@@ -1,242 +1,234 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Бухучет: Урок 1</title>
-    <!-- Telegram WebApp SDK -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <style>
-        :root {
-            --bg-color: var(--tg-theme-bg-color, #f4f5f7);
-            --text-color: var(--tg-theme-text-color, #1c1c1e);
-            --hint-color: var(--tg-theme-hint-color, #8e8e93);
-            --button-color: var(--tg-theme-button-color, #007aff);
-            --button-text-color: var(--tg-theme-button-text-color, #ffffff);
-            --card-bg: var(--tg-theme-secondary-bg-color, #ffffff);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background-color: #e5e5ea;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 33%;
-            background-color: #34c759;
-            transition: width 0.3s ease;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-
-        h2 { margin-top: 0; font-size: 20px; }
-        p { font-size: 15px; line-height: 1.5; color: var(--text-color); }
-        .hint { color: var(--hint-color); font-size: 13px; }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .btn-option {
-            background-color: var(--card-bg);
-            border: 2px solid #e5e5ea;
-            border-radius: 12px;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text-color);
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.2s ease;
-        }
-
-        .btn-option.selected {
-            border-color: var(--button-color);
-            background-color: rgba(0, 122, 255, 0.05);
-        }
-
-        .btn-option.correct {
-            border-color: #34c759;
-            background-color: rgba(52, 199, 89, 0.1);
-            color: #248a3d;
-        }
-
-        .btn-option.wrong {
-            border-color: #ff3b30;
-            background-color: rgba(255, 59, 48, 0.1);
-            color: #d70015;
-        }
-
-        .footer {
-            margin-top: auto;
-            padding-top: 10px;
-        }
-
-        .btn-primary {
-            width: 100%;
-            background-color: var(--button-color);
-            color: var(--button-text-color);
-            border: none;
-            border-radius: 12px;
-            padding: 16px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .feedback {
-            margin-top: 10px;
-            font-weight: 600;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 1: Основы бухгалтерского учета — Активы и Пассивы</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+      --primary-color: #2a72d7;
+      --accent-color: #27ae60;
+      --border-color: #e2e8f0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 16px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h1 {
+      color: var(--primary-color);
+      font-size: 24px;
+      margin-top: 0;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    h2 {
+      color: #34495e;
+      font-size: 18px;
+      margin-top: 24px;
+    }
+    p {
+      margin: 12px 0;
+      font-size: 15px;
+    }
+    .highlight-box {
+      background-color: #eeb80c10;
+      border-left: 4px solid var(--primary-color);
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #edf2f7;
+      font-weight: 600;
+    }
+    .quiz-box {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 30px;
+    }
+    .option-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      text-align: left;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .option-btn:hover {
+      background-color: #edf2f7;
+    }
+    .feedback {
+      margin-top: 12px;
+      font-weight: 600;
+      display: none;
+    }
+    .correct { color: var(--accent-color); }
+    .incorrect { color: #e74c3c; }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="progress-bar">
-            <div class="progress-fill" id="progress"></div>
-        </div>
-        <span class="hint">Урок 1: Основы баланса</span>
-    </div>
+<div class="container">
+  <h1>Урок 1. Базовое уравнение бухгалтерского учета: Активы и Пассивы</h1>
 
-    <!-- ЭКРАН 1: ТЕОРИЯ -->
-    <div id="step-1" class="step">
-        <div class="card">
-            <h2>Что такое Актив и Пассив? ⚖️</h2>
-            <p>Представь, что у твоей компании есть <b>100 000 ₽</b> в кассе и <b>ноутбук</b>.</p>
-            <p><b>АКТИВ</b> — это всё имущество компании (что у нас есть).</p>
-            <p><b>ПАССИВ</b> — это источники этого имущества (откуда мы взяли на это деньги: личные средства, кредит или долг перед поставщиком).</p>
-            <p class="hint">Главное правило бухгалтера: <b>АКТИВ ВСЕГДА РАВЕН ПАССИВУ</b>.</p>
-        </div>
-    </div>
+  <p>Приветствуем в первом уроке! Бухгалтерский учет — это не просто заполнение отчетов для налоговой инспекции, а строгая логическая система, которая отражает финансовое состояние бизнеса в любой момент времени.</p>
 
-    <!-- ЭКРАН 2: ПРАКТИКА -->
-    <div id="step-2" class="step" style="display: none;">
-        <div class="card">
-            <h2>Проверим знания 🧠</h2>
-            <p>Компания купила в офис новый **холодильник** за счет собственных средств. Чем является холодильник для компании?</p>
-            
-            <div class="options">
-                <button class="btn-option" onclick="selectOption(this, false)">Пассивом (Источник денег)</button>
-                <button class="btn-option" onclick="selectOption(this, true)">Активом (Имущество компании)</button>
-                <button class="btn-option" onclick="selectOption(this, false)">Ничем, это личная вещь</button>
-            </div>
-            <div id="feedback" class="feedback"></div>
-        </div>
-    </div>
+  <p>В основе всей мировой практики бухучета лежит один фундаментальный принцип: <strong>все имеющееся у компании имущество всегда имеет источник происхождения</strong>. Из этого вытекает концепция Активов и Пассивов.</p>
 
-    <!-- ЭКРАН 3: ИТОГ -->
-    <div id="step-3" class="step" style="display: none;">
-        <div class="card" style="text-align: center;">
-            <h2>Отлично сработано! 🎉</h2>
-            <p>Ты сделал первый шаг к пониманию бухгалтерского учета.</p>
-            <p>В следующем уроке мы разберем, что такое <b>Дебет</b> и <b>Кредит</b>.</p>
-        </div>
-    </div>
+  <div class="highlight-box">
+    <strong>Главное правило учета:</strong><br>
+    <code>АКТИВЫ = ПАССИВЫ</code> (или <code>АКТИВЫ = ОБЯЗАТЕЛЬСТВА + СОБСТВЕННЫЙ КАПИТАЛ</code>)
+  </div>
 
-    <div class="footer">
-        <button id="main-btn" class="btn-primary" onclick="nextStep()">Понятно, дальше</button>
-    </div>
+  <h2>1. Что такое Активы (Что у нас есть?)</h2>
+  <p><strong>Активы</strong> — это всё экономическое имущество и ресурсы, которыми владеет организация и которые способны приносить доход в настоящем или будущем.</p>
+  
+  <p>Активы принято делить на две ключевые категории:</p>
+  <ul>
+    <li><strong>Внеоборотные активы (долгосрочные):</strong> Имущество, которое используется бизнесом больше 1 года и не предназначено для быстрой перепродажи.
+      <ul>
+        <li>Здания, офисы, складские помещения, земельные участки.</li>
+        <li>Оборудование, станки, автотранспорт компании.</li>
+        <li>Нематериальные активы: патенты, лицензии, товарные знаки, программное обеспечение.</li>
+      </ul>
+    </li>
+    <li><strong>Оборотные активы (краткосрочные):</strong> Ресурсы, которые полностью расходуются, продаются или обращаются в деньги в течение одного производственного цикла (обычно до 1 года).
+      <ul>
+        <li>Денежные средства (наличные в кассе и расчетные счета в банках).</li>
+        <li>Товарные запасы (готовая продукция на складе, сырье, материалы, топливо).</li>
+        <li>Дебиторская задолженность (долги покупателей и клиентов перед вашей компанией).</li>
+      </ul>
+    </li>
+  </ul>
 
-    <script>
-        const tg = window.Telegram.WebApp;
-        tg.expand(); // Разворачиваем на весь экран
+  <h2>2. Что такое Пассивы (Откуда мы это взяли?)</h2>
+  <p><strong>Пассивы</strong> — это источники формирования имущества (активов). Они показывают, чьи деньги были использованы для покупки всех имеющихся у нас ресурсов.</p>
 
-        let currentStep = 1;
-        let isAnswered = false;
-        let isCorrect = false;
+  <p>Пассивы также разделяются на две группы:</p>
+  <ul>
+    <li><strong>Собственный капитал:</strong> Средства владельцев или самой компании.
+      <ul>
+        <li>Уставный капитал (первоначальный взнос учредителей при создании фирмы).</li>
+        <li>Нераспределенная прибыль (заработанные бизнесом деньги, которые реинвестированы в развитие).</li>
+      </ul>
+    </li>
+    <li><strong>Обязательства (Заемный капитал):</strong> Чужие деньги, привлеченные для финансирования бизнеса, которые необходимо вернуть.
+      <ul>
+        <li>Краткосрочные и долгосрочные кредиты и займы банков.</li>
+        <li>Кредиторская задолженность (долги нашей компании перед поставщиками за отгруженный товар, долги по зарплате перед сотрудниками, задолженность по налогам).</li>
+      </ul>
+    </li>
+  </ul>
 
-        function selectOption(el, correct) {
-            if (isAnswered) return;
-            
-            // Сброс выделения
-            document.querySelectorAll('.btn-option').forEach(btn => btn.classList.remove('selected'));
-            
-            el.classList.add('selected');
-            isCorrect = correct;
-            
-            // Вибрация в Telegram при клике
-            if (tg.HapticFeedback) {
-                tg.HapticFeedback.selectionChanged();
-            }
-        }
+  <h2>3. Наглядное сопоставление (Бухгалтерский баланс)</h2>
+  <p>Чтобы понять, как эти концепции работают в связке, рассмотрим таблицу двустороннего баланса:</p>
 
-        function nextStep() {
-            if (currentStep === 1) {
-                currentStep = 2;
-                document.getElementById('step-1').style.display = 'none';
-                document.getElementById('step-2').style.display = 'block';
-                document.getElementById('progress').style.width = '66%';
-                document.getElementById('main-btn').innerText = 'Проверить';
-            } 
-            else if (currentStep === 2) {
-                if (!isAnswered) {
-                    const selected = document.querySelector('.btn-option.selected');
-                    if (!selected) {
-                        alert('Выберите вариант ответа!');
-                        return;
-                    }
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>АКТИВ (Чем владеем)</th>
+          <th>ПАССИВ (За чей счет куплено)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Деньги на расчётном счёте — 500 000 ₽</td>
+          <td>Уставный капитал (собственные деньги) — 400 000 ₽</td>
+        </tr>
+        <tr>
+          <td>Товары на складе — 200 000 ₽</td>
+          <td>Задолженность перед поставщиком — 200 000 ₽</td>
+        </tr>
+        <tr>
+          <td>Ноутбук и офис. мебель — 100 000 ₽</td>
+          <td>Кредит банка — 200 000 ₽</td>
+        </tr>
+        <tr style="font-weight: bold; background-color: #f8fafc;">
+          <td>ИТОГО АКТИВОВ: 800 000 ₽</td>
+          <td>ИТОГО ПАССИВОВ: 800 000 ₽</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-                    isAnswered = true;
-                    const feedback = document.getElementById('feedback');
+  <p><em>Обратите внимание: итоговые суммы Актива и Пассива **всегда строго равны**. Если равенство нарушено — в учете допущена ошибка.</em></p>
 
-                    if (isCorrect) {
-                        selected.classList.add('correct');
-                        feedback.innerText = '✨ Абсолютно верно!';
-                        feedback.style.color = '#34c759';
-                        if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
-                    } else {
-                        selected.classList.add('wrong');
-                        feedback.innerText = '❌ Не совсем. Холодильник — это имущество, а значит Актив.';
-                        feedback.style.color = '#ff3b30';
-                        if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('error');
-                    }
+  <h2>4. Закрепление материала (Практический тест)</h2>
+  
+  <div class="quiz-box">
+    <p><strong>Вопрос:</strong> Ресторан закупает партию продуктов у поставщика. Продукты доставлены на кухню, но оплата поставщику будет произведена только через 14 дней. Как эта операция отразится в балансе?</p>
+    
+    <button class="option-btn" onclick="checkAnswer(1)">А) Продукты — это Актив, а долг перед поставщиком — это Пассив (Кредиторская задолженность).</button>
+    <button class="option-btn" onclick="checkAnswer(2)">Б) Продукты — это Пассив, так как за них еще не заплатили.</button>
+    <button class="option-btn" onclick="checkAnswer(3)">В) Эта операция вообще не отражается в балансе до момента оплаты.</button>
 
-                    document.getElementById('main-btn').innerText = 'Завершить урок';
-                } else {
-                    currentStep = 3;
-                    document.getElementById('step-2').style.display = 'none';
-                    document.getElementById('step-3').style.display = 'block';
-                    document.getElementById('progress').style.width = '100%';
-                    document.getElementById('main-btn').innerText = 'Закрыть';
-                }
-            } 
-            else if (currentStep === 3) {
-                tg.close(); // Закрыть Mini App в Telegram
-            }
-        }
-    </script>
+    <div id="feedback" class="feedback"></div>
+  </div>
+</div>
+
+<script>
+  let tg = window.Telegram ? window.Telegram.WebApp : null;
+  if (tg) {
+    tg.expand();
+  }
+
+  function checkAnswer(option) {
+    const feedback = document.getElementById('feedback');
+    feedback.style.display = 'block';
+
+    if (option === 1) {
+      feedback.textContent = 'Правильно! Продукты — это запасы (Ресурс = Актив), а обязанность заплатить поставщику — это Кредиторская задолженность (Источник = Пассив).';
+      feedback.className = 'feedback correct';
+      if (tg && tg.HapticFeedback) {
+        tg.HapticFeedback.notificationOccurred('success');
+      }
+    } else {
+      feedback.textContent = 'Неверно. Попробуйте еще раз. Помните: само имущество — это всегда Актив, а долг за него — Пассив.';
+      feedback.className = 'feedback incorrect';
+      if (tg && tg.HapticFeedback) {
+        tg.HapticFeedback.notificationOccurred('error');
+      }
+    }
+  }
+</script>
+
 </body>
 </html>
