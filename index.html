@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Бухучет: Урок 1</title>
+    <!-- Telegram WebApp SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        :root {
+            --bg-color: var(--tg-theme-bg-color, #f4f5f7);
+            --text-color: var(--tg-theme-text-color, #1c1c1e);
+            --hint-color: var(--tg-theme-hint-color, #8e8e93);
+            --button-color: var(--tg-theme-button-color, #007aff);
+            --button-text-color: var(--tg-theme-button-text-color, #ffffff);
+            --card-bg: var(--tg-theme-secondary-bg-color, #ffffff);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e5e5ea;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 33%;
+            background-color: #34c759;
+            transition: width 0.3s ease;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        h2 { margin-top: 0; font-size: 20px; }
+        p { font-size: 15px; line-height: 1.5; color: var(--text-color); }
+        .hint { color: var(--hint-color); font-size: 13px; }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-option {
+            background-color: var(--card-bg);
+            border: 2px solid #e5e5ea;
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .btn-option.selected {
+            border-color: var(--button-color);
+            background-color: rgba(0, 122, 255, 0.05);
+        }
+
+        .btn-option.correct {
+            border-color: #34c759;
+            background-color: rgba(52, 199, 89, 0.1);
+            color: #248a3d;
+        }
+
+        .btn-option.wrong {
+            border-color: #ff3b30;
+            background-color: rgba(255, 59, 48, 0.1);
+            color: #d70015;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: var(--button-color);
+            color: var(--button-text-color);
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+        <span class="hint">Урок 1: Основы баланса</span>
+    </div>
+
+    <!-- ЭКРАН 1: ТЕОРИЯ -->
+    <div id="step-1" class="step">
+        <div class="card">
+            <h2>Что такое Актив и Пассив? ⚖️</h2>
+            <p>Представь, что у твоей компании есть <b>100 000 ₽</b> в кассе и <b>ноутбук</b>.</p>
+            <p><b>АКТИВ</b> — это всё имущество компании (что у нас есть).</p>
+            <p><b>ПАССИВ</b> — это источники этого имущества (откуда мы взяли на это деньги: личные средства, кредит или долг перед поставщиком).</p>
+            <p class="hint">Главное правило бухгалтера: <b>АКТИВ ВСЕГДА РАВЕН ПАССИВУ</b>.</p>
+        </div>
+    </div>
+
+    <!-- ЭКРАН 2: ПРАКТИКА -->
+    <div id="step-2" class="step" style="display: none;">
+        <div class="card">
+            <h2>Проверим знания 🧠</h2>
+            <p>Компания купила в офис новый **холодильник** за счет собственных средств. Чем является холодильник для компании?</p>
+            
+            <div class="options">
+                <button class="btn-option" onclick="selectOption(this, false)">Пассивом (Источник денег)</button>
+                <button class="btn-option" onclick="selectOption(this, true)">Активом (Имущество компании)</button>
+                <button class="btn-option" onclick="selectOption(this, false)">Ничем, это личная вещь</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
+
+    <!-- ЭКРАН 3: ИТОГ -->
+    <div id="step-3" class="step" style="display: none;">
+        <div class="card" style="text-align: center;">
+            <h2>Отлично сработано! 🎉</h2>
+            <p>Ты сделал первый шаг к пониманию бухгалтерского учета.</p>
+            <p>В следующем уроке мы разберем, что такое <b>Дебет</b> и <b>Кредит</b>.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button id="main-btn" class="btn-primary" onclick="nextStep()">Понятно, дальше</button>
+    </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Разворачиваем на весь экран
+
+        let currentStep = 1;
+        let isAnswered = false;
+        let isCorrect = false;
+
+        function selectOption(el, correct) {
+            if (isAnswered) return;
+            
+            // Сброс выделения
+            document.querySelectorAll('.btn-option').forEach(btn => btn.classList.remove('selected'));
+            
+            el.classList.add('selected');
+            isCorrect = correct;
+            
+            // Вибрация в Telegram при клике
+            if (tg.HapticFeedback) {
+                tg.HapticFeedback.selectionChanged();
+            }
+        }
+
+        function nextStep() {
+            if (currentStep === 1) {
+                currentStep = 2;
+                document.getElementById('step-1').style.display = 'none';
+                document.getElementById('step-2').style.display = 'block';
+                document.getElementById('progress').style.width = '66%';
+                document.getElementById('main-btn').innerText = 'Проверить';
+            } 
+            else if (currentStep === 2) {
+                if (!isAnswered) {
+                    const selected = document.querySelector('.btn-option.selected');
+                    if (!selected) {
+                        alert('Выберите вариант ответа!');
+                        return;
+                    }
+
+                    isAnswered = true;
+                    const feedback = document.getElementById('feedback');
+
+                    if (isCorrect) {
+                        selected.classList.add('correct');
+                        feedback.innerText = '✨ Абсолютно верно!';
+                        feedback.style.color = '#34c759';
+                        if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+                    } else {
+                        selected.classList.add('wrong');
+                        feedback.innerText = '❌ Не совсем. Холодильник — это имущество, а значит Актив.';
+                        feedback.style.color = '#ff3b30';
+                        if (tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('error');
+                    }
+
+                    document.getElementById('main-btn').innerText = 'Завершить урок';
+                } else {
+                    currentStep = 3;
+                    document.getElementById('step-2').style.display = 'none';
+                    document.getElementById('step-3').style.display = 'block';
+                    document.getElementById('progress').style.width = '100%';
+                    document.getElementById('main-btn').innerText = 'Закрыть';
+                }
+            } 
+            else if (currentStep === 3) {
+                tg.close(); // Закрыть Mini App в Telegram
+            }
+        }
+    </script>
+</body>
+</html>
