@@ -2,6 +2,27 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- ВСТАВЛЯЕМ СЮДА С НОВОЙ СТРОЧКИ: -->
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 1. Сущность бухгалтерского учета, его предмет, метод и объекты</title>
+</head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Урок 1. Сущность бухгалтерского учета, его предмет, метод и объекты</title>
   <script src="https://cdn.tailwindcss.com"></script>
