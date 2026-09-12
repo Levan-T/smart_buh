@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Урок 2: Бухгалтерский баланс | smart_buh</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .glass-card {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(8px);
-    }
-  </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col justify-between">
 
@@ -36,376 +30,387 @@
     <!-- Заголовок урока -->
     <div class="text-center space-y-4">
       <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-        Бухгалтерский баланс: <span class="text-emerald-400">Актив, Пассив и Равновесие</span>
+        Бухгалтерский баланс: <span class="text-emerald-400">Теория, Разделы и Счета</span>
       </h1>
-      <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-        Фундаментальное понятие бухгалтерского учета по методике Н. П. Кондракова. Разбор структуры, группировка счетов и практика расчетов.
+      <p class="text-slate-400 max-w-3xl mx-auto text-lg">
+        Полный разбор структуры Бухгалтерского баланса на основе классической теории Н. П. Кондракова. Подробная характеристика счетов и интерактивный практикум.
       </p>
     </div>
 
-    <!-- БЛОК 1: ТЕОРИЯ (По Кондракову) -->
+    <!-- БЛОК 1: ТЕОРИЯ БУХГАЛТЕРСКОГО БАЛАНСА -->
     <article class="space-y-6">
       <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>📖</span> 1. Сущность и назначение Бухгалтерского баланса
+        <span>📖</span> 1. Сущность, назначение и пользователи баланса
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700 space-y-3">
           <h3 class="font-bold text-lg text-slate-200">Что такое Бухгалтерский баланс?</h3>
           <p class="text-slate-300 leading-relaxed text-sm">
-            <b>Бухгалтерский баланс</b> — это способ обобщения и группировки имущества организации (по составу и размещению) и источников его образования на определенную дату в денежном выражении.
+            <b>Бухгалтерский баланс</b> — это метод экономический группировки и обобщения имущества организации по его составу и размещению (Актив), а также по источникам его формирования (Пассив) на определенный момент времени (как правило, на конец отчетного периода) в денежной оценке.
           </p>
           <p class="text-slate-400 text-xs italic">
-            Слово «баланс» происходит от латинских слов bis (дважды) и lanx (чаша весов), что означает «двучашие».
+            Баланс снимет «финансовый слепок» предприятия. В отличие от отчета о финансовых результатах, который показывает динамику за период, баланс показывает точное состояние имущества и долгов на конкретную дату.
           </p>
         </div>
 
         <div class="bg-slate-800/60 p-6 rounded-xl border border-slate-700 space-y-3">
-          <h3 class="font-bold text-lg text-slate-200">Зачем он нужен и кто его использует?</h3>
-          <p class="text-slate-300 leading-relaxed text-sm">
-            Баланс является главным элементом бухгалтерской отчетности. Он характеризует финансовое положение компании.
-          </p>
-          <ul class="text-slate-400 text-xs space-y-1 list-disc list-inside">
-            | <b>Собственники и директор:</b> оценить рост бизнеса и чистые активы.
-            | <b>Банки:</b> принять решение о выдаче кредита.
-            | <b>Инвесторы и контрагенты:</b> проверить платежеспособность.
-            | <b>Налоговая инспекция (ФНС):</b> контроль правильности ведения учета.
+          <h3 class="font-bold text-lg text-slate-200">Кто использует данные баланса?</h3>
+          <ul class="text-slate-300 text-sm space-y-2">
+            <li><b>Руководители и учредители:</b> для оценки чистых активов, финансовой устойчивости и принятия управленческих решений.</li>
+            <li><b>Банки и кредиторы:</b> для оценки кредитоспособности и финансовой надежности компании перед выдачей займов.</li>
+            <li><b>Инвесторы и контрагенты:</b> для проверки ликвидности и стабильности бизнеса.</li>
+            <li><b>Налоговые органы (ФНС):</b> для финансового анализа и налогового контроля.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Главное балансовое равенство -->
-      <div class="bg-gradient-to-r from-emerald-950/40 via-slate-800 to-cyan-950/40 border border-emerald-500/30 p-6 rounded-xl text-center space-y-3">
-        <h3 class="text-lg font-bold text-emerald-400 uppercase tracking-wider">Главное балансовое равенство</h3>
-        <div class="text-2xl md:text-3xl font-black text-slate-100 font-mono">
-          АКТИВ = ПАССИВ
+      <!-- Равенство -->
+      <div class="bg-gradient-to-r from-emerald-950/50 via-slate-800 to-cyan-950/50 border border-emerald-500/30 p-6 rounded-xl text-center space-y-2">
+        <h3 class="text-lg font-bold text-emerald-400 uppercase tracking-wider">Фундаментальное балансовое равенство</h3>
+        <div class="text-3xl font-black text-slate-100 font-mono py-2">
+          ИТОГО АКТИВ = ИТОГО ПАССИВ
         </div>
-        <p class="text-xs text-slate-400 max-w-xl mx-auto">
-          Каждый рубль имущества (Актив) имеет свой источник возникновения — собственный капитал или долги (Пассив). Сумма всех статей Актива всегда строго равна сумме всех статей Пассива.
+        <p class="text-xs text-slate-400 max-w-2xl mx-auto">
+          Все средства организации (Актив) сформированы за счет двух источников (Пассив): собственных средств (Капитал) и заемных средств (Обязательства). Равенство двух частей баланса является абсолютным правилом бухгалтерского учета.
         </p>
       </div>
-
-      <!-- Актив vs Пассив -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-6 bg-slate-800/40 border-l-4 border-emerald-400 rounded-r-xl space-y-2">
-          <h3 class="text-xl font-bold text-emerald-400">АКТИВ</h3>
-          <p class="text-slate-300 text-sm"><b>Чем владеет организация?</b></p>
-          <p class="text-slate-400 text-sm">
-            Это ресурсы, контролируемые компанией в результате прошлых событий, от которых ожидается получение экономической выгоды в будущем (здания, станки, товары, деньги, дебиторская задолженность).
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-800/40 border-l-4 border-cyan-400 rounded-r-xl space-y-2">
-          <h3 class="text-xl font-bold text-cyan-400">ПАССИВ</h3>
-          <p class="text-slate-300 text-sm"><b>За чей счет это куплено?</b></p>
-          <p class="text-slate-400 text-sm">
-            Это источники формирования активов компании. Пассив делится на **собственный капитал** (уставный капитал, прибыль) и **обязательства** (кредиты банков, долги перед поставщиками и сотрудниками).
-          </p>
-        </div>
-      </div>
     </article>
 
-    <!-- БЛОК 2: СТРУКТУРА БАЛАНСА И СЧЕТА -->
-    <article class="space-y-6">
+    <!-- БЛОК 2: ПОЛНАЯ СТРУКТУРА БАЛАНСА И СЧЕТА -->
+    <article class="space-y-8">
       <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>📊</span> 2. Структура Бухгалтерского баланса и характеристика счетов
+        <span>📊</span> 2. Характеристика разделов и счетов бухгалтерского учета
       </h2>
 
-      <div class="bg-amber-950/30 border border-amber-500/30 p-4 rounded-xl text-amber-200 text-sm">
-        ⚠️ <b>Важно:</b> В бухгалтерский баланс <u>не входят</u> регулирующие счета (сч. 02, сч. 05). В балансе отражается <b>Остаточная стоимость</b>, которая является результатом вычитания: <br>
-        <span class="font-mono text-xs font-bold text-amber-300">Остаточная стоимость ОС = Счет 01 - Счет 02</span> | 
-        <span class="font-mono text-xs font-bold text-amber-300">Остаточная стоимость НМА = Счет 04 - Счет 05</span>
+      <!-- Правило вычитания регулирующих счетов -->
+      <div class="bg-amber-950/40 border border-amber-500/40 p-4 rounded-xl text-amber-200 text-sm">
+        💡 <b>Правило оценки имущества:</b> Регулирующие счета (02, 05) в баланс отдельными строками не включаются! В Активе отражаются расчетные показатели — <b>Остаточная стоимость</b>:
+        <ul class="list-disc list-inside mt-2 text-xs font-mono text-amber-300 space-y-1">
+          <li>Остаточная стоимость ОС = Счет 01 (Первоначальная стоимость) - Счет 02 (Износ ОС)</li>
+          <li>Остаточная стоимость НМА = Счет 04 (Первоначальная стоимость) - Счет 05 (Амортизация НМА)</li>
+        </ul>
       </div>
 
-      <!-- Разделы Баланса -->
-      <div class="space-y-8">
-        
-        <!-- АКТИВ: Раздел 1 -->
-        <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
-          <h3 class="text-lg font-bold text-emerald-400 mb-2">РАЗДЕЛ I. ВНЕОБОРОТНЫЕ АКТИВЫ (АКТИВ)</h3>
-          <p class="text-xs text-slate-400 mb-4">Имущество длительного пользования (более 12 месяцев), используемое в хозяйственной деятельности.</p>
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead>
-                <tr class="border-b border-slate-600 text-slate-400 text-xs uppercase">
-                  <th class="py-2 px-3">Счет</th>
-                  <th class="py-2 px-3">Статья / Наименование счета</th>
-                  <th class="py-2 px-3">Характеристика счета</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-700 text-slate-300">
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 01</td>
-                  <td class="py-2 px-3 font-semibold">Основные средства</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Здания, оборудование, транспорт, станки по первоначальной стоимости.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono text-rose-400">Счет 02</td>
-                  <td class="py-2 px-3 text-slate-400 pl-6">↳ Износ основных средств</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Регулирующий счет. Накопленная амортизация. Уменьшает счет 01.</td>
-                </tr>
-                <tr class="bg-emerald-950/30 font-semibold text-emerald-300">
-                  <td class="py-2 px-3 text-xs font-mono">—</td>
-                  <td class="py-2 px-3">Остаточная стоимость ОС (расчет: 01 - 02)</td>
-                  <td class="py-2 px-3 text-xs text-emerald-400/80">Реальная оценка основных средств, которая идет в сумму баланса!</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 04</td>
-                  <td class="py-2 px-3 font-semibold">Нематериальные активы (НМА)</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Патенты, товарные знаки, программы ЭВМ, лицензии.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono text-rose-400">Счет 05</td>
-                  <td class="py-2 px-3 text-slate-400 pl-6">↳ Амортизация НМА</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Регулирующий счет. Накопленная амортизация нематериальных активов.</td>
-                </tr>
-                <tr class="bg-emerald-950/30 font-semibold text-emerald-300">
-                  <td class="py-2 px-3 text-xs font-mono">—</td>
-                  <td class="py-2 px-3">Остаточная стоимость НМА (расчет: 04 - 05)</td>
-                  <td class="py-2 px-3 text-xs text-emerald-400/80">Заносится в баланс по остаточной стоимости.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 08</td>
-                  <td class="py-2 px-3 font-semibold">Вложения во внеоборотные активы</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Незавершенное строительство или процесс приобретения ОС/НМА.</td>
-                </tr>
-              </tbody>
-            </table>
+      <!-- АКТИВ -->
+      <div class="space-y-6">
+        <h3 class="text-xl font-bold text-emerald-400 border-b border-emerald-500/20 pb-1">ЧАСТЬ I. АКТИВ БАЛАНСА (Имущество и права)</h3>
+
+        <!-- Раздел 1 -->
+        <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5 space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+            <h4 class="font-bold text-slate-200 text-lg">Раздел I. Внеоборотные активы</h4>
+            <span class="text-xs bg-emerald-950 text-emerald-400 border border-emerald-500/30 px-2 py-1 rounded">Используются > 12 месяцев</span>
           </div>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="text-slate-400 border-b border-slate-700 text-xs uppercase">
+                <th class="py-2 px-2 w-20">Счет</th>
+                <th class="py-2 px-2 w-56">Наименование статьи</th>
+                <th class="py-2 px-2">Характеристика и порядок учета</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-700/60 text-slate-300 text-xs md:text-sm">
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 01</td>
+                <td class="py-2 px-2 font-semibold">Основные средства (ОС)</td>
+                <td class="py-2 px-2 text-slate-400">Здания, сооружения, машины, станки, транспортные средства. Учитываются по первоначальной стоимости.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono text-rose-400">Счет 02</td>
+                <td class="py-2 px-2 text-slate-400 pl-4">↳ Износ основных средств</td>
+                <td class="py-2 px-2 text-slate-400">Контрактивный (регулирующий) счет. Показывает накопленную амортизацию ОС. Вычитается из счета 01.</td>
+              </tr>
+              <tr class="bg-emerald-950/30 font-semibold text-emerald-300">
+                <td class="py-2 px-2 font-mono text-xs">—</td>
+                <td class="py-2 px-2">Остаточная стоимость ОС</td>
+                <td class="py-2 px-2 text-emerald-400">Расчетная строка баланса (01 - 02). Заносится в итог Раздела I.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 04</td>
+                <td class="py-2 px-2 font-semibold">Нематериальные активы (НМА)</td>
+                <td class="py-2 px-2 text-slate-400">Патенты, товарные знаки, программы ЭВМ, деловая репутация, научные разработки без физической формы.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono text-rose-400">Счет 05</td>
+                <td class="py-2 px-2 text-slate-400 pl-4">↳ Амортизация НМА</td>
+                <td class="py-2 px-2 text-slate-400">Контрактивный счет накопленной амортизации НМА. Вычитается из счета 04.</td>
+              </tr>
+              <tr class="bg-emerald-950/30 font-semibold text-emerald-300">
+                <td class="py-2 px-2 font-mono text-xs">—</td>
+                <td class="py-2 px-2">Остаточная стоимость НМА</td>
+                <td class="py-2 px-2 text-emerald-400">Расчетная строка баланса (04 - 05). Заносится в итог Раздела I.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 08</td>
+                <td class="py-2 px-2 font-semibold">Вложения во внеоборотные активы</td>
+                <td class="py-2 px-2 text-slate-400">Затраты на незавершенное строительство, монтаж оборудования, покупку ОС до их ввода в эксплуатацию.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <!-- АКТИВ: Раздел 2 -->
-        <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
-          <h3 class="text-lg font-bold text-emerald-400 mb-2">РАЗДЕЛ II. ОБОРОТНЫЕ АКТИВЫ (АКТИВ)</h3>
-          <p class="text-xs text-slate-400 mb-4">Текущие активы, которые расходуются или обращаются в деньги в течение 12 месяцев.</p>
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead>
-                <tr class="border-b border-slate-600 text-slate-400 text-xs uppercase">
-                  <th class="py-2 px-3">Счет</th>
-                  <th class="py-2 px-3">Наименование счета</th>
-                  <th class="py-2 px-3">Характеристика счета</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-700 text-slate-300">
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 10</td>
-                  <td class="py-2 px-3">Материалы</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Сырье, запчасти, топливо, инвентарь для производства.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 20</td>
-                  <td class="py-2 px-3">Основное производство</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Затраты на незавершенное производство (НЗП).</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 41</td>
-                  <td class="py-2 px-3">Товары</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Товаро-материальные ценности, закупленные для перепродажи.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 43</td>
-                  <td class="py-2 px-3">Готовая продукция</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Продукция, выпущенная производством и готовая к продаже.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 50</td>
-                  <td class="py-2 px-3">Касса</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Наличные денежные средства в кассе предприятия.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 51</td>
-                  <td class="py-2 px-3">Расчетные счета</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Безналичные деньги на счетах в банках.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-emerald-400">Счет 62</td>
-                  <td class="py-2 px-3">Расчеты с покупателями</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Дебиторская задолженность (клиенты должны нам за отгруженный товар).</td>
-                </tr>
-              </tbody>
-            </table>
+        <!-- Раздел 2 -->
+        <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5 space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+            <h4 class="font-bold text-slate-200 text-lg">Раздел II. Оборотные активы</h4>
+            <span class="text-xs bg-emerald-950 text-emerald-400 border border-emerald-500/30 px-2 py-1 rounded">Обращаются ≤ 12 месяцев</span>
           </div>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="text-slate-400 border-b border-slate-700 text-xs uppercase">
+                <th class="py-2 px-2 w-20">Счет</th>
+                <th class="py-2 px-2 w-56">Наименование счета</th>
+                <th class="py-2 px-2">Характеристика и назначение</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-700/60 text-slate-300 text-xs md:text-sm">
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 10</td>
+                <td class="py-2 px-2 font-semibold">Материалы</td>
+                <td class="py-2 px-2 text-slate-400">Сырье, основные и вспомогательные материалы, топливо, запчасти, тара, используемые в производстве.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 20</td>
+                <td class="py-2 px-2 font-semibold">Основное производство</td>
+                <td class="py-2 px-2 text-slate-400">Незавершенное производство (НЗП) — затраты на продукцию, не прошедшую все стадии обработки.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 41</td>
+                <td class="py-2 px-2 font-semibold">Товары</td>
+                <td class="py-2 px-2 text-slate-400">Товарно-материальные ценности, приобретенные специально для перепродажи.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 43</td>
+                <td class="py-2 px-2 font-semibold">Готовая продукция</td>
+                <td class="py-2 px-2 text-slate-400">Изделия, полностью законченные обработкой на предприятии и прошедшие испытания/приемку.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 50</td>
+                <td class="py-2 px-2 font-semibold">Касса</td>
+                <td class="py-2 px-2 text-slate-400">Наличные денежные средства и денежные документы, находящиеся в кассе предприятия.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 51</td>
+                <td class="py-2 px-2 font-semibold">Расчетные счета</td>
+                <td class="py-2 px-2 text-slate-400">Безналичные денежные средства организации на счетах в кредитных организациях (банках).</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-emerald-400">Счет 62</td>
+                <td class="py-2 px-2 font-semibold">Расчеты с покупателями</td>
+                <td class="py-2 px-2 text-slate-400">Дебиторская задолженность (клиенты должны нам за отгруженную им продукцию или услуги).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ПАССИВ -->
+      <div class="space-y-6">
+        <h3 class="text-xl font-bold text-cyan-400 border-b border-cyan-500/20 pb-1">ЧАСТЬ II. ПАССИВ БАЛАНСА (Источники формирования средств)</h3>
+
+        <!-- Раздел 3 -->
+        <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5 space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+            <h4 class="font-bold text-slate-200 text-lg">Раздел III. Капитал и резервы</h4>
+            <span class="text-xs bg-cyan-950 text-cyan-400 border border-cyan-500/30 px-2 py-1 rounded">Собственный капитал</span>
+          </div>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="text-slate-400 border-b border-slate-700 text-xs uppercase">
+                <th class="py-2 px-2 w-20">Счет</th>
+                <th class="py-2 px-2 w-56">Наименование счета</th>
+                <th class="py-2 px-2">Характеристика и назначение</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-700/60 text-slate-300 text-xs md:text-sm">
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 80</td>
+                <td class="py-2 px-2 font-semibold">Уставный капитал</td>
+                <td class="py-2 px-2 text-slate-400">Совокупность вкладов (в денежном выражении) учредителей при создании предприятия. Фиксированная величина.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 84</td>
+                <td class="py-2 px-2 font-semibold">Нераспределенная прибыль</td>
+                <td class="py-2 px-2 text-slate-400">Накопленная чистая прибыль организации за весь период ее деятельности за вычетом дивидендов.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <!-- ПАССИВ: Разделы 3, 4, 5 -->
-        <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6 space-y-6">
-          <h3 class="text-lg font-bold text-cyan-400">РАЗДЕЛЫ III, IV, V. КАПИТАЛ И ОБЯЗАТЕЛЬСТВА (ПАССИВ)</h3>
-          
-          <!-- III -->
-          <div>
-            <h4 class="font-bold text-sm text-slate-200 uppercase mb-2">Раздел III. Капитал и резервы (Собственный капитал)</h4>
-            <table class="w-full text-left text-sm">
-              <tbody class="divide-y divide-slate-700 text-slate-300">
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-cyan-400 w-24">Счет 80</td>
-                  <td class="py-2 px-3 font-semibold w-48">Уставный капитал</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Первоначальный капитал, внесенный учредителями при регистрации.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-cyan-400">Счет 84</td>
-                  <td class="py-2 px-3 font-semibold">Нераспределенная прибыль</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Чистая прибыль организации, накопленная за время ее работы.</td>
-                </tr>
-              </tbody>
-            </table>
+        <!-- Разделы 4 и 5 -->
+        <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5 space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+            <h4 class="font-bold text-slate-200 text-lg">Разделы IV и V. Обязательства компании</h4>
+            <span class="text-xs bg-cyan-950 text-cyan-400 border border-cyan-500/30 px-2 py-1 rounded">Заемный капитал</span>
           </div>
-
-          <!-- IV & V -->
-          <div>
-            <h4 class="font-bold text-sm text-slate-200 uppercase mb-2">Разделы IV и V. Заемный капитал (Обязательства)</h4>
-            <table class="w-full text-left text-sm">
-              <tbody class="divide-y divide-slate-700 text-slate-300">
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-cyan-400 w-24">Счет 67</td>
-                  <td class="py-2 px-3 font-semibold w-48">Долгосрочные займы</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Раздел IV. Кредиты и займы со сроком погашения более 1 года.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-cyan-400">Счет 66</td>
-                  <td class="py-2 px-3 font-semibold">Краткосрочные займы</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Раздел V. Кредиты и займы со сроком погашения до 1 года.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-cyan-400">Счет 60</td>
-                  <td class="py-2 px-3 font-semibold">Расчеты с поставщиками</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Кредиторская задолженность (мы должны поставщикам за сырье/услуги).</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-cyan-400">Счет 70</td>
-                  <td class="py-2 px-3 font-semibold">Расчеты с персоналом</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Начисленная, но еще не выплаченная зарплата сотрудникам.</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 font-mono font-bold text-cyan-400">Счет 68</td>
-                  <td class="py-2 px-3 font-semibold">Расчеты по налогам</td>
-                  <td class="py-2 px-3 text-xs text-slate-400">Задолженность перед бюджетом по налогам и сборам.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="text-slate-400 border-b border-slate-700 text-xs uppercase">
+                <th class="py-2 px-2 w-20">Счет</th>
+                <th class="py-2 px-2 w-56">Наименование счета</th>
+                <th class="py-2 px-2">Раздел баланса и характеристика</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-700/60 text-slate-300 text-xs md:text-sm">
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 67</td>
+                <td class="py-2 px-2 font-semibold">Долгосрочные займы</td>
+                <td class="py-2 px-2 text-slate-400"><b>Раздел IV.</b> Кредиты и займы, полученные на срок более 12 месяцев.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 66</td>
+                <td class="py-2 px-2 font-semibold">Краткосрочные займы</td>
+                <td class="py-2 px-2 text-slate-400"><b>Раздел V.</b> Кредиты и займы со сроком погашения до 12 месяцев.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 60</td>
+                <td class="py-2 px-2 font-semibold">Расчеты с поставщиками</td>
+                <td class="py-2 px-2 text-slate-400"><b>Раздел V.</b> Кредиторская задолженность перед поставщиками за полученные материалы/услуги.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 70</td>
+                <td class="py-2 px-2 font-semibold">Расчеты с персоналом</td>
+                <td class="py-2 px-2 text-slate-400"><b>Раздел V.</b> Кредиторская задолженность по оплате труда перед сотрудниками компании.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 68</td>
+                <td class="py-2 px-2 font-semibold">Расчеты по налогам</td>
+                <td class="py-2 px-2 text-slate-400"><b>Раздел V.</b> Начисленные, но еще не перечисленные в бюджет налоги и сборы.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-2 font-mono font-bold text-cyan-400">Счет 69</td>
+                <td class="py-2 px-2 font-semibold">Расчеты по соцстрахованию</td>
+                <td class="py-2 px-2 text-slate-400"><b>Раздел V.</b> Задолженность по страховым взносам в Социальный фонд и ФОМС.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
       </div>
     </article>
 
-    <!-- БЛОК 3: ИНТЕРАКТИВНЫЙ ТРЕНАЖЕР СВЕДЕНИЯ БАЛАНСА -->
+    <!-- БЛОК 3: ИНТЕРАКТИВНЫЙ ТРЕНАЖЕР БАЛАНСА -->
     <article class="space-y-6">
       <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>🎮</span> 3. Интерактивный тренажер «Сведи Баланс»
+        <span>🎮</span> 3. Интерактивный практикум «Сборка Баланса»
       </h2>
       <p class="text-sm text-slate-400">
-        Введи суммовые остатки по счетам. Обрати внимание, как автоматически рассчитывается **Остаточная стоимость** и проверяется главное равенство **АКТИВ = ПАССИВ**.
+        Измени значения счетов. Обрати внимание, как из Счета 01 вычитается Счет 02 для расчета **Остаточной стоимости**, а итог Актива автоматически сравнивается с Пассивом.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-slate-800/40 p-6 rounded-2xl border border-slate-700">
         
-        <!-- АКТИВ ТРЕНАЖЕРА -->
+        <!-- АКТИВ -->
         <div class="space-y-4">
-          <h3 class="text-lg font-bold text-emerald-400 border-b border-emerald-500/30 pb-2">АКТИВ (Имущество)</h3>
+          <h3 class="text-lg font-bold text-emerald-400 border-b border-emerald-500/30 pb-2">АКТИВ (Средства и Имущество)</h3>
           
           <div class="space-y-3 text-sm">
             <div class="flex justify-between items-center">
               <label for="c01" class="text-slate-300">Сч. 01 (Основные средства):</label>
-              <input type="number" id="c01" value="500000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-emerald-400 font-mono">
+              <input type="number" id="c01" value="600000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-emerald-400 font-mono">
             </div>
             <div class="flex justify-between items-center">
               <label for="c02" class="text-slate-300">Сч. 02 (Износ ОС):</label>
-              <input type="number" id="c02" value="100000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-rose-400 font-mono">
+              <input type="number" id="c02" value="150000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-rose-400 font-mono">
             </div>
-            <div class="flex justify-between items-center bg-slate-900/60 p-2 rounded border border-slate-700/50">
-              <span class="text-xs text-emerald-300 font-semibold">↳ Остаточная стоимость ОС:</span>
-              <span id="resOS" class="font-mono text-emerald-400 font-bold">400 000 руб.</span>
+            <div class="flex justify-between items-center bg-slate-900/80 p-2 rounded border border-slate-700">
+              <span class="text-xs text-emerald-300 font-semibold">↳ Остаточная стоимость ОС (01 - 02):</span>
+              <span id="resOS" class="font-mono text-emerald-400 font-bold">450 000 руб.</span>
             </div>
 
             <hr class="border-slate-700">
 
             <div class="flex justify-between items-center">
               <label for="c10" class="text-slate-300">Сч. 10 (Материалы):</label>
-              <input type="number" id="c10" value="150000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-emerald-400 font-mono">
+              <input type="number" id="c10" value="120000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-emerald-400 font-mono">
+            </div>
+            <div class="flex justify-between items-center">
+              <label for="c41" class="text-slate-300">Сч. 41 (Товары):</label>
+              <input type="number" id="c41" value="80000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-emerald-400 font-mono">
             </div>
             <div class="flex justify-between items-center">
               <label for="c51" class="text-slate-300">Сч. 51 (Расчетный счет):</label>
-              <input type="number" id="c51" value="250000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-emerald-400 font-mono">
+              <input type="number" id="c51" value="350000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-emerald-400 font-mono">
             </div>
           </div>
 
           <div class="pt-4 border-t border-slate-700 flex justify-between items-center">
             <span class="font-bold text-slate-200">ИТОГО АКТИВ:</span>
-            <span id="totalActive" class="text-xl font-black font-mono text-emerald-400">800 000 руб.</span>
+            <span id="totalActive" class="text-xl font-black font-mono text-emerald-400">1 000 000 руб.</span>
           </div>
         </div>
 
-        <!-- ПАССИВ ТРЕНАЖЕРА -->
+        <!-- ПАССИВ -->
         <div class="space-y-4">
           <h3 class="text-lg font-bold text-cyan-400 border-b border-cyan-500/30 pb-2">ПАССИВ (Источники)</h3>
           
           <div class="space-y-3 text-sm">
             <div class="flex justify-between items-center">
               <label for="c80" class="text-slate-300">Сч. 80 (Уставный капитал):</label>
-              <input type="number" id="c80" value="300000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
+              <input type="number" id="c80" value="500000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
             </div>
             <div class="flex justify-between items-center">
-              <label for="c84" class="text-slate-300">Сч. 84 (Нераспредел. прибыль):</label>
+              <label for="c84" class="text-slate-300">Сч. 84 (Прибыль):</label>
               <input type="number" id="c84" value="200000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
             </div>
             
             <hr class="border-slate-700">
 
             <div class="flex justify-between items-center">
+              <label for="c67" class="text-slate-300">Сч. 67 (Долгосрочный кредит):</label>
+              <input type="number" id="c67" value="150000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
+            </div>
+            <div class="flex justify-between items-center">
               <label for="c60" class="text-slate-300">Сч. 60 (Долг поставщикам):</label>
-              <input type="number" id="c60" value="180000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
+              <input type="number" id="c60" value="100000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
             </div>
             <div class="flex justify-between items-center">
               <label for="c70" class="text-slate-300">Сч. 70 (Долг по зарплате):</label>
-              <input type="number" id="c70" value="120000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
+              <input type="number" id="c70" value="50000" oninput="calcBalance()" class="w-32 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-right text-cyan-400 font-mono">
             </div>
           </div>
 
           <div class="pt-4 border-t border-slate-700 flex justify-between items-center">
             <span class="font-bold text-slate-200">ИТОГО ПАССИВ:</span>
-            <span id="totalPassive" class="text-xl font-black font-mono text-cyan-400">800 000 руб.</span>
+            <span id="totalPassive" class="text-xl font-black font-mono text-cyan-400">1 000 000 руб.</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Статус сведения -->
+      <!-- Статус равенства -->
       <div id="statusBox" class="p-4 rounded-xl text-center font-bold text-sm bg-emerald-950/60 text-emerald-300 border border-emerald-500/40">
-        ✅ БАЛАНС СВЕДЕН! Актив (800 000) равен Пассиву (800 000)
+        ✅ БАЛАНС СВЕДЕН!
       </div>
     </article>
 
-    <!-- БЛОК 4: ТЕСТ НА ПРОВЕРКУ ЗНАНИЙ -->
+    <!-- БЛОК 4: ТЕСТ -->
     <article class="space-y-6">
       <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>📝</span> 4. Экспресс-тест по теории Баланса
+        <span>📝</span> 4. Контрольный тест по Уроку 2
       </h2>
 
       <div class="space-y-4 max-w-2xl mx-auto">
-        
-        <!-- Вопрос 1 -->
         <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 space-y-3">
-          <p class="font-semibold text-slate-200">1. Какая сумма попадает в Бухгалтерский баланс по статье «Основные средства»?</p>
+          <p class="font-semibold text-slate-200">1. Каким образом счет 02 «Износ основных средств» влияет на Баланс?</p>
           <div class="space-y-2 text-sm">
             <label class="flex items-center space-x-2 cursor-pointer">
               <input type="radio" name="q1" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Первоначальная стоимость (Счет 01)</span>
+              <span class="text-slate-300">Записывается отдельной строкой в Пассив баланса.</span>
             </label>
             <label class="flex items-center space-x-2 cursor-pointer">
               <input type="radio" name="q1" value="1" class="text-emerald-500">
-              <span class="text-slate-300">Остаточная стоимость (Счет 01 minus Счет 02)</span>
+              <span class="text-slate-300">Вычитается из счета 01 для формирования Остаточной стоимости в Активе.</span>
             </label>
             <label class="flex items-center space-x-2 cursor-pointer">
               <input type="radio" name="q1" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Сумма счета 01 и счета 02</span>
+              <span class="text-slate-300">Вообще не учитывается в бухгалтерском учете.</span>
             </label>
           </div>
         </div>
 
-        <!-- Вопрос 2 -->
         <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 space-y-3">
-          <p class="font-semibold text-slate-200">2. К какому разделу баланса относится счет 51 «Расчетные счета»?</p>
+          <p class="font-semibold text-slate-200">2. В какой раздел баланса входит счет 80 «Уставный капитал»?</p>
           <div class="space-y-2 text-sm">
             <label class="flex items-center space-x-2 cursor-pointer">
               <input type="radio" name="q2" value="0" class="text-emerald-500">
@@ -413,11 +418,11 @@
             </label>
             <label class="flex items-center space-x-2 cursor-pointer">
               <input type="radio" name="q2" value="1" class="text-emerald-500">
-              <span class="text-slate-300">Раздел II. Оборотные активы</span>
+              <span class="text-slate-300">Раздел III. Капитал и резервы</span>
             </label>
             <label class="flex items-center space-x-2 cursor-pointer">
               <input type="radio" name="q2" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Раздел III. Капитал и резервы</span>
+              <span class="text-slate-300">Раздел V. Краткосрочные обязательства</span>
             </label>
           </div>
         </div>
@@ -434,44 +439,41 @@
 
   <!-- Подвал -->
   <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500 bg-slate-950">
-    <p>© 2026 smart_buh. Интерактивный курс по бухгалтерскому учету.</p>
+    <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
   </footer>
 
-  <!-- Скрипты расчета и тестов -->
+  <!-- JS -->
   <script>
     function calcBalance() {
-      // Считываем значения Актива
       const c01 = parseFloat(document.getElementById('c01').value) || 0;
       const c02 = parseFloat(document.getElementById('c02').value) || 0;
       const c10 = parseFloat(document.getElementById('c10').value) || 0;
+      const c41 = parseFloat(document.getElementById('c41').value) || 0;
       const c51 = parseFloat(document.getElementById('c51').value) || 0;
 
-      // Считываем значения Пассива
       const c80 = parseFloat(document.getElementById('c80').value) || 0;
       const c84 = parseFloat(document.getElementById('c84').value) || 0;
+      const c67 = parseFloat(document.getElementById('c67').value) || 0;
       const c60 = parseFloat(document.getElementById('c60').value) || 0;
       const c70 = parseFloat(document.getElementById('c70').value) || 0;
 
-      // Расчет остаточной стоимости
       const ostOS = c01 - c02;
       document.getElementById('resOS').innerText = ostOS.toLocaleString('ru-RU') + ' руб.';
 
-      // Подсчет Итого
-      const totalActive = ostOS + c10 + c51;
-      const totalPassive = c80 + c84 + c60 + c70;
+      const totalActive = ostOS + c10 + c41 + c51;
+      const totalPassive = c80 + c84 + c67 + c60 + c70;
 
       document.getElementById('totalActive').innerText = totalActive.toLocaleString('ru-RU') + ' руб.';
       document.getElementById('totalPassive').innerText = totalPassive.toLocaleString('ru-RU') + ' руб.';
 
-      // Проверка равенства
       const statusBox = document.getElementById('statusBox');
       if (totalActive === totalPassive) {
         statusBox.className = "p-4 rounded-xl text-center font-bold text-sm bg-emerald-950/60 text-emerald-300 border border-emerald-500/40";
-        statusBox.innerHTML = `✅ БАЛАНС СВЕДЕН! Актив (${totalActive.toLocaleString('ru-RU')}) равен Пассиву (${totalPassive.toLocaleString('ru-RU')})`;
+        statusBox.innerHTML = `✅ БАЛАНС СВЕДЕН! Итого Актив (${totalActive.toLocaleString('ru-RU')} руб.) = Итого Пассив (${totalPassive.toLocaleString('ru-RU')} руб.)`;
       } else {
         const diff = Math.abs(totalActive - totalPassive);
         statusBox.className = "p-4 rounded-xl text-center font-bold text-sm bg-rose-950/60 text-rose-300 border border-rose-500/40";
-        statusBox.innerHTML = `❌ БАЛАНС НЕ СВЕДЕН! Разница между Активом и Пассивом составляет ${diff.toLocaleString('ru-RU')} руб.`;
+        statusBox.innerHTML = `❌ БАЛАНС НЕ СВЕДЕН! Разница составляет ${diff.toLocaleString('ru-RU')} руб.`;
       }
     }
 
@@ -490,14 +492,13 @@
 
       if (score === 2) {
         result.className = "p-4 rounded-xl text-center font-bold text-sm bg-emerald-950/80 text-emerald-300 border border-emerald-500";
-        result.innerText = "🎉 Отлично! Все ответы верны! Ты отлично усвоил структуру баланса и расчет остаточной стоимости.";
+        result.innerText = "🎉 Отлично! Все ответы верны! Вы усвоили структуру всех разделов баланса.";
       } else {
         result.className = "p-4 rounded-xl text-center font-bold text-sm bg-amber-950/80 text-amber-300 border border-amber-500";
-        result.innerText = "Есть ошибки. Запомни: в баланс заносится Остаточная стоимость (01 - 02), а расчетный счет (51) — это Оборотный актив.";
+        result.innerText = "Есть ошибки. Проверьте правильность выбранных вариантов.";
       }
     }
 
-    // Первоначальный расчет при загрузке
     calcBalance();
   </script>
 </body>
