@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Интерактивный курс по бухгалтерскому учету</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen font-sans flex items-center justify-center p-4">
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans flex flex-col justify-between p-4 transition-colors duration-300">
 
-  <main class="w-full max-w-xl bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 md:p-8 shadow-2xl backdrop-blur-sm space-y-6">
+  <!-- Кнопка переключения темы -->
+  <div class="w-full max-w-xl mx-auto flex justify-end pt-2 pb-4">
+    <button id="theme-toggle" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold border border-slate-300 dark:border-slate-700 hover:opacity-80 transition">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-text">Тёмная тема</span>
+    </button>
+  </div>
+
+  <main class="w-full max-w-xl mx-auto bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 md:p-8 shadow-xl dark:shadow-2xl transition-colors duration-300 space-y-6">
 
     <!-- Заголовок оглавления -->
     <div class="text-center space-y-2">
-      <h1 class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+      <h1 class="text-2xl md:text-3xl font-extrabold text-blue-600 dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
         Интерактивный курс по бухгалтерскому учету
       </h1>
       
       <!-- Модуль 1 -->
       <div class="pt-2">
-        <span class="inline-block text-xs font-bold px-3 py-1 bg-slate-900 text-blue-400 rounded-full border border-slate-700 uppercase tracking-wider">
+        <span class="inline-block text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-slate-900 text-blue-600 dark:text-blue-400 rounded-full border border-slate-200 dark:border-slate-700 uppercase tracking-wider">
           Модуль 1. Основы бухгалтерского учета и балансовый метод
         </span>
       </div>
@@ -28,21 +41,21 @@
     <div class="space-y-4 pt-2">
       
       <!-- Урок 1 -->
-      <a href="lesson1.html" class="block group bg-slate-900/60 hover:bg-slate-900 border border-slate-700 hover:border-blue-500/50 p-5 rounded-xl transition duration-200 shadow-md">
-        <h2 class="text-base font-bold text-white group-hover:text-blue-400 transition">
+      <a href="lesson1.html" class="block group bg-slate-50 dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 p-5 rounded-xl transition duration-200 shadow-sm dark:shadow-md">
+        <h2 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
           Урок 1. Сущность бухгалтерского учета, его предмет и метод
         </h2>
-        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
           Язык бизнеса, история Пачоли, Активы, Пассивы и 8 элементов метода.
         </p>
       </a>
 
       <!-- Урок 2 -->
-      <a href="lesson2.html" class="block group bg-slate-900/60 hover:bg-slate-900 border border-slate-700 hover:border-blue-500/50 p-5 rounded-xl transition duration-200 shadow-md">
-        <h2 class="text-base font-bold text-white group-hover:text-blue-400 transition">
+      <a href="lesson2.html" class="block group bg-slate-50 dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 p-5 rounded-xl transition duration-200 shadow-sm dark:shadow-md">
+        <h2 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
           Урок 2. Бухгалтерский баланс и его структура, план счетов
         </h2>
-        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
           Структура баланса, равенство Активов и Пассивов, 4 типа изменений, План счетов.
         </p>
       </a>
@@ -50,6 +63,43 @@
     </div>
 
   </main>
+
+  <div class="py-4"></div>
+
+  <!-- Скрипт переключения темы -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+    const text = document.getElementById('theme-text');
+    const html = document.documentElement;
+
+    // Проверка сохраненной темы
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+      html.classList.remove('dark');
+      icon.textContent = '☀️';
+      text.textContent = 'Светлая тема';
+    } else {
+      html.classList.add('dark');
+      icon.textContent = '🌙';
+      text.textContent = 'Тёмная тема';
+    }
+
+    // Обработчик клика
+    toggleBtn.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        icon.textContent = '☀️';
+        text.textContent = 'Светлая тема';
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        icon.textContent = '🌙';
+        text.textContent = 'Тёмная тема';
+      }
+    });
+  </script>
 
 </body>
 </html>
