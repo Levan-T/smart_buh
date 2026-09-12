@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 3. Четыре типа изменений в балансе под влиянием хозяйственных операций</title>
+  
+  <!-- Мгновенная проверка темы до отрисовки -->
+  <script>
+    if (localStorage.getItem('theme') !== 'light') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
+
+  <!-- Навигация -->
+  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <span class="text-2xl font-black text-blue-600 dark:bg-gradient-to-r dark:from-emerald-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
+          smart_buh
+        </span>
+        <span class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Урок 3</span>
+      </div>
+      <nav class="space-x-4 text-sm font-medium">
+        <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Главная</a>
+        <a href="lesson1.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 1</a>
+        <a href="lesson2.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 2</a>
+        <span class="text-blue-600 dark:text-emerald-400 font-semibold border-b-2 border-blue-600 dark:border-emerald-400 pb-1">Урок 3</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+
+    <!-- Заголовок -->
+    <div class="space-y-4">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-blue-600 dark:text-emerald-400 leading-tight">
+        УРОК 3. Четыре типа изменений в балансе под влиянием хозяйственных операций
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">
+        Разбираем, как непрерывное движение средств организации меняет статьи Актива и Пассива, сохраняя главное балансовое равенство.
+      </p>
+    </div>
+
+    <!-- Введение -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+        Введение: Динамика балансового равенства
+      </h2>
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+        В Уроке №2 мы узнали фундаментальный закон бухгалтерского учета: <b>АКТИВ = ПАССИВ</b>. Однако организация не стоит на месте — каждый день совершаются десятки операций: закупаются товары, выплачивается зарплата, продается продукция, гасятся кредиты.
+      </p>
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+        Запомните ключевое правило: <b>абсолютно любая хозяйственная операция меняет как минимум две статьи баланса</b>, но при этом <b>равенство итогов Актива и Пассива никогда не нарушается</b>.
+      </p>
+
+      <div class="bg-blue-50 dark:bg-emerald-950/40 border-l-4 border-blue-600 dark:border-emerald-400 p-4 rounded-r-xl my-4 space-y-1">
+        <div class="font-bold text-blue-700 dark:text-emerald-400 text-base">Суть влияния операций:</div>
+        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed">
+          Разнообразие операций безгранично, но с точки зрения воздействия на Бухгалтерский баланс все они строго делятся на <b>4 типа</b>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Подробный разбор 4 типов -->
+    <section class="space-y-8">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+        Четыре типа изменений
+      </h2>
+
+      <!-- Тип 1 -->
+      <div class="bg-white dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+        <div class="flex items-center space-x-3">
+          <span class="bg-blue-600 dark:bg-emerald-500 text-white dark:text-slate-950 font-bold px-3 py-1 rounded-lg text-sm">
+            Тип I
+          </span>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+            Активные изменения (внутри Актива): <span class="text-blue-600 dark:text-emerald-400">+А -А</span>
+          </h3>
+        </div>
+        
+        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+          <b>Суть:</b> Одна статья Актива увеличивается, а другая статья Актива уменьшается на ту же самую сумму. Пассив не затрагивается вовсе.
+        </p>
+
+        <div class="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 text-xs font-mono space-y-1">
+          <p class="text-blue-600 dark:text-emerald-400 font-bold">Формула: (Актив + X - X) = Пассив</p>
+          <p class="text-slate-500 dark:text-slate-400">Итог (валюта) баланса НЕ МЕНЯЕТСЯ.</p>
+        </div>
+
+        <div class="space-y-2 text-xs md:text-sm">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">Примеры операций:</p>
+          <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-1 pl-2">
+            <li>Сняли наличные деньги с расчетного счета в кассу (Касса ↑, Расчетный счет ↓).</li>
+            <li>Оплатили поставщику аванс за товары (Дебиторская задолженность ↑, Расчетный счет ↓).</li>
+            <li>Отпустили материалы со склада в производство (Основное производство ↑, Материалы ↓).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Тип 2 -->
+      <div class="bg-white dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+        <div class="flex items-center space-x-3">
+          <span class="bg-blue-600 dark:bg-emerald-500 text-white dark:text-slate-950 font-bold px-3 py-1 rounded-lg text-sm">
+            Тип II
+          </span>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+            Пассивные изменения (внутри Пассива): <span class="text-blue-600 dark:text-emerald-400">+П -П</span>
+          </h3>
+        </div>
+
+        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+          <b>Суть:</b> Одна статья Пассива увеличивается, а другая статья Пассива уменьшается на ту же самую сумму. Актив не затрагивается вовсе.
+        </p>
+
+        <div class="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 text-xs font-mono space-y-1">
+          <p class="text-blue-600 dark:text-emerald-400 font-bold">Формула: Актив = (Пассив + X - X)</p>
+          <p class="text-slate-500 dark:text-slate-400">Итог (валюта) баланса НЕ МЕНЯЕТСЯ.</p>
+        </div>
+
+        <div class="space-y-2 text-xs md:text-sm">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">Примеры операций:</p>
+          <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-1 pl-2">
+            <li>Удержали подоходный налог (НДФЛ) из заработной платы работников (Долг по налогам ↑, Долг перед персоналом ↓).</li>
+            <li>Часть нераспределенной прибыли направили в резервный капитал (Резервный капитал ↑, Нераспределенная прибыль ↓).</li>
+            <li>За счет краткосрочного кредита погасили долг перед поставщиком (Долг перед банком ↑, Долг перед поставщиком ↓).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Тип 3 -->
+      <div class="bg-white dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+        <div class="flex items-center space-x-3">
+          <span class="bg-blue-600 dark:bg-emerald-500 text-white dark:text-slate-950 font-bold px-3 py-1 rounded-lg text-sm">
+            Тип III
+          </span>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+            Активно-пассивные в сторону увеличения: <span class="text-blue-600 dark:text-emerald-400">+А +П</span>
+          </h3>
+        </div>
+
+        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+          <b>Суть:</b> Одновременно увеличиваются одна статья Актива и одна статья Пассива на равную сумму.
+        </p>
+
+        <div class="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 text-xs font-mono space-y-1">
+          <p class="text-blue-600 dark:text-emerald-400 font-bold">Формула: (Актив + X) = (Пассив + X)</p>
+          <p class="text-slate-500 dark:text-slate-400">Итог (валюта) баланса УВЕЛИЧИВАЕТСЯ на сумму X.</p>
+        </div>
+
+        <div class="space-y-2 text-xs md:text-sm">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">Примеры операций:</p>
+          <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-1 pl-2">
+            <li>Получили товары от поставщика с отсрочкой платежа (Товары [Актив] ↑, Долг перед поставщиком [Пассив] ↑).</li>
+            <li>Получили банковский кредит на расчетный счет (Деньги на счете [Актив] ↑, Кредиторская задолженность банку [Пассив] ↑).</li>
+            <li>Начислена заработная плата сотрудникам за месяц (Затраты/Продукция [Актив] ↑, Обязательство по выплате зарплаты [Пассив] ↑).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Тип 4 -->
+      <div class="bg-white dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+        <div class="flex items-center space-x-3">
+          <span class="bg-blue-600 dark:bg-emerald-500 text-white dark:text-slate-950 font-bold px-3 py-1 rounded-lg text-sm">
+            Тип IV
+          </span>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+            Активно-пассивные в сторону уменьшения: <span class="text-blue-600 dark:text-emerald-400">-А -П</span>
+          </h3>
+        </div>
+
+        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+          <b>Суть:</b> Одновременно уменьшаются одна статья Актива и одна статья Пассива на равную сумму.
+        </p>
+
+        <div class="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 text-xs font-mono space-y-1">
+          <p class="text-blue-600 dark:text-emerald-400 font-bold">Формула: (Актив - X) = (Пассив - X)</p>
+          <p class="text-slate-500 dark:text-slate-400">Итог (валюта) баланса УМЕНЬШАЕТСЯ на сумму X.</p>
+        </div>
+
+        <div class="space-y-2 text-xs md:text-sm">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">Примеры операций:</p>
+          <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-1 pl-2">
+            <li>Выплачена заработная плата из кассы (Деньги в кассе [Актив] ↓, Долг по зарплате [Пассив] ↓).</li>
+            <li>Перечислены налоги с расчетного счета в бюджет (Деньги на счете [Актив] ↓, Задолженность перед бюджетом [Пассив] ↓).</li>
+            <li>Погашен банковский кредит с расчетного счета (Деньги на счете [Актив] ↓, Долг по кредиту [Пассив] ↓).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сводная таблица -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+        Сводная таблица типов изменений
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs md:text-sm text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-sm">
+          <thead class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 uppercase font-bold border-b border-slate-200 dark:border-slate-700">
+            <tr>
+              <th class="p-3">Тип операции</th>
+              <th class="p-3">Затрагиваемые стороны</th>
+              <th class="p-3">Влияние на итог (валюту) баланса</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+            <tr class="bg-white dark:bg-slate-900/40">
+              <td class="p-3 font-bold text-blue-600 dark:text-emerald-400">I. Активный (+А, -А)</td>
+              <td class="p-3">Только АКТИВ</td>
+              <td class="p-3 font-semibold text-slate-600 dark:text-slate-400">Не меняется</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-900/40">
+              <td class="p-3 font-bold text-blue-600 dark:text-emerald-400">II. Пассивный (+П, -П)</td>
+              <td class="p-3">Только ПАССИВ</td>
+              <td class="p-3 font-semibold text-slate-600 dark:text-slate-400">Не меняется</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-900/40">
+              <td class="p-3 font-bold text-blue-600 dark:text-emerald-400">III. Увеличивающий (+А, +П)</td>
+              <td class="p-3">АКТИВ и ПАССИВ</td>
+              <td class="p-3 font-bold text-emerald-600 dark:text-emerald-400">Увеличивается (+X)</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-900/40">
+              <td class="p-3 font-bold text-blue-600 dark:text-emerald-400">IV. Уменьшающий (-А, -П)</td>
+              <td class="p-3">АКТИВ и ПАССИВ</td>
+              <td class="p-3 font-bold text-rose-600 dark:text-rose-400">Уменьшается (-X)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Раздел 5 (Тест) -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+        Проверка знаний (Тест)
+      </h2>
+
+      <div class="space-y-6 text-sm">
+        <!-- В1 -->
+        <div class="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">
+            Вопрос 1: Компания сняла с расчетного счета в банке 50 000 ₽ и внесла их в кассу. К какому типу относится эта операция?
+          </p>
+          <div class="space-y-2">
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q1" value="A">
+              <span class="text-slate-700 dark:text-slate-300">А) I тип (+А, -А)</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q1" value="B">
+              <span class="text-slate-700 dark:text-slate-300">Б) II тип (+П, -П)</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q1" value="C">
+              <span class="text-slate-700 dark:text-slate-300">В) III тип (+А, +П)</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q1" value="D">
+              <span class="text-slate-700 dark:text-slate-300">Г) IV тип (-А, -П)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- В2 -->
+        <div class="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">
+            Вопрос 2: Фирма оплатила долг поставщику в размере 120 000 ₽ с расчетного счета. Как изменится итог (валюта) баланса?
+          </p>
+          <div class="space-y-2">
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q2" value="A">
+              <span class="text-slate-700 dark:text-slate-300">А) Увеличится на 120 000 ₽</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q2" value="B">
+              <span class="text-slate-700 dark:text-slate-300">Б) Уменьшится на 120 000 ₽</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q2" value="C">
+              <span class="text-slate-700 dark:text-slate-300">В) Не изменится</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q2" value="D">
+              <span class="text-slate-700 dark:text-slate-300">Г) Увеличится в два раза</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- В3 -->
+        <div class="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">
+            Вопрос 3: Из начисленной заработной платы работника удержан налог на доходы (НДФЛ). Какие статьи изменяются?
+          </p>
+          <div class="space-y-2">
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q3" value="A">
+              <span class="text-slate-700 dark:text-slate-300">А) Денежные средства в кассе и краткосрочные кредиты</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q3" value="B">
+              <span class="text-slate-700 dark:text-slate-300">Б) Две статьи Актива</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q3" value="C">
+              <span class="text-slate-700 dark:text-slate-300">В) Две статьи Пассива (Задолженность перед персоналом и Задолженность по налогам)</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q3" value="D">
+              <span class="text-slate-700 dark:text-slate-300">Г) Уставный капитал и Оборотные активы</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- В4 -->
+        <div class="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
+          <p class="font-semibold text-slate-900 dark:text-slate-100">
+            Вопрос 4: Какие типы операций ИЗМЕНЯЮТ общий итог (валюту) Бухгалтерского баланса?
+          </p>
+          <div class="space-y-2">
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q4" value="A">
+              <span class="text-slate-700 dark:text-slate-300">А) Только I тип</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q4" value="B">
+              <span class="text-slate-700 dark:text-slate-300">Б) I и II типы</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q4" value="C">
+              <span class="text-slate-700 dark:text-slate-300">В) III и IV типы</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input type="radio" name="q4" value="D">
+              <span class="text-slate-700 dark:text-slate-300">Г) Никакие типы не меняют итог</span>
+            </label>
+          </div>
+        </div>
+
+        <button onclick="checkAnswers()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-bold rounded-xl transition shadow-md">
+          Проверить ответы
+        </button>
+
+        <div id="result" class="hidden p-4 rounded-xl space-y-2"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500 bg-white dark:bg-slate-950">
+    <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+  </footer>
+
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: 'A',
+        q2: 'B',
+        q3: 'C',
+        q4: 'C'
+      };
+
+      let score = 0;
+      let total = 4;
+
+      for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+
+      const resDiv = document.getElementById('result');
+      resDiv.classList.remove('hidden');
+
+      if (score === total) {
+        resDiv.className = "p-4 rounded-xl bg-emerald-100 dark:bg-emerald-950 border border-emerald-500 text-emerald-800 dark:text-emerald-300 text-center font-bold";
+        resDiv.innerText = `Отлично! Вы правильно ответили на все ${score} из ${total} вопросов!`;
+      } else {
+        resDiv.className = "p-4 rounded-xl bg-amber-100 dark:bg-slate-800 border border-amber-500 text-amber-900 dark:text-amber-300 text-center font-bold";
+        resDiv.innerText = `Ваш результат: ${score} из ${total}. Попробуйте пройти ещё раз!`;
+      }
+    }
+  </script>
+</body>
+</html>
