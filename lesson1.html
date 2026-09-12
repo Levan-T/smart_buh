@@ -3,264 +3,423 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок 1: Введение в бухучет | smart_buh</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Урок 1: Что такое бухгалтерский учет?</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+      --primary-color: #2a72d7;
+      --accent-color: #27ae60;
+      --error-color: #e74c3c;
+      --border-color: #e2e8f0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 16px;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h1 {
+      color: var(--primary-color);
+      font-size: 22px;
+      margin-top: 0;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+      line-height: 1.3;
+    }
+    h2 {
+      color: #34495e;
+      font-size: 18px;
+      margin-top: 28px;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 10px;
+    }
+    h3 {
+      font-size: 16px;
+      color: #2c3e50;
+      margin-top: 18px;
+    }
+    p { margin: 12px 0; font-size: 15px; }
+    ul, ol { font-size: 15px; padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    
+    .quote-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-color);
+      padding: 14px 18px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 15px;
+    }
+
+    .schema-box {
+      background-color: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 20px 0;
+      font-family: monospace;
+      font-size: 13px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      line-height: 1.4;
+      color: #1e293b;
+    }
+    
+    .table-container { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 500px; }
+    th, td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background-color: #edf2f7; font-weight: 600; }
+    
+    .quiz-box {
+      background-color: #f8fafc;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 28px;
+    }
+    .quiz-question {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+    .option-btn {
+      display: block;
+      width: 100%;
+      padding: 12px 14px;
+      margin: 8px 0;
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      text-align: left;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text-color);
+      line-height: 1.4;
+    }
+    .option-btn:hover {
+      background-color: #edf2f7;
+      border-color: #cbd5e1;
+    }
+
+    .feedback-panel {
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 8px;
+      display: none;
+      align-items: start;
+      gap: 10px;
+      border: 1px solid transparent;
+    }
+    .feedback-icon { font-size: 20px; line-height: 1; }
+    .feedback-text { font-size: 14px; font-weight: 500; line-height: 1.4; }
+    .feedback-panel.correct {
+      display: flex;
+      background-color: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #065f46;
+    }
+    .feedback-panel.incorrect {
+      display: flex;
+      background-color: #fef2f2;
+      border-color: #fecaca;
+      color: #991b1b;
+    }
+  </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col justify-between">
+<body>
 
-  <!-- Навигация -->
-  <header class="border-b border-slate-800 bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <span class="text-2xl font-black bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-          smart_buh
-        </span>
-        <span class="text-xs px-2 py-1 rounded bg-slate-800 text-slate-400 font-mono">Урок 1</span>
-      </div>
-      <nav class="space-x-4 text-sm font-medium">
-        <a href="index.html" class="text-slate-400 hover:text-emerald-400 transition">Главная</a>
-        <span class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-1">Урок 1</span>
-        <a href="lesson2.html" class="text-slate-400 hover:text-emerald-400 transition">Урок 2</a>
-      </nav>
+<div class="container">
+  <h1>УРОК 1. Сущность бухгалтерского учета, его предмет, метод и объекты</h1>
+
+  <h2>Введение: Почему бухучет — это «язык бизнеса»?</h2>
+
+  <p>Представьте, что вы открыли небольшой отель в Гагре, кафе в Сухуме или завели фермерское хозяйство. Вы ежедневно совершаете десятки действий: покупаете продукты и оборудование, платите за электричество, принимаете деньги от клиентов, выдаете зарплату сотрудникам и платите налоги.</p>
+
+  <p>Как понять в конце месяца:</p>
+  <ul>
+    <li>Вы работаете в плюс или уходите в убыток?</li>
+    <li>Сколько денег у вас реально «свободно», а сколько нужно отдать поставщикам?</li>
+    <li>Каким имуществом обладает ваша компания прямо сейчас?</li>
+  </ul>
+
+  <p>На эти вопросы не даст ответа интуиция. На них отвечает <strong>бухгалтерский учет</strong> — строгая, логичная и непрерывная система фиксации экономической жизни предприятия. Недаром знаменитый экономист Пол Самуэльсон назвал бухучет <em>«языком бизнеса»</em>: не зная этого языка, невозможно грамотно управлять ни маленьким павильоном, ни крупным заводом.</p>
+
+  <div class="quote-box">
+    <strong>Классическое определение:</strong><br>
+    <strong>Бухгалтерский учет</strong> — это упорядоченная система сбора, регистрации и обобщения информации в денежном выражении об имуществе, обязательствах организации и их движении путем сплошного, непрерывного и документального учета.
+  </div>
+
+  <p>Разберем ключевые слова этого определения:</p>
+  <ul>
+    <li><strong>Сплошной учет:</strong> Фиксируется абсолютно всё. Нельзя «забыть» или пропустить мелкую покупку канцелярских скрепки или пачки бумаги.</li>
+    <li><strong>Непрерывный учет:</strong> Учет ведется со дня регистрации предприятия и до момента его ликвидации (без перерывов на выходные или праздники).</li>
+    <li><strong>Документальный учет:</strong> Ни одна цифра не берется «из головы». Каждая запись должна опираться на официальный документ (чек, накладную, акт, квитанцию).</li>
+    <li><strong>Денежный измеритель:</strong> Все ресурсы — рубли, валюта, тонны цемента, штуки компьютеров или квадратные метры помещений — переводятся в единый денежный эквивалент (в Абхазии основным денежным измерителем является российский рубль).</li>
+  </ul>
+
+  <h2>Раздел 1. Исторический экскурс: От восковых дощечек до Луки Пачоли</h2>
+
+  <p>Потребность считать возникла тогда же, когда возникла торговля.</p>
+  <ul>
+    <li>В <strong>Древнем Египте</strong> учетчики фиксировали урожай зерна на папирусах, используя «простую запись» (просто записывали, сколько пришло и сколько ушло).</li>
+    <li>В <strong>Древнем Риме</strong> правители и торговцы вели специальную «Книгу доходов и расходов» на восковых табличках.</li>
+  </ul>
+
+  <p>Однако настоящая революция произошла в эпоху Возрождения в Италии. Венецианские купцы вели масштабную торговлю по всему Средиземноморью, отправляли корабли и брали кредиты. Простая запись больше не отражала сложную реальность: она не показывала, кто кому остался должен и откуда взялась прибыль.</p>
+
+  <h3>Лука Пачоли — «Отец бухгалтерского учета»</h3>
+  <p>В <strong>1494 году</strong> в Венеции итальянский математик, ученый-монах <strong>Лука Пачоли</strong> опубликовал фундаментальный труд <em>«Summa de Arithmetica»</em>, частью которого был знаменитый трактат <strong>«О счетах и записях»</strong> (Трактат XI).</p>
+
+  <p>Пачоли не «изобрел» бухучет с нуля — он первым структурировал и описал опыт венецианских купцов, сформулировав <strong>метод двойной записи</strong>.</p>
+
+  <p><strong>Суть открытия Пачоли:</strong><br>
+  Любое событие в бизнесе имеет двоякую природу. Если где-то прибавилось, значит, где-то на эту же сумму убавилось или вырос долг. Пачоли писал: <em>«Никто не может быть признан кредитором без того, чтобы не быть в то же время дебитором»</em>.</p>
+
+  <p>С этого момента бухгалтерский учет из хаотичного ремесла превратился в строгую математическую науку.</p>
+
+  <h2>Раздел 2. Предмет и объекты бухгалтерского учета</h2>
+
+  <p>Бухучет не существует обособленно — он всегда привязан к конкретной организации (фирме, индивидуальному предпринимателю, государственному учреждению).</p>
+
+  <p><strong>Предмет бухгалтерского учета</strong> — это вся хозяйственно-финансовая деятельность конкретного предприятия.</p>
+
+  <p>Предмет слишком обширен, поэтому его разделяют на <strong>объекты учета</strong>.</p>
+
+  <div class="schema-box">
+                         ┌───────────────────────────────────────────┐
+                         │       ОБЪЕКТЫ БУХГАЛТЕРСКОГО УЧЕТА        │
+                         └─────────────────────┬─────────────────────┘
+                                               │
+        ┌──────────────────────────────────────┼──────────────────────────────────────┐
+        ▼                                      ▼                                      ▼
+┌──────────────┐                       ┌──────────────┐                       ┌──────────────┐
+│  Имущество   │                       │  Источники   │                       │ Хозяйственные│
+│  предприятия │                       │  имущества   │                       │   операции   │
+│  (АКТИВЫ)    │                       │  (ПАССИВЫ)   │                       │ (ПРОЦЕССЫ)   │
+└──────────────┘                       └──────────────┘                       └──────────────┘
+  </div>
+
+  <h3>1. Имущество организации (Активы)</h3>
+  <p>Это всё, чем владеет предприятие и что имеет стоимость. Активы должны приносить выгоду в будущем.</p>
+  <p><strong>Конкретные примеры:</strong> Здание гостиницы, служебный автомобиль, деньги в кассе или на расчетном учете в банке, запасы стройматериалов, купленные для продажи товары.</p>
+
+  <h3>2. Источники формирования имущества (Пассивы)</h3>
+  <p>Это ответ на вопрос: <em>«За чей счет куплено это имущество?»</em>.</p>
+  <ul>
+    <li><strong>Собственные источники:</strong> Уставный капитал (деньги, вложенные учредителями при старте) и нераспределенная прибыль (то, что заработала сама фирма).</li>
+    <li><strong>Заемные источники:</strong> Кредиты банков, займы, а также задолженность перед поставщиками за товары, которые они нам привезли, но мы за них еще не заплатили.</li>
+  </ul>
+
+  <h3>3. Хозяйственные операции (Процессы)</h3>
+  <p>Это действия и события, которые приводят к изменению состава имущества или источников.</p>
+
+  <h2>Раздел 3. Что такое хозяйственная операция?</h2>
+
+  <p>Не всякое событие в компании является хозяйственной операцией.</p>
+
+  <div class="quote-box">
+    <strong>Хозяйственная операция</strong> — это конкретное действие, событие или факт сделки, обязательно имеющий денежное выражение и изменяющий состав Активов или Пассивов организации.
+  </div>
+
+  <p><strong>Сравнительный анализ событий в компании:</strong></p>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Событие в организации</th>
+          <th>Является ли хозяйственной операцией?</th>
+          <th>Почему?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Директор провел собеседование с новым кандидатом в бухгалтеры</td>
+          <td>❌ <strong>Нет</strong></td>
+          <td>Нет денежного выражения, имущество и долги компании не изменились.</td>
+        </tr>
+        <tr>
+          <td>Заключен договор на поставку оборудования на сумму 500 000 ₽</td>
+          <td>❌ <strong>Нет</strong></td>
+          <td>Это намерение сделки. Сам договор не меняет наличие денег или оборудования до момента поставки или оплаты.</td>
+        </tr>
+        <tr>
+          <td>Выдана заработная плата сотрудникам из кассы в размере 100 000 ₽</td>
+          <td>✅ <strong>Да</strong></td>
+          <td>Деньги в кассе уменьшились на 100 000 ₽, а долг компании перед рабочими по зарплате погашен.</td>
+        </tr>
+        <tr>
+          <td>На расчетный счет поступила оплата от туроператора за проживание</td>
+          <td>✅ <strong>Да</strong></td>
+          <td>Безналичные деньги на счете увеличились, а обязательства туроператора перед нами уменьшились.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Раздел 4. Элементы метода бухгалтерского учета</h2>
+
+  <p>Чтобы непрерывно регистрировать тысячи хозяйственных операций, бухучет использует собственный метод — совокупность приемов и способов.</p>
+
+  <p>Метод бухгалтерского учета состоит из <strong>8 основных элементов</strong>, которые логически объединены в 4 пары:</p>
+
+  <div class="schema-box">
+               ┌────────────────────────────────────────────────────────┐
+               │         8 ЭЛЕМЕНТОВ МЕТОДА БУХГАЛТЕРСКОГО УЧЕТА        │
+               └───────────────────────────┬────────────────────────────┘
+                                           │
+         ┌─────────────────────────────────┼─────────────────────────────────┐
+         ▼                                 ▼                                 ▼
+┌──────────────────┐              ┌──────────────────┐              ┌──────────────────┐
+│  Первичное       │              │ Стоимостное      │              │ Текущая          │
+│  наблюдение      │              │ измерение        │              │ группировка      │
+├──────────────────┤              ├──────────────────┤              ├──────────────────┤
+│ 1. Документация  │              │ 3. Оценка        │              │ 5. Счета         │
+│ 2. Инвентаризация│              │ 4. Калькуляция   │              │ 6. Двойная запись│
+└──────────────────┘              └──────────────────┘              └──────────────────┘
+                                                                             │
+                                                                             ▼
+                                                                    ┌──────────────────┐
+                                                                    │ Итоговое         │
+                                                                    │ обобщение        │
+                                                                    ├──────────────────┤
+                                                                    │ 7. Баланс        │
+                                                                    │ 8. Отчетность    │
+                                                                    └──────────────────┘
+  </div>
+
+  <ol>
+    <li><strong>Документация:</strong> Каждая операция оформляется первичным документом (накладная, чек, квитанция). Нет документа — нет записи в бухучете!</li>
+    <li><strong>Инвентаризация:</strong> Периодическая физическая проверка (пересчет) имущества на складе или в кассе для проверки, совпадает ли реальность с документами.</li>
+    <li><strong>Оценка:</strong> Перевод любых ресурсов (килограммы, литры, штуки) в единый денежный эквивалент (в рубли).</li>
+    <li><strong>Калькуляция:</strong> Расчет себестоимости единицы продукции, работы или услуги (например, во сколько обошлось производство одной тонны мандаринов или один день проживания в номере).</li>
+    <li><strong>Счета бухгалтерского учета:</strong> Инструмент группировки однородного имущества, долгов и операций. В Республики Абхазия действует свой утвержденный План счетов (например, счет 50 — «Касса», счет 51 — «Расчетный счет»).</li>
+    <li><strong>Двойная запись:</strong> Запись каждой операции одновременно на двух взаимосвязанных счетах (по Дебету одного и Кредиту другого).</li>
+    <li><strong>Бухгалтерский баланс:</strong> Итоговая таблица, отражающая состояние имущества и источников на конкретную дату (например, на 31 декабря).</li>
+    <li><strong>Бухгалтерская отчетность:</strong> Комплект итоговых форм (Баланс, Отчет о финансовых результатах), сдающихся в Налоговую службу Республики Абхазия и госорганы.</li>
+  </ol>
+
+  <h2>Резюме урока</h2>
+  <ul>
+    <li>Бухучет — это сплошное, непрерывное и подтвержденное документами отражение жизни предприятия в денежном выражении.</li>
+    <li>Основоположником научной системы бухучета является Лука Пачоли, описавший в 1494 году метод двойной записи.</li>
+    <li>Объектами бухучета выступают Активы (имущество), Пассивы (источники/долги) и Хозяйственные операции (процессы).</li>
+    <li>Любая хозяйственная операция подлежит обязательному оформлению первичным документом и отражается с помощью 8 элементов метода бухучета.</li>
+  </ul>
+
+  <h2>Раздел 5. Проверка знаний (Тесты)</h2>
+
+  <!-- Вопрос 1 -->
+  <div class="quiz-box">
+    <p class="quiz-question">Вопрос 1: Какое из следующих утверждений о бухгалтерском учете является НЕВЕРНЫМ?</p>
+    <button class="option-btn" onclick="checkAnswer(1, 1, this)">А) Бухучет фиксирует только деньги, а склад и оборудование учитывают другие службы.</button>
+    <button class="option-btn" onclick="checkAnswer(1, 2, this)">Б) Бухучет должен быть сплошным и непрерывным с момента открытия фирмы.</button>
+    <button class="option-btn" onclick="checkAnswer(1, 3, this)">В) Любая запись в бухучете должна подтверждаться первичным документом.</button>
+    <button class="option-btn" onclick="checkAnswer(1, 4, this)">Г) Бухучет использует денежный измеритель для обобщения обязательств.</button>
+    <div id="fb-1" class="feedback-panel">
+      <div id="fb-icon-1" class="feedback-icon"></div>
+      <div id="fb-text-1" class="feedback-text"></div>
     </div>
-  </header>
+  </div>
 
-  <main class="max-w-5xl mx-auto px-4 py-8 flex-grow space-y-12">
-
-    <!-- Заголовок урока -->
-    <div class="text-center space-y-4">
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-        Основы бухгалтерского учета: <span class="text-emerald-400">Предмет, Метод и Измерители</span>
-      </h1>
-      <p class="text-slate-400 max-w-3xl mx-auto text-lg">
-        Фундаментальный вводный курс на основе классической теории Н. П. Кондракова. Разбор видов учета, нормативного регулирования и ключевых измерителей.
-      </p>
+  <!-- Вопрос 2 -->
+  <div class="quiz-box">
+    <p class="quiz-question">Вопрос 2: Чем исторически знаменателен 1494 год для науки о бухгалтерском учете?</p>
+    <button class="option-btn" onclick="checkAnswer(2, 1, this)">А) Заведена первая книга доходов на восковых дощечках в Древнем Риме.</button>
+    <button class="option-btn" onclick="checkAnswer(2, 2, this)">Б) Лука Пачоли впервые системно описал метод двойной записи в Венеции.</button>
+    <button class="option-btn" onclick="checkAnswer(2, 3, this)">В) В Египте впервые применили папирус для учета урожая зерна.</button>
+    <button class="option-btn" onclick="checkAnswer(2, 4, this)">Г) Был утвержден первый в истории национальный План счетов.</button>
+    <div id="fb-2" class="feedback-panel">
+      <div id="fb-icon-2" class="feedback-icon"></div>
+      <div id="fb-text-2" class="feedback-text"></div>
     </div>
+  </div>
 
-    <!-- БЛОК 1: ВИДЫ УЧЕТА -->
-    <article class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>📚</span> 1. Три вида хозяйственного учета
-      </h2>
+  <!-- Вопрос 3 -->
+  <div class="quiz-box">
+    <p class="quiz-question">Вопрос 3: Какое из перечисленных событий является ХОЗЯЙСТВЕННОЙ ОПЕРАЦИЕЙ?</p>
+    <button class="option-btn" onclick="checkAnswer(3, 1, this)">А) Директор подписал трудовой договор с новым сотрудником.</button>
+    <button class="option-btn" onclick="checkAnswer(3, 2, this)">Б) Выплата аванса поставщику за стройматериалы с расчетного счета.</button>
+    <button class="option-btn" onclick="checkAnswer(3, 3, this)">В) Формирование заявки на закупку ноутбуков у поставщика.</button>
+    <button class="option-btn" onclick="checkAnswer(3, 4, this)">Г) В суде рассматривается иск партнера без вынесенного решения.</button>
+    <div id="fb-3" class="feedback-panel">
+      <div id="fb-icon-3" class="feedback-icon"></div>
+      <div id="fb-text-3" class="feedback-text"></div>
+    </div>
+  </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 space-y-3">
-          <div class="text-emerald-400 font-bold text-lg">Оперативный учет</div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Ведется на местах совершения хозяйственных операций (склад, цех, отдел продаж) прямо во время их совершения. Служит для оперативного управления.
-          </p>
-          <span class="inline-block text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300">Пример: Журнал прихода товаров на склад</span>
-        </div>
+  <!-- Вопрос 4 -->
+  <div class="quiz-box">
+    <p class="quiz-question">Вопрос 4: Вы пересчитываете товар на складе для проверки совпадения с накладными. Какой это элемент метода?</p>
+    <button class="option-btn" onclick="checkAnswer(4, 1, this)">А) Калькуляция</button>
+    <button class="option-btn" onclick="checkAnswer(4, 2, this)">Б) Инвентаризация</button>
+    <button class="option-btn" onclick="checkAnswer(4, 3, this)">В) Двойная запись</button>
+    <button class="option-btn" onclick="checkAnswer(4, 4, this)">Г) Документация</button>
+    <div id="fb-4" class="feedback-panel">
+      <div id="fb-icon-4" class="feedback-icon"></div>
+      <div id="fb-text-4" class="feedback-text"></div>
+    </div>
+  </div>
 
-        <div class="bg-slate-800/60 p-5 rounded-xl border border-emerald-500/40 bg-emerald-950/10 space-y-3">
-          <div class="text-emerald-400 font-bold text-lg flex justify-between items-center">
-            <span>Бухгалтерский учет</span>
-            <span class="text-[10px] bg-emerald-500 text-slate-950 font-bold px-1.5 py-0.5 rounded">Основной</span>
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Сплошное, непрерывное, документально обоснованное отражение всей хозяйственной деятельности предприятия в денежном выражении.
-          </p>
-          <span class="inline-block text-[10px] bg-emerald-900/50 text-emerald-300 px-2 py-0.5 rounded">Пример: Учет основных средств и капитала</span>
-        </div>
+</div>
 
-        <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 space-y-3">
-          <div class="text-emerald-400 font-bold text-lg">Статистический учет</div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Изучает массовые социально-экономические явления для выявления закономерностей и тенденций развития экономики в целом или отрасли.
-          </p>
-          <span class="inline-block text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300">Пример: Перепись, уровень инфляции</span>
-        </div>
-      </div>
-    </article>
+<script>
+  let tg = window.Telegram ? window.Telegram.WebApp : null;
+  if (tg) { tg.expand(); tg.ready(); }
 
-    <!-- БЛОК 2: УЧЕТНЫЕ ИЗМЕРИТЕЛИ -->
-    <article class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>📏</span> 2. Учетные измерители
-      </h2>
+  const answersData = {
+    1: { correct: 1, textCorrect: "Верно! Это ложное утверждение. Бухучет является сплошным — он отражает не только деньги, но и всё имущество (склад, станки, товары).", textIncorrect: "Неверно. Вспомните определение сплошного учета: фиксируется абсолютная вся деятельность и всё имущество." },
+    2: { correct: 2, textCorrect: "Отлично! В 1494 году Лука Пачоли издал трактат «О счетах и записях», заложив фундамент метода двойной записи.", textIncorrect: "Неверно. 1494 год связан с трактатом Луки Пачоли в Венеции." },
+    3: { correct: 2, textCorrect: "Верно! Выплата аванса — реальный финансовый факт: деньги уменьшились, а обязательства поставщика выросли.", textIncorrect: "Неверно. Разговоры, договоры и заявки не меняют финансовое состояние до фактической оплаты или поставки." },
+    4: { correct: 2, textCorrect: "Точно! Инвентаризация — это фактическая проверка имущества путем пересчета и сверки с документами.", textIncorrect: "Неверно. Пересчет и сверка реальности с документами называется инвентаризацией." }
+  };
 
-      <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5 space-y-4">
-        <table class="w-full text-left text-sm">
-          <thead>
-            <tr class="text-slate-400 border-b border-slate-700 text-xs uppercase">
-              <th class="py-2 px-2 w-1/4">Измеритель</th>
-              <th class="py-2 px-2 w-1/4">Единицы измерения</th>
-              <th class="py-2 px-2">Область применения</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-700/60 text-slate-300 text-xs md:text-sm">
-            <tr>
-              <td class="py-3 px-2 font-bold text-emerald-400">Натуральные</td>
-              <td class="py-3 px-2 text-slate-300 font-mono">кг, м², штук, литры</td>
-              <td class="py-3 px-2 text-slate-400">Учет материальных ценностей (сырье, товары, готовая продукция) по их количеству.</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-2 font-bold text-emerald-400">Трудовые</td>
-              <td class="py-3 px-2 text-slate-300 font-mono">рабочие дни, человеко-часы</td>
-              <td class="py-3 px-2 text-slate-400">Учет затраченного труда, нормирование, расчет производительности и заработной платы.</td>
-            </tr>
-            <tr class="bg-emerald-950/20">
-              <td class="py-3 px-2 font-bold text-emerald-300">Денежный (Обобщающий)</td>
-              <td class="py-3 px-2 text-emerald-300 font-mono">рубли (руб.), валюта</td>
-              <td class="py-3 px-2 text-emerald-200">Универсальный измеритель. Позволяет обобщить разнородные активы и составить Баланс.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </article>
+  function checkAnswer(qNum, opt, btn) {
+    const panel = document.getElementById(`fb-${qNum}`);
+    const icon = document.getElementById(`fb-icon-${qNum}`);
+    const text = document.getElementById(`fb-text-${qNum}`);
+    
+    const quizBox = btn.closest('.quiz-box');
+    quizBox.querySelectorAll('.option-btn').forEach(b => {
+      b.style.borderColor = '#e2e8f0';
+      b.style.backgroundColor = '#ffffff';
+    });
 
-    <!-- БЛОК 3: ПРАКТИКУМ КЛАССИФИКАЦИИ -->
-    <article class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>🎮</span> 3. Практикум: Определение вида измерителя
-      </h2>
+    const isCorrect = opt === answersData[qNum].correct;
 
-      <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 space-y-4">
-        <p class="text-sm text-slate-300">Выберите правильный измеритель для указанной учетной операции:</p>
-        
-        <div class="space-y-3" id="interactiveSim">
-          <div class="flex justify-between items-center bg-slate-900/80 p-3 rounded-lg border border-slate-700 text-xs md:text-sm">
-            <span class="text-slate-200">Начисление зарплаты токарю за месяц: 65 000 руб.</span>
-            <select onchange="checkSim(this, 'money')" class="bg-slate-800 text-slate-200 border border-slate-600 rounded px-2 py-1 text-xs">
-              <option value="">Выберите измеритель...</option>
-              <option value="natural">Натуральный</option>
-              <option value="labor">Трудовой</option>
-              <option value="money">Денежный</option>
-            </select>
-          </div>
-
-          <div class="flex justify-between items-center bg-slate-900/80 p-3 rounded-lg border border-slate-700 text-xs md:text-sm">
-            <span class="text-slate-200">Приход листового металла: 120 тонн</span>
-            <select onchange="checkSim(this, 'natural')" class="bg-slate-800 text-slate-200 border border-slate-600 rounded px-2 py-1 text-xs">
-              <option value="">Выберите измеритель...</option>
-              <option value="natural">Натуральный</option>
-              <option value="labor">Трудовой</option>
-              <option value="money">Денежный</option>
-            </select>
-          </div>
-
-          <div class="flex justify-between items-center bg-slate-900/80 p-3 rounded-lg border border-slate-700 text-xs md:text-sm">
-            <span class="text-slate-200">Отработанное бригадой время: 160 человеко-часов</span>
-            <select onchange="checkSim(this, 'labor')" class="bg-slate-800 text-slate-200 border border-slate-600 rounded px-2 py-1 text-xs">
-              <option value="">Выберите измеритель...</option>
-              <option value="natural">Натуральный</option>
-              <option value="labor">Трудовой</option>
-              <option value="money">Денежный</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- БЛОК 4: ТЕСТ ПО УРОКУ 1 -->
-    <article class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-400 border-b border-slate-800 pb-2 flex items-center gap-2">
-        <span>📝</span> 4. Контрольный тест по Уроку 1
-      </h2>
-
-      <div class="space-y-4 max-w-3xl mx-auto">
-        <!-- Вопрос 1 -->
-        <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 space-y-3">
-          <p class="font-semibold text-slate-200">1. Какой из видов учета является непрерывным, сплошным и документально обоснованным?</p>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q1" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Оперативный учет</span>
-            </label>
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q1" value="1" class="text-emerald-500">
-              <span class="text-slate-300">Бухгалтерский учет</span>
-            </label>
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q1" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Статистический учет</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Вопрос 2 -->
-        <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 space-y-3">
-          <p class="font-semibold text-slate-200">2. Какой измеритель выступает в качестве единого обобщающего показателя в бухгалтерском учете?</p>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q2" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Натуральный</span>
-            </label>
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q2" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Трудовой</span>
-            </label>
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q2" value="1" class="text-emerald-500">
-              <span class="text-slate-300">Денежный</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Вопрос 3 -->
-        <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 space-y-3">
-          <p class="font-semibold text-slate-200">3. Для чего применяются трудовые измерители?</p>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q3" value="1" class="text-emerald-500">
-              <span class="text-slate-300">Для подсчета затраченного времени и нормирования труда</span>
-            </label>
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q3" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Для составления годового финансового баланса</span>
-            </label>
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="radio" name="l1q3" value="0" class="text-emerald-500">
-              <span class="text-slate-300">Для подсчета количества материалов на складе в килограммах</span>
-            </label>
-          </div>
-        </div>
-
-        <button onclick="checkL1Quiz()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl transition">
-          Проверить ответы
-        </button>
-
-        <div id="quizResult1" class="hidden p-4 rounded-xl text-center font-bold text-sm"></div>
-      </div>
-    </article>
-
-  </main>
-
-  <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500 bg-slate-950">
-    <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
-  </footer>
-
-  <script>
-    function checkSim(selectEl, correctValue) {
-      if (selectEl.value === correctValue) {
-        selectEl.className = "bg-emerald-950 text-emerald-300 border border-emerald-500 rounded px-2 py-1 text-xs font-bold";
-      } else if (selectEl.value !== "") {
-        selectEl.className = "bg-rose-950 text-rose-300 border border-rose-500 rounded px-2 py-1 text-xs font-bold";
-      }
+    if (isCorrect) {
+      btn.style.borderColor = '#27ae60';
+      btn.style.backgroundColor = '#ecfdf5';
+      panel.className = 'feedback-panel correct';
+      icon.textContent = '✅';
+      text.textContent = answersData[qNum].textCorrect;
+      if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+    } else {
+      btn.style.borderColor = '#e74c3c';
+      btn.style.backgroundColor = '#fef2f2';
+      panel.className = 'feedback-panel incorrect';
+      icon.textContent = '❌';
+      text.textContent = answersData[qNum].textIncorrect;
+      if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('error');
     }
+  }
+</script>
 
-    function checkL1Quiz() {
-      const q1 = document.querySelector('input[name="l1q1"]:checked');
-      const q2 = document.querySelector('input[name="l1q2"]:checked');
-      const q3 = document.querySelector('input[name="l1q3"]:checked');
-      const result = document.getElementById('quizResult1');
-
-      if (!q1 || !q2 || !q3) {
-        alert('Ответьте на все вопросы!');
-        return;
-      }
-
-      const score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value);
-      result.classList.remove('hidden');
-
-      if (score === 3) {
-        result.className = "p-4 rounded-xl text-center font-bold text-sm bg-emerald-950/80 text-emerald-300 border border-emerald-500";
-        result.innerText = "🎉 Прекрасно! 3 из 3 вопросов решены верно!";
-      } else {
-        result.className = "p-4 rounded-xl text-center font-bold text-sm bg-amber-950/80 text-amber-300 border border-amber-500";
-        result.innerText = `Результат: ${score} из 3. Попробуйте еще раз!`;
-      }
-    }
-  </script>
 </body>
 </html>
