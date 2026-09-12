@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Интерактивный курс по бухгалтерскому учету</title>
+  
+  <!-- Скрипт мгновенной проверки темы до загрузки страницы (убирает мигание) -->
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,9 +23,9 @@
 </head>
 <body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans flex flex-col justify-between p-4 transition-colors duration-300">
 
-  <!-- Кнопка переключения темы -->
+  <!-- Шапка с кнопкой темы -->
   <div class="w-full max-w-xl mx-auto flex justify-end pt-2 pb-4">
-    <button id="theme-toggle" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold border border-slate-300 dark:border-slate-700 hover:opacity-80 transition">
+    <button id="theme-toggle" type="button" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold border border-slate-300 dark:border-slate-700 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-750 transition cursor-pointer">
       <span id="theme-icon">🌙</span>
       <span id="theme-text">Тёмная тема</span>
     </button>
@@ -55,7 +65,7 @@
         <h2 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
           Урок 2. Бухгалтерский баланс и его структура, план счетов
         </h2>
-        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+        <p class="text-xs text-slate-400 dark:text-slate-400 mt-1 leading-relaxed">
           Структура баланса, равенство Активов и Пассивов, 4 типа изменений, План счетов.
         </p>
       </a>
@@ -66,38 +76,36 @@
 
   <div class="py-4"></div>
 
-  <!-- Скрипт переключения темы -->
+  <!-- Скрипт переключателя -->
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const icon = document.getElementById('theme-icon');
     const text = document.getElementById('theme-text');
     const html = document.documentElement;
 
-    // Проверка сохраненной темы
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'light') {
-      html.classList.remove('dark');
-      icon.textContent = '☀️';
-      text.textContent = 'Светлая тема';
-    } else {
-      html.classList.add('dark');
-      icon.textContent = '🌙';
-      text.textContent = 'Тёмная тема';
+    function updateUI() {
+      if (html.classList.contains('dark')) {
+        icon.textContent = '🌙';
+        text.textContent = 'Тёмная тема';
+      } else {
+        icon.textContent = '☀️';
+        text.textContent = 'Светлая тема';
+      }
     }
 
-    // Обработчик клика
+    // Первоначальное обновление иконки
+    updateUI();
+
+    // Клик по кнопке
     toggleBtn.addEventListener('click', () => {
       if (html.classList.contains('dark')) {
         html.classList.remove('dark');
         localStorage.setItem('theme', 'light');
-        icon.textContent = '☀️';
-        text.textContent = 'Светлая тема';
       } else {
         html.classList.add('dark');
         localStorage.setItem('theme', 'dark');
-        icon.textContent = '🌙';
-        text.textContent = 'Тёмная тема';
       }
+      updateUI();
     });
   </script>
 
