@@ -1,113 +1,121 @@
 <!DOCTYPE html>
-<html lang="ru" class="dark">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Интерактивный курс по бухгалтерскому учету</title>
-  
-  <!-- Скрипт мгновенной проверки темы до загрузки страницы (убирает мигание) -->
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
+  <title>Курс по Бухгалтерскому Учету</title>
+  <style>
+    :root {
+      --bg-color: #f4f6f9;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+      --text-muted: #666666;
+      --accent-color: #2563eb;
+      --shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
-  </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
+    [data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --card-bg: #2d2d2d;
+      --text-color: #e0e0e0;
+      --text-muted: #aaaaaa;
+      --accent-color: #60a5fa;
+      --shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 40px 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    h1 { margin: 0; font-size: 2em; }
+
+    .theme-btn {
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 { margin-top: 0; color: var(--accent-color); }
+    .card p { color: var(--text-muted); font-size: 0.95em; line-height: 1.5; }
+    .btn-read { font-weight: bold; color: var(--accent-color); margin-top: 15px; display: inline-block; }
+  </style>
+  
+  <script>
+    // Мгновенная тема до загрузки страницы
+    const savedTheme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
   </script>
 </head>
-<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans flex flex-col justify-between p-4 transition-colors duration-300">
+<body>
+  <div class="container">
+    <header>
+      <h1>Оглавление курса</h1>
+      <button class="theme-btn" onclick="toggleTheme()">🌓 Тема</button>
+    </header>
 
-  <!-- Шапка с кнопкой темы -->
-  <div class="w-full max-w-xl mx-auto flex justify-end pt-2 pb-4">
-    <button id="theme-toggle" type="button" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold border border-slate-300 dark:border-slate-700 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-750 transition cursor-pointer">
-      <span id="theme-icon">🌙</span>
-      <span id="theme-text">Тёмная тема</span>
-    </button>
+    <!-- Сюда скрипт сам подставит все уроки -->
+    <div class="grid" id="lessons-grid"></div>
   </div>
 
-  <main class="w-full max-w-xl mx-auto bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 md:p-8 shadow-xl dark:shadow-2xl transition-colors duration-300 space-y-6">
+  <!-- Подключаем наш авто-скрипт -->
+  <script src="navigation.js"></script>
 
-    <!-- Заголовок оглавления -->
-    <div class="text-center space-y-2">
-      <h1 class="text-2xl md:text-3xl font-extrabold text-blue-600 dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
-        Интерактивный курс по бухгалтерскому учету
-      </h1>
-      
-      <!-- Модуль 1 -->
-      <div class="pt-2">
-        <span class="inline-block text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-slate-900 text-blue-600 dark:text-blue-400 rounded-full border border-slate-200 dark:border-slate-700 uppercase tracking-wider">
-          Модуль 1. Основы бухгалтерского учета и балансовый метод
-        </span>
-      </div>
-    </div>
-
-    <!-- Список уроков -->
-    <div class="space-y-4 pt-2">
-      
-      <!-- Урок 1 -->
-      <a href="lesson1.html" class="block group bg-slate-50 dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 p-5 rounded-xl transition duration-200 shadow-sm dark:shadow-md">
-        <h2 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
-          Урок 1. Сущность бухгалтерского учета, его предмет и метод
-        </h2>
-        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-          Язык бизнеса, история Пачоли, Активы, Пассивы и 8 элементов метода.
-        </p>
-      </a>
-
-      <!-- Урок 2 -->
-      <a href="lesson2.html" class="block group bg-slate-50 dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 p-5 rounded-xl transition duration-200 shadow-sm dark:shadow-md">
-        <h2 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
-          Урок 2. Бухгалтерский баланс и его структура, план счетов
-        </h2>
-        <p class="text-xs text-slate-400 dark:text-slate-400 mt-1 leading-relaxed">
-          Структура баланса, равенство Активов и Пассивов, 4 типа изменений, План счетов.
-        </p>
-      </a>
-
-    </div>
-
-  </main>
-
-  <div class="py-4"></div>
-
-  <!-- Скрипт переключателя -->
   <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const icon = document.getElementById('theme-icon');
-    const text = document.getElementById('theme-text');
-    const html = document.documentElement;
-
-    function updateUI() {
-      if (html.classList.contains('dark')) {
-        icon.textContent = '🌙';
-        text.textContent = 'Тёмная тема';
-      } else {
-        icon.textContent = '☀️';
-        text.textContent = 'Светлая тема';
-      }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
     }
-
-    // Первоначальное обновление иконки
-    updateUI();
-
-    // Клик по кнопке
-    toggleBtn.addEventListener('click', () => {
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-      updateUI();
-    });
   </script>
-
 </body>
 </html>
