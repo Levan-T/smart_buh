@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 2. Бухгалтерский баланс</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f8fafc; color: #1e293b; }
+        .container { max-width: 1000px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        h1 { color: #0f172a; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-top: 0; }
+        h2 { color: #1e40af; margin-top: 30px; border-left: 4px solid #2563eb; padding-left: 10px; }
+        h3 { color: #334155; }
+        p, li { font-size: 16px; }
+        .info-box { background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; background: #fff; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+        th { background-color: #1e293b; color: #ffffff; }
+        .section-header { font-weight: bold; background-color: #f1f5f9; color: #0f172a; }
+        .total-row { font-weight: bold; background-color: #e2e8f0; }
+        .grand-total { font-weight: bold; background-color: #cbd5e1; color: #0f172a; font-size: 15px; }
+        .dict-list { background: #f8fafc; padding: 15px 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .dict-list li { margin-bottom: 8px; }
+        .interactive-box { background: #ffffff; border: 2px solid #3b82f6; padding: 25px; border-radius: 10px; margin: 30px 0; }
+        .btn { background-color: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background-color: #1d4ed8; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 6px; font-weight: bold; }
+        .quiz-option { display: block; margin: 8px 0; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>УРОК 2. Бухгалтерский баланс, его структура и балансовое равенство</h1>
+
+    <!-- 1. Что такое баланс -->
+    <h2>1. Что такое Бухгалтерский баланс и зачем он нужен?</h2>
+    <p><b>Бухгалтерский баланс (Форма № 1)</b> — это главный отчет о финансовом состоянии предприятия. По своей сути это <b>финансовый «стоп-кадр»</b>, который показывает, чем владеет организация и за счет каких источников это имущество сформировано на конкретную дату.</p>
+    
+    <div class="info-box">
+        <b>Зачем нужен баланс:</b>
+        <ul>
+            <li><b>Собственникам и директору:</b> видеть стоимость бизнеса, объем собственного капитала и долгов.</li>
+            <li><b>Банкам и инвесторам:</b> оценивать платежеспособность перед выдачей кредитов.</li>
+            <li><b>Налоговым органам РА:</b> для контроля за ведением учета и уплатой налогов.</li>
+        </ul>
+    </div>
+
+    <!-- 2. Из чего состоит -->
+    <h2>2. Из чего состоит баланс и фундаментальное равенство</h2>
+    <p>Баланс состоит из двух равновеликих частей:</p>
+    <ul>
+        <li><b>АКТИВ</b> — отражает всё <b>имущество</b> и права организации (здания, товары, деньги, долги покупателей). <i>«ЧТО есть у фирмы?»</i></li>
+        <li><b>ПАССИВ</b> — отражает <b>источники</b> формирования имущества (вложения учредителей, прибыль, кредиты, долги поставщикам). <i>«ОТКУДА это взялось?»</i></li>
+    </ul>
+
+    <div class="info-box" style="border-left-color: #10b981; background-color: #ecfdf5;">
+        <b>Главное равенство бухучета:</b><br>
+        <span style="font-size: 18px; font-weight: bold; color: #047857;">АКТИВ = ПАССИВ (Валюта Актива = Валюта Пассива)</span><br>
+        Так как Актив и Пассив — это два взгляда на одни и те же ресурсы, их итоговые суммы всегда строго равны.
+    </div>
+
+    <!-- 3. Форма баланса Excel -->
+    <h2>3. Форма Бухгалтерского баланса (Форма № 1 РА)</h2>
+    <p>Пустой бланк структуры баланса до внесения цифровых показателей:</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Статья Актива</th>
+                <th>Код</th>
+                <th>Счета</th>
+                <th>Статья Пассива</th>
+                <th>Код</th>
+                <th>Счета</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="section-header"><td colspan="3">I. ВНЕОБОРОТНЫЕ АКТИВЫ</td><td colspan="3">I. СОБСТВЕННЫЙ КАПИТАЛ</td></tr>
+            <tr><td>Нематериальные активы (остаточная)</td><td>012</td><td>04, 05</td><td>Уставный капитал</td><td>400</td><td>85</td></tr>
+            <tr><td>Основные средства (остаточная)</td><td>022</td><td>01, 02, 03</td><td>Добавочный капитал</td><td>401</td><td>87</td></tr>
+            <tr><td>Оборудование к установке</td><td>030</td><td>07</td><td>Резервный капитал</td><td>410</td><td>86</td></tr>
+            <tr><td>Незавершенные кап. вложения</td><td>040</td><td>08, 61</td><td>Фонды накопления / соц. сферы</td><td>420</td><td>88</td></tr>
+            <tr><td>Долгосрочные фин. вложения</td><td>050</td><td>06</td><td>Целевое финансирование</td><td>430</td><td>96</td></tr>
+            <tr><td>Расчеты с учредителями</td><td>060</td><td>75</td><td>Нераспределенная прибыль (убыток)</td><td>472</td><td>80, 81, 88</td></tr>
+            <tr class="total-row"><td>ИТОГО ПО РАЗДЕЛУ I</td><td>080</td><td></td><td>ИТОГО ПО РАЗДЕЛУ I</td><td>480</td><td></td></tr>
+            
+            <tr class="section-header"><td colspan="3">II. ЗАПАСЫ И ЗАТРАТЫ</td><td colspan="3">II. ОБЯЗАТЕЛЬСТВА И РАСЧЕТЫ</td></tr>
+            <tr><td>Производственные запасы</td><td>100</td><td>10, 15, 16</td><td>Долгосрочные кредиты и займы</td><td>500</td><td>92, 95</td></tr>
+            <tr><td>Животные на выращивании</td><td>110</td><td>11</td><td>Краткосрочные кредиты и займы</td><td>600</td><td>90, 93, 94</td></tr>
+            <tr><td>МБП (остаточная стоимость)</td><td>122</td><td>12, 13</td><td>Расчеты с поставщиками</td><td>630</td><td>60, 76</td></tr>
+            <tr><td>Незавершенное производство</td><td>130</td><td>20, 21, 23</td><td>Расчеты по оплате труда</td><td>650</td><td>70</td></tr>
+            <tr><td>Расходы будущих периодов</td><td>140</td><td>31</td><td>Расчеты по соц. страхованию</td><td>660</td><td>69</td></tr>
+            <tr><td>Готовая продукция</td><td>150</td><td>40</td><td>Расчеты с бюджетом (налоги)</td><td>700</td><td>68</td></tr>
+            <tr><td>Товары</td><td>162</td><td>41</td><td>Авансы от покупателей</td><td>720</td><td>64</td></tr>
+            <tr><td>НДС по приобретенным ценностям</td><td>175</td><td>19</td><td>Торговая наценка / Фонды</td><td>721</td><td>42, 88</td></tr>
+            <tr class="total-row"><td>ИТОГО ПО РАЗДЕЛУ II</td><td>180</td><td></td><td>Прочие краткосрочные пассивы</td><td>760</td><td>—</td></tr>
+            
+            <tr class="section-header"><td colspan="3">III. ДЕНЕЖНЫЕ СРЕДСТВА И РАСЧЕТЫ</td><td colspan="3"></td></tr>
+            <tr><td>Товары отгруженные</td><td>199</td><td>45</td><td colspan="3" rowspan="6"></td></tr>
+            <tr><td>Расчеты с дебиторами</td><td>200</td><td>62, 76</td></tr>
+            <tr><td>Авансы выданные поставщикам</td><td>260</td><td>61</td></tr>
+            <tr><td>Краткосрочные фин. вложения</td><td>270</td><td>58</td></tr>
+            <tr><td>Денежные средства: касса</td><td>280</td><td>50</td></tr>
+            <tr><td>Денежные средства: расчетный счет</td><td>290</td><td>51</td></tr>
+            <tr class="total-row"><td>ИТОГО ПО РАЗДЕЛУ III</td><td>330</td><td></td><td>ИТОГО ПО РАЗДЕЛУ II</td><td>770</td><td></td></tr>
+            
+            <tr class="grand-total"><td>ВАЛЮТА БАЛАНСА АКТИВ</td><td>360</td><td></td><td>ВАЛЮТА БАЛАНСА ПАССИВ</td><td>780</td><td></td></tr>
+        </tbody>
+    </table>
+
+    <!-- 4. Краткий справочник -->
+    <h2>4. Краткий справочник по строкам и счетам</h2>
+    <h3>АКТИВ:</h3>
+    <ul class="dict-list">
+        <li><b>Сч. 01, 02 (стр. 022 «Основные средства»):</b> Недвижимость, транспорт, оборудование со сроком службы > 1 года (остаточная стоимость).</li>
+        <li><b>Сч. 04, 05 (стр. 012 «Нематериальные активы»):</b> Лицензии, патенты, программы.</li>
+        <li><b>Сч. 10 (стр. 100 «Производственные запасы»):</b> Сырье, материалы, топливо, запчасти.</li>
+        <li><b>Сч. 20 (стр. 130 «Незавершенное производство»):</b> Затраты на изготовление продукции.</li>
+        <li><b>Сч. 41 (стр. 162 «Товары»):</b> Закупленные ценности для перепродажи.</li>
+        <li><b>Сч. 62 (стр. 200 «Дебиторка»):</b> Долги покупателей за товары/услуги.</li>
+        <li><b>Сч. 50, 51 (стр. 280, 290):</b> Наличные в кассе и безналичные рубли на расчетном счете.</li>
+    </ul>
+
+    <h3>ПАССИВ:</h3>
+    <ul class="dict-list">
+        <li><b>Сч. 85 (стр. 400 «Уставный капитал»):</b> Взносы учредителей при создании фирмы.</li>
+        <li><b>Сч. 88 / 80 (стр. 472 «Нераспределенная прибыль»):</b> Накопленная чистая прибыль бизнеса.</li>
+        <li><b>Сч. 90, 92 (стр. 500, 600 «Кредиты»):</b> Краткосрочные и долгосрочные долги перед банками.</li>
+        <li><b>Сч. 60 (стр. 630 «Расчеты с поставщиками»):</b> Наша задолженность за полученное сырье/товары.</li>
+        <li><b>Сч. 70 (стр. 650 «Расчеты по оплате труда»):</b> Начисленная, но еще не выплаченная зарплата.</li>
+        <li><b>Сч. 68 (стр. 700 «Расчеты с бюджетом»):</b> Наша задолженность по налогам.</li>
+    </ul>
+
+    <!-- 5. Интерактив и 4 типа операций -->
+    <h2>5. Четыре типа хозяйственных операций</h2>
+    <table>
+        <thead>
+            <tr><th>Тип</th><th>Формула</th><th>Описание</th><th>Пример</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><b>1-й</b></td><td>А ⬆️, А ⬇️</td><td>Перегруппировка в Активе. Валюта <b>не меняется</b>.</td><td>Сняли наличные с р/с в кассу (сч. 50 ⬆️, сч. 51 ⬇️)</td></tr>
+            <tr><td><b>2-й</b></td><td>П ⬆️, П ⬇️</td><td>Перегруппировка в Пассиве. Валюта <b>не меняется</b>.</td><td>Прибыль направлена в резервы (сч. 86 ⬆️, сч. 88 ⬇️)</td></tr>
+            <tr><td><b>3-й</b></td><td>А ⬆️, П ⬆️</td><td>Увеличение Актива и Пассива. Валюта <b>растет</b>.</td><td>Поступили товары от поставщика в долг (сч. 41 ⬆️, сч. 60 ⬆️)</td></tr>
+            <tr><td><b>4-й</b></td><td>А ⬇️, П ⬇️</td><td>Уменьшение Актива и Пассива. Валюта <b>падает</b>.</td><td>Выплачена зарплата из кассы (сч. 70 ⬇️, сч. 50 ⬇️)</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 6. Визуальный тренажер -->
+    <h2>6. Практикум: Визуальный тренажер сборки баланса</h2>
+    <div class="interactive-box">
+        <h3>Предприятие «Апсны-Маркет»</h3>
+        <p><b>Исходные данные:</b></p>
+        <ul>
+            <li>Здание магазина: 2 000 000 ₽</li>
+            <li>Товары на складе: 500 000 ₽</li>
+            <li>Деньги на расчетном счете: 300 000 ₽</li>
+            <li>Наличные в кассе: 50 000 ₽</li>
+            <li>Уставный капитал: 2 200 000 ₽</li>
+            <li>Долг перед поставщиком: 400 000 ₽</li>
+            <li>Краткосрочный кредит банка: 250 000 ₽</li>
+        </ul>
+        <button class="btn" onclick="runTrainer()">Собрать и проверить баланс</button>
+        <div id="trainer-result" class="result"></div>
+    </div>
+
+    <!-- 7. Тестовая часть -->
+    <h2>7. Тестовая часть</h2>
+    <div class="interactive-box" style="border-color: #cbd5e1;">
+        <p><b>Вопрос 1:</b> В какой раздел баланса относятся материалы на складе?</p>
+        <label class="quiz-option"><input type="radio" name="q1" value="a"> Раздел I Актива</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="b"> Раздел II Актива</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="c"> Раздел II Пассива</label>
+
+        <p style="margin-top: 20px;"><b>Вопрос 2:</b> Выплата зарплаты из кассы — это какой тип операций?</p>
+        <label class="quiz-option"><input type="radio" name="q2" value="a"> 1-й тип (А+, А-)</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="b"> 3-й тип (А+, П+)</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="c"> 4-й тип (А-, П-)</label>
+
+        <button class="btn" style="margin-top: 15px; background-color: #475569;" onclick="checkQuiz()">Проверить ответы</button>
+        <div id="quiz-result" class="result"></div>
+    </div>
+</div>
+
+<script>
+    function runTrainer() {
+        const active = 2000000 + 500000 + 300000 + 50000;
+        const passive = 2200000 + 400000 + 250000;
+        const resDiv = document.getElementById('trainer-result');
+
+        resDiv.style.backgroundColor = '#dcfce7';
+        resDiv.style.color = '#15803d';
+        resDiv.innerHTML = `
+            ✅ БАЛАНС УСПЕШНО СОБРАН!<br>
+            • Валюта Актива: ${active.toLocaleString()} ₽<br>
+            • Валюта Пассива: ${passive.toLocaleString()} ₽<br>
+            • Балансовое равенство соблюдено (А = П). Нераспределенная прибыль = 0 ₽.
+        `;
+    }
+
+    function checkQuiz() {
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        const resDiv = document.getElementById('quiz-result');
+
+        if (!q1 || !q2) {
+            resDiv.style.backgroundColor = '#fef3c7';
+            resDiv.style.color = '#b45309';
+            resDiv.innerHTML = 'Пожалуйста, выберите ответы на все вопросы!';
+            return;
+        }
+
+        let score = 0;
+        if (q1.value === 'b') score++;
+        if (q2.value === 'c') score++;
+
+        if (score === 2) {
+            resDiv.style.backgroundColor = '#dcfce7';
+            resDiv.style.color = '#15803d';
+            resDiv.innerHTML = 'Отлично! Все ответы верны (2/2).';
+        } else {
+            resDiv.style.backgroundColor = '#fee2e2';
+            resDiv.style.color = '#b91c1c';
+            resDiv.innerHTML = `Вы ответили правильно на ${score} из 2 вопросов. Попробуйте еще раз!`;
+        }
+    }
+</script>
+
+</body>
+</html>
