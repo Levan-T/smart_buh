@@ -1,410 +1,261 @@
 <!DOCTYPE html>
-<html lang="ru" class="dark">
+<html lang="ru" class="h-full bg-slate-900 text-slate-100">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок 2. Понятие бухгалтерского счета и плана счетов | smart_buh</title>
-  
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Учебный практикум РА - Telegram Mini App</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
+<body class="h-full flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
 
-  <!-- Шапка -->
-  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <a href="index.html" class="text-2xl font-black text-blue-600 dark:bg-gradient-to-r dark:from-emerald-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
-          smart_buh
-        </a>
-        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 2</span>
-      </div>
-      
-      <div class="flex items-center space-x-6">
-        <nav class="hidden md:flex space-x-5 text-sm font-medium">
-          <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Оглавление</a>
-          <a href="lesson1.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 1</a>
-          <span class="text-blue-600 dark:text-emerald-400 font-semibold border-b-2 border-blue-600 dark:border-emerald-400 pb-0.5">Урок 2</span>
-          <a href="lesson3.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 3</a>
-        </nav>
-
-        <button id="theme-toggle" class="p-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" title="Переключить тему">
-          <span class="dark:hidden">🌙</span>
-          <span class="hidden dark:inline">☀️</span>
-        </button>
-      </div>
+  <!-- Header -->
+  <header class="sticky top-0 z-20 bg-slate-900/95 backdrop-blur border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <i data-lucide="book-open" class="w-6 h-6 text-indigo-400"></i>
+      <h1 class="font-bold text-lg text-slate-100">Бухучет РА</h1>
     </div>
+    <span class="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2.5 py-1 rounded-full font-medium">Урок 2</span>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+  <!-- Navigation Tabs -->
+  <nav class="bg-slate-800/50 p-1.5 mx-4 mt-3 rounded-xl border border-slate-700/60 flex space-x-1">
+    <button id="tab-lesson" onclick="switchTab('lesson')" class="flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-white bg-indigo-600 shadow-sm">
+      Конспект урока
+    </button>
+    <button id="tab-simulator" onclick="switchTab('simulator')" class="flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-slate-400 hover:text-slate-200">
+      Т-Счет Симулятор
+    </button>
+    <button id="tab-plan" onclick="switchTab('plan')" class="flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-slate-400 hover:text-slate-200">
+      План счетов РА
+    </button>
+  </nav>
 
-    <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <div class="text-xs font-semibold tracking-wider text-blue-600 dark:text-emerald-400 uppercase">Тема 2 • Теория бухучета</div>
-      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
-        УРОК 2. Понятие бухгалтерского счета и плана счетов
-      </h1>
-      <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
-        Изучаем устройство бухгалтерских счетов, двойную запись, разделение на Дебет и Кредит, а также единую систему Плана счетов РА.
-      </p>
-    </div>
+  <!-- Main Content Area -->
+  <main class="flex-1 overflow-y-auto p-4 space-y-4">
 
-    <!-- Раздел 1. Назначение счетов -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">1.</span> Зачем нужны бухгалтерские счета?
-      </h2>
-      <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-        Бухгалтерский счет — это способ группировки и текущего отражения изменений в составе имущества, источников его формирования и хозяйственных операций.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-slate-900 dark:text-white">Синтетические счета</h3>
-            <span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 font-semibold">Обобщение</span>
+    <!-- VIEW 1: LESSON CONTENT -->
+    <section id="view-lesson" class="space-y-4">
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-4 space-y-3">
+        <h2 class="text-lg font-bold text-indigo-300">Понятие бухгалтерского счета</h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Непрерывное текущее наблюдение и контроль за операциями осуществляются с помощью системы счетов.
+        </p>
+        <div class="grid grid-cols-1 gap-2 text-xs">
+          <div class="p-3 bg-slate-900/60 rounded-lg border border-slate-700/50">
+            <span class="font-bold text-emerald-400">Синтетические счета:</span>
+            <p class="text-slate-400 mt-0.5">Обобщают информацию об объектах учета на верхнем уровне.</p>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            Обобщают данные в денежном выражении (например, счет 10 «Материалы», счет 60 «Расчеты с поставщиками»).
-          </p>
-        </div>
-
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-slate-900 dark:text-white">Аналитические счета</h3>
-            <span class="text-xs px-2 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 font-semibold">Детализация</span>
+          <div class="p-3 bg-slate-900/60 rounded-lg border border-slate-700/50">
+            <span class="font-bold text-amber-400">Аналитические счета:</span>
+            <p class="text-slate-400 mt-0.5">Детализируют показатели синтетических счетов по конкретным объектам.</p>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            Детализируют синтетический счет по конкретным видам материалов, сотрудникам или контрагентам.
-          </p>
+        </div>
+      </div>
+
+      <!-- Account Types Cards -->
+      <div class="space-y-3">
+        <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Формулы остатков (Сальдо)</h3>
+        
+        <div class="p-4 bg-slate-800/80 border border-slate-700/80 rounded-xl space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-bold text-emerald-400">Активный счет</span>
+            <span class="text-xs bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20">Имущество</span>
+          </div>
+          <div class="bg-slate-900/80 p-2.5 rounded-lg text-xs font-mono text-emerald-200">
+            Ск = Сн + Дт(оборот) - Кт(оборот)
+          </div>
+        </div>
+
+        <div class="p-4 bg-slate-800/80 border border-slate-700/80 rounded-xl space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-bold text-sky-400">Пассивный счет</span>
+            <span class="text-xs bg-sky-500/10 text-sky-300 px-2 py-0.5 rounded border border-sky-500/20">Капитал и долги</span>
+          </div>
+          <div class="bg-slate-900/80 p-2.5 rounded-lg text-xs font-mono text-sky-200">
+            Ск = Сн + Кт(оборот) - Дт(оборот)
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Раздел 2. Т-счет -->
-    <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">2.</span> Строение бухгалтерского счета («Т-счет»)
-      </h2>
-
-      <div class="bg-white dark:bg-slate-800/90 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 space-y-6 shadow-sm">
-        <div class="flex flex-wrap gap-2 border-b border-slate-200 dark:border-slate-700 pb-4">
-          <button onclick="switchAccountType('active')" id="btn-active" class="px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950">
-            Активный счет
-          </button>
-          <button onclick="switchAccountType('passive')" id="btn-passive" class="px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-200">
-            Пассивный счет
-          </button>
-          <button onclick="switchAccountType('act-pas')" id="btn-act-pas" class="px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-200">
-            Активно-Пассивный счет
-          </button>
+    <!-- VIEW 2: T-ACCOUNT INTERACTIVE SIMULATOR -->
+    <section id="view-simulator" class="hidden space-y-4">
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4 space-y-4">
+        <div class="flex justify-between items-center">
+          <h2 class="font-bold text-base text-slate-100">Интерактивный Т-Счет</h2>
+          <select id="acc-type" onchange="calculateTAccount()" class="bg-slate-900 text-xs border border-slate-700 text-indigo-300 rounded-lg px-2.5 py-1.5 outline-none focus:border-indigo-500">
+            <option value="active">Активный счет</option>
+            <option value="passive">Пассивный счет</option>
+          </select>
         </div>
 
-        <div id="t-account-display" class="space-y-4"></div>
+        <!-- Inputs -->
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div>
+            <label class="block text-slate-400 mb-1">Начальное сальдо (Сн)</label>
+            <input type="number" id="input-sn" value="10000" oninput="calculateTAccount()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-indigo-500">
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1">Тип Сн</label>
+            <div id="sn-side-indicator" class="py-2 px-3 bg-slate-900/50 border border-slate-700/50 rounded-lg text-indigo-400 font-semibold text-center">
+              Дебет
+            </div>
+          </div>
+        </div>
+
+        <!-- T-Account Graphical Representation -->
+        <div class="border border-slate-600 rounded-lg overflow-hidden bg-slate-900">
+          <div class="bg-slate-800 px-3 py-2 border-b border-slate-600 text-center font-bold text-xs text-slate-200">
+            Счет 50 "Касса" (Пример)
+          </div>
+          <div class="grid grid-cols-2 divide-x divide-slate-600">
+            <!-- Debit Side -->
+            <div class="p-3 space-y-2">
+              <div class="text-center font-bold text-xs text-emerald-400 border-b border-slate-800 pb-1">ДЕБЕТ (Дт)</div>
+              <div class="space-y-1.5">
+                <label class="text-[10px] text-slate-400 block">Оборот Дт (+)</label>
+                <input type="number" id="input-dt" value="5000" oninput="calculateTAccount()" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs text-emerald-300 outline-none">
+              </div>
+            </div>
+            <!-- Credit Side -->
+            <div class="p-3 space-y-2">
+              <div class="text-center font-bold text-xs text-rose-400 border-b border-slate-800 pb-1">КРЕДИТ (Кт)</div>
+              <div class="space-y-1.5">
+                <label class="text-[10px] text-slate-400 block">Оборот Кт (-)</label>
+                <input type="number" id="input-kt" value="3000" oninput="calculateTAccount()" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs text-rose-300 outline-none">
+              </div>
+            </div>
+          </div>
+          <!-- Result / Sk -->
+          <div class="bg-slate-800/90 border-t border-slate-600 p-3 flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-300">Конечное Сальдо (Ск):</span>
+            <span id="result-sk" class="font-mono font-bold text-indigo-400 text-sm">12,000 ₽</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Раздел 3. План счетов РА (Полная версия) -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">3.</span> План счетов (Постановление Минфина РА №26)
-      </h2>
-
-      <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs leading-relaxed">
-        <b>🏛️ Нормативная база:</b> Утвержден Постановлением Минфина Республики Абхазия №26 от 20 марта 2000 года (в ред. Приказа Минфина РА №191). Ниже приведен полный справочник синтетических счетов.
+    <!-- VIEW 3: PLAN OF ACCOUNTS RA -->
+    <section id="view-plan" class="hidden space-y-3">
+      <!-- Search Input -->
+      <div class="relative">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-3"></i>
+        <input type="text" id="plan-search" oninput="filterPlan()" placeholder="Поиск по номеру или названию..." class="w-full bg-slate-800 border border-slate-700 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-slate-400 outline-none focus:border-indigo-500">
       </div>
 
-      <!-- Поиск -->
-      <div class="space-y-3 pt-2">
-        <input id="account-search" type="text" placeholder="Поиск счета (например: 44, Касса, Продажи, Взносы)..." onkeyup="filterAccounts()" 
-               class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-400 text-sm">
-
-        <div id="plan-schetov-container" class="space-y-3 max-h-[500px] overflow-y-auto pr-1"></div>
-      </div>
-    </section>
-
-    <!-- Раздел 4. Тест -->
-    <section class="space-y-6 pt-4 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">4.</span> Проверка знаний
-      </h2>
-
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">1. К какому разделу Плана счетов РА относится счет 44 «Расходы на продажу»?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q1', 0, false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Раздел III. Затраты на производство</button>
-          <button onclick="checkAnswer('q1', 1, true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Раздел IV. Готовая продукция и товары</button>
-          <button onclick="checkAnswer('q1', 2, false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Раздел VIII. Финансовые результаты</button>
-        </div>
-        <div id="q1-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <!-- Accounts List Container -->
+      <div id="plan-container" class="space-y-2">
+        <!-- JS injected accounts -->
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 bg-white dark:bg-slate-950 mt-12">
-    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
-      <div class="flex space-x-4">
-        <a href="lesson1.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 1</a>
-        <a href="lesson3.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 3 →</a>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    // Theme Switcher
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    themeToggleBtn.addEventListener('click', () => {
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-
-    // Interactive T-Accounts
-    const tAccountData = {
-      active: {
-        title: "Активный счет (Учет имущества)",
-        desc: "Сальдо начальное и конечное только по Дебету. Поступления/увеличение — Дебет, списание/уменьшение — Кредит.",
-        formula: "Ск = Сн + Оборот_Дт - Оборот_Кт",
-        debet: ["Начальное сальдо (Сн)", "Увеличение (+)", "Дебетовый оборот"],
-        kredit: ["—", "Уменьшение (-)", "Кредитовый оборот"]
-      },
-      passive: {
-        title: "Пассивный счет (Учет капитала и обязательств)",
-        desc: "Сальдо начальное и конечное только по Кредиту. Возникновение/увеличение долга — Кредит, погашение — Дебет.",
-        formula: "Ск = Сн + Оборот_Кт - Оборот_Дт",
-        debet: ["—", "Уменьшение (-)", "Дебетовый оборот"],
-        kredit: ["Начальное сальдо (Сн)", "Увеличение (+)", "Кредитовый оборот"]
-      },
-      'act-pas': {
-        title: "Активно-Пассивный счет (Учет расчетов)",
-        desc: "Может иметь развернутое сальдо (одновременно и по Дебету, и по Кредиту).",
-        formula: "Ск_Дт = (Сн_Дт + Об_Дт) - Об_Кт  |  Ск_Кт = (Сн_Кт + Об_Кт) - Об_Дт",
-        debet: ["Дебиторский остаток (Сн)", "Рост дебиторки / Снижение кредиторки"],
-        kredit: ["Кредиторский остаток (Сн)", "Рост кредиторки / Снижение дебиторки"]
-      }
-    };
-
-    function switchAccountType(type) {
-      ['active', 'passive', 'act-pas'].forEach(t => {
-        const btn = document.getElementById(`btn-${t}`);
-        btn.className = (t === type)
-          ? "px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950"
-          : "px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-200";
-      });
-
-      const data = tAccountData[type];
-      document.getElementById('t-account-display').innerHTML = `
-        <div class="space-y-1">
-          <h4 class="font-bold text-base text-slate-900 dark:text-white">${data.title}</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-400">${data.desc}</p>
-        </div>
-        <div class="border border-slate-300 dark:border-slate-700 rounded-xl overflow-hidden text-sm">
-          <div class="grid grid-cols-2 bg-slate-100 dark:bg-slate-700/60 font-bold border-b border-slate-300 dark:border-slate-700 text-center py-2">
-            <div class="border-r border-slate-300 dark:border-slate-700 text-blue-600 dark:text-emerald-400">Дебет (Дт)</div>
-            <div class="text-rose-600 dark:text-rose-400">Кредит (Кт)</div>
-          </div>
-          <div class="grid grid-cols-2 divide-x divide-slate-300 dark:divide-slate-700 p-4 gap-4 bg-slate-50/50 dark:bg-slate-900/40">
-            <ul class="space-y-1 text-xs">${data.debet.map(i => `<li>• ${i}</li>`).join('')}</ul>
-            <ul class="space-y-1 text-xs">${data.kredit.map(i => `<li>• ${i}</li>`).join('')}</ul>
-          </div>
-          <div class="bg-slate-200/60 dark:bg-slate-800/80 p-2 text-center text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border-t border-slate-300 dark:border-slate-700">
-            ${data.formula}
-          </div>
-        </div>
-      `;
+    // Telegram Mini App Initialization
+    const tg = window.Telegram?.WebApp;
+    if (tg) {
+      tg.ready();
+      tg.expand();
     }
 
-    // ПОЛНЫЙ ПЛАН СЧЕТОВ РЕСПУБЛИКИ АБХАЗИЯ
-    const planSections = [
-      {
-        title: "Раздел I. Внеоборотные активы",
-        accounts: [
-          { code: "01", name: "Основные средства", sub: "Собственные и арендованные OS" },
-          { code: "02", name: "Износ основных средств", sub: "Амортизация OS" },
-          { code: "03", name: "Доходные вложения в мат. ценности", sub: "Имущество для сдачи в аренду/лизинг" },
-          { code: "04", name: "Нематериальные активы", sub: "Права, лицензии, патенты, ПО" },
-          { code: "05", name: "Амортизация нематериальных активов", sub: "Накопленная амортизация НМА" },
-          { code: "07", name: "Оборудование к установке", sub: "Технологическое оборудование" },
-          { code: "08", name: "Вложения во внеоборотные активы", sub: "Капитальное строительство и покупка OS" }
-        ]
-      },
-      {
-        title: "Раздел II. Производственные запасы",
-        accounts: [
-          { code: "10", name: "Материалы", sub: "Сырье, топливо, тара, запчасти" },
-          { code: "11", name: "Животные на выращивании и откорме", sub: "Молодняк и скот" },
-          { code: "14", name: "Резервы под снижение стоимости ценностей", sub: "Резерв обесценения запасов" },
-          { code: "15", name: "Заготовление и приобретение мат. ценностей", sub: "Учет заготовления материалов" },
-          { code: "16", name: "Отклонение в стоимости мат. ценностей", sub: "Разница между фактической и учетной ценой" },
-          { code: "19", name: "НДС по приобретенным ценностям", sub: "Входной НДС по ТМЦ и услугам" }
-        ]
-      },
-      {
-        title: "Раздел III. Затраты на производство",
-        accounts: [
-          { code: "20", name: "Основное производство", sub: "Прямые затраты на выпуск продукции" },
-          { code: "21", name: "Полуфабрикаты собственного производства", sub: "Собственная полуготовая продукция" },
-          { code: "23", name: "Вспомогательные производства", sub: "Ремонтные и автотранспортные цеха" },
-          { code: "25", name: "Общепроизводственные расходы", sub: "Затраты на обслуживание цехов" },
-          { code: "26", name: "Общехозяйственные расходы", sub: "Административно-управленческие затраты" },
-          { code: "28", name: "Брак в производстве", sub: "Потери и расходы от брака" },
-          { code: "29", name: "Обслуживающие производства и хозяйства", sub: "ЖКХ, столовые, подсобные хозяйства" }
-        ]
-      },
-      {
-        title: "Раздел IV. Готовая продукция и товары",
-        accounts: [
-          { code: "40", name: "Выпуск продукции (работ, услуг)", sub: "Отклонения фактической себестоимости от нормативной" },
-          { code: "41", name: "Товары", sub: "Склады, розничная торговля, тара" },
-          { code: "42", name: "Торговая наценка", sub: "Скидки и наценки в рознице" },
-          { code: "43", name: "Готовая продукция", sub: "Готовая продукция на складе" },
-          { code: "44", name: "Расходы на продажу (Издержки обращения)", sub: "Коммерческие расходы, логистика, реклама" },
-          { code: "45", name: "Товары отгруженные", sub: "Отгруженное имущество до перехода права собственности" },
-          { code: "46", name: "Выполненные этапы по незавершенным работам", sub: "Этапы работ с самостоятельным значением" }
-        ]
-      },
-      {
-        title: "Раздел V. Денежные средства",
-        accounts: [
-          { code: "50", name: "Касса", sub: "Наличные деньги в кассе организации" },
-          { code: "51", name: "Расчетные счета", sub: "Безналичные средства на счетах в банках" },
-          { code: "52", name: "Валютные счета", sub: "Средства в иностранной валюте" },
-          { code: "55", name: "Специальные счета в банках", sub: "Аккредитивы, чековые книжки, депозиты" },
-          { code: "57", name: "Переводы в пути", sub: "Внесенные, но еще не зачисленные средства" },
-          { code: "58", name: "Финансовые вложения", sub: "Ценные бумаги, акции, предоставленные займы" }
-        ]
-      },
-      {
-        title: "Раздел VI. Расчеты",
-        accounts: [
-          { code: "60", name: "Расчеты с поставщиками и подрядчиками", sub: "Задолженность за сырье, товары и услуги" },
-          { code: "62", name: "Расчеты с покупателями и заказчиками", sub: "Дебиторка за отгруженную продукцию" },
-          { code: "63", name: "Резервы по сомнительным долгам", sub: "Резерв под дебиторскую задолженность" },
-          { code: "66", name: "Расчеты по краткосрочным кредитам и займам", sub: "Займы сроком до 1 года" },
-          { code: "67", name: "Расчеты по долгосрочным кредитам и займам", sub: "Займы сроком свыше 1 года" },
-          { code: "68", name: "Расчеты по налогам и сборам", sub: "Задолженность и переплаты по бюджетам" },
-          { code: "69", name: "Расчеты по социальному страхованию", sub: "Взносы в социальные фонды" },
-          { code: "70", name: "Расчеты с персоналом по оплате труда", sub: "Начисленная и выплаченная зарплата" },
-          { code: "71", name: "Расчеты с подотчетными лицами", sub: "Авансы на командировки и хозяйственные нужды" },
-          { code: "73", name: "Расчеты с персоналом по прочим операциям", sub: "Займы сотрудникам, возмещение ущерба" },
-          { code: "75", name: "Расчеты с учредителями", sub: "Вклады в уставный капитал, дивиденды" },
-          { code: "76", name: "Расчеты с разными дебиторами и кредиторами", sub: "Претензии, страхование, прочие расчеты" },
-          { code: "79", name: "Внутрихозяйственные расчеты", sub: "Расчеты с филиалами и подразделениями" }
-        ]
-      },
-      {
-        title: "Раздел VII. Капитал",
-        accounts: [
-          { code: "80", name: "Уставный капитал", sub: "Зарегистрированный уставный капитал" },
-          { code: "81", name: "Собственные акции (доли)", sub: "Выкупленные у акционеров доли" },
-          { code: "82", name: "Резервный капитал", sub: "Резервный фонд организации" },
-          { code: "83", name: "Добавочный капитал", sub: "Прирост стоимости имущества от переоценки" },
-          { code: "84", name: "Нераспределенная прибыль (непокрытый убыток)", sub: "Финансовый результат прошлых лет" },
-          { code: "86", name: "Целевое финансирование", sub: "Средства целевого назначения и гранты" }
-        ]
-      },
-      {
-        title: "Раздел VIII. Финансовые результаты",
-        accounts: [
-          { code: "90", name: "Продажи", sub: "Выручка, себестоимость и прибыль от основной деятельности" },
-          { code: "91", name: "Прочие доходы и расходы", sub: "Операционные и внереализационные доходы/расходы" },
-          { code: "94", name: "Недостачи и потери от порчи ценностей", sub: "Выявленные недостачи ТМЦ" },
-          { code: "96", name: "Резервы предстоящих расходов", sub: "Резервы на отпуска, ремонт и гарантии" },
-          { code: "97", name: "Расходы будущих периодов", sub: "Затраты, относящиеся к следующим периодам" },
-          { code: "98", name: "Доходы будущих периодов", sub: "Доходы, полученные в счет будущих периодов" },
-          { code: "99", name: "Прибыли и убытки", sub: "Итоговый финансовый результат отчетного года" }
-        ]
-      },
-      {
-        title: "Забалансовые счета",
-        accounts: [
-          { code: "001", name: "Арендованные основные средства", sub: "Имущество в пользовании по договору аренды" },
-          { code: "002", name: "ТМЦ, принятые на ответственное хранение", sub: "Чужие товарно-материальные ценности" },
-          { code: "003", name: "Материалы, принятые в переработку", sub: "Давальческое сырье" },
-          { code: "004", name: "Товары, принятые на комиссию", sub: "Комиссионные товары" },
-          { code: "005", name: "Оборудование, принятое для монтажа", sub: "Оборудование заказчика для установки" },
-          { code: "006", name: "Бланки строгой отчетности", sub: "Квитанции, акцизные марки, формы" },
-          { code: "007", name: "Списанная в убыток задолженность", sub: "Учет дебиторки неплатежеспособных должников" },
-          { code: "008", name: "Обеспечения обязательств полученные", sub: "Залоги и гарантии в пользу компании" },
-          { code: "009", name: "Обеспечения обязательств выданные", sub: "Выданные залоги и гарантии" },
-          { code: "010", name: "Износ основных средств", sub: "Износ жилфонда и объектов благоустройства" },
-          { code: "011", name: "Основные средства, сданные в аренду", sub: "Собственные OS, переданные в аренду" }
-        ]
-      }
+    // Plan of Accounts Dataset (Republic of Abkhazia)
+    const accountsData = [
+      { section: "Раздел I. Основные средства", code: "01", name: "Основные средства", subs: "1. Собственные ОС; 2. Арендованное имущество" },
+      { section: "Раздел I. Основные средства", code: "02", name: "Износ основных средств", subs: "1. Износ собственных ОС; 2. Износ лизинга" },
+      { section: "Раздел II. Производственные запасы", code: "10", name: "Материалы", subs: "1. Сырье; 3. Топливо; 5. Запчасти; 8. Стройматериалы" },
+      { section: "Раздел II. Производственные запасы", code: "19", name: "НДС по приобретенным ценностям", subs: "1. НДС капвложения; 3. НДС материалы" },
+      { section: "Раздел III. Затраты на производство", code: "20", name: "Основное производство", subs: "Аналитический учет по видам затрат" },
+      { section: "Раздел IV. Готовая продукция и товары", code: "41", name: "Товары", subs: "1. На складах; 2. В рознице; 3. Тара" },
+      { section: "Раздел V. Денежные средства", code: "50", name: "Касса", subs: "1. Валюта РФ; 2. Иностранная валюта" },
+      { section: "Раздел V. Денежные средства", code: "51", name: "Расчетный счет", subs: "Расчетные счета в банках" },
+      { section: "Раздел VI. Расчеты", code: "60", name: "Расчеты с поставщиками", subs: "Аналитика по контрагентам" },
+      { section: "Раздел VI. Расчеты", code: "68", name: "Расчеты с бюджетом", subs: "По видам налогов и сборов" },
+      { section: "Забалансовые счета", code: "001", name: "Арендованные основные средства", subs: "Забалансовый учет" }
     ];
 
-    function renderPlanSchetov(filter = "") {
-      const container = document.getElementById('plan-schetov-container');
-      container.innerHTML = "";
+    // Navigation Switcher
+    function switchTab(tab) {
+      ['lesson', 'simulator', 'plan'].forEach(t => {
+        document.getElementById(`view-${t}`).classList.add('hidden');
+        const btn = document.getElementById(`tab-${t}`);
+        btn.className = "flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-slate-400 hover:text-slate-200";
+      });
 
-      planSections.forEach(section => {
-        const matching = section.accounts.filter(acc => 
-          acc.code.includes(filter) || 
-          acc.name.toLowerCase().includes(filter.toLowerCase()) || 
-          acc.sub.toLowerCase().includes(filter.toLowerCase())
-        );
+      document.getElementById(`view-${tab}`).classList.remove('hidden');
+      const activeBtn = document.getElementById(`tab-${tab}`);
+      activeBtn.className = "flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-white bg-indigo-600 shadow-sm";
+    }
 
-        if (matching.length > 0) {
-          const sectionEl = document.createElement('div');
-          sectionEl.className = "bg-white dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden";
-          
-          let accListHtml = matching.map(acc => `
-            <div class="p-3 border-t border-slate-100 dark:border-slate-700/50 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
-              <div class="flex items-center gap-2">
-                <span class="font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 dark:bg-emerald-950 dark:text-emerald-300">${acc.code}</span>
-                <span class="font-semibold text-slate-800 dark:text-slate-200">${acc.name}</span>
-              </div>
-              <span class="text-slate-500 dark:text-slate-400 text-[11px]">${acc.sub}</span>
-            </div>
-          `).join('');
+    // T-Account Calculation Logic
+    function calculateTAccount() {
+      const type = document.getElementById('acc-type').value;
+      const sn = parseFloat(document.getElementById('input-sn').value) || 0;
+      const dt = parseFloat(document.getElementById('input-dt').value) || 0;
+      const kt = parseFloat(document.getElementById('input-kt').value) || 0;
+      
+      const indicator = document.getElementById('sn-side-indicator');
+      const resultEl = document.getElementById('result-sk');
 
-          sectionEl.innerHTML = `
-            <div class="bg-slate-100/80 dark:bg-slate-700/40 p-2.5 font-bold text-xs text-slate-700 dark:text-slate-300">
-              ${section.title}
-            </div>
-            <div>${accListHtml}</div>
-          `;
-          container.appendChild(sectionEl);
-        }
+      let sk = 0;
+      if (type === 'active') {
+        indicator.textContent = "Дебет";
+        indicator.className = "py-2 px-3 bg-slate-900/50 border border-slate-700/50 rounded-lg text-emerald-400 font-semibold text-center";
+        sk = sn + dt - kt;
+      } else {
+        indicator.textContent = "Кредит";
+        indicator.className = "py-2 px-3 bg-slate-900/50 border border-slate-700/50 rounded-lg text-sky-400 font-semibold text-center";
+        sk = sn + kt - dt;
+      }
+
+      resultEl.textContent = `${sk.toLocaleString('ru-RU')} ₽`;
+    }
+
+    // Render & Filter Plan of Accounts
+    function renderPlan(data) {
+      const container = document.getElementById('plan-container');
+      container.innerHTML = '';
+
+      if (data.length === 0) {
+        container.innerHTML = `<div class="text-center text-xs text-slate-500 py-6">Счета не найдены</div>`;
+        return;
+      }
+
+      data.forEach(acc => {
+        const item = document.createElement('div');
+        item.className = "p-3 bg-slate-800/80 border border-slate-700/70 rounded-xl space-y-1";
+        item.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-indigo-300 text-sm">Счет ${acc.code}</span>
+            <span class="text-[10px] text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-700">${acc.section}</span>
+          </div>
+          <div class="text-xs font-semibold text-slate-200">${acc.name}</div>
+          <div class="text-[11px] text-slate-400 font-mono pt-1 border-t border-slate-700/40">${acc.subs}</div>
+        `;
+        container.appendChild(item);
       });
     }
 
-    function filterAccounts() {
-      const query = document.getElementById('account-search').value.trim();
-      renderPlanSchetov(query);
+    function filterPlan() {
+      const q = document.getElementById('plan-search').value.toLowerCase();
+      const filtered = accountsData.filter(a => 
+        a.code.toLowerCase().includes(q) || 
+        a.name.toLowerCase().includes(q) || 
+        a.subs.toLowerCase().includes(q)
+      );
+      renderPlan(filtered);
     }
 
-    function checkAnswer(qId, index, isCorrect) {
-      const feedback = document.getElementById(`${qId}-feedback`);
-      feedback.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/60', 'dark:text-emerald-300', 'bg-rose-50', 'text-rose-800', 'dark:bg-rose-950/60', 'dark:text-rose-300');
-
-      if (isCorrect) {
-        feedback.classList.add('bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/60', 'dark:text-emerald-300', 'border', 'border-emerald-200', 'dark:border-emerald-800');
-        feedback.innerHTML = "<b>Верно!</b> Счет 44 «Расходы на продажу» входит в Раздел IV «Готовая продукция и товары».";
-      } else {
-        feedback.classList.add('bg-rose-50', 'text-rose-800', 'dark:bg-rose-950/60', 'dark:text-rose-300', 'border', 'border-rose-200', 'dark:border-rose-800');
-        feedback.innerHTML = "<b>Неверно.</b> Счет 44 находится в Разделе IV.";
-      }
-    }
-
+    // Init
     document.addEventListener('DOMContentLoaded', () => {
-      switchAccountType('active');
-      renderPlanSchetov();
+      lucide.createIcons();
+      renderPlan(accountsData);
+      calculateTAccount();
     });
   </script>
 </body>
