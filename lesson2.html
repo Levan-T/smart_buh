@@ -18,7 +18,7 @@
 </head>
 <body class="h-full flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
 
-  <!-- Header -->
+  <!-- Header (Без кнопки смены темы) -->
   <header class="sticky top-0 z-20 bg-slate-900/95 backdrop-blur border-b border-slate-800 px-4 py-3 flex items-center justify-between">
     <div class="flex items-center space-x-2.5">
       <i data-lucide="book-open" class="w-5 h-5 text-indigo-400"></i>
@@ -45,36 +45,45 @@
   <!-- Main Content Area -->
   <main class="flex-1 overflow-y-auto p-4 space-y-5 custom-scrollbar">
 
-    <!-- VIEW 1: FULL LESSON CONTENT -->
+    <!-- VIEW 1: FULL LESSON CONTENT (ПОЛНЫЙ ТЕКСТ УРОКА) -->
     <section id="view-lesson" class="space-y-5">
       
-      <!-- Lesson Intro -->
+      <!-- Intro Section -->
       <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4 space-y-3">
         <h2 class="text-base font-bold text-indigo-300">Урок 2. Понятие бухгалтерского счета и плана счетов</h2>
+        
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
           Бухгалтерский учет невозможен без системы, позволяющей упорядочить огромное количество разнородных операций хозяйственной жизни организации. Непрерывное текущее наблюдение и контроль за этими операциями и за изменениями в составе имущества и источников его формирования осуществляются с помощью системы счетов бухгалтерского учета.
         </p>
+        
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          Счета открываются на каждый экономически однородный вид имущества, источники его формирования и хозяйственные операции.
+          <strong>Бухгалтерский счет</strong> — это способ группировки, текущего учета и контроля за состоянием и движением однородных видов имущества, источников его формирования и хозяйственных процессов.
+        </p>
+
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Счета открываются на каждый экономически однородный вид имущества и источников. По степени детализации и обобщения информации бухгалтерские счета подразделяются на двух основных уровня:
         </p>
         
-        <div class="grid grid-cols-1 gap-2.5 pt-2">
+        <div class="grid grid-cols-1 gap-2.5 pt-1">
           <div class="p-3 bg-slate-900/70 rounded-lg border border-slate-700/60">
             <span class="font-bold text-xs text-emerald-400 block mb-1">Синтетические счета</span>
-            <p class="text-xs text-slate-300">Обобщают информацию об объектах учета на верхнем уровне.</p>
+            <p class="text-xs text-slate-300">Обобщают информацию об объектах учета на верхнем уровне только в денежном выражении (например, счет 01 «Основные средства», счет 50 «Касса», счет 60 «Расчеты с поставщиками»).</p>
           </div>
           <div class="p-3 bg-slate-900/70 rounded-lg border border-slate-700/60">
             <span class="font-bold text-xs text-amber-400 block mb-1">Аналитические счета</span>
-            <p class="text-xs text-slate-300">Детализируют конкретные показатели синтетических счетов для получения частных данных по каждому виду имущества, обязательств и процессов.</p>
+            <p class="text-xs text-slate-300">Детализируют конкретные показатели синтетических счетов в денежном и натуральном выражении по каждому конкретному виду имущества, материалу, контрагенту или работнику.</p>
           </div>
         </div>
         
         <div class="p-3 bg-indigo-950/40 border border-indigo-500/30 rounded-lg text-xs text-indigo-200">
-          <strong>Взаимосвязь:</strong> остатки и обороты синтетического счета всегда равны сумме остатков и оборотов всех аналитических счетов, открытых в его развитие.
+          <strong>Взаимосвязь счетов:</strong> остатки и обороты синтетического счета всегда строго равны сумме остатков и оборотов всех аналитических счетов, открытых в его развитие.
         </div>
         
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          Графически бухгалтерский счет представляет собой двухстороннюю таблицу: левая сторона — <strong>Дебет (Дт)</strong>, правая — <strong>Кредит (Кт)</strong>. Остатки на начало и конец периода называются <strong>Сальдо</strong>, а сумма операций за период — <strong>Оборотом</strong> (дебетовым или кредитовым).
+          Графически бухгалтерский счет представляет собой двухстороннюю таблицу: левая сторона называются <strong>Дебет (Дт)</strong>, правая — <strong>Кредит (Кт)</strong>.
+        </p>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Остатки средств или источников на начало и конец периода называются <strong>Сальдо</strong> (начальное — Сн, конечное — Ск). Сумма всех записей по дебету или кредиту за период (без учета начального остатка) называется <strong>Оборотом</strong> (дебетовым или кредитовым).
         </p>
       </div>
 
@@ -87,7 +96,9 @@
           <div class="flex justify-between items-center">
             <h4 class="font-bold text-emerald-400 text-sm">1. Активный счет (учет имущества и активов)</h4>
           </div>
-          <p class="text-xs text-slate-300">Имеет только дебетовое сальдо. Увеличение отражается по дебету, уменьшение — по кредиту.</p>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            На активных счетах учитываются виды имущества и активов организации (денежные средства, материалы, основные средства, готовая продукция). Активный счет имеет <strong>только дебетовое сальдо</strong>. Увеличение имущества отражается по Дебету, а уменьшение — по Кредиту.
+          </p>
           <div class="overflow-x-auto rounded-lg border border-slate-700">
             <table class="w-full text-xs text-left">
               <thead class="bg-slate-900 text-slate-300 border-b border-slate-700">
@@ -98,16 +109,20 @@
               </thead>
               <tbody class="divide-y divide-slate-700/60 bg-slate-900/40 text-slate-300">
                 <tr>
-                  <td class="p-2.5 border-r border-slate-700 font-medium text-emerald-300">1. Начальное сальдо (Сн)</td>
+                  <td class="p-2.5 border-r border-slate-700 font-medium text-emerald-300">1. Начальное сальдо (Сн) — остаток активов</td>
                   <td class="p-2.5 text-slate-500">-</td>
                 </tr>
                 <tr>
-                  <td class="p-2.5 border-r border-slate-700">2. Увеличение (+)</td>
-                  <td class="p-2.5">3. Уменьшение (-)</td>
+                  <td class="p-2.5 border-r border-slate-700">2. Увеличение (+), Поступление активов</td>
+                  <td class="p-2.5">3. Уменьшение (-), Списание/выбытие активов</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 border-r border-slate-700 font-medium text-emerald-400">Дебетовый оборот (Од)</td>
+                  <td class="p-2.5 font-medium text-rose-400">Кредитовый оборот (Ок)</td>
                 </tr>
                 <tr class="bg-slate-900/80 font-mono">
                   <td colspan="2" class="p-2.5 text-indigo-300 font-bold">
-                    4. Конечное Сальдо (Ск): <span class="text-white">Ск = Сн + Дт - Кт</span>
+                    4. Конечное Сальдо (Ск): <span class="text-white">Ск = Сн + Од - Ок</span>
                   </td>
                 </tr>
               </tbody>
@@ -120,7 +135,9 @@
           <div class="flex justify-between items-center">
             <h4 class="font-bold text-sky-400 text-sm">2. Пассивный счет (учет капитала и обязательств)</h4>
           </div>
-          <p class="text-xs text-slate-300">Имеет только кредитовое сальдо. Увеличение отражается по кредиту, уменьшение — по дебету.</p>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            На пассивных счетах учитываются источники образования имущества (уставный капитал, прибыль, займы, кредиторская задолженность). Пассивный счет имеет <strong>только кредитовое сальдо</strong>. Увеличение источников отражается по Кредиту, а уменьшение — по Дебету.
+          </p>
           <div class="overflow-x-auto rounded-lg border border-slate-700">
             <table class="w-full text-xs text-left">
               <thead class="bg-slate-900 text-slate-300 border-b border-slate-700">
@@ -132,15 +149,19 @@
               <tbody class="divide-y divide-slate-700/60 bg-slate-900/40 text-slate-300">
                 <tr>
                   <td class="p-2.5 border-r border-slate-700 text-slate-500">-</td>
-                  <td class="p-2.5 font-medium text-sky-300">1. Начальное сальдо (Сн)</td>
+                  <td class="p-2.5 font-medium text-sky-300">1. Начальное сальдо (Сн) — остаток обязательств</td>
                 </tr>
                 <tr>
-                  <td class="p-2.5 border-r border-slate-700">2. Уменьшение (-)</td>
-                  <td class="p-2.5">3. Увеличение (+)</td>
+                  <td class="p-2.5 border-r border-slate-700">2. Уменьшение (-), Погашение долга</td>
+                  <td class="p-2.5">3. Увеличение (+), Возникновение обязательства</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 border-r border-slate-700 font-medium text-rose-400">Дебетовый оборот (Од)</td>
+                  <td class="p-2.5 font-medium text-sky-400">Кредитовый оборот (Ок)</td>
                 </tr>
                 <tr class="bg-slate-900/80 font-mono">
                   <td colspan="2" class="p-2.5 text-indigo-300 font-bold">
-                    4. Конечное Сальдо (Ск): <span class="text-white">Ск = Сн + Кт - Дт</span>
+                    4. Конечное Сальдо (Ск): <span class="text-white">Ск = Сн + Ок - Од</span>
                   </td>
                 </tr>
               </tbody>
@@ -151,9 +172,11 @@
         <!-- Active-Passive Account -->
         <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4 space-y-3">
           <div class="flex justify-between items-center">
-            <h4 class="font-bold text-amber-400 text-sm">3. Активно-пассивный счет (учет расчетов)</h4>
+            <h4 class="font-bold text-amber-400 text-sm">3. Активно-пассивный счет (учет расчетов и финансовых результатов)</h4>
           </div>
-          <p class="text-xs text-slate-300">Конечное сальдо может быть дебетовым (дебиторская задолженность) или кредитовым (кредиторская задолженность).</p>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Сочетает признаки активных и пассивных счетов. Применяется для учета расчетов с контрагентами, где характер задолженности может меняться. Сальдо может быть дебетовым (дебиторская задолженность — когда должны нам) или кредитовым (кредиторская задолженность — когда должны мы), либо одновременно развернутым.
+          </p>
           <div class="overflow-x-auto rounded-lg border border-slate-700">
             <table class="w-full text-xs text-left">
               <thead class="bg-slate-900 text-slate-300 border-b border-slate-700">
@@ -164,20 +187,16 @@
               </thead>
               <tbody class="divide-y divide-slate-700/60 bg-slate-900/40 text-slate-300">
                 <tr>
-                  <td class="p-2.5 border-r border-slate-700 text-emerald-300">1. Начальное сальдо (дебетовое)</td>
-                  <td class="p-2.5 text-sky-300">2. Начальное сальдо (кредитовое)</td>
+                  <td class="p-2.5 border-r border-slate-700 text-emerald-300 font-medium">Сн(Дт) — Нам должны (дебиторы)</td>
+                  <td class="p-2.5 text-sky-300 font-medium">Сн(Кт) — Мы должны (кредиторы)</td>
                 </tr>
                 <tr>
-                  <td class="p-2.5 border-r border-slate-700">3. Увеличение (+) (рост дебиторки)</td>
-                  <td class="p-2.5">4. Уменьшение (-)</td>
-                </tr>
-                <tr>
-                  <td class="p-2.5 border-r border-slate-700">5. Уменьшение (-)</td>
-                  <td class="p-2.5">6. Увеличение (+) (рост кредиторки)</td>
+                  <td class="p-2.5 border-r border-slate-700">Увеличение дебиторки / погашение кредиторки</td>
+                  <td class="p-2.5">Увеличение кредиторки / погашение дебиторки</td>
                 </tr>
                 <tr class="bg-slate-900/80 font-mono text-[11px]">
-                  <td class="p-2 border-r border-slate-700 text-emerald-300 font-bold">Ск(Дт) = Сн(Дт) + Дт - Кт</td>
-                  <td class="p-2 text-sky-300 font-bold">Ск(Кт) = Сн(Кт) + Кт - Дт</td>
+                  <td class="p-2 border-r border-slate-700 text-emerald-300 font-bold">Ск(Дт) = Сн(Дт) + Од - Ок</td>
+                  <td class="p-2 text-sky-300 font-bold">Ск(Кт) = Сн(Кт) + Ок - Од</td>
                 </tr>
               </tbody>
             </table>
@@ -189,19 +208,22 @@
       <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4 space-y-3">
         <h3 class="text-sm font-bold text-indigo-300">Двойная запись и План счетов</h3>
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          Любая хозяйственная операция вызывает равновеликие изменения в двух статьях баланса, при этом равенство итогов актива и пассива не нарушается. В этом заключается суть <strong>двойной записи</strong>. Счета, между которыми возникает двойная запись, называются <strong>корреспондирующими</strong>, а сама запись — <strong>бухгалтерской проводкой</strong>.
+          Любая хозяйственная операция вызывает равновеликие изменения в двух объектах учета. Способ отражения операций одновременно по Дебету одного счета и Кредиту другого счета в одинаковой сумме называется <strong>метод двойной записи</strong>.
         </p>
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          <strong>План счетов</strong> — систематизированный перечень счетов для построения системы учета. На основе унифицированного Плана счетов каждая организация в учетной политике утверждает свой рабочий план счетов.
+          Счета, между которыми возникает связь при отражении операции, называются <strong>корреспондирующими</strong>, а само указание счетов и суммы — <strong>бухгалтерской проводкой</strong>.
+        </p>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <strong>План счетов бухгалтерского учета</strong> — это нормативный документ, представляющий собой систематизированный перечень всех синтетических счетов и субсчетов, применяемых для ведения учета в организации.
         </p>
         <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-xs text-amber-200">
-          В Республике Абхазия действует План счетов, утвержденный Постановлением №26 Министерства финансов РА от 20 марта 2000 года (в ред. Приказа Минфина РА от 13.09.2019 №191).
+          <strong>Законодательная база РА:</strong> В Республике Абхазия действует План счетов бухгалтерского учета финансово-хозяйственной деятельности организаций, утвержденный Постановлением Министерства финансов РА №26 от 20 марта 2000 года (в редакции Приказа Минфина РА №191 от 13 сентября 2019 года).
         </div>
       </div>
 
     </section>
 
-    <!-- VIEW 2: FULL PLAN OF ACCOUNTS RA -->
+    <!-- VIEW 2: ACCURATE PLAN OF ACCOUNTS RA (ПОЛНЫЙ ПЛАН СЧЕТОВ РА) -->
     <section id="view-plan" class="hidden space-y-3">
       <div class="flex items-center justify-between">
         <h2 class="text-sm font-bold text-slate-200">План счетов РА (Пост. №26 / Пр. №191)</h2>
@@ -220,7 +242,7 @@
       </div>
     </section>
 
-    <!-- VIEW 3: T-ACCOUNT INTERACTIVE SIMULATOR -->
+    <!-- VIEW 3: T-ACCOUNT INTERACTIVE SIMULATOR (Т-ТРЕНАЖЕР) -->
     <section id="view-simulator" class="hidden space-y-4">
       <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4 space-y-4">
         <div class="flex justify-between items-center border-b border-slate-700 pb-3">
@@ -228,6 +250,7 @@
           <select id="acc-type" onchange="calculateTAccount()" class="bg-slate-900 text-xs border border-slate-700 text-indigo-300 rounded-lg px-2.5 py-1.5 outline-none focus:border-indigo-500">
             <option value="active">Активный счет</option>
             <option value="passive">Пассивный счет</option>
+            <option value="active-passive">Активно-пассивный счет</option>
           </select>
         </div>
 
@@ -237,7 +260,7 @@
             <input type="number" id="input-sn" value="10000" oninput="calculateTAccount()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-indigo-500">
           </div>
           <div>
-            <label class="block text-slate-400 mb-1">Сторона Сн</label>
+            <label class="block text-slate-400 mb-1">Сторона начального остатка</label>
             <div id="sn-side-indicator" class="py-2 px-3 bg-slate-900/50 border border-slate-700/50 rounded-lg text-emerald-400 font-semibold text-center">
               Дебет
             </div>
@@ -247,14 +270,14 @@
         <!-- T-Account T-Shape UI -->
         <div class="border border-slate-600 rounded-lg overflow-hidden bg-slate-900">
           <div class="bg-slate-800 px-3 py-2 border-b border-slate-600 text-center font-bold text-xs text-slate-200">
-            Счет (Схема Т-Счета)
+            Учебный Т-Счет
           </div>
           <div class="grid grid-cols-2 divide-x divide-slate-600">
             <!-- Debit Side -->
             <div class="p-3 space-y-2">
               <div class="text-center font-bold text-xs text-emerald-400 border-b border-slate-800 pb-1">ДЕБЕТ (Дт)</div>
               <div class="space-y-1.5">
-                <label class="text-[10px] text-slate-400 block">Оборот Дт (+)</label>
+                <label class="text-[10px] text-slate-400 block">Дебетовый оборот (Од)</label>
                 <input type="number" id="input-dt" value="5000" oninput="calculateTAccount()" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-xs text-emerald-300 outline-none">
               </div>
             </div>
@@ -262,25 +285,25 @@
             <div class="p-3 space-y-2">
               <div class="text-center font-bold text-xs text-rose-400 border-b border-slate-800 pb-1">КРЕДИТ (Кт)</div>
               <div class="space-y-1.5">
-                <label class="text-[10px] text-slate-400 block">Оборот Кт (-)</label>
+                <label class="text-[10px] text-slate-400 block">Кредитовый оборот (Ок)</label>
                 <input type="number" id="input-kt" value="3000" oninput="calculateTAccount()" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-xs text-rose-300 outline-none">
               </div>
             </div>
           </div>
           <div class="bg-slate-800/90 border-t border-slate-600 p-3 flex justify-between items-center text-xs">
             <span class="font-bold text-slate-300">Конечное Сальдо (Ск):</span>
-            <span id="result-sk" class="font-mono font-bold text-indigo-400 text-sm">12,000 ₽</span>
+            <span id="result-sk" class="font-mono font-bold text-indigo-400 text-sm">12 000 ₽</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- VIEW 4: TESTS (MIN 5 QUESTIONS) -->
+    <!-- VIEW 4: TESTS (БЛОК ИЗ 6 ТЕСТОВ) -->
     <section id="view-tests" class="hidden space-y-4">
       <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4 flex justify-between items-center">
         <div>
           <h2 class="font-bold text-sm text-slate-100">Тестирование знания Урока 2</h2>
-          <p class="text-[11px] text-slate-400">Проверьте себя по материалу счетов и Плана счетов РА</p>
+          <p class="text-[11px] text-slate-400">Проверьте понимание счетов и Плана счетов РА</p>
         </div>
         <div id="quiz-score" class="text-xs font-bold bg-indigo-600/30 border border-indigo-500/40 text-indigo-300 px-3 py-1.5 rounded-lg">
           0 / 6
@@ -292,21 +315,21 @@
       </div>
 
       <button onclick="resetQuiz()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-300 rounded-xl transition-all">
-        Перепройти тест
+        Сбросить и пройти заново
       </button>
     </section>
 
   </main>
 
   <script>
-    // Initialize Telegram WebApp
+    // Telegram WebApp Initialization
     const tg = window.Telegram?.WebApp;
     if (tg) {
       tg.ready();
       tg.expand();
     }
 
-    // COMPLETE PLAN OF ACCOUNTS (REPUBLIC OF ABKHAZIA)
+    // ACCURATE PLAN OF ACCOUNTS (REPUBLIC OF ABKHAZIA)
     const fullPlanData = [
       // Раздел I
       { section: "Раздел I. Основные средства и долгосрочные вложения", code: "01", name: "Основные средства", subs: "1. Собственные ОС; 2. Арендованное имущество" },
@@ -425,79 +448,79 @@
         id: 1,
         question: "1. Какое сальдо имеет активный бухгалтерский счет?",
         options: [
-          "Только дебетовое",
-          "Только кредитовое",
-          "Может иметь как дебетовое, так и кредитовое",
-          "Активный счет не имеет сальдо"
+          "Только дебетовое сальдо (или нулевое)",
+          "Только кредитовое сальдо",
+          "Всегда одновременно дебетовое и кредитовое",
+          "Активный счет никогда не имеет начального остатка"
         ],
         correct: 0,
-        explanation: "Активные счета предназначены для учета имущества и активов. Они могут иметь только дебетовое сальдо."
+        explanation: "Активные счета отражают имущество и активы компании. Увеличение пишется в Дебет, поэтому сальдо может быть только дебетовым."
       },
       {
         id: 2,
-        question: "2. Какая формула используется для расчета конечного сальдо (Ск) на ПАССИВНОМ счете?",
+        question: "2. Выберите правильную формулу расчета конечного сальдо (Ск) для ПАССИВНОГО счета:",
         options: [
-          "Ск = Сн + Дт - Кт",
-          "Ск = Сн + Кт - Дт",
-          "Ск = Дт - Кт",
-          "Ск = Сн - Кт + Дт"
+          "Ск = Сн + Од - Ок",
+          "Ск = Сн + Ок - Од",
+          "Ск = Од - Ок",
+          "Ск = Сн - Ок + Од"
         ],
         correct: 1,
-        explanation: "На пассивном счете увеличение отражается по Кредиту, поэтому Ск = Сн(Кт) + Кт(оборот) - Дт(оборот)."
+        explanation: "В пассивных счетах увеличение идет по Кредиту (Ок), а уменьшение по Дебету (Од). Поэтому Ск = Сн(Кт) + Ок - Од."
       },
       {
         id: 3,
-        question: "3. В чем заключается суть двойной записи в бухгалтерском учете?",
+        question: "3. В чем состоит сущность метода двойной записи?",
         options: [
-          "Каждая операция записывается дважды в кассовую книгу",
-          "Каждая операция отражается по дебету одного и кредиту другого счета в равной сумме",
-          "Запись делается одновременно в двух валютах",
-          "Каждый документ подписывается двумя бухгалтерами"
+          "Запись любой операции делается два раза в день",
+          "Операция отражается одновременно по Дебету одного и Кредиту другого счета в одинаковой сумме",
+          "Каждый первичный документ копируется в двух экземплярах",
+          "Сумма операции одновременно умножается на два"
         ],
         correct: 1,
-        explanation: "Двойная запись отражает операцию одновременно по Дт одного счета и Кт другого счета на одинаковую сумму."
+        explanation: "Двойная запись связывает два корреспондентских счета: один по Дебету, другой по Кредиту на равновеликую сумму."
       },
       {
         id: 4,
-        question: "4. Какой документ утверждает действующий План счетов бухгалтерского учета в Республике Абхазия?",
+        question: "4. Каким нормативным актом утвержден действующий План счетов бухгалтерского учета в Республике Абхазия?",
         options: [
-          "Закон РА №100 от 2005 года",
-          "Постановление №26 Минфина РА от 20 марта 2000 года",
-          "Приказ Минфина РФ №94н",
-          "Международный стандарт МСФО №1"
+          "Постановлением Минфина РА №26 от 20.03.2000г. (в ред. Приказа №191 от 2019г.)",
+          "Приказом Минфина РФ №94н от 31.10.2000г.",
+          "Законом о БУ РА №500 от 2010 года",
+          "Международным стандартом МСФО №1"
         ],
-        correct: 1,
-        explanation: "В РА действует План счетов, утвержденный Постановлением Минфина РА №26 от 20.03.2000 г. (в ред. Приказа №191 от 2019 г.)."
+        correct: 0,
+        explanation: "В Республике Абхазия действует национальный План счетов, утвержденный Постановлением Минфина РА №26 от 20.03.2000 г."
       },
       {
         id: 5,
         question: "5. К какому разделу Плана счетов РА относится счет 50 «Касса»?",
         options: [
           "Раздел II. Производственные запасы",
-          "Раздел IV. Готовая продукция",
+          "Раздел IV. Готовая продукция, товары и реализация",
           "Раздел V. Денежные средства",
           "Раздел VI. Расчеты"
         ],
         correct: 2,
-        explanation: "Счет 50 «Касса» относится к Разделу V «Денежные средства»."
+        explanation: "Счет 50 «Касса» входит в Раздел V «Денежные средства» (счета 50, 51, 52, 55, 56, 57, 58)."
       },
       {
         id: 6,
-        question: "6. Что отражают аналитические бухгалтерские счета?",
+        question: "6. Чем отличается аналитический счет от синтетического?",
         options: [
-          "Обобщенные данные на верхнем уровне",
-          "Детализированные конкретные показатели по отдельным видам имущества и обязательств",
-          "Только финансовые результаты компании",
-          "Внебалансовые операции"
+          "Синтетический счет детализирует данные, а аналитический дает обобщенную информацию",
+          "Аналитический счет детализирует показатели синтетического счета по конкретным видам ценностей и контрагентам",
+          "Аналитические счета используются только в конце года",
+          "Между ними нет никакой связи"
         ],
         correct: 1,
-        explanation: "Аналитические счета детализируют синтетические счета для учета по конкретным контрагентам, материалам и объектам."
+        explanation: "Аналитические счета открываются в развитие синтетического счета для подробного учета по конкретным материалам, работникам и контрагентам."
       }
     ];
 
     let userAnswers = {};
 
-    // Tab Switcher
+    // Tab Navigation Switcher
     function switchTab(tab) {
       ['lesson', 'plan', 'simulator', 'tests'].forEach(t => {
         document.getElementById(`view-${t}`).classList.add('hidden');
@@ -510,7 +533,7 @@
       activeBtn.className = "flex-1 py-2 text-[11px] sm:text-xs font-semibold rounded-lg transition-all text-white bg-indigo-600 shadow-sm";
     }
 
-    // Interactive T-Account Calculation
+    // T-Account Calculator Logic
     function calculateTAccount() {
       const type = document.getElementById('acc-type').value;
       const sn = parseFloat(document.getElementById('input-sn').value) || 0;
@@ -525,16 +548,25 @@
         indicator.textContent = "Дебет";
         indicator.className = "py-2 px-3 bg-slate-900/50 border border-slate-700/50 rounded-lg text-emerald-400 font-semibold text-center";
         sk = sn + dt - kt;
-      } else {
+        resultEl.textContent = `${sk.toLocaleString('ru-RU')} ₽ (Дт)`;
+      } else if (type === 'passive') {
         indicator.textContent = "Кредит";
         indicator.className = "py-2 px-3 bg-slate-900/50 border border-slate-700/50 rounded-lg text-sky-400 font-semibold text-center";
         sk = sn + kt - dt;
+        resultEl.textContent = `${sk.toLocaleString('ru-RU')} ₽ (Кт)`;
+      } else {
+        indicator.textContent = "Дт / Кт";
+        indicator.className = "py-2 px-3 bg-slate-900/50 border border-slate-700/50 rounded-lg text-amber-400 font-semibold text-center";
+        sk = sn + dt - kt;
+        if (sk >= 0) {
+          resultEl.textContent = `${sk.toLocaleString('ru-RU')} ₽ (Сальдо Дт)`;
+        } else {
+          resultEl.textContent = `${Math.abs(sk).toLocaleString('ru-RU')} ₽ (Сальдо Кт)`;
+        }
       }
-
-      resultEl.textContent = `${sk.toLocaleString('ru-RU')} ₽`;
     }
 
-    // Render & Filter Plan of Accounts
+    // Plan Rendering & Filtering
     function renderPlan(data) {
       const container = document.getElementById('plan-container');
       const countEl = document.getElementById('plan-count');
@@ -572,7 +604,7 @@
       renderPlan(filtered);
     }
 
-    // Quiz Renderer and Logic
+    // Quiz Renderer & Handler
     function renderQuiz() {
       const container = document.getElementById('quiz-container');
       container.innerHTML = '';
@@ -611,7 +643,7 @@
           const isCorrect = userAnswers[q.id] === q.correct;
           explanationHtml = `
             <div class="mt-2 p-2.5 rounded-lg text-[11px] ${isCorrect ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-300 border border-rose-500/20'}">
-              <strong>${isCorrect ? 'Правильно!' : 'Ошибка!'}</strong> ${q.explanation}
+              <strong>${isCorrect ? 'Верно!' : 'Ошибка!'}</strong> ${q.explanation}
             </div>
           `;
         }
@@ -645,7 +677,7 @@
       renderQuiz();
     }
 
-    // Initialize Page
+    // Initialization on Page Load
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
       renderPlan(fullPlanData);
