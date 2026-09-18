@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок 5. Итоговое практическое занятие | smart_buh</title>
+  <title>Урок 5. Практическое задание по Разделу 1 | smart_buh</title>
   <script>
     if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
     else document.documentElement.classList.add('dark');
@@ -33,20 +33,19 @@
   <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 5. Итоговое практическое занятие</h1>
-      <p class="text-slate-600 dark:text-slate-400 text-base">Закрепляем материал уроков 1-4. Тесты, практические задания и составление баланса для ООО «Smart_buh».</p>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 5. Практическое задание по Разделу 1</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base">Итоговое практическое занятие по урокам 1-4. Тесты, практические задания и составление баланса для ООО «Smart_buh».</p>
     </div>
 
     <!-- ЧАСТЬ 1: ТЕСТЫ -->
     <section class="space-y-6">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 1. Тесты (20 вопросов)</h2>
-      <p class="text-sm text-slate-600 dark:text-slate-400">Выберите правильный вариант ответа.</p>
+      <p class="text-sm text-slate-600 dark:text-slate-400">Выберите правильный вариант ответа по материалам уроков 1-4.</p>
 
-      <!-- Генерация 20 вопросов (компактно) -->
       <div id="tests-container" class="space-y-4"></div>
     </section>
 
-    <!-- ЧАСТЬ 2: МИНИ-ЗАДАНИЯ -->
+    <!-- ЧАСТЬ 2: ОПРЕДЕЛЕНИЕ ТИПА ОПЕРАЦИЙ -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 2. Определите тип операции</h2>
       <p class="text-sm text-slate-600 dark:text-slate-400">К какому типу (I, II, III, IV) относится каждая операция?</p>
@@ -84,12 +83,61 @@
           </div>
           <p class="feedback hidden mt-2 text-xs font-bold"></p>
         </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-semibold mb-3">4. Сняты наличные с расчетного счета в кассу</p>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="checkType(this, true)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Тип I</button>
+            <button onclick="checkType(this, false)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Тип II</button>
+            <button onclick="checkType(this, false)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Тип III</button>
+            <button onclick="checkType(this, false)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Тип IV</button>
+          </div>
+          <p class="feedback hidden mt-2 text-xs font-bold"></p>
+        </div>
       </div>
     </section>
 
-    <!-- ЧАСТЬ 3: БОЛЬШОЕ ЗАДАНИЕ -->
+    <!-- ЧАСТЬ 3: СОСТАВЛЕНИЕ ПРОВОДОК -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 3. Практикум: ООО «Smart_buh»</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 3. Составьте проводки</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400">Для каждой операции укажите корреспонденцию счетов (Дт и Кт).</p>
+      
+      <div class="space-y-4">
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-semibold mb-3">1. Поступили материалы от поставщика на сумму 40 000 руб.</p>
+          <div class="flex gap-2">
+            <input type="text" id="p1-dt" placeholder="Дт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p1-kt" placeholder="Кт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <button onclick="checkEntry('p1', '10', '60')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+          </div>
+          <p id="p1-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-semibold mb-3">2. Выдана заработная плата из кассы на сумму 20 000 руб.</p>
+          <div class="flex gap-2">
+            <input type="text" id="p2-dt" placeholder="Дт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p2-kt" placeholder="Кт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <button onclick="checkEntry('p2', '70', '50')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+          </div>
+          <p id="p2-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-semibold mb-3">3. Начислена заработная плата за октябрь 35 000 руб.</p>
+          <div class="flex gap-2">
+            <input type="text" id="p3-dt" placeholder="Дт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p3-kt" placeholder="Кт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <button onclick="checkEntry('p3', '20', '70')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+          </div>
+          <p id="p3-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЧАСТЬ 4: БОЛЬШОЕ ЗАДАНИЕ -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 4. Практикум: ООО «Smart_buh»</h2>
       
       <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
         <p class="text-sm text-blue-800 dark:text-blue-300"><b>Легенда:</b> Вы — главный бухгалтер ООО «Smart_buh». Ниже представлен входящий баланс на 01.10.2026 и список хозяйственных операций за октябрь. Ваша задача: определить тип операции, составить проводки и сформировать баланс на 31.10.2026.</p>
@@ -128,37 +176,78 @@
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
         <h3 class="font-bold text-lg mb-3">Хозяйственные операции за октябрь 2026 г.</h3>
         <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li>Снят наличный расчетный счет в кассу: 30 000 руб. (Дт 50 - Кт 51)</li>
-          <li>Оплачена задолженность поставщику с р/с: 20 000 руб. (Дт 60 - Кт 51)</li>
-          <li>Поступили материалы от поставщика: 40 000 руб. (Дт 10 - Кт 60)</li>
-          <li>Материалы отпущены в производство: 15 000 руб. (Дт 20 - Кт 10)</li>
-          <li>Выдана заработная плата из кассы: 20 000 руб. (Дт 70 - Кт 50)</li>
-          <li>Отгружена продукция покупателю (выручка): 80 000 руб. (Дт 62 - Кт 46)</li>
-          <li>Списана себестоимость отгруженной продукции: 50 000 руб. (Дт 46 - Кт 41)</li>
-          <li>Поступила оплата от покупателя на р/с: 80 000 руб. (Дт 51 - Кт 62)</li>
-          <li>Начислена заработная плата за октябрь: 35 000 руб. (Дт 20 - Кт 70)</li>
-          <li>Начислены страховые взносы (30%): 10 500 руб. (Дт 20 - Кт 69)</li>
-          <li>Удержан НДФЛ из зарплаты (13%): 4 550 руб. (Дт 70 - Кт 68)</li>
-          <li>Перечислен НДФЛ в бюджет с р/с: 4 550 руб. (Дт 68 - Кт 51)</li>
-          <li>Приобретено оборудование у поставщика: 60 000 руб. (Дт 01 - Кт 60)</li>
-          <li>Оплачено оборудование с р/с: 60 000 руб. (Дт 60 - Кт 51)</li>
-          <li>Начислена амортизация оборудования: 5 000 руб. (Дт 20 - Кт 02)</li>
-          <li>Начислены счета за электроэнергию (общехоз.): 3 000 руб. (Дт 20 - Кт 60)</li>
-          <li>Получен краткосрочный кредит банка на р/с: 100 000 руб. (Дт 51 - Кт 90)</li>
-          <li>Погашена часть кредита с р/с: 50 000 руб. (Дт 90 - Кт 51)</li>
-          <li>Определена прибыль от реализации (80 000 - 50 000): 30 000 руб. (Дт 46 - Кт 80)</li>
-          <li>Начислен налог на прибыль (20%): 6 000 руб. (Дт 80 - Кт 68)</li>
-          <li>Перечислен налог на прибыль с р/с: 6 000 руб. (Дт 68 - Кт 51)</li>
-          <li>Чистая прибыль (24 000) направлена на формирование капитала: (Дт 80 - Кт 88)</li>
+          <li>Снят наличный с расчетного счета в кассу: 30 000 руб.</li>
+          <li>Оплачена задолженность поставщику с р/с: 20 000 руб.</li>
+          <li>Поступили материалы от поставщика: 40 000 руб.</li>
+          <li>Материалы отпущены в производство: 15 000 руб.</li>
+          <li>Выдана заработная плата из кассы: 20 000 руб.</li>
+          <li>Отгружена продукция покупателю (выручка): 80 000 руб.</li>
+          <li>Списана себестоимость отгруженной продукции: 50 000 руб.</li>
+          <li>Поступила оплата от покупателя на р/с: 80 000 руб.</li>
+          <li>Начислена заработная плата за октябрь: 35 000 руб.</li>
+          <li>Начислены страховые взносы (30%): 10 500 руб.</li>
+          <li>Удержан НДФЛ из зарплаты (13%): 4 550 руб.</li>
+          <li>Перечислен НДФЛ в бюджет с р/с: 4 550 руб.</li>
+          <li>Приобретено оборудование у поставщика: 60 000 руб.</li>
+          <li>Оплачено оборудование с р/с: 60 000 руб.</li>
+          <li>Начислена амортизация оборудования: 5 000 руб.</li>
+          <li>Начислены счета за электроэнергию: 3 000 руб.</li>
+          <li>Получен краткосрочный кредит банка на р/с: 100 000 руб.</li>
+          <li>Погашена часть кредита с р/с: 50 000 руб.</li>
+          <li>Определена прибыль от реализации: 30 000 руб.</li>
+          <li>Начислен налог на прибыль (20%): 6 000 руб.</li>
+          <li>Перечислен налог на прибыль с р/с: 6 000 руб.</li>
+          <li>Чистая прибыль направлена на формирование капитала: 24 000 руб.</li>
         </ol>
       </div>
 
       <!-- Кнопка решения -->
       <button onclick="toggleSolution()" class="w-full px-6 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition text-lg">
-        👁 Показать эталонное решение (Проводки и Баланс на 31.10.2026)
+        Показать эталонное решение (Проводки и Баланс на 31.10.2026)
       </button>
 
       <div id="solution" class="hidden space-y-6">
+        <!-- Проводки -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
+          <h3 class="font-bold text-lg mb-3">Бухгалтерские проводки за октябрь 2026 г.</h3>
+          <table class="w-full text-sm">
+            <thead class="bg-slate-100 dark:bg-slate-700/60">
+              <tr>
+                <th class="p-2 text-left">№</th>
+                <th class="p-2 text-left">Содержание операции</th>
+                <th class="p-2 text-left">Дт</th>
+                <th class="p-2 text-left">Кт</th>
+                <th class="p-2 text-right">Сумма</th>
+                <th class="p-2 text-left">Тип</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+              <tr><td class="p-2">1</td><td class="p-2">Снят наличный с р/с в кассу</td><td class="p-2 font-mono">50</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">30 000</td><td class="p-2">I</td></tr>
+              <tr><td class="p-2">2</td><td class="p-2">Оплачена задолженность поставщику</td><td class="p-2 font-mono">60</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">20 000</td><td class="p-2">IV</td></tr>
+              <tr><td class="p-2">3</td><td class="p-2">Поступили материалы от поставщика</td><td class="p-2 font-mono">10</td><td class="p-2 font-mono">60</td><td class="p-2 text-right">40 000</td><td class="p-2">III</td></tr>
+              <tr><td class="p-2">4</td><td class="p-2">Материалы отпущены в производство</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">10</td><td class="p-2 text-right">15 000</td><td class="p-2">I</td></tr>
+              <tr><td class="p-2">5</td><td class="p-2">Выдана заработная плата из кассы</td><td class="p-2 font-mono">70</td><td class="p-2 font-mono">50</td><td class="p-2 text-right">20 000</td><td class="p-2">IV</td></tr>
+              <tr><td class="p-2">6</td><td class="p-2">Отгружена продукция покупателю</td><td class="p-2 font-mono">62</td><td class="p-2 font-mono">46</td><td class="p-2 text-right">80 000</td><td class="p-2">III</td></tr>
+              <tr><td class="p-2">7</td><td class="p-2">Списана себестоимость продукции</td><td class="p-2 font-mono">46</td><td class="p-2 font-mono">41</td><td class="p-2 text-right">50 000</td><td class="p-2">I</td></tr>
+              <tr><td class="p-2">8</td><td class="p-2">Поступила оплата от покупателя</td><td class="p-2 font-mono">51</td><td class="p-2 font-mono">62</td><td class="p-2 text-right">80 000</td><td class="p-2">I</td></tr>
+              <tr><td class="p-2">9</td><td class="p-2">Начислена заработная плата</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">70</td><td class="p-2 text-right">35 000</td><td class="p-2">III</td></tr>
+              <tr><td class="p-2">10</td><td class="p-2">Начислены страховые взносы</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">69</td><td class="p-2 text-right">10 500</td><td class="p-2">III</td></tr>
+              <tr><td class="p-2">11</td><td class="p-2">Удержан НДФЛ из зарплаты</td><td class="p-2 font-mono">70</td><td class="p-2 font-mono">68</td><td class="p-2 text-right">4 550</td><td class="p-2">II</td></tr>
+              <tr><td class="p-2">12</td><td class="p-2">Перечислен НДФЛ в бюджет</td><td class="p-2 font-mono">68</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">4 550</td><td class="p-2">IV</td></tr>
+              <tr><td class="p-2">13</td><td class="p-2">Приобретено оборудование</td><td class="p-2 font-mono">01</td><td class="p-2 font-mono">60</td><td class="p-2 text-right">60 000</td><td class="p-2">III</td></tr>
+              <tr><td class="p-2">14</td><td class="p-2">Оплачено оборудование</td><td class="p-2 font-mono">60</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">60 000</td><td class="p-2">IV</td></tr>
+              <tr><td class="p-2">15</td><td class="p-2">Начислена амортизация</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">02</td><td class="p-2 text-right">5 000</td><td class="p-2">I</td></tr>
+              <tr><td class="p-2">16</td><td class="p-2">Начислены счета за электроэнергию</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">60</td><td class="p-2 text-right">3 000</td><td class="p-2">III</td></tr>
+              <tr><td class="p-2">17</td><td class="p-2">Получен краткосрочный кредит</td><td class="p-2 font-mono">51</td><td class="p-2 font-mono">90</td><td class="p-2 text-right">100 000</td><td class="p-2">III</td></tr>
+              <tr><td class="p-2">18</td><td class="p-2">Погашена часть кредита</td><td class="p-2 font-mono">90</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">50 000</td><td class="p-2">IV</td></tr>
+              <tr><td class="p-2">19</td><td class="p-2">Определена прибыль от реализации</td><td class="p-2 font-mono">46</td><td class="p-2 font-mono">80</td><td class="p-2 text-right">30 000</td><td class="p-2">II</td></tr>
+              <tr><td class="p-2">20</td><td class="p-2">Начислен налог на прибыль</td><td class="p-2 font-mono">80</td><td class="p-2 font-mono">68</td><td class="p-2 text-right">6 000</td><td class="p-2">II</td></tr>
+              <tr><td class="p-2">21</td><td class="p-2">Перечислен налог на прибыль</td><td class="p-2 font-mono">68</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">6 000</td><td class="p-2">IV</td></tr>
+              <tr><td class="p-2">22</td><td class="p-2">Чистая прибыль направлена на капитал</td><td class="p-2 font-mono">80</td><td class="p-2 font-mono">88</td><td class="p-2 text-right">24 000</td><td class="p-2">II</td></tr>
+            </tbody>
+          </table>
+        </div>
+
         <!-- Итоговый баланс -->
         <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border-2 border-emerald-500 dark:border-emerald-400">
           <h3 class="font-bold text-xl mb-4 text-emerald-600 dark:text-emerald-400">Бухгалтерский баланс ООО «Smart_buh» на 31.10.2026</h3>
@@ -181,7 +270,7 @@
               <ul class="space-y-2 text-slate-700 dark:text-slate-300">
                 <li class="flex justify-between"><span>85 Уставный капитал</span><span>300 000</span></li>
                 <li class="flex justify-between"><span>88 Нераспределенная прибыль</span><span>24 000</span></li>
-                <li class="flex justify-between"><span>60 Поставщики (20-20+40+60+3)</span><span>43 000</span></li>
+                <li class="flex justify-between"><span>60 Поставщики (20-20+40+60-60+3)</span><span>43 000</span></li>
                 <li class="flex justify-between"><span>69 Страхование</span><span>10 500</span></li>
                 <li class="flex justify-between"><span>70 Оплата труда (20-20+35-4,55)</span><span>30 450</span></li>
                 <li class="flex justify-between"><span>90 Кредиты (100-50)</span><span>50 000</span></li>
@@ -190,7 +279,7 @@
             </div>
           </div>
           <div class="mt-4 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg text-center text-emerald-800 dark:text-emerald-300 font-bold">
-            ✅ Баланс сошелся! Актив (457 950) = Пассив (457 950)
+            Баланс сошелся! Актив (457 950) = Пассив (457 950)
           </div>
         </div>
       </div>
@@ -254,11 +343,11 @@
       if (isCorrect) {
         btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
         fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Верно!';
+        fb.textContent = 'Верно!';
       } else {
         btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
         fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
+        fb.textContent = 'Неверно. Попробуйте еще раз.';
       }
     }
 
@@ -269,11 +358,26 @@
       if (isCorrect) {
         btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
         fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Абсолютно верно!';
+        fb.textContent = 'Абсолютно верно!';
       } else {
         btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
         fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Подумайте, как меняются А и П.';
+        fb.textContent = 'Неверно. Подумайте, как меняются А и П.';
+      }
+    }
+
+    function checkEntry(id, correctDt, correctKt) {
+      const dt = document.getElementById(`${id}-dt`).value.trim();
+      const kt = document.getElementById(`${id}-kt`).value.trim();
+      const fb = document.getElementById(`${id}-feedback`);
+      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+      
+      if (dt === correctDt && kt === correctKt) {
+        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
+        fb.textContent = 'Верно!';
+      } else {
+        fb.classList.add('text-rose-600', 'dark:text-rose-400');
+        fb.textContent = `Неверно. Правильно: Дт ${correctDt} - Кт ${correctKt}`;
       }
     }
 
