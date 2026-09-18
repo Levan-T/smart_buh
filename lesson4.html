@@ -60,6 +60,13 @@
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p><b>Форма бухгалтерского учета</b> — это определенная система построения учетных регистров, порядок и способы записи в них хозяйственных операций, а также связь между регистрами синтетического и аналитического учета.</p>
         <p>Простыми словами, это <b>«маршрут»</b>, который проходит документ от момента его создания до попадания в итоговую отчетность.</p>
+        <p>Выбор формы зависит от масштаба бизнеса, количества операций, штата бухгалтерии и степени автоматизации. Выделяют 4 формы бухгалтерского учета:</p>
+        <ol class="space-y-1 text-sm text-slate-700 dark:text-slate-300 list-decimal list-inside mt-2">
+          <li>Журнал-Главная</li>
+          <li>Мемориально-ордерная</li>
+          <li>Журнально-ордерная</li>
+          <li>Автоматизированная</li>
+        </ol>
       </div>
 
       <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
@@ -83,12 +90,6 @@
           </li>
         </ol>
       </div>
-
-      <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
-        <p class="text-sm text-emerald-800 dark:text-emerald-300">
-          <b> Важно:</b> Выбор формы зависит от масштаба бизнеса, количества операций, штата бухгалтерии и степени автоматизации. Выделяют <b>4 формы</b> бухгалтерского учета.
-        </p>
-      </div>
     </section>
 
     <!-- Раздел 2: Журнал-Главная -->
@@ -97,12 +98,12 @@
         <span>2.</span> Форма «Журнал-Главная»
       </h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
-        <p><b>Журнал-Главная</b> — это простейшая форма учета, которая подходит для <b>малых предприятий</b> с небольшим количеством хозяйственных операций (до 50-100 в месяц).</p>
+        <p><b>Журнал-Главная</b> — это простейшая форма учета, которая подходит для <b>малых предприятий</b> с небольшим количеством хозяйственных операций.</p>
         <p>Все операции за месяц записываются в хронологическом порядке в одну единую книгу — Журнал-Главную, которая одновременно выполняет роль и хронологической записи, и Главной книги.</p>
       </div>
 
       <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
-        <h3 class="font-bold text-slate-900 dark:text-white mb-3">📊 Схема движения документов:</h3>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-3"> Схема движения документов:</h3>
         <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm">
           <div class="bg-blue-100 dark:bg-blue-950/50 p-3 rounded-xl text-center">
             <b>Первичный документ</b>
@@ -124,7 +125,7 @@
       </button>
       <div id="example-jg" class="hidden space-y-4">
         <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
-          <h4 class="font-bold text-slate-900 dark:text-white mb-3">Журнал-Главная за январь 2026 г.</h4>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3">Журнал-Главная за октябрь 2026 г.</h4>
           <table class="w-full text-xs">
             <thead class="bg-slate-100 dark:bg-slate-700/60">
               <tr>
@@ -137,43 +138,50 @@
             </thead>
             <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
               <tr>
-                <td class="p-2">05.01</td>
-                <td class="p-2">ПКО №1</td>
-                <td class="p-2">Получено в кассу с расчетного счета</td>
+                <td class="p-2">02.10</td>
+                <td class="p-2">Чек №01</td>
+                <td class="p-2">Снято в кассу с расчетного счета</td>
                 <td class="p-2 text-right">50 000</td>
                 <td class="p-2">Дт 50 – Кт 51</td>
               </tr>
               <tr>
-                <td class="p-2">07.01</td>
-                <td class="p-2">РКО №1</td>
-                <td class="p-2">Выдано под отчет сотруднику</td>
+                <td class="p-2">02.10</td>
+                <td class="p-2">ТТН №15</td>
+                <td class="p-2">Поступили материалы от поставщика</td>
+                <td class="p-2 text-right">30 000</td>
+                <td class="p-2">Дт 10 – Кт 60</td>
+              </tr>
+              <tr>
+                <td class="p-2">02.10</td>
+                <td class="p-2">РКО №01</td>
+                <td class="p-2">Выдана заработная плата из кассы</td>
+                <td class="p-2 text-right">40 000</td>
+                <td class="p-2">Дт 70 – Кт 50</td>
+              </tr>
+              <tr>
+                <td class="p-2">05.10</td>
+                <td class="p-2">ПКО №02</td>
+                <td class="p-2">Взнос наличными на расчетный счет</td>
                 <td class="p-2 text-right">10 000</td>
-                <td class="p-2">Дт 71 – Кт 50</td>
+                <td class="p-2">Дт 51 – Кт 50</td>
               </tr>
               <tr>
-                <td class="p-2">10.01</td>
-                <td class="p-2">Авансовый отчет</td>
-                <td class="p-2">Оприходованы материалы от подотчетного лица</td>
-                <td class="p-2 text-right">8 500</td>
-                <td class="p-2">Дт 10 – Кт 71</td>
-              </tr>
-              <tr>
-                <td class="p-2">15.01</td>
-                <td class="p-2">Накладная №1</td>
-                <td class="p-2">Отгружена продукция покупателю</td>
-                <td class="p-2 text-right">120 000</td>
-                <td class="p-2">Дт 62 – Кт 46</td>
+                <td class="p-2">12.10</td>
+                <td class="p-2">РКО №02</td>
+                <td class="p-2">Оплата поставщику наличными</td>
+                <td class="p-2 text-right">5 000</td>
+                <td class="p-2">Дт 60 – Кт 50</td>
               </tr>
               <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
                 <td class="p-2" colspan="3">ИТОГО оборот за месяц</td>
-                <td class="p-2 text-right">188 500</td>
+                <td class="p-2 text-right">135 000</td>
                 <td class="p-2"></td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-3 rounded-r-xl text-xs text-emerald-800 dark:text-emerald-300">
-          <b>💡 Обратите внимание:</b> Все операции записываются в хронологическом порядке в одну книгу. Для поиска информации по конкретному счету нужно просматривать всю книгу.
+          <b> Обратите внимание:</b> Все операции записываются в хронологическом порядке в одну книгу. Для поиска информации по конкретному счету нужно просматривать всю книгу.
         </div>
       </div>
 
@@ -186,15 +194,14 @@
               <li>• Простота ведения</li>
               <li>• Минимум регистров</li>
               <li>• Легко освоить</li>
-              <li>• Подходит для малого объема операций</li>
             </ul>
           </div>
           <div>
             <h4 class="font-semibold text-rose-600 dark:text-rose-400 mb-2">Недостатки:</h4>
             <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
-              <li>• Неудобно при большом объеме операций</li>
+              <li>• Неудобна при большом объеме операций</li>
               <li>• Нет группировки по счетам</li>
-              <li>• Сложно найти нужную запись</li>
+              <li>• Сложно искать конкретные данные</li>
               <li>• Трудоемко составлять баланс</li>
             </ul>
           </div>
@@ -203,7 +210,7 @@
 
       <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
         <p class="text-sm text-blue-800 dark:text-blue-300">
-          <b>🏢 Для кого подходит:</b> Малые предприятия с небольшим объемом операций (до 50-100 операций в месяц), индивидуальные предприниматели, организации с простой структурой учета.
+          <b>🏢 Для кого подходит:</b> Малые предприятия с небольшим объемом операций.
         </p>
       </div>
     </section>
@@ -231,6 +238,11 @@
           </div>
           <div class="text-emerald-500 text-2xl">→</div>
           <div class="bg-amber-100 dark:bg-amber-950/50 p-3 rounded-xl text-center">
+            <b>Журнал регистрации МО</b><br>
+            <span class="text-xs">(хронологический учет)</span>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-rose-100 dark:bg-rose-950/50 p-3 rounded-xl text-center">
             <b>Главная книга</b>
           </div>
           <div class="text-emerald-500 text-2xl">→</div>
@@ -240,87 +252,149 @@
         </div>
       </div>
 
-      <button onclick="toggleExample('mo1')" id="btn-mo1" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
-        👁 Показать пример Мемориального ордера №1
+      <button onclick="toggleExample('mo')" id="btn-mo" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
+        👁 Показать примеры мемориальных ордеров и журнал регистрации
       </button>
-      <div id="example-mo1" class="hidden space-y-4">
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
-          <h4 class="font-bold text-slate-900 dark:text-white mb-3">Мемориальный ордер №1 за январь 2026 г.</h4>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">По кредиту счета 50 «Касса»</p>
-          <table class="w-full text-xs">
-            <thead class="bg-slate-100 dark:bg-slate-700/60">
-              <tr>
-                <th class="p-2 text-left">Дата</th>
-                <th class="p-2 text-left">№ документа</th>
-                <th class="p-2 text-left">Корр. счет (Дт)</th>
-                <th class="p-2 text-left">Содержание операции</th>
-                <th class="p-2 text-right">Сумма, руб.</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-              <tr>
-                <td class="p-2">07.01</td>
-                <td class="p-2">РКО №1</td>
-                <td class="p-2">71</td>
-                <td class="p-2">Выдано под отчет сотруднику</td>
-                <td class="p-2 text-right">10 000</td>
-              </tr>
-              <tr>
-                <td class="p-2">12.01</td>
-                <td class="p-2">РКО №2</td>
-                <td class="p-2">70</td>
-                <td class="p-2">Выдана зарплата сотруднику</td>
-                <td class="p-2 text-right">25 000</td>
-              </tr>
-              <tr>
-                <td class="p-2">22.01</td>
-                <td class="p-2">РКО №3</td>
-                <td class="p-2">60</td>
-                <td class="p-2">Оплачено поставщику наличными</td>
-                <td class="p-2 text-right">45 000</td>
-              </tr>
-              <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
-                <td class="p-2" colspan="4">ИТОГО оборот по кредиту сч. 50</td>
-                <td class="p-2 text-right">80 000</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <button onclick="toggleExample('mo2')" id="btn-mo2" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
-        👁 Показать пример Мемориального ордера №05 (официальная форма)
-      </button>
-      <div id="example-mo2" class="hidden space-y-4">
+      <div id="example-mo" class="hidden space-y-4">
+        
+        <!-- Мемориальный ордер №1 -->
         <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
           <div class="border border-slate-300 dark:border-slate-600 p-4 rounded-xl">
-            <h4 class="font-bold text-slate-900 dark:text-white text-center mb-2">МЕМОРИАЛЬНЫЙ ОРДЕР № 05</h4>
-            <p class="text-xs text-center text-slate-500 dark:text-slate-400 mb-4">от «02» октября 2026 г.</p>
-            <p class="text-xs mb-2"><b>Содержание операции:</b> Выплата заработной платы персоналу из кассы</p>
-            <p class="text-xs mb-4"><b>Основание:</b> Платежная ведомость № 12, РКО № 01</p>
+            <h4 class="font-bold text-slate-900 dark:text-white text-center mb-1">МЕМОРИАЛЬНЫЙ ОРДЕР № 01</h4>
+            <p class="text-xs text-center text-slate-500 dark:text-slate-400 mb-3">от «02» октября 2026 г.</p>
+            <p class="text-xs mb-1"><b>Содержание операции:</b> Расходные операции по кассе</p>
+            <p class="text-xs mb-3"><b>Корреспондирующий счет:</b> Кредит счета 50 «Касса»</p>
+            <p class="text-xs mb-3"><b>Основание:</b> РКО №01, РКО №02, ПКО №02</p>
             <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
               <thead>
                 <tr class="bg-slate-100 dark:bg-slate-700">
-                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Дебет (счет / субсчет)</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Кредит (счет / субсчет)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Дата</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">№ первичного документа</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Дебет (счет)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Содержание операции</th>
                   <th class="border border-slate-300 dark:border-slate-600 p-2 text-right">Сумма (руб.)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">02.10</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">РКО №01</td>
                   <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">70</td>
-                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">50</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Выдана заработная плата из кассы</td>
                   <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">40 000</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">05.10</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">ПКО №02</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">51</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Взнос наличными на расчетный счет</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">10 000</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">12.10</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">РКО №02</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">60</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Оплата поставщику наличными</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">5 000</td>
+                </tr>
+                <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
+                  <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="4">ИТОГО по кредиту счета 50 «Касса»</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">55 000</td>
                 </tr>
               </tbody>
             </table>
-            <div class="mt-4 text-xs">
+            <div class="mt-3 text-xs flex justify-between">
+              <p>Составил бухгалтер: _________ (Подпись)</p>
               <p>Главный бухгалтер: _________ (Подпись)</p>
             </div>
           </div>
         </div>
+
+        <!-- Мемориальный ордер №5 -->
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
+          <div class="border border-slate-300 dark:border-slate-600 p-4 rounded-xl">
+            <h4 class="font-bold text-slate-900 dark:text-white text-center mb-1">МЕМОРИАЛЬНЫЙ ОРДЕР № 05</h4>
+            <p class="text-xs text-center text-slate-500 dark:text-slate-400 mb-3">от «02» октября 2026 г.</p>
+            <p class="text-xs mb-1"><b>Содержание операции:</b> Поступление материалов от поставщика</p>
+            <p class="text-xs mb-3"><b>Корреспондирующий счет:</b> Кредит счета 60 «Расчеты с поставщиками»</p>
+            <p class="text-xs mb-3"><b>Основание:</b> ТТН №15</p>
+            <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+              <thead>
+                <tr class="bg-slate-100 dark:bg-slate-700">
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Дата</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">№ первичного документа</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Дебет (счет)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Содержание операции</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-right">Сумма (руб.)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">02.10</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">ТТН №15</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">10</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Поступили материалы от поставщика</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">30 000</td>
+                </tr>
+                <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
+                  <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="4">ИТОГО по кредиту счета 60 «Расчеты с поставщиками»</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">30 000</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="mt-3 text-xs flex justify-between">
+              <p>Составил бухгалтер: _________ (Подпись)</p>
+              <p>Главный бухгалтер: _________ (Подпись)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Журнал регистрации мемориальных ордеров -->
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
+          <div class="border border-slate-300 dark:border-slate-600 p-4 rounded-xl">
+            <h4 class="font-bold text-slate-900 dark:text-white text-center mb-1">ЖУРНАЛ РЕГИСТРАЦИИ МЕМОРИАЛЬНЫХ ОРДЕРОВ</h4>
+            <p class="text-xs text-center text-slate-500 dark:text-slate-400 mb-3">за октябрь 2026 г.</p>
+            <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+              <thead>
+                <tr class="bg-slate-100 dark:bg-slate-700">
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-center">№ мемориального ордера</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-center">Дата</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Кредитуемый счет</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-center">Количество документов</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-right">Сумма (руб.)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-center">Отметка о записи в Главную книгу</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">01</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">02.10.2026</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">50 «Касса»</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">3</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">55 000</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">✓</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">05</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">02.10.2026</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">60 «Расчеты с поставщиками»</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">1</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">30 000</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">✓</td>
+                </tr>
+                <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
+                  <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="3">ИТОГО за октябрь 2026 г.</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">4</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">85 000</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-3 rounded-r-xl text-xs text-emerald-800 dark:text-emerald-300">
-          <b>💡 Принцип:</b> Все операции, где кредитующий счет — 50 «Касса», собираются в один мемориальный ордер. Это позволяет легко контролировать движение наличных.
+          <b>💡 Принцип:</b> Все операции сначала группируются в мемориальные ордера по кредитующим счетам, затем ордера регистрируются в Журнале регистрации (в хронологическом порядке), и только после этого данные переносятся в Главную книгу. Это позволяет контролировать полноту отражения операций.
         </div>
       </div>
 
@@ -332,7 +406,7 @@
             <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
               <li>• Четкая группировка операций</li>
               <li>• Упрощение работы с Главной книгой</li>
-              <li>• Возможность разделения труда</li>
+              <li>• Возможность разделения труда между бухгалтерами</li>
               <li>• Контроль по каждому счету</li>
             </ul>
           </div>
@@ -400,42 +474,55 @@
               <tr>
                 <th class="p-2 text-left">Кредит \ Дебет</th>
                 <th class="p-2 text-center">10<br><span class="font-normal">(Материалы)</span></th>
-                <th class="p-2 text-center">20<br><span class="font-normal">(Производство)</span></th>
                 <th class="p-2 text-center">50<br><span class="font-normal">(Касса)</span></th>
                 <th class="p-2 text-center">51<br><span class="font-normal">(Расч. счет)</span></th>
+                <th class="p-2 text-center">60<br><span class="font-normal">(Поставщики)</span></th>
+                <th class="p-2 text-center">70<br><span class="font-normal">(Зарплата)</span></th>
                 <th class="p-2 text-center font-bold">Итого по Кредиту</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
               <tr>
-                <td class="p-2 font-semibold">60 (Поставщики)</td>
+                <td class="p-2 font-semibold">50 (Касса)</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center">10 000</td>
+                <td class="p-2 text-center">5 000</td>
+                <td class="p-2 text-center">40 000</td>
+                <td class="p-2 text-center font-bold">55 000</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-semibold">51 (Расч. счет)</td>
+                <td class="p-2 text-center">-</td>
                 <td class="p-2 text-center">50 000</td>
                 <td class="p-2 text-center">-</td>
                 <td class="p-2 text-center">-</td>
-                <td class="p-2 text-center">45 000</td>
-                <td class="p-2 text-center font-bold">95 000</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center font-bold">50 000</td>
               </tr>
               <tr>
-                <td class="p-2 font-semibold">70 (Зарплата)</td>
+                <td class="p-2 font-semibold">60 (Поставщики)</td>
+                <td class="p-2 text-center">30 000</td>
                 <td class="p-2 text-center">-</td>
-                <td class="p-2 text-center">80 000</td>
-                <td class="p-2 text-center">25 000</td>
                 <td class="p-2 text-center">-</td>
-                <td class="p-2 text-center font-bold">105 000</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center font-bold">30 000</td>
               </tr>
               <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
                 <td class="p-2">Итого по Дебету</td>
+                <td class="p-2 text-center">30 000</td>
                 <td class="p-2 text-center">50 000</td>
-                <td class="p-2 text-center">80 000</td>
-                <td class="p-2 text-center">25 000</td>
-                <td class="p-2 text-center">45 000</td>
-                <td class="p-2 text-center">200 000</td>
+                <td class="p-2 text-center">10 000</td>
+                <td class="p-2 text-center">5 000</td>
+                <td class="p-2 text-center">40 000</td>
+                <td class="p-2 text-center">135 000</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-3 rounded-r-xl text-xs text-emerald-800 dark:text-emerald-300">
-          <b>💡 Контроль:</b> Итог по строке "Итого Кредит" должен равняться итогу по столбцу "Итого Дебет". В нашем примере: 200 000 = 200 000 ✅
+          <b>💡 Контроль:</b> Итог по строке "Итого Кредит" должен равняться итогу по столбцу "Итого Дебет". В нашем примере: 135 000 = 135 000 ✅
         </div>
       </div>
 
@@ -599,7 +686,7 @@
               <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
                 <td class="p-3 font-semibold text-slate-900 dark:text-white">Кол-во регистров</td>
                 <td class="p-3 text-slate-700 dark:text-slate-300">1 (Журнал-Главная)</td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">Много (Ордера + Гл. книга)</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Много (МО + Журнал регистрации + Гл. книга)</td>
                 <td class="p-3 text-slate-700 dark:text-slate-300">Много (Журналы + Шахматка)</td>
                 <td class="p-3 text-slate-700 dark:text-slate-300">Виртуальные (в базе данных)</td>
               </tr>
@@ -613,7 +700,7 @@
               <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
                 <td class="p-3 font-semibold text-slate-900 dark:text-white">Контроль ошибок</td>
                 <td class="p-3 text-slate-700 dark:text-slate-300">Сложный</td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">Средний</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Средний (журнал регистрации)</td>
                 <td class="p-3 text-slate-700 dark:text-slate-300">Высокий (шахматка)</td>
                 <td class="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">Автоматический</td>
               </tr>
