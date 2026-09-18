@@ -43,8 +43,7 @@
 
     <!-- Заголовок -->
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <div class="text-xs font-semibold tracking-wider text-blue-600 dark:text-emerald-400 uppercase">Тема 2 • Теория бухучета</div>
-      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 leading-tight">
         УРОК 2. Понятие бухгалтерского счета и плана счетов
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
@@ -54,8 +53,8 @@
 
     <!-- Раздел 1 -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">1.</span> Зачем нужна система счетов?
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>1.</span> Зачем нужна система счетов?
       </h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p>Бухгалтерский учет невозможен без системы, позволяющей упорядочить огромное количество разнородных операций хозяйственной жизни организации. Каждый день на предприятии происходят десятки, а то и сотни операций: поступают материалы, отпускаются в производство, начисляется зарплата, приходят деньги от покупателей, уходят платежи поставщикам и так далее.</p>
@@ -93,8 +92,8 @@
 
     <!-- Раздел 2 -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">2.</span> Строение бухгалтерского счета («Т-счет»)
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>2.</span> Строение бухгалтерского счета («Т-счет»)
       </h2>
       <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
         Графически бухгалтерский счет представляет собой двухстороннюю таблицу, в которой левая сторона называется <b>Дебет (Дт)</b>, а правая — <b>Кредит (Кт)</b>. Остатки на счете на начало и конец периода называются <b>Сальдо</b>, а сумма операций за период — <b>Оборотом</b>.
@@ -128,10 +127,33 @@
       </div>
     </section>
 
-    <!-- Раздел 2.5: Практика -->
+    <!-- Раздел 3 -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">2.5.</span> Практика: разноска операций по счетам
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>3.</span> Двойная запись и План счетов
+      </h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p>Любая хозяйственная операция вызывает равновеликие изменения в двух статьях баланса, при этом равенство итогов актива и пассива не нарушается. В этом и заключается суть <b>двойной записи</b>.</p>
+        <p>Счета, между которыми возникает двойная запись, называются <b>корреспондирующими</b>, а отображаемые с помощью счетов операции – <b>корреспонденцией счетов</b> или бухгалтерской проводкой.</p>
+        <p>Систематизированный перечень счетов, который формирует построение системы бухгалтерского учета, называется <b>Планом счетов</b>. Он носит универсальный характер. На его основе каждая организация утверждает свой рабочий план счетов.</p>
+      </div>
+    </section>
+
+    <!-- Раздел 4 -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>4.</span> Справочник: План счетов
+      </h2>
+      <div class="space-y-3 pt-2">
+        <input id="account-search" type="text" placeholder="🔍 Поиск счета (например: 46, 85, Касса, Прибыль)..." onkeyup="filterAccounts()" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 text-sm shadow-sm">
+        <div id="plan-schetov-container" class="space-y-3 max-h-[600px] overflow-y-auto pr-1"></div>
+      </div>
+    </section>
+
+    <!-- 🆕 Раздел 5: Примеры типовых проводок -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>5.</span> Примеры типовых проводок
       </h2>
       <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
         Рассмотрим несколько типовых хозяйственных операций и проследим, как каждая из них отражается на Т-счетах. Нажимайте на кнопку, чтобы увидеть проводку и движение по счетам.
@@ -144,7 +166,7 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 italic">Суть: Организация пополняет кассу наличными деньгами для текущих нужд. Денег стало больше в кассе, но меньше на расчетном счете. Валюта баланса не меняется.</p>
         </div>
         <div class="p-4 space-y-4">
-          <button onclick="toggleOp(1)" id="btn-op-1" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
+          <button onclick="toggleOp(1)" id="btn-op-1" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
           <div id="op-1" class="hidden space-y-4">
             <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded-xl text-sm font-mono text-center">
               <b>Дт 50</b> «Касса» — <b>Кт 51</b> «Расчетный счет» — <b>30 000 руб.</b>
@@ -191,7 +213,7 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 italic">Суть: Организация получила сырье на склад, увеличив свои запасы (актив), но пока не заплатила за него, из-за чего возник долг перед поставщиком (обязательство).</p>
         </div>
         <div class="p-4 space-y-4">
-          <button onclick="toggleOp(2)" id="btn-op-2" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
+          <button onclick="toggleOp(2)" id="btn-op-2" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
           <div id="op-2" class="hidden space-y-4">
             <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded-xl text-sm font-mono text-center">
               <b>Дт 10</b> «Материалы» — <b>Кт 60</b> «Расчеты с поставщиками» — <b>50 000 руб.</b>
@@ -239,7 +261,7 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 italic">Суть: Банк перечислил деньги на расчетный счет организации. Денежные средства компании выросли (актив +), но одновременно вырос и долг компании перед банком (обязательство +).</p>
         </div>
         <div class="p-4 space-y-4">
-          <button onclick="toggleOp(3)" id="btn-op-3" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
+          <button onclick="toggleOp(3)" id="btn-op-3" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
           <div id="op-3" class="hidden space-y-4">
             <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded-xl text-sm font-mono text-center">
               <b>Дт 51</b> «Расчетный счет» — <b>Кт 90</b> «Краткосрочные кредиты банков» — <b>100 000 руб.</b>
@@ -287,7 +309,7 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 italic">Суть: Учредитель оплатил свою долю в бизнесе. Денежные средства организации выросли (актив +), и одновременно вырос её собственный капитал (пассив +).</p>
         </div>
         <div class="p-4 space-y-4">
-          <button onclick="toggleOp(4)" id="btn-op-4" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
+          <button onclick="toggleOp(4)" id="btn-op-4" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
           <div id="op-4" class="hidden space-y-4">
             <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded-xl text-sm font-mono text-center">
               <b>Дт 51</b> «Расчетный счет» — <b>Кт 85</b> «Уставный капитал» — <b>500 000 руб.</b>
@@ -335,7 +357,7 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 italic">Суть: Организация признала расход на оплату труда за месяц. Затраты на производство (актив/затраты) увеличились, и одновременно вырос долг организации перед сотрудниками.</p>
         </div>
         <div class="p-4 space-y-4">
-          <button onclick="toggleOp(5)" id="btn-op-5" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
+          <button onclick="toggleOp(5)" id="btn-op-5" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
           <div id="op-5" class="hidden space-y-4">
             <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded-xl text-sm font-mono text-center">
               <b>Дт 20</b> «Основное производство» — <b>Кт 70</b> «Расчеты с персоналом» — <b>80 000 руб.</b>
@@ -383,7 +405,7 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 italic">Суть: Организация выдала сотрудникам заработанную плату наличными. Денежные средства в кассе уменьшились (актив -), и одновременно уменьшился долг организации перед персоналом (пассив -).</p>
         </div>
         <div class="p-4 space-y-4">
-          <button onclick="toggleOp(6)" id="btn-op-6" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
+          <button onclick="toggleOp(6)" id="btn-op-6" class="w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">👁 Показать проводку и Т-счета</button>
           <div id="op-6" class="hidden space-y-4">
             <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded-xl text-sm font-mono text-center">
               <b>Дт 70</b> «Расчеты с персоналом» — <b>Кт 50</b> «Касса» — <b>25 000 руб.</b>
@@ -428,41 +450,302 @@
 
     </section>
 
-    <!-- Раздел 3 -->
-    <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">3.</span> Двойная запись и План счетов
+    <!-- Раздел 6: Тест -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>6.</span> Проверка знаний
       </h2>
-      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
-        <p>Любая хозяйственная операция вызывает равновеликие изменения в двух статьях баланса, при этом равенство итогов актива и пассива не нарушается. В этом и заключается суть <b>двойной записи</b>.</p>
-        <p>Счета, между которыми возникает двойная запись, называются <b>корреспондирующими</b>, а отображаемые с помощью счетов операции – <b>корреспонденцией счетов</b> или бухгалтерской проводкой.</p>
-        <p>Систематизированный перечень счетов, который формирует построение системы бухгалтерского учета, называется <b>Планом счетов</b>. Он носит универсальный характер. На его основе каждая организация утверждает свой рабочий план счетов.</p>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Ответьте на 5 вопросов, чтобы закрепить материал урока.</p>
+
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">1. Как называется левая сторона бухгалтерского счета?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q1',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Кредит</button>
+          <button onclick="checkAnswer('q1',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Дебет</button>
+          <button onclick="checkAnswer('q1',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Сальдо</button>
+        </div>
+        <div id="q1-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">2. На каком счете отражается выручка от реализации продукции?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q2',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) 80 «Прибыли и убытки»</button>
+          <button onclick="checkAnswer('q2',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) 46 «Реализация продукции»</button>
+          <button onclick="checkAnswer('q2',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) 62 «Расчеты с покупателями»</button>
+        </div>
+        <div id="q2-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">3. Какое сальдо всегда имеет пассивный счет?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q3',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Дебетовое</button>
+          <button onclick="checkAnswer('q3',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Кредитовое</button>
+          <button onclick="checkAnswer('q3',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Нулевое</button>
+        </div>
+        <div id="q3-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">4. Что такое корреспонденция счетов?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q4',0,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Взаимная связь между счетами при двойной записи</button>
+          <button onclick="checkAnswer('q4',1,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Письменное доказательство совершения операции</button>
+          <button onclick="checkAnswer('q4',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Итоговая сумма баланса</button>
+        </div>
+        <div id="q4-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">5. Как называется счет, который может иметь как дебетовое, так и кредитовое сальдо?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q5',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Активный</button>
+          <button onclick="checkAnswer('q5',1,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Пассивный</button>
+          <button onclick="checkAnswer('q5',2,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Активно-пассивный</button>
+        </div>
+        <div id="q5-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
       </div>
     </section>
 
-    <!-- Раздел 4 -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">4.</span> Справочник: План счетов
-      </h2>
-      <div class="space-y-3 pt-2">
-        <input id="account-search" type="text" placeholder="🔍 Поиск счета (например: 46, 85, Касса, Прибыль)..." onkeyup="filterAccounts()" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-400 text-sm shadow-sm">
-        <div id="plan-schetov-container" class="space-y-3 max-h-[600px] overflow-y-auto pr-1"></div>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 bg-white dark:bg-slate-950 mt-12">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+      <div class="flex space-x-4">
+        <a href="lesson1.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 1</a>
+        <a href="lesson3.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 3 →</a>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <!-- 🆕 Раздел 5: Примеры типовых проводок -->
-    <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="text-blue-600 dark:text-emerald-400">5.</span> Примеры типовых проводок
-      </h2>
-      <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-        Рассмотрим типовые хозяйственные операции и соответствующие им бухгалтерские проводки. Это поможет понять, как теория применяется на практике.
-      </p>
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
 
-      <div class="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead class="bg-slate-100 dark:bg-slate-700/60">
-              <tr>
-                <th class="p-3 text-left font-bold text-slate-900 dark:text-white">№</th>
+    const tAccountData = {
+      active: {
+        title: "Активный счет (А) — Учет имущества: 01, 10, 50, 51",
+        desc: "Сальдо начальное и конечное только по Дебету. Поступление/увеличение — Дебет, списание/уменьшение — Кредит.",
+        formula: "Ск = Сн + Оборот_Дт - Оборот_Кт",
+        debet: ["Начальное сальдо (Сн)", "Увеличение (+)", "Дебетовый оборот"],
+        kredit: ["—", "Уменьшение (-)", "Кредитовый оборот"]
+      },
+      passive: {
+        title: "Пассивный счет (П) — Учет капитала и обязательств: 85, 70",
+        desc: "Сальдо начальное и конечное только по Кредиту. Возникновение/увеличение источника — Кредит, погашение/уменьшение — Дебет.",
+        formula: "Ск = Сн + Оборот_Кт - Оборот_Дт",
+        debet: ["—", "Уменьшение (-)", "Дебетовый оборот"],
+        kredit: ["Начальное сальдо (Сн)", "Увеличение (+)", "Кредитовый оборот"]
+      },
+      'act-pas': {
+        title: "Активно-Пассивный счет (А-П) — Учет расчетов: 60, 62, 46, 76",
+        desc: "Может иметь развернутое сальдо (одновременно и по Дебету как дебиторка, и по Кредиту как кредиторка).",
+        formula: "Ск_Дт = (Сн_Дт + Об_Дт) - Об_Кт  |  Ск_Кт = (Сн_Кт + Об_Кт) - Об_Дт",
+        debet: ["Дебиторский остаток (Сн)", "Рост дебиторки / Снижение кредиторки"],
+        kredit: ["Кредиторский остаток (Сн)", "Рост кредиторки / Снижение дебиторки"]
+      }
+    };
+
+    function switchAccountType(type) {
+      ['active', 'passive', 'act-pas'].forEach(t => {
+        const btn = document.getElementById(`btn-${t}`);
+        btn.className = (t === type)
+          ? "px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white dark:bg-emerald-500 dark:text-slate-950"
+          : "px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-200";
+      });
+      const data = tAccountData[type];
+      document.getElementById('t-account-display').innerHTML = `
+        <div class="space-y-1">
+          <h4 class="font-bold text-base text-slate-900 dark:text-white">${data.title}</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400">${data.desc}</p>
+        </div>
+        <div class="border border-slate-300 dark:border-slate-700 rounded-xl overflow-hidden text-sm">
+          <div class="grid grid-cols-2 bg-slate-100 dark:bg-slate-700/60 font-bold border-b border-slate-300 dark:border-slate-700 text-center py-2">
+            <div class="border-r border-slate-300 dark:border-slate-700 text-blue-600 dark:text-emerald-400">Дебет (Дт)</div>
+            <div class="text-rose-600 dark:text-rose-400">Кредит (Кт)</div>
+          </div>
+          <div class="grid grid-cols-2 divide-x divide-slate-300 dark:divide-slate-700 p-4 gap-4 bg-slate-50/50 dark:bg-slate-900/40">
+            <ul class="space-y-1 text-xs">${data.debet.map(i => `<li>• ${i}</li>`).join('')}</ul>
+            <ul class="space-y-1 text-xs">${data.kredit.map(i => `<li>• ${i}</li>`).join('')}</ul>
+          </div>
+          <div class="bg-slate-200/60 dark:bg-slate-800/80 p-2 text-center text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border-t border-slate-300 dark:border-slate-700">${data.formula}</div>
+        </div>`;
+    }
+
+    function toggleOp(n) {
+      const el = document.getElementById(`op-${n}`);
+      const btn = document.getElementById(`btn-op-${n}`);
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        btn.innerHTML = '🙈 Скрыть';
+        btn.className = 'w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:opacity-90';
+      } else {
+        el.classList.add('hidden');
+        btn.innerHTML = '👁 Показать проводку и Т-счета';
+        btn.className = 'w-full px-4 py-2 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90';
+      }
+    }
+
+    const planSections = [
+      { title: "Раздел I. Основные средства и другие долгосрочные вложения", accounts: [
+        { code: "01", name: "Основные средства", sub: "Собственные и арендованные ОС", type: "А" },
+        { code: "02", name: "Износ основных средств", sub: "Амортизация ОС", type: "П" },
+        { code: "03", name: "Доходные вложения в материальные ценности", sub: "Имущество для сдачи в аренду/лизинг", type: "А" },
+        { code: "04", name: "Нематериальные активы", sub: "Права, лицензии, патенты, ПО", type: "А" },
+        { code: "05", name: "Амортизация нематериальных активов", sub: "Накопленная амортизация НМА", type: "П" },
+        { code: "06", name: "Долгосрочные финансовые вложения", sub: "Паи, акции, облигации, займы", type: "А" },
+        { code: "07", name: "Оборудование к установке", sub: "Технологическое оборудование", type: "А" },
+        { code: "08", name: "Капитальные вложения", sub: "Строительство и покупка ОС, НМА", type: "А" }
+      ]},
+      { title: "Раздел II. Производственные запасы", accounts: [
+        { code: "10", name: "Материалы", sub: "Сырье, топливо, тара, запчасти", type: "А" },
+        { code: "11", name: "Животные на выращивании и откорме", sub: "Молодняк и скот", type: "А" },
+        { code: "12", name: "Малоценные и быстроизнашивающиеся предметы", sub: "МБП в запасе и эксплуатации", type: "А" },
+        { code: "13", name: "Износ МБП", sub: "Амортизация МБП", type: "П" },
+        { code: "14", name: "Переоценка материальных ценностей", sub: "Резерв обесценения", type: "П" },
+        { code: "15", name: "Заготовление и приобретение материалов", sub: "Учет заготовления", type: "А" },
+        { code: "16", name: "Отклонение в стоимости материалов", sub: "Разница фактической и учетной цены", type: "А-П" },
+        { code: "18", name: "Акцизы по оплаченным материальным ресурсам", sub: "Учет акцизов", type: "А" },
+        { code: "19", name: "НДС по приобретенным ценностям", sub: "Входной НДС", type: "А" }
+      ]},
+      { title: "Раздел III. Затраты на производство", accounts: [
+        { code: "20", name: "Основное производство", sub: "Прямые затраты на выпуск", type: "А" },
+        { code: "21", name: "Полуфабрикаты собственного производства", sub: "Полуготовая продукция", type: "А" },
+        { code: "23", name: "Вспомогательные производства", sub: "Ремонтные и автотранспортные цеха", type: "А" },
+        { code: "25", name: "Общепроизводственные расходы", sub: "Затраты на обслуживание цехов", type: "А" },
+        { code: "26", name: "Общехозяйственные расходы", sub: "Административно-управленческие", type: "А" },
+        { code: "28", name: "Брак в производстве", sub: "Потери от брака", type: "А" },
+        { code: "29", name: "Обслуживающие производства и хозяйства", sub: "ЖКХ, столовые", type: "А" },
+        { code: "30", name: "Некапитальные работы", sub: "Временные сооружения", type: "А" },
+        { code: "31", name: "Расходы будущих периодов", sub: "Затраты будущих периодов", type: "А" },
+        { code: "36", name: "Выполненные этапы по незавершенным работам", sub: "По видам работ", type: "А" },
+        { code: "37", name: "Выпуск продукции (работ, услуг)", sub: "Отклонения себестоимости", type: "А" }
+      ]},
+      { title: "Раздел IV. Готовая продукция, товары и реализация", accounts: [
+        { code: "40", name: "Готовая продукция", sub: "На складе", type: "А" },
+        { code: "41", name: "Товары", sub: "Склады, розница, тара", type: "А" },
+        { code: "42", name: "Торговая наценка", sub: "Скидки, накидки", type: "П" },
+        { code: "43", name: "Коммерческие расходы", sub: "Расходы на продажу", type: "А" },
+        { code: "44", name: "Издержки обращения", sub: "Коммерческие расходы торговли", type: "А" },
+        { code: "45", name: "Товары отгруженные", sub: "До перехода права собственности", type: "А" },
+        { code: "46", name: "Реализация продукции (работ, услуг)", sub: "Выручка от обычных видов деятельности", type: "А-П" },
+        { code: "47", name: "Реализация и прочее выбытие ОС", sub: "Продажа или ликвидация ОС", type: "А-П" },
+        { code: "48", name: "Реализация прочих активов", sub: "Продажа материалов и прочего", type: "А-П" }
+      ]},
+      { title: "Раздел V. Денежные средства", accounts: [
+        { code: "50", name: "Касса", sub: "Наличные деньги", type: "А" },
+        { code: "51", name: "Расчетный счет", sub: "Безналичные средства в банках", type: "А" },
+        { code: "52", name: "Валютный счет", sub: "Средства в иностранной валюте", type: "А" },
+        { code: "55", name: "Специальные счета в банках", sub: "Аккредитивы, чековые книжки", type: "А" },
+        { code: "56", name: "Денежные документы", sub: "Проездные, путевки", type: "А" },
+        { code: "57", name: "Переводы в пути", sub: "Незачисленные средства", type: "А" },
+        { code: "58", name: "Краткосрочные финансовые вложения", sub: "Облигации, депозиты, займы", type: "А" }
+      ]},
+      { title: "Раздел VI. Расчеты", accounts: [
+        { code: "60", name: "Расчеты с поставщиками и подрядчиками", sub: "Задолженность за сырье, товары, услуги", type: "А-П" },
+        { code: "61", name: "Расчеты по авансам выданным", sub: "Авансы поставщикам", type: "А" },
+        { code: "62", name: "Расчеты с покупателями и заказчиками", sub: "Дебиторка за отгруженную продукцию", type: "А-П" },
+        { code: "63", name: "Расчеты по претензиям", sub: "Предъявленные претензии", type: "А-П" },
+        { code: "64", name: "Расчеты по авансам полученным", sub: "Авансы от покупателей", type: "П" },
+        { code: "65", name: "Расчеты по имущественному и личному страхованию", sub: "Страховые премии", type: "А-П" },
+        { code: "67", name: "Расчеты по внебюджетным платежам", sub: "По видам платежей", type: "А-П" },
+        { code: "68", name: "Расчеты с бюджетом", sub: "Налоги и сборы", type: "А-П" },
+        { code: "69", name: "Расчеты по социальному страхованию", sub: "Пенсионный, ОМС и др. фонды", type: "А-П" },
+        { code: "70", name: "Расчеты с персоналом по оплате труда", sub: "Зарплата", type: "П" },
+        { code: "71", name: "Расчеты с подотчетными лицами", sub: "Авансы, командировки", type: "А-П" },
+        { code: "73", name: "Расчеты с персоналом по прочим операциям", sub: "Займы, ущерб", type: "А-П" },
+        { code: "75", name: "Расчеты с учредителями", sub: "Вклады, дивиденды", type: "А-П" },
+        { code: "76", name: "Расчеты с разными дебиторами и кредиторами", sub: "Претензии, страхование, прочее", type: "А-П" },
+        { code: "77", name: "Расчеты с государственным органом", sub: "Выделенное имущество, доходы", type: "А-П" },
+        { code: "78", name: "Расчеты с дочерними (зависимыми) организациями", sub: "Совместная деятельность", type: "А-П" },
+        { code: "79", name: "Внутрихозяйственные расчеты", sub: "Филиалы, подразделения", type: "А-П" }
+      ]},
+      { title: "Раздел VII. Финансовые результаты и использование прибыли", accounts: [
+        { code: "80", name: "Прибыли и убытки", sub: "Формирование финансового результата", type: "А-П" },
+        { code: "81", name: "Использование прибыли", sub: "Направление чистой прибыли", type: "А" },
+        { code: "82", name: "Оценочные резервы", sub: "Сомнительные долги, обесценение", type: "П" },
+        { code: "83", name: "Доходы будущих периодов", sub: "Доходы, курсовые разницы", type: "П" },
+        { code: "84", name: "Недостачи и потери от порчи ценностей", sub: "Выявленные недостачи", type: "А" }
+      ]},
+      { title: "Раздел VIII. Капитал и резервы", accounts: [
+        { code: "85", name: "Уставный капитал", sub: "Зарегистрированный уставный капитал", type: "П" },
+        { code: "86", name: "Резервный капитал", sub: "Резервный фонд", type: "П" },
+        { code: "87", name: "Добавочный капитал", sub: "Переоценка, безвозмездные поступления", type: "П" },
+        { code: "88", name: "Нераспределенная прибыль (непокрытый убыток)", sub: "Прошлых лет, фонды", type: "А-П" },
+        { code: "89", name: "Резервы предстоящих расходов и платежей", sub: "По видам резервов", type: "П" }
+      ]},
+      { title: "Раздел IX. Кредиты и финансирование", accounts: [
+        { code: "90", name: "Краткосрочные кредиты банков", sub: "По видам кредитов", type: "П" },
+        { code: "92", name: "Долгосрочные кредиты банков", sub: "По видам кредитов", type: "П" },
+        { code: "93", name: "Кредиты банков для работников", sub: "По видам кредитов", type: "П" },
+        { code: "94", name: "Краткосрочные займы", sub: "От других организаций", type: "П" },
+        { code: "95", name: "Долгосрочные займы", sub: "От других организаций", type: "П" },
+        { code: "96", name: "Целевые финансирования и поступления", sub: "Бюджетные средства", type: "П" },
+        { code: "98", name: "Источники средств специального назначения", sub: "Комитет по управлению гос. имуществом", type: "П" }
+      ]},
+      { title: "Забалансовые счета", accounts: [
+        { code: "001", name: "Арендованные основные средства", sub: "По договору аренды", type: "З" },
+        { code: "002", name: "ТМЦ на ответственном хранении", sub: "Чужие ценности", type: "З" },
+        { code: "003", name: "Материалы в переработке", sub: "Давальческое сырье", type: "З" },
+        { code: "004", name: "Товары на комиссии", sub: "Комиссионные товары", type: "З" },
+        { code: "005", name: "Оборудование для монтажа", sub: "Оборудование заказчика", type: "З" },
+        { code: "006", name: "Бланки строгой отчетности", sub: "Квитанции, формы", type: "З" },
+        { code: "007", name: "Списанная задолженность", sub: "Неплатежеспособные дебиторы", type: "З" },
+        { code: "008", name: "Обеспечения полученные", sub: "Залоги, гарантии", type: "З" },
+        { code: "009", name: "Обеспечения выданные", sub: "Выданные залоги", type: "З" }
+      ]}
+    ];
+
+    function getTypeBadge(type) {
+      const m = { 'А': 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300', 'П': 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300', 'А-П': 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300', 'З': 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300' };
+      const label = type === 'З' ? 'Забал.' : type;
+      return `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${m[type] || ''}">${label}</span>`;
+    }
+
+    function renderPlanSchetov(filter = "") {
+      const c = document.getElementById('plan-schetov-container');
+      c.innerHTML = "";
+      planSections.forEach(s => {
+        const m = s.accounts.filter(a => a.code.includes(filter) || a.name.toLowerCase().includes(filter.toLowerCase()) || (a.sub && a.sub.toLowerCase().includes(filter.toLowerCase())) || (a.type && a.type.toLowerCase().includes(filter.toLowerCase())));
+        if (m.length > 0) {
+          const el = document.createElement('div');
+          el.className = "bg-white dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden";
+          el.innerHTML = `<div class="bg-slate-100/80 dark:bg-slate-700/40 p-2.5 font-bold text-xs text-slate-700 dark:text-slate-300 uppercase tracking-wide">${s.title}</div>` +
+            m.map(a => `<div class="p-3 border-t border-slate-100 dark:border-slate-700/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs"><div class="flex items-center gap-2 flex-wrap"><span class="font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 dark:bg-emerald-950 dark:text-emerald-300">${a.code}</span>${getTypeBadge(a.type)}<span class="font-semibold text-slate-800 dark:text-slate-200">${a.name}</span></div><span class="text-slate-500 dark:text-slate-400 text-[11px] italic">${a.sub||''}</span></div>`).join('');
+          c.appendChild(el);
+        }
+      });
+    }
+
+    function filterAccounts() { renderPlanSchetov(document.getElementById('account-search').value.trim()); }
+
+    function checkAnswer(qId, idx, ok) {
+      const fb = document.getElementById(`${qId}-feedback`);
+      fb.classList.remove('hidden','bg-emerald-50','text-emerald-800','dark:bg-emerald-950/60','dark:text-emerald-300','bg-rose-50','text-rose-800','dark:bg-rose-950/60','dark:text-rose-300','border','border-emerald-200','dark:border-emerald-800','border-rose-200','dark:border-rose-800');
+      const ex = {
+        q1: { y: "Верно! Левая сторона счета — Дебет (Дт), правая — Кредит (Кт).", n: "Неверно. Левая сторона — Дебет (Дт)." },
+        q2: { y: "Верно! Выручка от реализации отражается на счете 46.", n: "Неверно. Выручка отражается на счете 46 «Реализация продукции»." },
+        q3: { y: "Верно! Пассивные счета всегда имеют кредитовое сальдо.", n: "Неверно. Пассивные счета имеют кредитовое сальдо." },
+        q4: { y: "Верно! Корреспонденция — это взаимосвязь между счетами при двойной записи.", n: "Неверно. Корреспонденция — это связь между счетами при двойной записи." },
+        q5: { y: "Верно! Активно-пассивные счета могут иметь и дебетовое, и кредитовое сальдо.", n: "Неверно. Такой счет называется активно-пассивным." }
+      };
+      if (ok) { fb.classList.add('bg-emerald-50','text-emerald-800','dark:bg-emerald-950/60','dark:text-emerald-300','border','border-emerald-200','dark:border-emerald-800'); fb.innerHTML = `<b>✅ ${ex[qId].y}</b>`; }
+      else { fb.classList.add('bg-rose-50','text-rose-800','dark:bg-rose-950/60','dark:text-rose-300','border','border-rose-200','dark:border-rose-800'); fb.innerHTML = `<b>❌ ${ex[qId].n}</b>`; }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => { switchAccountType('active'); renderPlanSchetov(); });
+  </script>
+</body>
+</html>
