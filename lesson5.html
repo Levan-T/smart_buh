@@ -41,11 +41,10 @@
     <section class="space-y-6">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 1. Тесты (20 вопросов)</h2>
       <p class="text-sm text-slate-600 dark:text-slate-400">Выберите правильный вариант ответа по материалам уроков 1-4.</p>
-
       <div id="tests-container" class="space-y-4"></div>
     </section>
 
-    <!-- ЧАСТЬ 2: ОПРЕДЕЛЕНИЕ ТИПА ОПЕРАЦИЙ -->
+    <!-- ЧАСТЬ 2: ТИПЫ ОПЕРАЦИЙ -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 2. Определите тип операции</h2>
       <p class="text-sm text-slate-600 dark:text-slate-400">К какому типу (I, II, III, IV) относится каждая операция?</p>
@@ -63,7 +62,7 @@
         </div>
 
         <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <p class="font-semibold mb-3">2. Удержан НДФЛ из заработной платы сотрудников</p>
+          <p class="font-semibold mb-3">2. Удержан подоходный налог из заработной платы сотрудников</p>
           <div class="flex flex-wrap gap-2">
             <button onclick="checkType(this, false)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Тип I</button>
             <button onclick="checkType(this, true)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Тип II</button>
@@ -97,7 +96,7 @@
       </div>
     </section>
 
-    <!-- ЧАСТЬ 3: СОСТАВЛЕНИЕ ПРОВОДОК -->
+    <!-- ЧАСТЬ 3: ПРОВОДКИ (5 штук) -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 3. Составьте проводки</h2>
       <p class="text-sm text-slate-600 dark:text-slate-400">Для каждой операции укажите корреспонденцию счетов (Дт и Кт).</p>
@@ -105,9 +104,9 @@
       <div class="space-y-4">
         <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
           <p class="font-semibold mb-3">1. Поступили материалы от поставщика на сумму 40 000 руб.</p>
-          <div class="flex gap-2">
-            <input type="text" id="p1-dt" placeholder="Дт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-            <input type="text" id="p1-kt" placeholder="Кт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+          <div class="flex flex-wrap gap-2">
+            <input type="text" id="p1-dt" placeholder="Дт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p1-kt" placeholder="Кт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
             <button onclick="checkEntry('p1', '10', '60')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
           </div>
           <p id="p1-feedback" class="hidden mt-2 text-xs font-bold"></p>
@@ -115,9 +114,9 @@
 
         <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
           <p class="font-semibold mb-3">2. Выдана заработная плата из кассы на сумму 20 000 руб.</p>
-          <div class="flex gap-2">
-            <input type="text" id="p2-dt" placeholder="Дт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-            <input type="text" id="p2-kt" placeholder="Кт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+          <div class="flex flex-wrap gap-2">
+            <input type="text" id="p2-dt" placeholder="Дт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p2-kt" placeholder="Кт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
             <button onclick="checkEntry('p2', '70', '50')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
           </div>
           <p id="p2-feedback" class="hidden mt-2 text-xs font-bold"></p>
@@ -125,27 +124,47 @@
 
         <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
           <p class="font-semibold mb-3">3. Начислена заработная плата за октябрь 35 000 руб.</p>
-          <div class="flex gap-2">
-            <input type="text" id="p3-dt" placeholder="Дт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-            <input type="text" id="p3-kt" placeholder="Кт" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+          <div class="flex flex-wrap gap-2">
+            <input type="text" id="p3-dt" placeholder="Дт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p3-kt" placeholder="Кт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
             <button onclick="checkEntry('p3', '20', '70')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
           </div>
           <p id="p3-feedback" class="hidden mt-2 text-xs font-bold"></p>
         </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-semibold mb-3">4. Поступила оплата от покупателя на расчетный счет 80 000 руб.</p>
+          <div class="flex flex-wrap gap-2">
+            <input type="text" id="p4-dt" placeholder="Дт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p4-kt" placeholder="Кт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <button onclick="checkEntry('p4', '51', '62')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+          </div>
+          <p id="p4-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-semibold mb-3">5. Приобретено оборудование у поставщика за 60 000 руб.</p>
+          <div class="flex flex-wrap gap-2">
+            <input type="text" id="p5-dt" placeholder="Дт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <input type="text" id="p5-kt" placeholder="Кт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
+            <button onclick="checkEntry('p5', '01', '60')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+          </div>
+          <p id="p5-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        </div>
       </div>
     </section>
 
-    <!-- ЧАСТЬ 4: БОЛЬШОЕ ЗАДАНИЕ -->
+    <!-- ЧАСТЬ 4: ПРАКТИКУМ ООО "Smart_buh" -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 4. Практикум: ООО «Smart_buh»</h2>
       
       <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
-        <p class="text-sm text-blue-800 dark:text-blue-300"><b>Легенда:</b> Вы — главный бухгалтер ООО «Smart_buh». Ниже представлен входящий баланс на 01.10.2026 и список хозяйственных операций за октябрь. Ваша задача: определить тип операции, составить проводки и сформировать баланс на 31.10.2026.</p>
+        <p class="text-sm text-blue-800 dark:text-blue-300"><b>Легенда:</b> Вы — главный бухгалтер ООО «Smart_buh». Ниже представлен баланс на 01.10.2026 и список хозяйственных операций за октябрь. Ваша задача: заполнить таблицу проводок и составить баланс на 31.10.2026.</p>
       </div>
 
-      <!-- Входящий баланс -->
+      <!-- Баланс на 01.10.2026 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
-        <h3 class="font-bold text-lg mb-3">Входящий баланс ООО «Smart_buh» на 01.10.2026</h3>
+        <h3 class="font-bold text-lg mb-3">Баланс ООО «Smart_buh» на 01.10.2026</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div>
             <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-2">АКТИВ</h4>
@@ -186,8 +205,8 @@
           <li>Поступила оплата от покупателя на р/с: 80 000 руб.</li>
           <li>Начислена заработная плата за октябрь: 35 000 руб.</li>
           <li>Начислены страховые взносы (30%): 10 500 руб.</li>
-          <li>Удержан НДФЛ из зарплаты (13%): 4 550 руб.</li>
-          <li>Перечислен НДФЛ в бюджет с р/с: 4 550 руб.</li>
+          <li>Удержан подоходный налог из зарплаты (13%): 4 550 руб.</li>
+          <li>Перечислен подоходный налог в бюджет с р/с: 4 550 руб.</li>
           <li>Приобретено оборудование у поставщика: 60 000 руб.</li>
           <li>Оплачено оборудование с р/с: 60 000 руб.</li>
           <li>Начислена амортизация оборудования: 5 000 руб.</li>
@@ -201,66 +220,138 @@
         </ol>
       </div>
 
-      <!-- Кнопка решения -->
-      <button onclick="toggleSolution()" class="w-full px-6 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition text-lg">
-        Показать эталонное решение (Проводки и Баланс на 31.10.2026)
-      </button>
-
-      <div id="solution" class="hidden space-y-6">
-        <!-- Проводки -->
-        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
-          <h3 class="font-bold text-lg mb-3">Бухгалтерские проводки за октябрь 2026 г.</h3>
-          <table class="w-full text-sm">
+      <!-- ИНТЕРАКТИВНАЯ ТАБЛИЦА ПРОВОДОК -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-lg mb-3"> Заполните таблицу проводок</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Для каждой операции введите Дебет, Кредит и выберите тип операции. Нажмите «Проверить» для проверки.</p>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs" id="entries-table">
             <thead class="bg-slate-100 dark:bg-slate-700/60">
               <tr>
                 <th class="p-2 text-left">№</th>
-                <th class="p-2 text-left">Содержание операции</th>
-                <th class="p-2 text-left">Дт</th>
-                <th class="p-2 text-left">Кт</th>
-                <th class="p-2 text-right">Сумма</th>
-                <th class="p-2 text-left">Тип</th>
+                <th class="p-2 text-left">Операция</th>
+                <th class="p-2 text-center">Дт</th>
+                <th class="p-2 text-center">Кт</th>
+                <th class="p-2 text-center">Тип</th>
+                <th class="p-2 text-center">Статус</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-              <tr><td class="p-2">1</td><td class="p-2">Снят наличный с р/с в кассу</td><td class="p-2 font-mono">50</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">30 000</td><td class="p-2">I</td></tr>
-              <tr><td class="p-2">2</td><td class="p-2">Оплачена задолженность поставщику</td><td class="p-2 font-mono">60</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">20 000</td><td class="p-2">IV</td></tr>
-              <tr><td class="p-2">3</td><td class="p-2">Поступили материалы от поставщика</td><td class="p-2 font-mono">10</td><td class="p-2 font-mono">60</td><td class="p-2 text-right">40 000</td><td class="p-2">III</td></tr>
-              <tr><td class="p-2">4</td><td class="p-2">Материалы отпущены в производство</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">10</td><td class="p-2 text-right">15 000</td><td class="p-2">I</td></tr>
-              <tr><td class="p-2">5</td><td class="p-2">Выдана заработная плата из кассы</td><td class="p-2 font-mono">70</td><td class="p-2 font-mono">50</td><td class="p-2 text-right">20 000</td><td class="p-2">IV</td></tr>
-              <tr><td class="p-2">6</td><td class="p-2">Отгружена продукция покупателю</td><td class="p-2 font-mono">62</td><td class="p-2 font-mono">46</td><td class="p-2 text-right">80 000</td><td class="p-2">III</td></tr>
-              <tr><td class="p-2">7</td><td class="p-2">Списана себестоимость продукции</td><td class="p-2 font-mono">46</td><td class="p-2 font-mono">41</td><td class="p-2 text-right">50 000</td><td class="p-2">I</td></tr>
-              <tr><td class="p-2">8</td><td class="p-2">Поступила оплата от покупателя</td><td class="p-2 font-mono">51</td><td class="p-2 font-mono">62</td><td class="p-2 text-right">80 000</td><td class="p-2">I</td></tr>
-              <tr><td class="p-2">9</td><td class="p-2">Начислена заработная плата</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">70</td><td class="p-2 text-right">35 000</td><td class="p-2">III</td></tr>
-              <tr><td class="p-2">10</td><td class="p-2">Начислены страховые взносы</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">69</td><td class="p-2 text-right">10 500</td><td class="p-2">III</td></tr>
-              <tr><td class="p-2">11</td><td class="p-2">Удержан НДФЛ из зарплаты</td><td class="p-2 font-mono">70</td><td class="p-2 font-mono">68</td><td class="p-2 text-right">4 550</td><td class="p-2">II</td></tr>
-              <tr><td class="p-2">12</td><td class="p-2">Перечислен НДФЛ в бюджет</td><td class="p-2 font-mono">68</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">4 550</td><td class="p-2">IV</td></tr>
-              <tr><td class="p-2">13</td><td class="p-2">Приобретено оборудование</td><td class="p-2 font-mono">01</td><td class="p-2 font-mono">60</td><td class="p-2 text-right">60 000</td><td class="p-2">III</td></tr>
-              <tr><td class="p-2">14</td><td class="p-2">Оплачено оборудование</td><td class="p-2 font-mono">60</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">60 000</td><td class="p-2">IV</td></tr>
-              <tr><td class="p-2">15</td><td class="p-2">Начислена амортизация</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">02</td><td class="p-2 text-right">5 000</td><td class="p-2">I</td></tr>
-              <tr><td class="p-2">16</td><td class="p-2">Начислены счета за электроэнергию</td><td class="p-2 font-mono">20</td><td class="p-2 font-mono">60</td><td class="p-2 text-right">3 000</td><td class="p-2">III</td></tr>
-              <tr><td class="p-2">17</td><td class="p-2">Получен краткосрочный кредит</td><td class="p-2 font-mono">51</td><td class="p-2 font-mono">90</td><td class="p-2 text-right">100 000</td><td class="p-2">III</td></tr>
-              <tr><td class="p-2">18</td><td class="p-2">Погашена часть кредита</td><td class="p-2 font-mono">90</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">50 000</td><td class="p-2">IV</td></tr>
-              <tr><td class="p-2">19</td><td class="p-2">Определена прибыль от реализации</td><td class="p-2 font-mono">46</td><td class="p-2 font-mono">80</td><td class="p-2 text-right">30 000</td><td class="p-2">II</td></tr>
-              <tr><td class="p-2">20</td><td class="p-2">Начислен налог на прибыль</td><td class="p-2 font-mono">80</td><td class="p-2 font-mono">68</td><td class="p-2 text-right">6 000</td><td class="p-2">II</td></tr>
-              <tr><td class="p-2">21</td><td class="p-2">Перечислен налог на прибыль</td><td class="p-2 font-mono">68</td><td class="p-2 font-mono">51</td><td class="p-2 text-right">6 000</td><td class="p-2">IV</td></tr>
-              <tr><td class="p-2">22</td><td class="p-2">Чистая прибыль направлена на капитал</td><td class="p-2 font-mono">80</td><td class="p-2 font-mono">88</td><td class="p-2 text-right">24 000</td><td class="p-2">II</td></tr>
-            </tbody>
+            <tbody id="entries-body"></tbody>
           </table>
         </div>
+        
+        <button onclick="checkAllEntries()" class="mt-4 w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition">
+          ✅ Проверить все проводки
+        </button>
+        <div id="entries-summary" class="hidden mt-3 p-3 rounded-xl text-sm font-bold"></div>
+      </div>
 
-        <!-- Итоговый баланс -->
+      <!-- ИНТЕРАКТИВНЫЙ БАЛАНС -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-lg mb-3"> Составьте баланс на 31.10.2026</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Введите конечные остатки по каждой статье. Итоги считаются автоматически.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- АКТИВ -->
+          <div>
+            <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3 border-b border-blue-200 dark:border-blue-800 pb-1">АКТИВ</h4>
+            <div class="space-y-2 text-sm" id="asset-fields">
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">01 Основные средства</span>
+                <input type="number" id="a-01" data-correct="260000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2 pl-4">
+                <span class="flex-1 text-slate-500">02 Амортизация (−)</span>
+                <input type="number" id="a-02" data-correct="45000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2 font-semibold bg-blue-50 dark:bg-blue-950/30 px-2 py-1 rounded">
+                <span class="flex-1">Остаточная стоимость ОС</span>
+                <span id="a-residual" class="w-32 text-right font-mono">0</span>
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">10 Материалы</span>
+                <input type="number" id="a-10" data-correct="45000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">20 Производство</span>
+                <input type="number" id="a-20" data-correct="68500" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">50 Касса</span>
+                <input type="number" id="a-50" data-correct="20000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">51 Расчетный счет</span>
+                <input type="number" id="a-51" data-correct="109450" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
+                <span class="flex-1">ИТОГО АКТИВ</span>
+                <span id="a-total" class="w-32 text-right font-mono text-emerald-600 dark:text-emerald-400">0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ПАССИВ -->
+          <div>
+            <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-3 border-b border-purple-200 dark:border-purple-800 pb-1">ПАССИВ</h4>
+            <div class="space-y-2 text-sm" id="passive-fields">
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">85 Уставный капитал</span>
+                <input type="number" id="p-85" data-correct="300000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">88 Нераспределенная прибыль</span>
+                <input type="number" id="p-88" data-correct="24000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">60 Поставщики</span>
+                <input type="number" id="p-60" data-correct="43000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">69 Страхование</span>
+                <input type="number" id="p-69" data-correct="10500" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">70 Оплата труда</span>
+                <input type="number" id="p-70" data-correct="30450" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2">
+                <span class="flex-1">90 Кредиты</span>
+                <input type="number" id="p-90" data-correct="50000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+              </div>
+              <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
+                <span class="flex-1">ИТОГО ПАССИВ</span>
+                <span id="p-total" class="w-32 text-right font-mono text-emerald-600 dark:text-emerald-400">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="checkBalance()" class="mt-6 w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition text-lg">
+           Проверить баланс
+        </button>
+        <div id="balance-result" class="hidden mt-3 p-4 rounded-xl text-sm font-bold"></div>
+      </div>
+
+      <!-- ЭТАЛОННОЕ РЕШЕНИЕ (скрыто) -->
+      <button onclick="toggleSolution()" class="w-full px-6 py-4 bg-slate-600 hover:bg-slate-700 text-white font-bold rounded-xl transition text-lg">
+         Показать эталонное решение
+      </button>
+
+      <div id="solution" class="hidden space-y-6">
         <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border-2 border-emerald-500 dark:border-emerald-400">
-          <h3 class="font-bold text-xl mb-4 text-emerald-600 dark:text-emerald-400">Бухгалтерский баланс ООО «Smart_buh» на 31.10.2026</h3>
+          <h3 class="font-bold text-xl mb-4 text-emerald-600 dark:text-emerald-400">Эталонный баланс ООО «Smart_buh» на 31.10.2026</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
             <div>
               <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3 border-b border-blue-200 dark:border-blue-800 pb-1">АКТИВ</h4>
               <ul class="space-y-2 text-slate-700 dark:text-slate-300">
-                <li class="flex justify-between"><span>01 Основные средства (200+60)</span><span>260 000</span></li>
-                <li class="flex justify-between pl-4 text-slate-500"><span>02 Амортизация (40+5)</span><span>(45 000)</span></li>
-                <li class="flex justify-between font-semibold bg-blue-50 dark:bg-blue-950/30 px-2 rounded"><span>Остаточная стоимость ОС</span><span>215 000</span></li>
-                <li class="flex justify-between"><span>10 Материалы (20+40-15)</span><span>45 000</span></li>
-                <li class="flex justify-between"><span>20 Производство (15+35+10,5+5+3)</span><span>68 500</span></li>
-                <li class="flex justify-between"><span>50 Касса (10+30-20)</span><span>20 000</span></li>
+                <li class="flex justify-between"><span>01 Основные средства</span><span>260 000</span></li>
+                <li class="flex justify-between pl-4 text-slate-500"><span>02 Амортизация</span><span>(45 000)</span></li>
+                <li class="flex justify-between font-semibold bg-blue-50 dark:bg-blue-950/30 px-2 rounded"><span>Остаточная стоимость</span><span>215 000</span></li>
+                <li class="flex justify-between"><span>10 Материалы</span><span>45 000</span></li>
+                <li class="flex justify-between"><span>20 Производство</span><span>68 500</span></li>
+                <li class="flex justify-between"><span>50 Касса</span><span>20 000</span></li>
                 <li class="flex justify-between"><span>51 Расчетный счет</span><span>109 450</span></li>
                 <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО АКТИВ</span><span class="text-emerald-600 dark:text-emerald-400">457 950</span></li>
               </ul>
@@ -270,16 +361,16 @@
               <ul class="space-y-2 text-slate-700 dark:text-slate-300">
                 <li class="flex justify-between"><span>85 Уставный капитал</span><span>300 000</span></li>
                 <li class="flex justify-between"><span>88 Нераспределенная прибыль</span><span>24 000</span></li>
-                <li class="flex justify-between"><span>60 Поставщики (20-20+40+60-60+3)</span><span>43 000</span></li>
+                <li class="flex justify-between"><span>60 Поставщики</span><span>43 000</span></li>
                 <li class="flex justify-between"><span>69 Страхование</span><span>10 500</span></li>
-                <li class="flex justify-between"><span>70 Оплата труда (20-20+35-4,55)</span><span>30 450</span></li>
-                <li class="flex justify-between"><span>90 Кредиты (100-50)</span><span>50 000</span></li>
+                <li class="flex justify-between"><span>70 Оплата труда</span><span>30 450</span></li>
+                <li class="flex justify-between"><span>90 Кредиты</span><span>50 000</span></li>
                 <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО ПАССИВ</span><span class="text-emerald-600 dark:text-emerald-400">457 950</span></li>
               </ul>
             </div>
           </div>
           <div class="mt-4 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg text-center text-emerald-800 dark:text-emerald-300 font-bold">
-            Баланс сошелся! Актив (457 950) = Пассив (457 950)
+            ✅ Баланс сошелся! Актив (457 950) = Пассив (457 950)
           </div>
         </div>
       </div>
@@ -297,7 +388,7 @@
   </footer>
 
   <script>
-    // Данные для 20 тестов
+    // ===== ДАННЫЕ ТЕСТОВ =====
     const testsData = [
       { q: "Что является предметом бухгалтерского учета?", a: ["Только денежные средства", "Имущество, обязательства и хоз. операции", "Только прибыль"], correct: 1 },
       { q: "Какой счет активный?", a: ["70 Оплата труда", "01 Основные средства", "85 Уставный капитал"], correct: 1 },
@@ -305,7 +396,7 @@
       { q: "Счет 50 «Касса» является:", a: ["Пассивным", "Активным", "Активно-пассивным"], correct: 1 },
       { q: "Валюта баланса — это:", a: ["Сумма активов", "Итог по активу и пассиву (они равны)", "Разница между А и П"], correct: 1 },
       { q: "Операция «Получен кредит на р/с» это тип:", a: ["I (+А -А)", "II (+П -П)", "III (+А +П)"], correct: 2 },
-      { q: "Операция «Погашен кредит с р/с» это тип:", a: ["I", "II", "IV (-А -П)"], correct: 2 },
+      { q: "Сколько элементов включает любая форма учета?", a: ["2 (документы и регистры)", "4 (документы, регистры, порядок записей, обобщение)", "6 (все элементы учета)"], correct: 1 },
       { q: "Проводка при покупке материалов в кредит:", a: ["Дт 10 - Кт 51", "Дт 10 - Кт 60", "Дт 60 - Кт 10"], correct: 1 },
       { q: "Форма учета для малых предприятий:", a: ["Журнал-Главная", "Журнально-ордерная", "Автоматизированная"], correct: 0 },
       { q: "Мемориальный ордер — это:", a: ["Первичный документ", "Сводный документ по одному счету", "Отчетность"], correct: 1 },
@@ -316,12 +407,38 @@
       { q: "Активы в балансе — это:", a: ["Источники средств", "Имущество по составу", "Капитал"], correct: 1 },
       { q: "Пассивы в балансе — это:", a: ["Имущество", "Источники формирования", "Деньги в кассе"], correct: 1 },
       { q: "Автоматизированная форма учета использует:", a: ["Только бумагу", "Программы (1С)", "Только журналы"], correct: 1 },
-      { q: "Счет 46 в РА используется для:", a: ["Кассы", "Реализации продукции", "Материалов"], correct: 1 },
+      { q: "Журнал регистрации мемориальных ордеров — это:", a: ["Первичный документ", "Хронологический учет всех составленных мемориальных ордеров", "Отчет о прибылях"], correct: 1 },
       { q: "Начисление зарплаты проводка:", a: ["Дт 70 - Кт 50", "Дт 20 - Кт 70", "Дт 50 - Кт 70"], correct: 1 },
       { q: "Балансовое уравнение:", a: ["А > П", "А = П", "А < П"], correct: 1 }
     ];
 
-    // Рендер тестов
+    // ===== ДАННЫЕ ПРОВОДОК =====
+    const entriesData = [
+      { op: "Снят наличный с р/с в кассу", dt: "50", kt: "51", type: "I" },
+      { op: "Оплачена задолженность поставщику", dt: "60", kt: "51", type: "IV" },
+      { op: "Поступили материалы от поставщика", dt: "10", kt: "60", type: "III" },
+      { op: "Материалы отпущены в производство", dt: "20", kt: "10", type: "I" },
+      { op: "Выдана заработная плата из кассы", dt: "70", kt: "50", type: "IV" },
+      { op: "Отгружена продукция покупателю", dt: "62", kt: "46", type: "III" },
+      { op: "Списана себестоимость продукции", dt: "46", kt: "41", type: "I" },
+      { op: "Поступила оплата от покупателя", dt: "51", kt: "62", type: "I" },
+      { op: "Начислена заработная плата", dt: "20", kt: "70", type: "III" },
+      { op: "Начислены страховые взносы", dt: "20", kt: "69", type: "III" },
+      { op: "Удержан подоходный налог", dt: "70", kt: "68", type: "II" },
+      { op: "Перечислен подоходный налог в бюджет", dt: "68", kt: "51", type: "IV" },
+      { op: "Приобретено оборудование", dt: "01", kt: "60", type: "III" },
+      { op: "Оплачено оборудование", dt: "60", kt: "51", type: "IV" },
+      { op: "Начислена амортизация", dt: "20", kt: "02", type: "I" },
+      { op: "Начислены счета за электроэнергию", dt: "20", kt: "60", type: "III" },
+      { op: "Получен краткосрочный кредит", dt: "51", kt: "90", type: "III" },
+      { op: "Погашена часть кредита", dt: "90", kt: "51", type: "IV" },
+      { op: "Определена прибыль от реализации", dt: "46", kt: "80", type: "II" },
+      { op: "Начислен налог на прибыль", dt: "80", kt: "68", type: "II" },
+      { op: "Перечислен налог на прибыль", dt: "68", kt: "51", type: "IV" },
+      { op: "Чистая прибыль направлена на капитал", dt: "80", kt: "88", type: "II" }
+    ];
+
+    // ===== РЕНДЕР ТЕСТОВ =====
     const container = document.getElementById('tests-container');
     testsData.forEach((t, i) => {
       const div = document.createElement('div');
@@ -336,6 +453,31 @@
       container.appendChild(div);
     });
 
+    // ===== РЕНДЕР ТАБЛИЦЫ ПРОВОДОК =====
+    const tbody = document.getElementById('entries-body');
+    entriesData.forEach((e, i) => {
+      const tr = document.createElement('tr');
+      tr.className = 'border-b border-slate-200 dark:border-slate-700';
+      tr.innerHTML = `
+        <td class="p-2 font-mono">${i+1}</td>
+        <td class="p-2 text-xs">${e.op}</td>
+        <td class="p-1"><input type="text" id="e${i}-dt" class="w-14 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs"></td>
+        <td class="p-1"><input type="text" id="e${i}-kt" class="w-14 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs"></td>
+        <td class="p-1">
+          <select id="e${i}-type" class="w-16 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs">
+            <option value="">—</option>
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IV">IV</option>
+          </select>
+        </td>
+        <td class="p-2 text-center" id="e${i}-status">—</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // ===== ФУНКЦИИ ПРОВЕРКИ =====
     function checkTest(btn, isCorrect) {
       const parent = btn.parentElement.parentElement;
       const fb = parent.querySelector('.feedback');
@@ -343,11 +485,11 @@
       if (isCorrect) {
         btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
         fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = 'Верно!';
+        fb.textContent = '✅ Верно!';
       } else {
         btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
         fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = 'Неверно. Попробуйте еще раз.';
+        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
       }
     }
 
@@ -358,11 +500,11 @@
       if (isCorrect) {
         btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
         fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = 'Абсолютно верно!';
+        fb.textContent = '✅ Абсолютно верно!';
       } else {
         btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
         fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = 'Неверно. Подумайте, как меняются А и П.';
+        fb.textContent = '❌ Неверно. Подумайте, как меняются А и П.';
       }
     }
 
@@ -374,10 +516,111 @@
       
       if (dt === correctDt && kt === correctKt) {
         fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = 'Верно!';
+        fb.textContent = '✅ Верно!';
       } else {
         fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = `Неверно. Правильно: Дт ${correctDt} - Кт ${correctKt}`;
+        fb.textContent = `❌ Неверно. Правильно: Дт ${correctDt} - Кт ${correctKt}`;
+      }
+    }
+
+    function checkAllEntries() {
+      let correct = 0;
+      entriesData.forEach((e, i) => {
+        const dt = document.getElementById(`e${i}-dt`).value.trim();
+        const kt = document.getElementById(`e${i}-kt`).value.trim();
+        const type = document.getElementById(`e${i}-type`).value;
+        const status = document.getElementById(`e${i}-status`);
+        
+        const dtOk = dt === e.dt;
+        const ktOk = kt === e.kt;
+        const typeOk = type === e.type;
+        
+        if (dtOk && ktOk && typeOk) {
+          status.innerHTML = '<span class="text-emerald-600 dark:text-emerald-400">✅</span>';
+          correct++;
+        } else {
+          let wrong = [];
+          if (!dtOk) wrong.push('Дт');
+          if (!ktOk) wrong.push('Кт');
+          if (!typeOk) wrong.push('Тип');
+          status.innerHTML = `<span class="text-rose-600 dark:text-rose-400 text-xs">❌ ${wrong.join(', ')}</span>`;
+        }
+      });
+      
+      const summary = document.getElementById('entries-summary');
+      summary.classList.remove('hidden');
+      if (correct === entriesData.length) {
+        summary.className = 'mt-3 p-3 rounded-xl text-sm font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800';
+        summary.textContent = `🎉 Отлично! Все ${correct} проводок заполнены правильно!`;
+      } else {
+        summary.className = 'mt-3 p-3 rounded-xl text-sm font-bold bg-amber-50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
+        summary.textContent = `📊 Правильно: ${correct} из ${entriesData.length}. Проверьте строки с ❌ и исправьте ошибки.`;
+      }
+    }
+
+    // ===== АВТОМАТИЧЕСКИЙ ПОДСЧЕТ БАЛАНСА =====
+    function calcBalance() {
+      const a01 = parseFloat(document.getElementById('a-01').value) || 0;
+      const a02 = parseFloat(document.getElementById('a-02').value) || 0;
+      const a10 = parseFloat(document.getElementById('a-10').value) || 0;
+      const a20 = parseFloat(document.getElementById('a-20').value) || 0;
+      const a50 = parseFloat(document.getElementById('a-50').value) || 0;
+      const a51 = parseFloat(document.getElementById('a-51').value) || 0;
+      
+      const p85 = parseFloat(document.getElementById('p-85').value) || 0;
+      const p88 = parseFloat(document.getElementById('p-88').value) || 0;
+      const p60 = parseFloat(document.getElementById('p-60').value) || 0;
+      const p69 = parseFloat(document.getElementById('p-69').value) || 0;
+      const p70 = parseFloat(document.getElementById('p-70').value) || 0;
+      const p90 = parseFloat(document.getElementById('p-90').value) || 0;
+      
+      const residual = a01 - a02;
+      const aTotal = residual + a10 + a20 + a50 + a51;
+      const pTotal = p85 + p88 + p60 + p69 + p70 + p90;
+      
+      document.getElementById('a-residual').textContent = residual.toLocaleString('ru-RU');
+      document.getElementById('a-total').textContent = aTotal.toLocaleString('ru-RU');
+      document.getElementById('p-total').textContent = pTotal.toLocaleString('ru-RU');
+    }
+
+    // ===== ПРОВЕРКА БАЛАНСА =====
+    function checkBalance() {
+      const fields = document.querySelectorAll('#asset-fields input[data-correct], #passive-fields input[data-correct]');
+      let correctCount = 0;
+      let totalCount = fields.length;
+      
+      fields.forEach(input => {
+        const userVal = parseFloat(input.value) || 0;
+        const correctVal = parseFloat(input.dataset.correct);
+        
+        input.classList.remove('border-emerald-500', 'border-rose-500', 'bg-emerald-50', 'bg-rose-50', 'dark:bg-emerald-950/30', 'dark:bg-rose-950/30');
+        
+        if (userVal === correctVal) {
+          input.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950/30');
+          correctCount++;
+        } else if (input.value !== '') {
+          input.classList.add('border-rose-500', 'bg-rose-50', 'dark:bg-rose-950/30');
+        }
+      });
+      
+      const aTotal = parseFloat(document.getElementById('a-total').textContent.replace(/\s/g, '')) || 0;
+      const pTotal = parseFloat(document.getElementById('p-total').textContent.replace(/\s/g, '')) || 0;
+      
+      const result = document.getElementById('balance-result');
+      result.classList.remove('hidden');
+      
+      if (correctCount === totalCount && aTotal === pTotal && aTotal === 457950) {
+        result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800';
+        result.innerHTML = `🎉 Превосходно! Все статьи заполнены верно (${correctCount}/${totalCount}). Баланс сошелся: ${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}`;
+      } else if (aTotal === pTotal && aTotal > 0) {
+        result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-amber-50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
+        result.innerHTML = `⚖️ Баланс сошелся (${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}), но есть ошибки в отдельных статьях. Правильно: ${correctCount}/${totalCount}. Проверьте поля с красной рамкой.`;
+      } else if (aTotal !== pTotal && aTotal > 0 && pTotal > 0) {
+        result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800';
+        result.innerHTML = ` Баланс не сходится! Актив: ${aTotal.toLocaleString('ru-RU')} ≠ Пассив: ${pTotal.toLocaleString('ru-RU')}. Разница: ${Math.abs(aTotal - pTotal).toLocaleString('ru-RU')}. Проверьте расчеты.`;
+      } else {
+        result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-600';
+        result.innerHTML = `📝 Заполните все поля баланса для проверки.`;
       }
     }
 
