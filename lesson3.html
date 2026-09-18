@@ -60,35 +60,14 @@
         <p><b>Бухгалтерская отчётность</b> — это единая система показателей об имущественном и финансовом положении организации и о результатах её хозяйственной деятельности, составленная на основе данных бухгалтерского учёта по установленным формам за определённый период.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-2xl">📊</span>
-            <h3 class="font-bold text-slate-900 dark:text-white">Форма №1</h3>
-          </div>
-          <p class="text-sm text-slate-600 dark:text-slate-400">Бухгалтерский баланс</p>
-        </div>
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-2xl">💰</span>
-            <h3 class="font-bold text-slate-900 dark:text-white">Форма №2</h3>
-          </div>
-          <p class="text-sm text-slate-600 dark:text-slate-400">Отчёт о прибылях и убытках</p>
-        </div>
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-2xl">📋</span>
-            <h3 class="font-bold text-slate-900 dark:text-white">Справка к Форме №2</h3>
-          </div>
-          <p class="text-sm text-slate-600 dark:text-slate-400">Справка к отчёту о прибылях и убытках</p>
-        </div>
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-2xl">📎</span>
-            <h3 class="font-bold text-slate-900 dark:text-white">Форма №5</h3>
-          </div>
-          <p class="text-sm text-slate-600 dark:text-slate-400">Приложение к балансу</p>
-        </div>
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
+        <h3 class="font-bold text-slate-900 dark:text-white text-lg">Основные формы бухгалтерской отчетности</h3>
+        <ol class="space-y-2 text-sm text-slate-700 dark:text-slate-300 list-decimal list-inside">
+          <li><b>Бухгалтерский баланс</b> (Форма №1)</li>
+          <li><b>Отчет о прибылях и убытках</b> (Форма №2)</li>
+          <li><b>Справка к отчету о прибылях и убытках</b> (справка к Форме №2)</li>
+          <li><b>Приложение к балансу</b> (Форма №5)</li>
+        </ol>
       </div>
 
       <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
@@ -106,6 +85,7 @@
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p><b>Бухгалтерский баланс</b> — это один из элементов методологической основы бухгалтерского учёта. В нём в обобщённом виде отражаются средства организации по составу и размещению (<b>активы</b>), а также по источникам формирования и целевому назначению (<b>пассивы</b>).</p>
         <p>Иными словами, бухгалтерский баланс — способ обобщения и группировки имущества (активов) хозяйствующего субъекта и источников их образования (пассивов) на определённую дату в денежном выражении.</p>
+        <p><b>В балансе отражается сальдо по всем счетам на дату составления баланса.</b></p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -120,17 +100,18 @@
       </div>
 
       <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
-        <h3 class="font-bold text-slate-900 dark:text-white text-lg">🔑 Ключевые понятия</h3>
+        <h3 class="font-bold text-slate-900 dark:text-white text-lg"> Ключевые понятия</h3>
         <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2">
-          <li><b>Балансовая статья</b> — показатель (строка) актива и пассива баланса, характеризующий отдельные виды имущества или источников его формирования.</li>
-          <li><b>Валюта баланса</b> — итоги по активу и пассиву, которые всегда должны быть равны между собой.</li>
-          <li><b>Основное балансовое уравнение:</b> <span class="font-mono font-bold text-emerald-600 dark:text-emerald-400">АКТИВ = ПАССИВ</span></li>
+          <li><b>Балансовая статья</b> — показатель (строка) актива и пассива баланса, характеризующий отдельные виды имущества, источников его формирования, обязательств предприятия. Исходя из их экономического содержания балансовые статьи объединяют в группы, а группы — в разделы.</li>
+          <li><b>Основное балансовое уравнение</b> заключается в постоянном равенстве активов и пассивов. Актив и пассив всегда должны быть равны.</li>
+          <li><b>Валюта баланса</b> — итоги по активу и по пассиву бухгалтерского баланса.</li>
+          <li><b>Равенство активов и пассивов</b> достигается за счёт применения двойной записи, которая отражает одновременные изменения, происходящие в процессе хозяйственной деятельности и отражаемые на счетах.</li>
         </ul>
       </div>
 
       <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
         <p class="text-sm text-emerald-800 dark:text-emerald-300">
-          <b>💡 Почему Актив всегда равен Пассиву?</b> Это достигается за счёт метода <b>двойной записи</b>, которая отражает одновременные изменения, происходящие в процессе хозяйственной деятельности и отражаемые на счетах.
+          <b>💡 Важно:</b> Баланс даёт представление об изменениях структуры, объёма и удельного веса отдельных статей имущества организации (активов) и обязательств (пассивов) организации за отчётный период.
         </p>
       </div>
     </section>
@@ -143,6 +124,10 @@
       <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
         Ниже представлена утверждённая Министерством финансов РА форма бухгалтерского баланса. Нажимайте на разделы, чтобы раскрыть их статьи. В скобках указаны номера счетов, данные которых формируют соответствующие строки.
       </p>
+
+      <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-3 rounded-r-xl text-xs text-amber-800 dark:text-amber-300">
+        <b>⚠️ Примечание:</b> Строки, отмеченные звёздочкой (*), не участвуют в расчёте валюты баланса.
+      </div>
 
       <!-- АКТИВ -->
       <div class="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
@@ -158,7 +143,7 @@
         <div id="balance-a1" class="hidden">
           <!-- Раздел I -->
           <button onclick="toggleBalanceSection('a1-1')" class="w-full p-3 flex items-center justify-between bg-slate-100 dark:bg-slate-700/40 hover:bg-slate-200 dark:hover:bg-slate-700/60 transition text-left border-t border-slate-200 dark:border-slate-700">
-            <span class="font-semibold text-sm text-slate-900 dark:text-white">I. Внеоборотные активы</span>
+            <span class="font-semibold text-sm text-slate-900 dark:text-white">I. Основные средства и другие долгосрочные вложения (Внеоборотные активы)</span>
             <svg id="chevron-a1-1" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
@@ -166,16 +151,18 @@
           <div id="balance-a1-1" class="hidden">
             <table class="w-full text-xs">
               <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Нематериальные активы: первоначальная стоимость</td><td class="p-2 text-right font-mono text-slate-500">(04)</td><td class="p-2 text-right font-mono">010</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">износ</td><td class="p-2 text-right font-mono text-slate-500">(05)</td><td class="p-2 text-right font-mono">011</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Нематериальные активы:</td><td class="p-2"></td><td class="p-2"></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">первоначальная стоимость*) (04)</td><td class="p-2 text-right font-mono text-slate-500">(04)</td><td class="p-2 text-right font-mono">010</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">износ* (05)</td><td class="p-2 text-right font-mono text-slate-500">(05)</td><td class="p-2 text-right font-mono">011</td></tr>
                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">остаточная стоимость</td><td class="p-2"></td><td class="p-2 text-right font-mono font-bold">012</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Основные средства: первоначальная стоимость</td><td class="p-2 text-right font-mono text-slate-500">(01, 03)</td><td class="p-2 text-right font-mono">020</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">износ</td><td class="p-2 text-right font-mono text-slate-500">(02)</td><td class="p-2 text-right font-mono">021</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Основные средства:</td><td class="p-2"></td><td class="p-2"></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">первоначальная (восстановительная) стоимость* (01, 03)</td><td class="p-2 text-right font-mono text-slate-500">(01, 03)</td><td class="p-2 text-right font-mono">020</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">износ* (02)</td><td class="p-2 text-right font-mono text-slate-500">(02)</td><td class="p-2 text-right font-mono">021</td></tr>
                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">остаточная стоимость</td><td class="p-2"></td><td class="p-2 text-right font-mono font-bold">022</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Оборудование к установке</td><td class="p-2 text-right font-mono text-slate-500">(07)</td><td class="p-2 text-right font-mono">030</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Незавершённые капитальные вложения</td><td class="p-2 text-right font-mono text-slate-500">(08, 61)</td><td class="p-2 text-right font-mono">040</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Долгосрочные финансовые вложения</td><td class="p-2 text-right font-mono text-slate-500">(06)</td><td class="p-2 text-right font-mono">050</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с учредителями</td><td class="p-2 text-right font-mono text-slate-500">(75)</td><td class="p-2 text-right font-mono">060</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Оборудование к установке (07)</td><td class="p-2 text-right font-mono text-slate-500">(07)</td><td class="p-2 text-right font-mono">030</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Незавершённые капитальные вложения (08, 61)</td><td class="p-2 text-right font-mono text-slate-500">(08, 61)</td><td class="p-2 text-right font-mono">040</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Долгосрочные финансовые вложения (06)</td><td class="p-2 text-right font-mono text-slate-500">(06)</td><td class="p-2 text-right font-mono">050</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с учредителями (75)</td><td class="p-2 text-right font-mono text-slate-500">(75)</td><td class="p-2 text-right font-mono">060</td></tr>
                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие внеоборотные активы</td><td class="p-2"></td><td class="p-2 text-right font-mono">070</td></tr>
                 <tr class="bg-blue-100 dark:bg-blue-950/50 font-bold"><td class="p-2 pl-4">ИТОГО по разделу I</td><td class="p-2"></td><td class="p-2 text-right font-mono">080</td></tr>
               </tbody>
@@ -192,15 +179,18 @@
           <div id="balance-a1-2" class="hidden">
             <table class="w-full text-xs">
               <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Производственные запасы</td><td class="p-2 text-right font-mono text-slate-500">(10, 15, 16)</td><td class="p-2 text-right font-mono">100</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Животные на выращивании и откорме</td><td class="p-2 text-right font-mono text-slate-500">(11)</td><td class="p-2 text-right font-mono">110</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Малоценные и быстроизнашивающиеся предметы: остаточная стоимость</td><td class="p-2 text-right font-mono text-slate-500">(12, 13)</td><td class="p-2 text-right font-mono">122</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Незавершённое производство</td><td class="p-2 text-right font-mono text-slate-500">(20, 21, 23, 29, 30, 36, 44)</td><td class="p-2 text-right font-mono">130</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расходы будущих периодов</td><td class="p-2 text-right font-mono text-slate-500">(31)</td><td class="p-2 text-right font-mono">140</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Готовая продукция</td><td class="p-2 text-right font-mono text-slate-500">(40)</td><td class="p-2 text-right font-mono">150</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Товары</td><td class="p-2 text-right font-mono text-slate-500">(41)</td><td class="p-2 text-right font-mono">162</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">НДС по приобретённым ценностям</td><td class="p-2 text-right font-mono text-slate-500">(19)</td><td class="p-2 text-right font-mono">175</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие запасы и затраты</td><td class="p-2 text-right font-mono text-slate-500">(96)</td><td class="p-2 text-right font-mono">176</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Производственные запасы (10, 15, 16)</td><td class="p-2 text-right font-mono text-slate-500">(10, 15, 16)</td><td class="p-2 text-right font-mono">100</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Животные на выращивании и откорме (11)</td><td class="p-2 text-right font-mono text-slate-500">(11)</td><td class="p-2 text-right font-mono">110</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Малоценные и быстроизнашивающиеся предметы:</td><td class="p-2"></td><td class="p-2"></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">первоначальная стоимость* (12, 16)</td><td class="p-2 text-right font-mono text-slate-500">(12, 16)</td><td class="p-2 text-right font-mono">120</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">износ* (13)</td><td class="p-2 text-right font-mono text-slate-500">(13)</td><td class="p-2 text-right font-mono">121</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">остаточная стоимость</td><td class="p-2"></td><td class="p-2 text-right font-mono font-bold">122</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Незавершённое производство (20, 21, 23, 29, 30, 36, 44)</td><td class="p-2 text-right font-mono text-slate-500">(20, 21, 23, 29, 30, 36, 44)</td><td class="p-2 text-right font-mono">130</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расходы будущих периодов (31)</td><td class="p-2 text-right font-mono text-slate-500">(31)</td><td class="p-2 text-right font-mono">140</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Готовая продукция (40)</td><td class="p-2 text-right font-mono text-slate-500">(40)</td><td class="p-2 text-right font-mono">150</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Товары (41)</td><td class="p-2 text-right font-mono text-slate-500">(41)</td><td class="p-2 text-right font-mono">162</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Налог на добавленную стоимость по приобретённым ценностям (19)</td><td class="p-2 text-right font-mono text-slate-500">(19)</td><td class="p-2 text-right font-mono">175</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие запасы и затраты (96)</td><td class="p-2 text-right font-mono text-slate-500">(96)</td><td class="p-2 text-right font-mono">176</td></tr>
                 <tr class="bg-blue-100 dark:bg-blue-950/50 font-bold"><td class="p-2 pl-4">ИТОГО по разделу II</td><td class="p-2"></td><td class="p-2 text-right font-mono">180</td></tr>
               </tbody>
             </table>
@@ -216,26 +206,38 @@
           <div id="balance-a1-3" class="hidden">
             <table class="w-full text-xs">
               <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Товары отгруженные</td><td class="p-2 text-right font-mono text-slate-500">(45)</td><td class="p-2 text-right font-mono">199</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с дебиторами за товары, работы и услуги</td><td class="p-2 text-right font-mono text-slate-500">(62, 76)</td><td class="p-2 text-right font-mono">200</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с бюджетом</td><td class="p-2 text-right font-mono text-slate-500">(68)</td><td class="p-2 text-right font-mono">230</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с персоналом по прочим операциям</td><td class="p-2 text-right font-mono text-slate-500">(73)</td><td class="p-2 text-right font-mono">240</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с прочими дебиторами</td><td class="p-2 text-right font-mono text-slate-500">(71)</td><td class="p-2 text-right font-mono">250</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Авансы, выданные поставщикам</td><td class="p-2 text-right font-mono text-slate-500">(61)</td><td class="p-2 text-right font-mono">260</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Краткосрочные финансовые вложения</td><td class="p-2 text-right font-mono text-slate-500">(58)</td><td class="p-2 text-right font-mono">270</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Касса</td><td class="p-2 text-right font-mono text-slate-500">(50)</td><td class="p-2 text-right font-mono">280</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчётный счёт</td><td class="p-2 text-right font-mono text-slate-500">(51)</td><td class="p-2 text-right font-mono">290</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Валютный счёт</td><td class="p-2 text-right font-mono text-slate-500">(52)</td><td class="p-2 text-right font-mono">300</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие денежные средства</td><td class="p-2 text-right font-mono text-slate-500">(55, 56, 57)</td><td class="p-2 text-right font-mono">310</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие оборотные активы</td><td class="p-2 text-right font-mono text-slate-500">(79)</td><td class="p-2 text-right font-mono">320</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Товары отгруженные (45)</td><td class="p-2 text-right font-mono text-slate-500">(45)</td><td class="p-2 text-right font-mono">199</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с дебиторами:</td><td class="p-2"></td><td class="p-2"></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">за товары, работы и услуги (62, 76)</td><td class="p-2 text-right font-mono text-slate-500">(62, 76)</td><td class="p-2 text-right font-mono">200</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по векселям полученным (62)</td><td class="p-2 text-right font-mono text-slate-500">(62)</td><td class="p-2 text-right font-mono">210</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с дочерними (зависимыми) обществами (78)</td><td class="p-2 text-right font-mono text-slate-500">(78)</td><td class="p-2 text-right font-mono">220</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с бюджетом (68)</td><td class="p-2 text-right font-mono text-slate-500">(68)</td><td class="p-2 text-right font-mono">230</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с персоналом по прочим операциям (73)</td><td class="p-2 text-right font-mono text-slate-500">(73)</td><td class="p-2 text-right font-mono">240</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с прочими дебиторами (71)</td><td class="p-2 text-right font-mono text-slate-500">(71)</td><td class="p-2 text-right font-mono">250</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Авансы, выданные поставщикам и подрядчикам (61)</td><td class="p-2 text-right font-mono text-slate-500">(61)</td><td class="p-2 text-right font-mono">260</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Краткосрочные финансовые вложения (58)</td><td class="p-2 text-right font-mono text-slate-500">(58)</td><td class="p-2 text-right font-mono">270</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Денежные средства:</td><td class="p-2"></td><td class="p-2"></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">касса (50)</td><td class="p-2 text-right font-mono text-slate-500">(50)</td><td class="p-2 text-right font-mono">280</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">расчётный счёт (51)</td><td class="p-2 text-right font-mono text-slate-500">(51)</td><td class="p-2 text-right font-mono">290</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">валютный счёт (52)</td><td class="p-2 text-right font-mono text-slate-500">(52)</td><td class="p-2 text-right font-mono">300</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">прочие денежные средства (55, 56, 57)</td><td class="p-2 text-right font-mono text-slate-500">(55, 56, 57)</td><td class="p-2 text-right font-mono">310</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие оборотные активы (79)</td><td class="p-2 text-right font-mono text-slate-500">(79)</td><td class="p-2 text-right font-mono">320</td></tr>
                 <tr class="bg-blue-100 dark:bg-blue-950/50 font-bold"><td class="p-2 pl-4">ИТОГО по разделу III</td><td class="p-2"></td><td class="p-2 text-right font-mono">330</td></tr>
               </tbody>
             </table>
           </div>
 
+          <!-- Убытки -->
           <div class="p-3 bg-rose-50 dark:bg-rose-950/30 border-t border-slate-200 dark:border-slate-700">
-            <p class="text-xs text-rose-700 dark:text-rose-300"><b>⚠️ Убытки:</b> прошлых лет (сч. 87) — стр. 340; отчётного года — стр. 350. Данные по этим строкам в валюту баланса не входят.</p>
+            <p class="text-xs text-rose-700 dark:text-rose-300 mb-2"><b>Убытки:</b></p>
+            <table class="w-full text-xs">
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">прошлых лет (87)</td><td class="p-2 text-right font-mono text-slate-500">(87)</td><td class="p-2 text-right font-mono">340</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">отчётного года</td><td class="p-2"></td><td class="p-2 text-right font-mono">350</td></tr>
+              </tbody>
+            </table>
           </div>
+
           <div class="p-3 bg-blue-100 dark:bg-blue-950/50 font-bold text-sm">
             <div class="flex justify-between">
               <span>БАЛАНС (сумма строк 080 + 180 + 330 + 340 + 350)</span>
@@ -249,7 +251,7 @@
       <div class="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
         <button onclick="toggleBalanceSection('p1')" class="w-full p-4 flex items-center justify-between bg-purple-50 dark:bg-purple-950/30 hover:bg-purple-100 dark:hover:bg-purple-950/50 transition text-left">
           <div class="flex items-center gap-3">
-            <span class="text-xl">💼</span>
+            <span class="text-xl"></span>
             <h3 class="font-bold text-slate-900 dark:text-white">ПАССИВ</h3>
           </div>
           <svg id="chevron-p1" class="chevron w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -267,16 +269,17 @@
           <div id="balance-p1-1" class="hidden">
             <table class="w-full text-xs">
               <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Уставный капитал</td><td class="p-2 text-right font-mono text-slate-500">(85)</td><td class="p-2 text-right font-mono">400</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Добавочный капитал</td><td class="p-2 text-right font-mono text-slate-500">(87)</td><td class="p-2 text-right font-mono">401</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Резервный капитал</td><td class="p-2 text-right font-mono text-slate-500">(86)</td><td class="p-2 text-right font-mono">410</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Фонды накопления</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">420</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Фонды социальной сферы</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">425</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Целевые финансирования и поступления</td><td class="p-2 text-right font-mono text-slate-500">(96)</td><td class="p-2 text-right font-mono">430</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Арендные обязательства</td><td class="p-2 text-right font-mono text-slate-500">(97)</td><td class="p-2 text-right font-mono">440</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Нераспределённая прибыль прошлых лет</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">460</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прибыль отчётного года</td><td class="p-2 text-right font-mono text-slate-500">(80)</td><td class="p-2 text-right font-mono">470</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">использовано</td><td class="p-2 text-right font-mono text-slate-500">(81)</td><td class="p-2 text-right font-mono">471</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Уставный капитал (85)</td><td class="p-2 text-right font-mono text-slate-500">(85)</td><td class="p-2 text-right font-mono">400</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Добавочный капитал (87)</td><td class="p-2 text-right font-mono text-slate-500">(87)</td><td class="p-2 text-right font-mono">401</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Резервный капитал (86)</td><td class="p-2 text-right font-mono text-slate-500">(86)</td><td class="p-2 text-right font-mono">410</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Фонды накопления (88)</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">420</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Фонды социальной сферы (88)</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">425</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Целевые финансирования и поступления (96)</td><td class="p-2 text-right font-mono text-slate-500">(96)</td><td class="p-2 text-right font-mono">430</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Арендные обязательства (97)</td><td class="p-2 text-right font-mono text-slate-500">(97)</td><td class="p-2 text-right font-mono">440</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Нераспределённая прибыль прошлых лет (88)</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">460</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прибыль:</td><td class="p-2"></td><td class="p-2"></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">отчётного года* (80)</td><td class="p-2 text-right font-mono text-slate-500">(80)</td><td class="p-2 text-right font-mono">470</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">использовано* (81)</td><td class="p-2 text-right font-mono text-slate-500">(81)</td><td class="p-2 text-right font-mono">471</td></tr>
                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">нераспределённая прибыль отчётного года</td><td class="p-2"></td><td class="p-2 text-right font-mono">472</td></tr>
                 <tr class="bg-purple-100 dark:bg-purple-950/50 font-bold"><td class="p-2 pl-4">ИТОГО по разделу I</td><td class="p-2"></td><td class="p-2 text-right font-mono">480</td></tr>
               </tbody>
@@ -293,23 +296,28 @@
           <div id="balance-p1-2" class="hidden">
             <table class="w-full text-xs">
               <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Долгосрочные кредиты банков</td><td class="p-2 text-right font-mono text-slate-500">(92)</td><td class="p-2 text-right font-mono">500</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие долгосрочные займы</td><td class="p-2 text-right font-mono text-slate-500">(95)</td><td class="p-2 text-right font-mono">510</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Краткосрочные кредиты банков</td><td class="p-2 text-right font-mono text-slate-500">(90)</td><td class="p-2 text-right font-mono">600</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Кредиты банков для работников</td><td class="p-2 text-right font-mono text-slate-500">(93)</td><td class="p-2 text-right font-mono">610</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Краткосрочные займы</td><td class="p-2 text-right font-mono text-slate-500">(94)</td><td class="p-2 text-right font-mono">620</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с кредиторами за товары, работы, услуги</td><td class="p-2 text-right font-mono text-slate-500">(60, 76)</td><td class="p-2 text-right font-mono">630</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по оплате труда</td><td class="p-2 text-right font-mono text-slate-500">(70)</td><td class="p-2 text-right font-mono">650</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по социальному страхованию и обеспечению</td><td class="p-2 text-right font-mono text-slate-500">(69)</td><td class="p-2 text-right font-mono">660</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с бюджетом</td><td class="p-2 text-right font-mono text-slate-500">(68)</td><td class="p-2 text-right font-mono">700</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Долгосрочные кредиты банков (92)</td><td class="p-2 text-right font-mono text-slate-500">(92)</td><td class="p-2 text-right font-mono">500</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие долгосрочные займы (95)</td><td class="p-2 text-right font-mono text-slate-500">(95)</td><td class="p-2 text-right font-mono">510</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Краткосрочные кредиты банков (90)</td><td class="p-2 text-right font-mono text-slate-500">(90)</td><td class="p-2 text-right font-mono">600</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Кредиты банков для работников (93)</td><td class="p-2 text-right font-mono text-slate-500">(93)</td><td class="p-2 text-right font-mono">610</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Краткосрочные займы (94)</td><td class="p-2 text-right font-mono text-slate-500">(94)</td><td class="p-2 text-right font-mono">620</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с кредиторами:</td><td class="p-2"></td><td class="p-2"></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">за товары, работы, услуги (60, 76)</td><td class="p-2 text-right font-mono text-slate-500">(60, 76)</td><td class="p-2 text-right font-mono">630</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по векселям выданным (60)</td><td class="p-2 text-right font-mono text-slate-500">(60)</td><td class="p-2 text-right font-mono">640</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по оплате труда (70)</td><td class="p-2 text-right font-mono text-slate-500">(70)</td><td class="p-2 text-right font-mono">650</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по социальному страхованию и обеспечению (69)</td><td class="p-2 text-right font-mono text-slate-500">(69)</td><td class="p-2 text-right font-mono">660</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по имущественному и личному страхованию (65)</td><td class="p-2 text-right font-mono text-slate-500">(65)</td><td class="p-2 text-right font-mono">670</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с дочерними (зависимыми) обществами (78)</td><td class="p-2 text-right font-mono text-slate-500">(78)</td><td class="p-2 text-right font-mono">680</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">по внебюджетным платежам (67)</td><td class="p-2 text-right font-mono text-slate-500">(67)</td><td class="p-2 text-right font-mono">690</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с бюджетом (68)</td><td class="p-2 text-right font-mono text-slate-500">(68)</td><td class="p-2 text-right font-mono">700</td></tr>
                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">с прочими кредиторами</td><td class="p-2"></td><td class="p-2 text-right font-mono">710</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Авансы, полученные от покупателей</td><td class="p-2 text-right font-mono text-slate-500">(64)</td><td class="p-2 text-right font-mono">720</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Торговая наценка</td><td class="p-2 text-right font-mono text-slate-500">(42)</td><td class="p-2 text-right font-mono">721</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с учредителями</td><td class="p-2 text-right font-mono text-slate-500">(75)</td><td class="p-2 text-right font-mono">725</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Доходы будущих периодов</td><td class="p-2 text-right font-mono text-slate-500">(83)</td><td class="p-2 text-right font-mono">730</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Фонды потребления</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">735</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Резервы предстоящих расходов и платежей</td><td class="p-2 text-right font-mono text-slate-500">(89)</td><td class="p-2 text-right font-mono">740</td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Резервы по сомнительным долгам</td><td class="p-2 text-right font-mono text-slate-500">(82)</td><td class="p-2 text-right font-mono">750</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Авансы, полученные от покупателей и заказчиков (64)</td><td class="p-2 text-right font-mono text-slate-500">(64)</td><td class="p-2 text-right font-mono">720</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Торговая наценка (42)</td><td class="p-2 text-right font-mono text-slate-500">(42)</td><td class="p-2 text-right font-mono">721</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Расчёты с учредителями (75)</td><td class="p-2 text-right font-mono text-slate-500">(75)</td><td class="p-2 text-right font-mono">725</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Доходы будущих периодов (83)</td><td class="p-2 text-right font-mono text-slate-500">(83)</td><td class="p-2 text-right font-mono">730</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Фонды потребления (88)</td><td class="p-2 text-right font-mono text-slate-500">(88)</td><td class="p-2 text-right font-mono">735</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Резервы предстоящих расходов и платежей (89)</td><td class="p-2 text-right font-mono text-slate-500">(89)</td><td class="p-2 text-right font-mono">740</td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Резервы по сомнительным долгам (82)</td><td class="p-2 text-right font-mono text-slate-500">(82)</td><td class="p-2 text-right font-mono">750</td></tr>
                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30"><td class="p-2 pl-6">Прочие краткосрочные пассивы</td><td class="p-2"></td><td class="p-2 text-right font-mono">760</td></tr>
                 <tr class="bg-purple-100 dark:bg-purple-950/50 font-bold"><td class="p-2 pl-4">ИТОГО по разделу II</td><td class="p-2"></td><td class="p-2 text-right font-mono">770</td></tr>
               </tbody>
@@ -323,6 +331,12 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Сноска -->
+      <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 p-4 rounded-xl text-xs text-amber-800 dark:text-amber-300">
+        <p><b>* Данные по этим строкам в валюту баланса не входят.</b></p>
+        <p class="mt-2">К таким строкам относятся: первоначальная стоимость и износ нематериальных активов (010, 011), первоначальная (восстановительная) стоимость и износ основных средств (020, 021), первоначальная стоимость и износ малоценных и быстроизнашивающихся предметов (120, 121), прибыль отчётного года и использовано (470, 471).</p>
       </div>
     </section>
 
@@ -449,7 +463,7 @@
               <tr>
                 <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Тип операции</th>
                 <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Затрагиваемые стороны</th>
-                <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Влияние на валюту баланса</th>
+                <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Влияние на итог (валюту) баланса</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
