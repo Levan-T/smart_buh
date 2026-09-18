@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 4. Формы бухгалтерского учета | smart_buh</title>
+  
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
+
+  <!-- Шапка -->
+  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="text-2xl font-black text-blue-600 dark:bg-gradient-to-r dark:from-emerald-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
+          smart_buh
+        </a>
+        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 4</span>
+      </div>
+      
+      <nav class="hidden md:flex space-x-5 text-sm font-medium">
+        <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Оглавление</a>
+        <a href="lesson1.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 1</a>
+        <a href="lesson2.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 2</a>
+        <a href="lesson3.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 3</a>
+        <span class="text-blue-600 dark:text-emerald-400 font-semibold border-b-2 border-blue-600 dark:border-emerald-400 pb-0.5">Урок 4</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+
+    <!-- Заголовок -->
+    <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 leading-tight">
+        УРОК 4. Формы бухгалтерского учета
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+        Изучаем четыре основные формы ведения бухгалтерского учета: от простейшей Журнал-Главная до современных автоматизированных систем.
+      </p>
+    </div>
+
+    <!-- Раздел 1: Введение -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>1.</span> Что такое форма бухгалтерского учета?
+      </h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p><b>Форма бухгалтерского учета</b> — это определенная система построения учетных регистров, порядок и способы записи в них хозяйственных операций, а также связь между регистрами синтетического и аналитического учета.</p>
+        <p>Простыми словами, это <b>«маршрут»</b>, который проходит документ от момента его создания до попадания в итоговую отчетность.</p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
+        <h3 class="font-bold text-slate-900 dark:text-white text-lg"> Четыре обязательных элемента любой формы учета:</h3>
+        <ol class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-start gap-2">
+            <span class="font-bold text-emerald-600 dark:text-emerald-400">1.</span>
+            <span><b>Первичные документы</b> (основание для записи)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-bold text-emerald-600 dark:text-emerald-400">2.</span>
+            <span><b>Учетные регистры</b> (журналы, ведомости, книги, карточки)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-bold text-emerald-600 dark:text-emerald-400">3.</span>
+            <span><b>Порядок записей</b> данных из документов в регистры</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-bold text-emerald-600 dark:text-emerald-400">4.</span>
+            <span><b>Способ обобщения</b> данных для составления отчетности</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
+        <p class="text-sm text-emerald-800 dark:text-emerald-300">
+          <b> Важно:</b> Выбор формы зависит от масштаба бизнеса, количества операций, штата бухгалтерии и степени автоматизации. Выделяют <b>4 формы</b> бухгалтерского учета.
+        </p>
+      </div>
+    </section>
+
+    <!-- Раздел 2: Журнал-Главная -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>2.</span> Форма «Журнал-Главная»
+      </h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p><b>Журнал-Главная</b> — это простейшая форма учета, которая подходит для <b>малых предприятий</b> с небольшим количеством хозяйственных операций (до 50-100 в месяц).</p>
+        <p>Все операции за месяц записываются в хронологическом порядке в одну единую книгу — Журнал-Главную, которая одновременно выполняет роль и хронологической записи, и Главной книги.</p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-slate-900 dark:text-white mb-3">📊 Схема движения документов:</h3>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm">
+          <div class="bg-blue-100 dark:bg-blue-950/50 p-3 rounded-xl text-center">
+            <b>Первичный документ</b>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-purple-100 dark:bg-purple-950/50 p-3 rounded-xl text-center">
+            <b>Журнал-Главная</b><br>
+            <span class="text-xs">(хронология + систематизация)</span>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-amber-100 dark:bg-amber-950/50 p-3 rounded-xl text-center">
+            <b>Бухгалтерский баланс</b>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="toggleExample('jg')" id="btn-jg" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
+        👁 Показать пример Журнала-Главной
+      </button>
+      <div id="example-jg" class="hidden space-y-4">
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3">Журнал-Главная за январь 2026 г.</h4>
+          <table class="w-full text-xs">
+            <thead class="bg-slate-100 dark:bg-slate-700/60">
+              <tr>
+                <th class="p-2 text-left">Дата</th>
+                <th class="p-2 text-left">№ документа</th>
+                <th class="p-2 text-left">Содержание операции</th>
+                <th class="p-2 text-right">Сумма, руб.</th>
+                <th class="p-2 text-left">Корр. счетов</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+              <tr>
+                <td class="p-2">05.01</td>
+                <td class="p-2">ПКО №1</td>
+                <td class="p-2">Получено в кассу с расчетного счета</td>
+                <td class="p-2 text-right">50 000</td>
+                <td class="p-2">Дт 50 – Кт 51</td>
+              </tr>
+              <tr>
+                <td class="p-2">07.01</td>
+                <td class="p-2">РКО №1</td>
+                <td class="p-2">Выдано под отчет сотруднику</td>
+                <td class="p-2 text-right">10 000</td>
+                <td class="p-2">Дт 71 – Кт 50</td>
+              </tr>
+              <tr>
+                <td class="p-2">10.01</td>
+                <td class="p-2">Авансовый отчет</td>
+                <td class="p-2">Оприходованы материалы от подотчетного лица</td>
+                <td class="p-2 text-right">8 500</td>
+                <td class="p-2">Дт 10 – Кт 71</td>
+              </tr>
+              <tr>
+                <td class="p-2">15.01</td>
+                <td class="p-2">Накладная №1</td>
+                <td class="p-2">Отгружена продукция покупателю</td>
+                <td class="p-2 text-right">120 000</td>
+                <td class="p-2">Дт 62 – Кт 46</td>
+              </tr>
+              <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
+                <td class="p-2" colspan="3">ИТОГО оборот за месяц</td>
+                <td class="p-2 text-right">188 500</td>
+                <td class="p-2"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-3 rounded-r-xl text-xs text-emerald-800 dark:text-emerald-300">
+          <b>💡 Обратите внимание:</b> Все операции записываются в хронологическом порядке в одну книгу. Для поиска информации по конкретному счету нужно просматривать всю книгу.
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <h3 class="font-bold text-slate-900 dark:text-white text-lg">✅ Преимущества и ❌ Недостатки</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-semibold text-emerald-600 dark:text-emerald-400 mb-2">Преимущества:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Простота ведения</li>
+              <li>• Минимум регистров</li>
+              <li>• Легко освоить</li>
+              <li>• Подходит для малого объема операций</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-rose-600 dark:text-rose-400 mb-2">Недостатки:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Неудобно при большом объеме операций</li>
+              <li>• Нет группировки по счетам</li>
+              <li>• Сложно найти нужную запись</li>
+              <li>• Трудоемко составлять баланс</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
+        <p class="text-sm text-blue-800 dark:text-blue-300">
+          <b>🏢 Для кого подходит:</b> Малые предприятия с небольшим объемом операций (до 50-100 операций в месяц), индивидуальные предприниматели, организации с простой структурой учета.
+        </p>
+      </div>
+    </section>
+
+    <!-- Раздел 3: Мемориально-ордерная форма -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>3.</span> Мемориально-ордерная форма учета
+      </h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p>Эта форма подходит для <b>более крупных предприятий</b>, где операций уже много и их нужно предварительно группировать.</p>
+        <p>На основании первичных документов или их групп составляются <b>мемориальные ордера</b> (каждый ордер объединяет однотипные операции, например, только кассовые или только банковские). Затем данные из мемориальных ордеров переносятся в Главную книгу.</p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-slate-900 dark:text-white mb-3">📊 Схема движения документов:</h3>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm">
+          <div class="bg-blue-100 dark:bg-blue-950/50 p-3 rounded-xl text-center">
+            <b>Первичные документы</b>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-purple-100 dark:bg-purple-950/50 p-3 rounded-xl text-center">
+            <b>Мемориальные ордера</b><br>
+            <span class="text-xs">(группировка по видам операций)</span>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-amber-100 dark:bg-amber-950/50 p-3 rounded-xl text-center">
+            <b>Главная книга</b>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-rose-100 dark:bg-rose-950/50 p-3 rounded-xl text-center">
+            <b>Бухгалтерский баланс</b>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="toggleExample('mo1')" id="btn-mo1" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
+        👁 Показать пример Мемориального ордера №1
+      </button>
+      <div id="example-mo1" class="hidden space-y-4">
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3">Мемориальный ордер №1 за январь 2026 г.</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">По кредиту счета 50 «Касса»</p>
+          <table class="w-full text-xs">
+            <thead class="bg-slate-100 dark:bg-slate-700/60">
+              <tr>
+                <th class="p-2 text-left">Дата</th>
+                <th class="p-2 text-left">№ документа</th>
+                <th class="p-2 text-left">Корр. счет (Дт)</th>
+                <th class="p-2 text-left">Содержание операции</th>
+                <th class="p-2 text-right">Сумма, руб.</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+              <tr>
+                <td class="p-2">07.01</td>
+                <td class="p-2">РКО №1</td>
+                <td class="p-2">71</td>
+                <td class="p-2">Выдано под отчет сотруднику</td>
+                <td class="p-2 text-right">10 000</td>
+              </tr>
+              <tr>
+                <td class="p-2">12.01</td>
+                <td class="p-2">РКО №2</td>
+                <td class="p-2">70</td>
+                <td class="p-2">Выдана зарплата сотруднику</td>
+                <td class="p-2 text-right">25 000</td>
+              </tr>
+              <tr>
+                <td class="p-2">22.01</td>
+                <td class="p-2">РКО №3</td>
+                <td class="p-2">60</td>
+                <td class="p-2">Оплачено поставщику наличными</td>
+                <td class="p-2 text-right">45 000</td>
+              </tr>
+              <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
+                <td class="p-2" colspan="4">ИТОГО оборот по кредиту сч. 50</td>
+                <td class="p-2 text-right">80 000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <button onclick="toggleExample('mo2')" id="btn-mo2" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
+        👁 Показать пример Мемориального ордера №05 (официальная форма)
+      </button>
+      <div id="example-mo2" class="hidden space-y-4">
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
+          <div class="border border-slate-300 dark:border-slate-600 p-4 rounded-xl">
+            <h4 class="font-bold text-slate-900 dark:text-white text-center mb-2">МЕМОРИАЛЬНЫЙ ОРДЕР № 05</h4>
+            <p class="text-xs text-center text-slate-500 dark:text-slate-400 mb-4">от «02» октября 2026 г.</p>
+            <p class="text-xs mb-2"><b>Содержание операции:</b> Выплата заработной платы персоналу из кассы</p>
+            <p class="text-xs mb-4"><b>Основание:</b> Платежная ведомость № 12, РКО № 01</p>
+            <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+              <thead>
+                <tr class="bg-slate-100 dark:bg-slate-700">
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Дебет (счет / субсчет)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Кредит (счет / субсчет)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2 text-right">Сумма (руб.)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">70</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-center font-mono">50</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-right font-mono">40 000</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="mt-4 text-xs">
+              <p>Главный бухгалтер: _________ (Подпись)</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-3 rounded-r-xl text-xs text-emerald-800 dark:text-emerald-300">
+          <b>💡 Принцип:</b> Все операции, где кредитующий счет — 50 «Касса», собираются в один мемориальный ордер. Это позволяет легко контролировать движение наличных.
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <h3 class="font-bold text-slate-900 dark:text-white text-lg">✅ Преимущества и ❌ Недостатки</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-semibold text-emerald-600 dark:text-emerald-400 mb-2">Преимущества:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Четкая группировка операций</li>
+              <li>• Упрощение работы с Главной книгой</li>
+              <li>• Возможность разделения труда</li>
+              <li>• Контроль по каждому счету</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-rose-600 dark:text-rose-400 mb-2">Недостатки:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Двойная работа (сначала ордер, потом Главная книга)</li>
+              <li>• Трудоемкость при большом объеме</li>
+              <li>• Много мемориальных ордеров</li>
+              <li>• Устаревшая форма (вытесняется журнально-ордерной)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
+        <p class="text-sm text-blue-800 dark:text-blue-300">
+          <b>🏢 Для кого подходит:</b> Средние предприятия с умеренным объемом операций, организации с простой структурой учета, где можно сгруппировать операции по экономическому содержанию.
+        </p>
+      </div>
+    </section>
+
+    <!-- Раздел 4: Журнально-ордерная форма -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>4.</span> Журнально-ордерная форма учета
+      </h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p>Это <b>классическая, наиболее совершенная форма</b> для крупных предприятий с большим документооборотом (широко применялась до массовой автоматизации и до сих пор является методологической базой).</p>
+        <p>Она объединяет хронологическую и систематическую записи. Для каждого кредитующего счета (или группы счетов) открывается свой <b>Журнал-ордер</b>. Контроль правильности записей осуществляется с помощью <b>Шахматной оборотной ведомости</b>.</p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-slate-900 dark:text-white mb-3">📊 Схема движения документов:</h3>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm">
+          <div class="bg-blue-100 dark:bg-blue-950/50 p-3 rounded-xl text-center">
+            <b>Первичные документы</b>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-purple-100 dark:bg-purple-950/50 p-3 rounded-xl text-center">
+            <b>Журналы-ордера и Ведомости</b><br>
+            <span class="text-xs">(хронология + систематизация)</span>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-amber-100 dark:bg-amber-950/50 p-3 rounded-xl text-center">
+            <b>Шахматная ведомость</b><br>
+            <span class="text-xs">(контроль)</span>
+          </div>
+          <div class="text-emerald-500 text-2xl">→</div>
+          <div class="bg-rose-100 dark:bg-rose-950/50 p-3 rounded-xl text-center">
+            <b>Бухгалтерский баланс</b>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="toggleExample('shahmatka')" id="btn-shahmatka" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
+        👁 Показать пример Шахматной оборотной ведомости
+      </button>
+      <div id="example-shahmatka" class="hidden space-y-4">
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto">
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3">Шахматная оборотная ведомость за октябрь 2026 г.</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">(По вертикали – Кредитуемые счета, по горизонтали – Дебетуемые счета. На пересечении – сумма операции)</p>
+          <table class="w-full text-xs">
+            <thead class="bg-slate-100 dark:bg-slate-700/60">
+              <tr>
+                <th class="p-2 text-left">Кредит \ Дебет</th>
+                <th class="p-2 text-center">10<br><span class="font-normal">(Материалы)</span></th>
+                <th class="p-2 text-center">20<br><span class="font-normal">(Производство)</span></th>
+                <th class="p-2 text-center">50<br><span class="font-normal">(Касса)</span></th>
+                <th class="p-2 text-center">51<br><span class="font-normal">(Расч. счет)</span></th>
+                <th class="p-2 text-center font-bold">Итого по Кредиту</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+              <tr>
+                <td class="p-2 font-semibold">60 (Поставщики)</td>
+                <td class="p-2 text-center">50 000</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center">45 000</td>
+                <td class="p-2 text-center font-bold">95 000</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-semibold">70 (Зарплата)</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center">80 000</td>
+                <td class="p-2 text-center">25 000</td>
+                <td class="p-2 text-center">-</td>
+                <td class="p-2 text-center font-bold">105 000</td>
+              </tr>
+              <tr class="bg-slate-100 dark:bg-slate-700/40 font-bold">
+                <td class="p-2">Итого по Дебету</td>
+                <td class="p-2 text-center">50 000</td>
+                <td class="p-2 text-center">80 000</td>
+                <td class="p-2 text-center">25 000</td>
+                <td class="p-2 text-center">45 000</td>
+                <td class="p-2 text-center">200 000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-3 rounded-r-xl text-xs text-emerald-800 dark:text-emerald-300">
+          <b>💡 Контроль:</b> Итог по строке "Итого Кредит" должен равняться итогу по столбцу "Итого Дебет". В нашем примере: 200 000 = 200 000 ✅
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <h3 class="font-bold text-slate-900 dark:text-white text-lg">✅ Преимущества и ❌ Недостатки</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-semibold text-emerald-600 dark:text-emerald-400 mb-2">Преимущества:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Механизированная группировка данных</li>
+              <li>• Отличный внутренний контроль (шахматная ведомость)</li>
+              <li>• Сокращение числа записей в Главной книге</li>
+              <li>• Удобство составления отчетности</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-rose-600 dark:text-rose-400 mb-2">Недостатки:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Сложность построения и освоения</li>
+              <li>• Требует высокой квалификации персонала</li>
+              <li>• Громоздкость при очень больших объемах</li>
+              <li>• Вытесняется автоматизированными системами</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
+        <p class="text-sm text-blue-800 dark:text-blue-300">
+          <b>🏢 Для кого подходит:</b> Средние и крупные предприятия с большим объемом операций, организации со сложной структурой учета, предприятия с развитой системой аналитического учета.
+        </p>
+      </div>
+    </section>
+
+    <!-- Раздел 5: Автоматизированная форма -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>5.</span> Автоматизированная форма бухгалтерского учета
+      </h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p><b>Автоматизированная форма</b> — это современный стандарт для абсолютного большинства организаций. Реализуется с помощью программных продуктов (например, «1С:Предприятие»).</p>
+        <p>Бухгалтер вводит первичный документ в программу. Программа <b>автоматически</b> определяет корреспонденцию счетов, делает проводку, обновляет данные в регистрах (аналогиях Журналов-ордеров и Главной книги) и мгновенно формирует отчетность.</p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-slate-900 dark:text-white mb-3">📊 Схема движения документов:</h3>
+        <div class="flex flex-col items-center justify-center gap-3 text-xs">
+          <div class="bg-blue-100 dark:bg-blue-950/50 p-3 rounded-xl text-center w-full md:w-auto">
+            <b>Первичный документ</b><br>
+            <span class="text-[10px]">(электронный чек / выписка банк-клиента)</span>
+          </div>
+          <div class="text-emerald-500 text-xl">↓</div>
+          <div class="bg-purple-100 dark:bg-purple-950/50 p-3 rounded-xl text-center w-full md:w-auto">
+            <b>Ввод в бухгалтерскую программу</b><br>
+            <span class="text-[10px]">(1С, SAP и др.)</span>
+          </div>
+          <div class="text-emerald-500 text-xl">↓</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+            <div class="bg-amber-100 dark:bg-amber-950/50 p-3 rounded-xl text-center">
+              <b>Регистры аналитики</b><br>
+              <span class="text-[10px]">(Номенклатура, Контрагенты)</span>
+            </div>
+            <div class="bg-amber-100 dark:bg-amber-950/50 p-3 rounded-xl text-center">
+              <b>Синтетические проводки</b><br>
+              <span class="text-[10px]">(Дт / Кт)</span>
+            </div>
+          </div>
+          <div class="text-emerald-500 text-xl">↓</div>
+          <div class="bg-rose-100 dark:bg-rose-950/50 p-3 rounded-xl text-center w-full md:w-auto">
+            <b>Главная книга / ОСВ</b>
+          </div>
+          <div class="text-emerald-500 text-xl">↓</div>
+          <div class="bg-emerald-100 dark:bg-emerald-950/50 p-3 rounded-xl text-center w-full md:w-auto">
+            <b>Автоматический Бухгалтерский Баланс (Форма №1)</b>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="toggleExample('auto')" id="btn-auto" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
+        👁 Показать пример работы в программе 1С
+      </button>
+      <div id="example-auto" class="hidden space-y-4">
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
+          <h4 class="font-bold text-slate-900 dark:text-white">Как это выглядит на практике (пример в 1С):</h4>
+          <ol class="space-y-2 text-sm text-slate-700 dark:text-slate-300 list-decimal list-inside">
+            <li>Бухгалтер создает документ <b>«Поступление товаров и услуг»</b>.</li>
+            <li>Указывает: Поставщик (ООО «Поставщик»), Товар (Материалы, 10 000 руб.), НДС (2 000 руб.).</li>
+            <li>Нажимает <b>«Провести и закрыть»</b>.</li>
+            <li><b>Система автоматически создает проводки:</b>
+              <ul class="list-disc list-inside ml-4 mt-1 text-xs">
+                <li>Дт 10 – Кт 60 (10 000 руб.)</li>
+                <li>Дт 19 – Кт 60 (2 000 руб.)</li>
+              </ul>
+            </li>
+            <li>При нажатии кнопки <b>«Отчеты» → «Оборотно-сальдовая ведомость»</b> бухгалтер мгновенно видит обновленные остатки по счетам 10, 19 и 60.</li>
+          </ol>
+        </div>
+        <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-3 rounded-r-xl text-xs text-emerald-800 dark:text-emerald-300">
+          <b>💡 Главное преимущество:</b> Программа сама определяет корреспонденцию счетов, проверяет правильность проводок и мгновенно формирует любую отчетность.
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <h3 class="font-bold text-slate-900 dark:text-white text-lg">✅ Преимущества и ❌ Недостатки</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-semibold text-emerald-600 dark:text-emerald-400 mb-2">Преимущества:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Высокая скорость обработки</li>
+              <li>• Отсутствие арифметических ошибок</li>
+              <li>• Мгновенное получение любой отчетности</li>
+              <li>• Удобство поиска и анализа</li>
+              <li>• Автоматический контроль</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-rose-600 dark:text-rose-400 mb-2">Недостатки:</h4>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+              <li>• Риск потери данных без резервного копирования</li>
+              <li>• Зависимость от программного обеспечения</li>
+              <li>• Необходимость обучения персонала</li>
+              <li>• Стоимость лицензий</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
+        <p class="text-sm text-blue-800 dark:text-blue-300">
+          <b>🏢 Для кого подходит:</b> Абсолютно для всех организаций — от малых предприятий до крупных корпораций. Современный стандарт бухгалтерского учета.
+        </p>
+      </div>
+    </section>
+
+    <!-- Раздел 6: Сравнительная таблица -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>6.</span> Сравнение форм бухгалтерского учета
+      </h2>
+      
+      <div class="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-100 dark:bg-slate-700/60">
+              <tr>
+                <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Критерий</th>
+                <th class="p-3 text-left font-bold text-blue-600 dark:text-blue-400">Журнал-Главная</th>
+                <th class="p-3 text-left font-bold text-purple-600 dark:text-purple-400">Мемориально-ордерная</th>
+                <th class="p-3 text-left font-bold text-amber-600 dark:text-amber-400">Журнально-ордерная</th>
+                <th class="p-3 text-left font-bold text-emerald-600 dark:text-emerald-400">Автоматизированная</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                <td class="p-3 font-semibold text-slate-900 dark:text-white">Масштаб бизнеса</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Малый</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Средний</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Крупный</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Любой</td>
+              </tr>
+              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                <td class="p-3 font-semibold text-slate-900 dark:text-white">Кол-во регистров</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">1 (Журнал-Главная)</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Много (Ордера + Гл. книга)</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Много (Журналы + Шахматка)</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Виртуальные (в базе данных)</td>
+              </tr>
+              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                <td class="p-3 font-semibold text-slate-900 dark:text-white">Трудоемкость</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Низкая</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Средняя</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Высокая</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">Минимальная</td>
+              </tr>
+              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
+                <td class="p-3 font-semibold text-slate-900 dark:text-white">Контроль ошибок</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Сложный</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Средний</td>
+                <td class="p-3 text-slate-700 dark:text-slate-300">Высокий (шахматка)</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">Автоматический</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Раздел 7: Тесты -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>7.</span> Проверка знаний
+      </h2>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Ответьте на 5 вопросов, чтобы закрепить материал урока.</p>
+
+      <!-- Вопрос 1 -->
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">1. Что такое форма бухгалтерского учета?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q1',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Единая система показателей об имущественном положении организации</button>
+          <button onclick="checkAnswer('q1',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Система построения учетных регистров, порядок и способы записи хозяйственных операций</button>
+          <button onclick="checkAnswer('q1',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Совокупность первичных документов за отчетный период</button>
+        </div>
+        <div id="q1-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">2. Какая форма учета лучше всего подходит для малых предприятий с небольшим количеством операций?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q2',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Журнально-ордерная</button>
+          <button onclick="checkAnswer('q2',1,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Мемориально-ордерная</button>
+          <button onclick="checkAnswer('q2',2,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Журнал-Главная</button>
+        </div>
+        <div id="q2-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">3. Что является отличительной чертой мемориально-ордерной формы?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q3',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Использование шахматной оборотной ведомости для контроля</button>
+          <button onclick="checkAnswer('q3',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Предварительная группировка однотипных операций в мемориальные ордера</button>
+          <button onclick="checkAnswer('q3',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Запись всех операций в одну единую книгу в хронологическом порядке</button>
+        </div>
+        <div id="q3-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">4. С помощью какого регистра осуществляется контроль правильности записей в журнально-ордерной форме?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q4',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Главная книга</button>
+          <button onclick="checkAnswer('q4',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Шахматная оборотная ведомость</button>
+          <button onclick="checkAnswer('q4',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Мемориальный ордер</button>
+        </div>
+        <div id="q4-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+        <p class="font-semibold text-slate-900 dark:text-white">5. Какое главное преимущество автоматизированной формы учета?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkAnswer('q5',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Полное отсутствие необходимости в бухгалтере</button>
+          <button onclick="checkAnswer('q5',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Автоматическое формирование проводок и мгновенное получение отчетности</button>
+          <button onclick="checkAnswer('q5',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Использование исключительно бумажных носителей информации</button>
+        </div>
+        <div id="q5-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 bg-white dark:bg-slate-950 mt-12">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+      <div class="flex space-x-4">
+        <a href="lesson3.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 3</a>
+        <a href="lesson5.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 5 →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Переключение примеров
+    function toggleExample(id) {
+      const content = document.getElementById(`example-${id}`);
+      const btn = document.getElementById(`btn-${id}`);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        btn.innerHTML = '🙈 Скрыть пример';
+        btn.classList.remove('bg-emerald-600', 'dark:bg-emerald-500');
+        btn.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+      } else {
+        content.classList.add('hidden');
+        btn.innerHTML = '👁 Показать пример';
+        btn.classList.add('bg-emerald-600', 'dark:bg-emerald-500');
+        btn.classList.remove('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+      }
+    }
+
+    // Тесты
+    function checkAnswer(qId, idx, ok) {
+      const fb = document.getElementById(`${qId}-feedback`);
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/60', 'dark:text-emerald-300', 'bg-rose-50', 'text-rose-800', 'dark:bg-rose-950/60', 'dark:text-rose-300', 'border', 'border-emerald-200', 'dark:border-emerald-800', 'border-rose-200', 'dark:border-rose-800');
+      
+      const ex = {
+        q1: { y: "Верно! Форма учета — это система регистров и порядок записей.", n: "Неверно. Форма учета — это система построения регистров и порядок записей операций." },
+        q2: { y: "Верно! Журнал-Главная — простейшая форма для малого бизнеса.", n: "Неверно. Для малого бизнеса с небольшим объемом операций подходит форма Журнал-Главная." },
+        q3: { y: "Верно! В этой форме операции сначала группируются в мемориальные ордера.", n: "Неверно. Главная черта — предварительная группировка операций в мемориальные ордера." },
+        q4: { y: "Верно! Шахматная ведомость позволяет контролировать равенство оборотов.", n: "Неверно. В журнально-ордерной форме контроль осуществляется через шахматную оборотную ведомость." },
+        q5: { y: "Верно! Программа сама делает проводки и формирует отчеты.", n: "Неверно. Главное преимущество — автоматическое формирование проводок и отчетности." }
+      };
+      
+      if (ok) {
+        fb.classList.add('bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/60', 'dark:text-emerald-300', 'border', 'border-emerald-200', 'dark:border-emerald-800');
+        fb.innerHTML = `<b>✅ ${ex[qId].y}</b>`;
+      } else {
+        fb.classList.add('bg-rose-50', 'text-rose-800', 'dark:bg-rose-950/60', 'dark:text-rose-300', 'border', 'border-rose-200', 'dark:border-rose-800');
+        fb.innerHTML = `<b>❌ ${ex[qId].n}</b>`;
+      }
+    }
+  </script>
+</body>
+</html>
