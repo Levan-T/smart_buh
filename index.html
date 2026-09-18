@@ -3,7 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Курс по Бухгалтерскому Учету</title>
+  <title>Курс по Бухгалтерскому Учету | smart_buh</title>
+  
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+  </script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
   <style>
     :root {
       --bg-color: #f4f6f9;
@@ -11,111 +24,211 @@
       --text-color: #2c3e50;
       --text-muted: #666666;
       --accent-color: #2563eb;
+      --accent-green: #10b981;
       --shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
-
-    [data-theme="dark"] {
-      --bg-color: #1a1a1a;
-      --card-bg: #2d2d2d;
+    .dark {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
       --text-color: #e0e0e0;
-      --text-muted: #aaaaaa;
+      --text-muted: #94a3b8;
       --accent-color: #60a5fa;
+      --accent-green: #34d399;
       --shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      margin: 0;
-      padding: 40px 20px;
       transition: background-color 0.3s, color 0.3s;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
+    .section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
     }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
+    .section-content.open {
+      max-height: 2000px;
+      transition: max-height 0.6s ease-in;
     }
-
-    h1 { margin: 0; font-size: 2em; }
-
-    .theme-btn {
-      background: var(--card-bg);
-      color: var(--text-color);
-      border: 1px solid var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
+    .chevron {
+      transition: transform 0.3s;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+    .chevron.rotated {
+      transform: rotate(180deg);
     }
-
-    .card-link {
-      text-decoration: none;
-      color: inherit;
+    .progress-bar {
+      background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
     }
-
-    .card {
-      background: var(--card-bg);
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      height: 100%;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card h3 { margin-top: 0; color: var(--accent-color); }
-    .card p { color: var(--text-muted); font-size: 0.95em; line-height: 1.5; }
-    .btn-read { font-weight: bold; color: var(--accent-color); margin-top: 15px; display: inline-block; }
   </style>
-  
-  <script>
-    // Мгновенная тема до загрузки страницы
-    const savedTheme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  </script>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Оглавление курса</h1>
-      <button class="theme-btn" onclick="toggleTheme()" title="Переключить светлую/темную тему">🌓</button>
+<body class="min-h-screen">
+
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    
+    <!-- Шапка -->
+    <header class="flex justify-between items-center mb-8 pb-6 border-b border-slate-200 dark:border-slate-700">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">
+          smart_buh
+        </h1>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+          Курс по бухгалтерскому учету • Республика Абхазия
+        </p>
+      </div>
+      <button id="theme-toggle" onclick="toggleTheme()" class="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition shadow-sm" title="Переключить тему">
+        <span class="dark:hidden text-xl">🌙</span>
+        <span class="hidden dark:inline text-xl">☀️</span>
+      </button>
     </header>
 
-    <!-- Сюда скрипт сам подставит все уроки -->
-    <div class="grid" id="lessons-grid"></div>
+    <!-- Общий прогресс -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
+      <div class="flex justify-between items-center mb-3">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white">Ваш прогресс</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400" id="progress-text">Загрузка...</p>
+        </div>
+        <div class="text-right">
+          <div class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400" id="progress-percent">0%</div>
+        </div>
+      </div>
+      <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3 overflow-hidden">
+        <div id="progress-bar" class="progress-bar h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Контейнер для разделов -->
+    <div id="sections-container" class="space-y-4"></div>
+
+    <!-- Футер -->
+    <footer class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-700 text-center text-xs text-slate-500 dark:text-slate-400">
+      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+    </footer>
   </div>
 
-  <!-- Подключаем наш авто-скрипт -->
   <script src="navigation.js"></script>
 
   <script>
     function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
     }
+
+    function toggleSection(sectionId) {
+      const content = document.getElementById(`section-${sectionId}-content`);
+      const chevron = document.getElementById(`chevron-${sectionId}`);
+      content.classList.toggle('open');
+      chevron.classList.toggle('rotated');
+    }
+
+    function getStatusIcon(status) {
+      if (status === 'completed') return '<span class="text-emerald-500 text-lg">✅</span>';
+      if (status === 'current') return '<span class="text-amber-500 text-lg animate-pulse">🔥</span>';
+      if (status === 'locked') return '<span class="text-slate-400 text-lg">🔒</span>';
+      return '';
+    }
+
+    function getStatusLabel(status) {
+      if (status === 'completed') return '<span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-semibold">Пройден</span>';
+      if (status === 'current') return '<span class="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300 font-semibold">Текущий</span>';
+      if (status === 'locked') return '<span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400 font-semibold">В разработке</span>';
+      return '';
+    }
+
+    function renderCourse() {
+      const container = document.getElementById('sections-container');
+      container.innerHTML = '';
+
+      let totalLessons = 0;
+      let completedLessons = 0;
+
+      courseStructure.sections.forEach(section => {
+        const sectionCompleted = section.lessons.filter(l => l.status === 'completed').length;
+        const sectionTotal = section.lessons.length;
+        const sectionPercent = sectionTotal > 0 ? Math.round((sectionCompleted / sectionTotal) * 100) : 0;
+
+        totalLessons += sectionTotal;
+        completedLessons += sectionCompleted;
+
+        const sectionEl = document.createElement('div');
+        sectionEl.className = 'bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden';
+
+        const lessonsHtml = section.lessons.map(lesson => {
+          const isClickable = lesson.status !== 'locked';
+          const linkClass = isClickable 
+            ? 'hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer' 
+            : 'opacity-60 cursor-not-allowed';
+          const href = isClickable ? `lesson${lesson.id}.html` : '#';
+
+          return `
+            <a href="${href}" class="block p-4 border-t border-slate-100 dark:border-slate-700 ${linkClass} transition">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3 flex-1 min-w-0">
+                  <span class="flex-shrink-0">${getStatusIcon(lesson.status)}</span>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-0.5">Урок ${lesson.id}</div>
+                    <div class="text-sm font-semibold text-slate-900 dark:text-white truncate">${lesson.title}</div>
+                    ${lesson.description ? `<div class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">${lesson.description}</div>` : ''}
+                  </div>
+                </div>
+                <div class="flex-shrink-0">
+                  ${getStatusLabel(lesson.status)}
+                </div>
+              </div>
+            </a>
+          `;
+        }).join('');
+
+        sectionEl.innerHTML = `
+          <button onclick="toggleSection(${section.id})" class="w-full p-5 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/30 transition text-left">
+            <div class="flex items-center gap-4 flex-1 min-w-0">
+              <div class="text-3xl flex-shrink-0">${section.icon}</div>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-1">Раздел ${section.id}</div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white truncate">${section.title}</h3>
+                <div class="flex items-center gap-3 mt-2">
+                  <div class="flex-1 max-w-xs bg-slate-200 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+                    <div class="progress-bar h-1.5 rounded-full transition-all" style="width: ${sectionPercent}%"></div>
+                  </div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400 font-semibold flex-shrink-0">${sectionCompleted}/${sectionTotal} уроков</span>
+                </div>
+              </div>
+            </div>
+            <svg id="chevron-${section.id}" class="chevron w-6 h-6 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="section-${section.id}-content" class="section-content">
+            ${lessonsHtml}
+          </div>
+        `;
+
+        container.appendChild(sectionEl);
+      });
+
+      // Обновляем общий прогресс
+      const totalPercent = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+      document.getElementById('progress-percent').textContent = `${totalPercent}%`;
+      document.getElementById('progress-bar').style.width = `${totalPercent}%`;
+      document.getElementById('progress-text').textContent = `Пройдено ${completedLessons} из ${totalLessons} уроков`;
+
+      // Автоматически раскрываем раздел с текущим уроком
+      const currentSection = courseStructure.sections.find(s => s.lessons.some(l => l.status === 'current'));
+      if (currentSection) {
+        toggleSection(currentSection.id);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCourse);
   </script>
 </body>
 </html>
