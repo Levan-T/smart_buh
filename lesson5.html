@@ -123,11 +123,11 @@
         </div>
 
         <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <p class="font-semibold mb-3">3. Начислена заработная плата за 4 квартал 35 000 руб.</p>
+          <p class="font-semibold mb-3">3. Сняты наличные с расчетного счета в кассу 30 000 руб.</p>
           <div class="flex flex-wrap gap-2">
             <input type="text" id="p3-dt" placeholder="Дт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
             <input type="text" id="p3-kt" placeholder="Кт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-            <button onclick="checkEntry('p3', '20', '70')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+            <button onclick="checkEntry('p3', '50', '51')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
           </div>
           <p id="p3-feedback" class="hidden mt-2 text-xs font-bold"></p>
         </div>
@@ -169,23 +169,19 @@
           <div>
             <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-2">АКТИВ</h4>
             <ul class="space-y-1 text-slate-700 dark:text-slate-300">
-              <li class="flex justify-between"><span>01 Основные средства</span><span>200 000</span></li>
-              <li class="flex justify-between pl-4 text-slate-500"><span>02 Амортизация</span><span>(40 000)</span></li>
-              <li class="flex justify-between font-semibold"><span>Остаточная стоимость</span><span>160 000</span></li>
-              <li class="flex justify-between"><span>10 Материалы</span><span>20 000</span></li>
-              <li class="flex justify-between"><span>41 Товары</span><span>50 000</span></li>
+              <li class="flex justify-between"><span>10 Материалы</span><span>50 000</span></li>
               <li class="flex justify-between"><span>50 Касса</span><span>10 000</span></li>
-              <li class="flex justify-between"><span>51 Расчетный счет</span><span>100 000</span></li>
-              <li class="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1 mt-1"><span>ИТОГО АКТИВ</span><span>340 000</span></li>
+              <li class="flex justify-between"><span>51 Расчетный счет</span><span>200 000</span></li>
+              <li class="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1 mt-1"><span>ИТОГО АКТИВ</span><span>260 000</span></li>
             </ul>
           </div>
           <div>
             <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-2">ПАССИВ</h4>
             <ul class="space-y-1 text-slate-700 dark:text-slate-300">
-              <li class="flex justify-between"><span>85 Уставный капитал</span><span>300 000</span></li>
-              <li class="flex justify-between"><span>60 Поставщики</span><span>20 000</span></li>
+              <li class="flex justify-between"><span>85 Уставный капитал</span><span>200 000</span></li>
+              <li class="flex justify-between"><span>60 Поставщики</span><span>40 000</span></li>
               <li class="flex justify-between"><span>70 Оплата труда</span><span>20 000</span></li>
-              <li class="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1 mt-1"><span>ИТОГО ПАССИВ</span><span>340 000</span></li>
+              <li class="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1 mt-1"><span>ИТОГО ПАССИВ</span><span>260 000</span></li>
             </ul>
           </div>
         </div>
@@ -195,36 +191,23 @@
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
         <h3 class="font-bold text-lg mb-3">Хозяйственные операции за 4 квартал 2026 г.</h3>
         <ol class="list-decimal list-inside space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li>Сняты наличные денежные средства с расчетного счета в кассу: 30 000 руб.</li>
-          <li>Оплачена задолженность поставщику с р/с: 20 000 руб.</li>
-          <li>Поступили материалы от поставщика: 40 000 руб.</li>
-          <li>Материалы отпущены в производство: 15 000 руб.</li>
-          <li>Выдана заработная плата из кассы: 20 000 руб.</li>
-          <li>Отгружена продукция покупателю (выручка): 80 000 руб.</li>
-          <li>Списана себестоимость отгруженной продукции: 50 000 руб.</li>
-          <li>Поступила оплата от покупателя на р/с: 80 000 руб.</li>
-          <li>Начислена заработная плата за 4 квартал: 35 000 руб.</li>
-          <li>Начислены страховые взносы: 7 500 руб.</li>
-          <li>Удержан подоходный налог из зарплаты: 3 494 руб.</li>
-          <li>Перечислен подоходный налог в бюджет с р/с: 3 494 руб.</li>
-          <li>Получено оборудование от поставщика по договору купли-продажи: 60 000 руб.</li>
-          <li>Погашена задолженность перед поставщиком за оборудование с р/с: 60 000 руб.</li>
-          <li>Начислена амортизация оборудования: 5 000 руб.</li>
-          <li>Начислены счета за электроэнергию: 3 000 руб.</li>
-          <li>Получен краткосрочный кредит банка на р/с: 100 000 руб.</li>
-          <li>Погашена часть кредита с р/с: 50 000 руб.</li>
-          <li>Определена прибыль от реализации: 30 000 руб.</li>
-          <li>Начислен налог на прибыль: 5 400 руб.</li>
-          <li>Списан налог на прибыль на финансовый результат: 5 400 руб.</li>
-          <li>Перечислен налог на прибыль с р/с: 5 400 руб.</li>
-          <li>Чистая прибыль направлена на формирование капитала: 24 600 руб.</li>
+          <li>Сняты наличные денежные средства с расчетного счета в кассу: 20 000 руб.</li>
+          <li>Оплачена задолженность поставщику с р/с: 15 000 руб.</li>
+          <li>Поступили материалы от поставщика: 30 000 руб.</li>
+          <li>Выдана заработная плата из кассы: 10 000 руб.</li>
+          <li>Внесены наличные из кассы на расчетный счет: 5 000 руб.</li>
+          <li>Поступили материалы от поставщика: 20 000 руб.</li>
+          <li>Оплачена задолженность поставщику с р/с: 10 000 руб.</li>
+          <li>Выдана заработная плата из кассы: 8 000 руб.</li>
+          <li>Сняты наличные денежные средства с расчетного счета в кассу: 15 000 руб.</li>
+          <li>Поступили материалы от поставщика: 25 000 руб.</li>
         </ol>
       </div>
 
-      <!-- ИНТЕРАКТИВНАЯ ТАБЛИЦА ПРОВОДОК -->
+      <!-- ИНТЕРАКТИВНАЯ ТАБЛИЦА ПРОВОДОК С МГНОВЕННОЙ ПРОВЕРКОЙ -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <h3 class="font-bold text-lg mb-3">📝 Заполните таблицу проводок</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Для каждой операции введите Дебет, Кредит, сумму и выберите тип операции. Нажмите «Проверить все проводки» для проверки.</p>
+        <h3 class="font-bold text-lg mb-3"> Заполните таблицу проводок</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Для каждой операции введите Дебет, Кредит, сумму и выберите тип операции. Статус проверки показывается автоматически при изменении любого поля.</p>
         
         <div class="overflow-x-auto">
           <table class="w-full text-xs" id="entries-table">
@@ -243,16 +226,13 @@
           </table>
         </div>
         
-        <button onclick="checkAllEntries()" class="mt-4 w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition">
-          ✅ Проверить все проводки
-        </button>
         <div id="entries-summary" class="hidden mt-3 p-3 rounded-xl text-sm font-bold"></div>
       </div>
 
       <!-- ИНТЕРАКТИВНЫЙ БАЛАНС -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
         <h3 class="font-bold text-lg mb-3">📊 Составьте баланс на 01.01.2027</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Введите конечные остатки по каждой статье. Итоги считаются автоматически. Или нажмите «Рассчитать автоматически» — баланс заполнится на основе ваших проводок.</p>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Введите конечные остатки по каждой статье. Итоги считаются автоматически.</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- АКТИВ -->
@@ -260,36 +240,16 @@
             <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3 border-b border-blue-200 dark:border-blue-800 pb-1">АКТИВ</h4>
             <div class="space-y-2 text-sm" id="asset-fields">
               <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">01 Основные средства</span>
-                <input type="number" id="a-01" data-correct="200000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2 pl-4">
-                <span class="flex-1 text-slate-500">02 Амортизация (−)</span>
-                <input type="number" id="a-02" data-correct="45000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2 font-semibold bg-blue-50 dark:bg-blue-950/30 px-2 py-1 rounded">
-                <span class="flex-1">Остаточная стоимость ОС</span>
-                <span id="a-residual" class="w-32 text-right font-mono">0</span>
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">08 Капитальные вложения</span>
-                <input type="number" id="a-08" data-correct="60000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
                 <span class="flex-1">10 Материалы</span>
-                <input type="number" id="a-10" data-correct="45000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">20 Производство</span>
-                <input type="number" id="a-20" data-correct="65500" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                <input type="number" id="a-10" data-correct="125000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
               </div>
               <div class="flex justify-between items-center gap-2">
                 <span class="flex-1">50 Касса</span>
-                <input type="number" id="a-50" data-correct="20000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                <input type="number" id="a-50" data-correct="22000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
               </div>
               <div class="flex justify-between items-center gap-2">
                 <span class="flex-1">51 Расчетный счет</span>
-                <input type="number" id="a-51" data-correct="111106" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                <input type="number" id="a-51" data-correct="145000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
               </div>
               <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
                 <span class="flex-1">ИТОГО АКТИВ</span>
@@ -304,31 +264,15 @@
             <div class="space-y-2 text-sm" id="passive-fields">
               <div class="flex justify-between items-center gap-2">
                 <span class="flex-1">85 Уставный капитал</span>
-                <input type="number" id="p-85" data-correct="300000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">88 Нераспределенная прибыль</span>
-                <input type="number" id="p-88" data-correct="24600" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                <input type="number" id="p-85" data-correct="200000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
               </div>
               <div class="flex justify-between items-center gap-2">
                 <span class="flex-1">60 Поставщики</span>
-                <input type="number" id="p-60" data-correct="40000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">69 Страхование</span>
-                <input type="number" id="p-69" data-correct="7500" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                <input type="number" id="p-60" data-correct="90000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
               </div>
               <div class="flex justify-between items-center gap-2">
                 <span class="flex-1">70 Оплата труда</span>
-                <input type="number" id="p-70" data-correct="31506" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">76 Кредиторы</span>
-                <input type="number" id="p-76" data-correct="3000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">90 Кредиты</span>
-                <input type="number" id="p-90" data-correct="50000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                <input type="number" id="p-70" data-correct="2000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
               </div>
               <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
                 <span class="flex-1">ИТОГО ПАССИВ</span>
@@ -338,14 +282,9 @@
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-3 mt-6">
-          <button onclick="autoCalculateBalance()" class="flex-1 px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition">
-            🤖 Рассчитать автоматически (на основе проводок)
-          </button>
-          <button onclick="checkBalance()" class="flex-1 px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition text-lg">
-            ✅ Проверить баланс
-          </button>
-        </div>
+        <button onclick="checkBalance()" class="mt-6 w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition text-lg">
+          ✅ Проверить баланс
+        </button>
         <div id="balance-result" class="hidden mt-3 p-4 rounded-xl text-sm font-bold"></div>
       </div>
 
@@ -361,33 +300,24 @@
             <div>
               <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3 border-b border-blue-200 dark:border-blue-800 pb-1">АКТИВ</h4>
               <ul class="space-y-2 text-slate-700 dark:text-slate-300">
-                <li class="flex justify-between"><span>01 Основные средства</span><span>200 000</span></li>
-                <li class="flex justify-between pl-4 text-slate-500"><span>02 Амортизация</span><span>(45 000)</span></li>
-                <li class="flex justify-between font-semibold bg-blue-50 dark:bg-blue-950/30 px-2 rounded"><span>Остаточная стоимость</span><span>155 000</span></li>
-                <li class="flex justify-between"><span>08 Капитальные вложения</span><span>60 000</span></li>
-                <li class="flex justify-between"><span>10 Материалы</span><span>45 000</span></li>
-                <li class="flex justify-between"><span>20 Производство</span><span>65 500</span></li>
-                <li class="flex justify-between"><span>50 Касса</span><span>20 000</span></li>
-                <li class="flex justify-between"><span>51 Расчетный счет</span><span>111 106</span></li>
-                <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО АКТИВ</span><span class="text-emerald-600 dark:text-emerald-400">456 606</span></li>
+                <li class="flex justify-between"><span>10 Материалы</span><span>125 000</span></li>
+                <li class="flex justify-between"><span>50 Касса</span><span>22 000</span></li>
+                <li class="flex justify-between"><span>51 Расчетный счет</span><span>145 000</span></li>
+                <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО АКТИВ</span><span class="text-emerald-600 dark:text-emerald-400">292 000</span></li>
               </ul>
             </div>
             <div>
               <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-3 border-b border-purple-200 dark:border-purple-800 pb-1">ПАССИВ</h4>
               <ul class="space-y-2 text-slate-700 dark:text-slate-300">
-                <li class="flex justify-between"><span>85 Уставный капитал</span><span>300 000</span></li>
-                <li class="flex justify-between"><span>88 Нераспределенная прибыль</span><span>24 600</span></li>
-                <li class="flex justify-between"><span>60 Поставщики</span><span>40 000</span></li>
-                <li class="flex justify-between"><span>69 Страхование</span><span>7 500</span></li>
-                <li class="flex justify-between"><span>70 Оплата труда</span><span>31 506</span></li>
-                <li class="flex justify-between"><span>76 Кредиторы</span><span>3 000</span></li>
-                <li class="flex justify-between"><span>90 Кредиты</span><span>50 000</span></li>
-                <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО ПАССИВ</span><span class="text-emerald-600 dark:text-emerald-400">456 606</span></li>
+                <li class="flex justify-between"><span>85 Уставный капитал</span><span>200 000</span></li>
+                <li class="flex justify-between"><span>60 Поставщики</span><span>90 000</span></li>
+                <li class="flex justify-between"><span>70 Оплата труда</span><span>2 000</span></li>
+                <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО ПАССИВ</span><span class="text-emerald-600 dark:text-emerald-400">292 000</span></li>
               </ul>
             </div>
           </div>
           <div class="mt-4 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg text-center text-emerald-800 dark:text-emerald-300 font-bold">
-            ✅ Баланс сошелся! Актив (456 606) = Пассив (456 606)
+            ✅ Баланс сошелся! Актив (292 000) = Пассив (292 000)
           </div>
         </div>
       </div>
@@ -408,13 +338,13 @@
     // ===== ДАННЫЕ ТЕСТОВ =====
     const testsData = [
       { q: "Что является предметом бухгалтерского учета?", a: ["Только денежные средства", "Имущество, обязательства и хоз. операции", "Только прибыль"], correct: 1 },
-      { q: "Какой счет активный?", a: ["70 Оплата труда", "01 Основные средства", "85 Уставный капитал"], correct: 1 },
+      { q: "Какой счет активный?", a: ["70 Оплата труда", "10 Материалы", "85 Уставный капитал"], correct: 1 },
       { q: "По дебету активного счета отражается:", a: ["Уменьшение", "Увеличение", "Ничего"], correct: 1 },
       { q: "Счет 50 «Касса» является:", a: ["Пассивным", "Активным", "Активно-пассивным"], correct: 1 },
       { q: "Валюта баланса — это:", a: ["Сумма активов", "Итог по активу и пассиву (они равны)", "Разница между А и П"], correct: 1 },
       { q: "Операция «Получен кредит на р/с» это тип:", a: ["I (+А -А)", "II (+П -П)", "III (+А +П)"], correct: 2 },
       { q: "Сколько элементов включает любая форма учета?", a: ["2 (документы и регистры)", "4 (документы, регистры, порядок записей, обобщение)", "6 (все элементы учета)"], correct: 1 },
-      { q: "Начислена амортизация по нематериальным активам. Проводка:", a: ["Дт 05 - Кт 20", "Дт 20 - Кт 05", "Дт 04 - Кт 05"], correct: 1 },
+      { q: "Проводка при покупке материалов:", a: ["Дт 10 - Кт 51", "Дт 10 - Кт 60", "Дт 60 - Кт 10"], correct: 1 },
       { q: "Форма учета для малых предприятий:", a: ["Журнал-Главная", "Журнально-ордерная", "Автоматизированная"], correct: 0 },
       { q: "Мемориальный ордер — это:", a: ["Первичный документ", "Сводный документ по одному счету", "Отчетность"], correct: 1 },
       { q: "Контрольный регистр в журнально-ордерной форме:", a: ["Главная книга", "Шахматная ведомость", "Журнал регистрации"], correct: 1 },
@@ -431,29 +361,16 @@
 
     // ===== ДАННЫЕ ПРОВОДОК =====
     const entriesData = [
-      { op: "Сняты наличные денежные средства с р/с в кассу", dt: "50", kt: "51", sum: 30000, type: "I" },
-      { op: "Оплачена задолженность поставщику", dt: "60", kt: "51", sum: 20000, type: "IV" },
-      { op: "Поступили материалы от поставщика", dt: "10", kt: "60", sum: 40000, type: "III" },
-      { op: "Материалы отпущены в производство", dt: "20", kt: "10", sum: 15000, type: "I" },
-      { op: "Выдана заработная плата из кассы", dt: "70", kt: "50", sum: 20000, type: "IV" },
-      { op: "Отгружена продукция покупателю", dt: "62", kt: "46", sum: 80000, type: "III" },
-      { op: "Списана себестоимость продукции", dt: "46", kt: "41", sum: 50000, type: "I" },
-      { op: "Поступила оплата от покупателя", dt: "51", kt: "62", sum: 80000, type: "I" },
-      { op: "Начислена заработная плата", dt: "20", kt: "70", sum: 35000, type: "III" },
-      { op: "Начислены страховые взносы", dt: "20", kt: "69", sum: 7500, type: "III" },
-      { op: "Удержан подоходный налог", dt: "70", kt: "68", sum: 3494, type: "II" },
-      { op: "Перечислен подоходный налог в бюджет", dt: "68", kt: "51", sum: 3494, type: "IV" },
-      { op: "Получено оборудование от поставщика", dt: "08", kt: "60", sum: 60000, type: "III" },
-      { op: "Погашена задолженность за оборудование с р/с", dt: "60", kt: "51", sum: 60000, type: "IV" },
-      { op: "Начислена амортизация", dt: "20", kt: "02", sum: 5000, type: "I" },
-      { op: "Начислены счета за электроэнергию", dt: "20", kt: "76", sum: 3000, type: "III" },
-      { op: "Получен краткосрочный кредит", dt: "51", kt: "90", sum: 100000, type: "III" },
-      { op: "Погашена часть кредита", dt: "90", kt: "51", sum: 50000, type: "IV" },
-      { op: "Определена прибыль от реализации", dt: "46", kt: "80", sum: 30000, type: "II" },
-      { op: "Начислен налог на прибыль", dt: "81", kt: "68", sum: 5400, type: "II" },
-      { op: "Списан налог на прибыль на финансовый результат", dt: "80", kt: "81", sum: 5400, type: "II" },
-      { op: "Перечислен налог на прибыль", dt: "68", kt: "51", sum: 5400, type: "IV" },
-      { op: "Чистая прибыль направлена на капитал", dt: "80", kt: "88", sum: 24600, type: "II" }
+      { op: "Сняты наличные с р/с в кассу", dt: "50", kt: "51", sum: 20000, type: "I" },
+      { op: "Оплачена задолженность поставщику", dt: "60", kt: "51", sum: 15000, type: "IV" },
+      { op: "Поступили материалы от поставщика", dt: "10", kt: "60", sum: 30000, type: "III" },
+      { op: "Выдана заработная плата из кассы", dt: "70", kt: "50", sum: 10000, type: "IV" },
+      { op: "Внесены наличные из кассы на р/с", dt: "51", kt: "50", sum: 5000, type: "I" },
+      { op: "Поступили материалы от поставщика", dt: "10", kt: "60", sum: 20000, type: "III" },
+      { op: "Оплачена задолженность поставщику", dt: "60", kt: "51", sum: 10000, type: "IV" },
+      { op: "Выдана заработная плата из кассы", dt: "70", kt: "50", sum: 8000, type: "IV" },
+      { op: "Сняты наличные с р/с в кассу", dt: "50", kt: "51", sum: 15000, type: "I" },
+      { op: "Поступили материалы от поставщика", dt: "10", kt: "60", sum: 25000, type: "III" }
     ];
 
     // ===== РЕНДЕР ТЕСТОВ =====
@@ -471,7 +388,7 @@
       container.appendChild(div);
     });
 
-    // ===== РЕНДЕР ТАБЛИЦЫ ПРОВОДОК =====
+    // ===== РЕНДЕР ТАБЛИЦЫ ПРОВОДОК С МГНОВЕННОЙ ПРОВЕРКОЙ =====
     const tbody = document.getElementById('entries-body');
     entriesData.forEach((e, i) => {
       const tr = document.createElement('tr');
@@ -479,11 +396,11 @@
       tr.innerHTML = `
         <td class="p-2 font-mono">${i+1}</td>
         <td class="p-2 text-xs">${e.op}</td>
-        <td class="p-1"><input type="text" id="e${i}-dt" class="w-14 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs"></td>
-        <td class="p-1"><input type="text" id="e${i}-kt" class="w-14 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs"></td>
-        <td class="p-1"><input type="number" id="e${i}-sum" class="w-20 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right text-xs"></td>
+        <td class="p-1"><input type="text" id="e${i}-dt" class="w-14 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs" oninput="checkEntryRow(${i})"></td>
+        <td class="p-1"><input type="text" id="e${i}-kt" class="w-14 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs" oninput="checkEntryRow(${i})"></td>
+        <td class="p-1"><input type="number" id="e${i}-sum" class="w-20 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right text-xs" oninput="checkEntryRow(${i})"></td>
         <td class="p-1">
-          <select id="e${i}-type" class="w-24 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs">
+          <select id="e${i}-type" class="w-24 p-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center text-xs" onchange="checkEntryRow(${i})">
             <option value="">—</option>
             <option value="I">I (+А -А)</option>
             <option value="II">II (+П -П)</option>
@@ -542,112 +459,82 @@
       }
     }
 
-    function checkAllEntries() {
+    // МГНОВЕННАЯ ПРОВЕРКА СТРОКИ ПРОВОДКИ
+    function checkEntryRow(i) {
+      const e = entriesData[i];
+      const dt = document.getElementById(`e${i}-dt`).value.trim();
+      const kt = document.getElementById(`e${i}-kt`).value.trim();
+      const sum = parseFloat(document.getElementById(`e${i}-sum`).value) || 0;
+      const type = document.getElementById(`e${i}-type`).value;
+      const status = document.getElementById(`e${i}-status`);
+      
+      // Проверяем только если все поля заполнены
+      if (dt === '' || kt === '' || sum === 0 || type === '') {
+        status.innerHTML = '<span class="text-slate-400">—</span>';
+        return;
+      }
+      
+      const dtOk = dt === e.dt;
+      const ktOk = kt === e.kt;
+      const sumOk = sum === e.sum;
+      const typeOk = type === e.type;
+      
+      if (dtOk && ktOk && sumOk && typeOk) {
+        status.innerHTML = '<span class="text-emerald-600 dark:text-emerald-400 font-bold">✅</span>';
+      } else {
+        let wrong = [];
+        if (!dtOk) wrong.push('Дт');
+        if (!ktOk) wrong.push('Кт');
+        if (!sumOk) wrong.push('Сумма');
+        if (!typeOk) wrong.push('Тип');
+        status.innerHTML = `<span class="text-rose-600 dark:text-rose-400 text-xs">❌ ${wrong.join(', ')}</span>`;
+      }
+      
+      // Обновляем сводку
+      updateSummary();
+    }
+
+    function updateSummary() {
       let correct = 0;
       entriesData.forEach((e, i) => {
         const dt = document.getElementById(`e${i}-dt`).value.trim();
         const kt = document.getElementById(`e${i}-kt`).value.trim();
         const sum = parseFloat(document.getElementById(`e${i}-sum`).value) || 0;
         const type = document.getElementById(`e${i}-type`).value;
-        const status = document.getElementById(`e${i}-status`);
         
-        const dtOk = dt === e.dt;
-        const ktOk = kt === e.kt;
-        const sumOk = sum === e.sum;
-        const typeOk = type === e.type;
-        
-        if (dtOk && ktOk && sumOk && typeOk) {
-          status.innerHTML = '<span class="text-emerald-600 dark:text-emerald-400">✅</span>';
+        if (dt === e.dt && kt === e.kt && sum === e.sum && type === e.type) {
           correct++;
-        } else {
-          let wrong = [];
-          if (!dtOk) wrong.push('Дт');
-          if (!ktOk) wrong.push('Кт');
-          if (!sumOk) wrong.push('Сумма');
-          if (!typeOk) wrong.push('Тип');
-          status.innerHTML = `<span class="text-rose-600 dark:text-rose-400 text-xs">❌ ${wrong.join(', ')}</span>`;
         }
       });
       
       const summary = document.getElementById('entries-summary');
-      summary.classList.remove('hidden');
-      if (correct === entriesData.length) {
-        summary.className = 'mt-3 p-3 rounded-xl text-sm font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800';
-        summary.textContent = `🎉 Отлично! Все ${correct} проводок заполнены правильно!`;
+      if (correct > 0) {
+        summary.classList.remove('hidden');
+        if (correct === entriesData.length) {
+          summary.className = 'mt-3 p-3 rounded-xl text-sm font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800';
+          summary.textContent = `🎉 Отлично! Все ${correct} проводок заполнены правильно!`;
+        } else {
+          summary.className = 'mt-3 p-3 rounded-xl text-sm font-bold bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-600';
+          summary.textContent = `📊 Заполнено правильно: ${correct} из ${entriesData.length}`;
+        }
       } else {
-        summary.className = 'mt-3 p-3 rounded-xl text-sm font-bold bg-amber-50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
-        summary.textContent = ` Правильно: ${correct} из ${entriesData.length}. Проверьте строки с ❌ и исправьте ошибки.`;
+        summary.classList.add('hidden');
       }
-    }
-
-    // ===== АВТОМАТИЧЕСКИЙ РАСЧЕТ БАЛАНСА =====
-    function autoCalculateBalance() {
-      let allCorrect = true;
-      entriesData.forEach((e, i) => {
-        const dt = document.getElementById(`e${i}-dt`).value.trim();
-        const kt = document.getElementById(`e${i}-kt`).value.trim();
-        const sum = parseFloat(document.getElementById(`e${i}-sum`).value) || 0;
-        const type = document.getElementById(`e${i}-type`).value;
-        
-        if (dt !== e.dt || kt !== e.kt || sum !== e.sum || type !== e.type) {
-          allCorrect = false;
-        }
-      });
-      
-      if (!allCorrect) {
-        const result = document.getElementById('balance-result');
-        result.classList.remove('hidden');
-        result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800';
-        result.innerHTML = '⚠️ Сначала исправьте все ошибки в проводках (должно быть 23/23 правильно), затем баланс рассчитается автоматически.';
-        return;
-      }
-      
-      const correctValues = {
-        'a-01': 200000, 'a-02': 45000, 'a-08': 60000, 'a-10': 45000, 'a-20': 65500,
-        'a-50': 20000, 'a-51': 111106,
-        'p-85': 300000, 'p-88': 24600, 'p-60': 40000,
-        'p-69': 7500, 'p-70': 31506, 'p-76': 3000, 'p-90': 50000
-      };
-      
-      Object.keys(correctValues).forEach(id => {
-        const input = document.getElementById(id);
-        if (input) {
-          input.value = correctValues[id];
-          input.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950/30');
-        }
-      });
-      
-      calcBalance();
-      
-      const result = document.getElementById('balance-result');
-      result.classList.remove('hidden');
-      result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800';
-      result.innerHTML = '🎉 Баланс рассчитан автоматически на основе правильных проводок! Актив = Пассив = 456 606 руб.';
     }
 
     // ===== АВТОМАТИЧЕСКИЙ ПОДСЧЕТ БАЛАНСА =====
     function calcBalance() {
-      const a01 = parseFloat(document.getElementById('a-01').value) || 0;
-      const a02 = parseFloat(document.getElementById('a-02').value) || 0;
-      const a08 = parseFloat(document.getElementById('a-08').value) || 0;
       const a10 = parseFloat(document.getElementById('a-10').value) || 0;
-      const a20 = parseFloat(document.getElementById('a-20').value) || 0;
       const a50 = parseFloat(document.getElementById('a-50').value) || 0;
       const a51 = parseFloat(document.getElementById('a-51').value) || 0;
       
       const p85 = parseFloat(document.getElementById('p-85').value) || 0;
-      const p88 = parseFloat(document.getElementById('p-88').value) || 0;
       const p60 = parseFloat(document.getElementById('p-60').value) || 0;
-      const p69 = parseFloat(document.getElementById('p-69').value) || 0;
       const p70 = parseFloat(document.getElementById('p-70').value) || 0;
-      const p76 = parseFloat(document.getElementById('p-76').value) || 0;
-      const p90 = parseFloat(document.getElementById('p-90').value) || 0;
       
-      const residual = a01 - a02;
-      const aTotal = residual + a08 + a10 + a20 + a50 + a51;
-      const pTotal = p85 + p88 + p60 + p69 + p70 + p76 + p90;
+      const aTotal = a10 + a50 + a51;
+      const pTotal = p85 + p60 + p70;
       
-      document.getElementById('a-residual').textContent = residual.toLocaleString('ru-RU');
       document.getElementById('a-total').textContent = aTotal.toLocaleString('ru-RU');
       document.getElementById('p-total').textContent = pTotal.toLocaleString('ru-RU');
     }
@@ -678,12 +565,12 @@
       const result = document.getElementById('balance-result');
       result.classList.remove('hidden');
       
-      if (correctCount === totalCount && aTotal === pTotal && aTotal === 456606) {
+      if (correctCount === totalCount && aTotal === pTotal && aTotal === 292000) {
         result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800';
-        result.innerHTML = ` Превосходно! Все статьи заполнены верно (${correctCount}/${totalCount}). Баланс сошелся: ${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}`;
+        result.innerHTML = `🎉 Превосходно! Все статьи заполнены верно (${correctCount}/${totalCount}). Баланс сошелся: ${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}`;
       } else if (aTotal === pTotal && aTotal > 0) {
         result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-amber-50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
-        result.innerHTML = `️ Баланс сошелся (${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}), но есть ошибки в отдельных статьях. Правильно: ${correctCount}/${totalCount}. Проверьте поля с красной рамкой.`;
+        result.innerHTML = `⚖️ Баланс сошелся (${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}), но есть ошибки в отдельных статьях. Правильно: ${correctCount}/${totalCount}. Проверьте поля с красной рамкой.`;
       } else if (aTotal !== pTotal && aTotal > 0 && pTotal > 0) {
         result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800';
         result.innerHTML = `❌ Баланс не сходится! Актив: ${aTotal.toLocaleString('ru-RU')} ≠ Пассив: ${pTotal.toLocaleString('ru-RU')}. Разница: ${Math.abs(aTotal - pTotal).toLocaleString('ru-RU')}. Проверьте расчеты.`;
