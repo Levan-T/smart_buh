@@ -57,11 +57,26 @@
       </div>
 
       <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
-        <h3 class="font-bold text-slate-900 dark:text-white">📋 Исключения из правила о сдаче сверхлимитных сумм:</h3>
-        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 list-disc list-inside">
-          <li>Разрешается выдача наличных денежных средств материально-ответственным лицам <b>под отчет в пределах лимита кассы</b>.</li>
-          <li>При этом <b>выплата заработной платы</b>, другие выплаты социального характера, оплата по договорам аренды, выдача денежных средств под отчет на командировочные расходы за пределы Республики Абхазия осуществляются за счет наличных денежных средств, поступивших в кассу, <b>после их снятия с банковского счета</b>.</li>
-        </ul>
+        <h3 class="font-bold text-slate-900 dark:text-white"> Правило об источниках наличных денег в кассе</h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300">Важно различать, из какого источника можно брать наличные для разных целей:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+          <div class="p-4 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <h4 class="font-bold text-emerald-700 dark:text-emerald-400 mb-2">✅ Можно выдавать из наличных в кассе (в пределах лимита):</h4>
+            <ul class="text-sm text-emerald-800 dark:text-emerald-300 list-disc list-inside space-y-1">
+              <li>Выдача наличных материально-ответственным лицам <b>под отчет</b> в пределах лимита кассы</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-xl border border-blue-200 dark:border-blue-800">
+            <h4 class="font-bold text-blue-700 dark:text-blue-400 mb-2">🏦 Нужно сначала снять с банковского счета:</h4>
+            <ul class="text-sm text-blue-800 dark:text-blue-300 list-disc list-inside space-y-1">
+              <li>Выплата заработной платы</li>
+              <li>Другие выплаты социального характера</li>
+              <li>Оплата по договорам аренды</li>
+              <li>Выдача денежных средств под отчет на командировочные расходы <b>за пределы Республики Абхазия</b></li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">Таким образом, <b>нельзя</b> использовать наличную выручку, поступившую в кассу от покупателей, для выплаты зарплаты, аренды или командировочных за пределы РА. Для этих целей необходимо сначала оформить снятие наличных с расчетного счета в банке.</p>
       </div>
 
       <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
@@ -182,7 +197,7 @@
             <p class="font-mono font-bold text-emerald-800 dark:text-emerald-300">Дт 50 «Касса» — Кт 80 «Прибыли и убытки»</p>
           </div>
           <div class="p-3 bg-rose-50 dark:bg-rose-950/30 rounded-lg border border-rose-200 dark:border-rose-800">
-            <p class="font-semibold mb-1">❌ В случае выявления недостачи осуществляется запись:</p>
+            <p class="font-semibold mb-1"> В случае выявления недостачи осуществляется запись:</p>
             <p class="font-mono font-bold text-rose-800 dark:text-rose-300 mb-2">Дт 84 «Недостачи и потери от порчи ценностей» — Кт 50 «Касса»</p>
             <p class="font-semibold mt-2 mb-1">⚖️ А при вине кассира (подлежит возмещению):</p>
             <p class="font-mono font-bold text-rose-800 dark:text-rose-300">Дт 73 «Расчеты с персоналом по прочим операциям» — Кт 84 «Недостачи и потери от порчи ценностей»</p>
@@ -198,7 +213,8 @@
 
       <div class="flex flex-wrap gap-2">
         <button onclick="showDoc('doc-pko', this)" class="doc-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-emerald-600 text-white">📄 Приходный кассовый ордер (ПКО)</button>
-        <button onclick="showDoc('doc-rko', this)" class="doc-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600"> Расходный кассовый ордер (РКО)</button>
+        <button onclick="showDoc('doc-rko', this)" class="doc-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600">📄 Расходный кассовый ордер (РКО)</button>
+        <button onclick="showDoc('doc-zhurnal', this)" class="doc-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600">📋 Журнал регистрации ПКО и РКО</button>
         <button onclick="showDoc('doc-kniga', this)" class="doc-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600">📒 Кассовая книга</button>
       </div>
 
@@ -293,6 +309,77 @@
         </div>
       </div>
 
+      <!-- Журнал регистрации ПКО и РКО -->
+      <div id="doc-zhurnal" class="doc-content hidden bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+        <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg text-xs font-mono overflow-x-auto">
+          <div class="text-center font-bold text-sm mb-4">ЖУРНАЛ РЕГИСТРАЦИИ ПРИХОДНЫХ И РАСХОДНЫХ КАССОВЫХ ДОКУМЕНТОВ</div>
+          <p class="text-center text-xs mb-4">за ________ 20__ г.</p>
+          <table class="w-full border-collapse border border-slate-300 dark:border-slate-600">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">№ ПКО</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">№ РКО</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">От кого получено / Кому выдано</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Основание</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">№ счета</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">01.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">1</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">Иванов И.И.</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">Возврат подотчетной суммы</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">2 500</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">71</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">01.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">1</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">Петров П.П.</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">На хозяйственные нужды</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">5 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">71</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">02.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">2</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">ООО «Покупатель»</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">Оплата за товар</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">15 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">62</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">02.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">2</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">Сидоров С.С.</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">На командировку</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">20 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">71</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">03.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">3</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">Банк (выписка № 15)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">Снятие наличных на зарплату</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">150 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-1">51</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+          <b>💡 Обратите внимание:</b> Журнал регистрации ведется <b>до передачи документов в кассу</b>. В нем регистрируются все ПКО и РКО в хронологическом порядке. В одной строке указывается либо номер ПКО, либо номер РКО (в зависимости от типа операции).
+        </div>
+      </div>
+
       <!-- Кассовая книга -->
       <div id="doc-kniga" class="doc-content hidden bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
         <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg text-xs font-mono overflow-x-auto">
@@ -346,7 +433,7 @@
           </table>
         </div>
         <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
-          <b>💡 Обратите внимание:</b> Кассовая книга ведется через копировальную бумагу. Отрывной лист сдается в бухгалтерию в конце дня вместе с ПКО и РКО.
+          <b>💡 Обратите внимание:</b> Кассовая книга ведется через копировальную бумагу. Отрывной лист сдается в бухгалтерию в конце дня вместе с ПКО и РКО. В отличие от журнала регистрации, в кассовой книге показываются суммы прихода и расхода с расчетом остатка.
         </div>
       </div>
     </section>
@@ -424,7 +511,7 @@
   </footer>
 
   <script>
-    // Переключение документов (исправлено!)
+    // Переключение документов
     function showDoc(id, btn) {
       // Скрыть все документы
       document.querySelectorAll('.doc-content').forEach(el => {
