@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <script>
-    if (localStorage.getItem('theme') !== 'light') {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
+<html lang="ru" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок 1. Сущность бухгалтерского учета, его предмет, метод и объекты</title>
+  <title>Урок 1. Сущность бухгалтерского учета | smart_buh</title>
   
   <script>
     if (localStorage.getItem('theme') === 'light') {
@@ -27,37 +21,35 @@
 
   <!-- Навигация -->
   <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-3">
-        <span class="text-2xl font-black text-blue-600 dark:bg-gradient-to-r dark:from-emerald-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
-          smart_buh
-        </span>
-        <span class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Урок 1</span>
+        <a href="index.html" class="text-2xl font-black text-blue-600 dark:text-emerald-400">smart_buh</a>
+        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 1</span>
       </div>
-      <nav class="space-x-4 text-sm font-medium">
-        <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Оглавление</a>
-        <span class="text-blue-600 dark:text-emerald-400 font-semibold border-b-2 border-blue-600 dark:border-emerald-400 pb-1">Урок 1</span>
-        <a href="lesson2.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 2</a>
-        <a href="lesson3.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 3</a>
-        <a href="lesson4.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 4</a>
-        <a href="lesson5.html" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-emerald-400 transition">Урок 5</a>
+      <nav class="hidden md:flex space-x-5 text-sm font-medium">
+        <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Оглавление</a>
+        <span class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-0.5">Урок 1</span>
+        <a href="lesson2.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 2</a>
+        <a href="lesson3.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 3</a>
+        <a href="lesson4.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 4</a>
+        <a href="lesson5.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 5</a>
         <a href="lesson6.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 6</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
     <!-- Главный заголовок -->
-    <div class="space-y-4">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-blue-600 dark:text-emerald-400 leading-tight">
+    <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 leading-tight">
         УРОК 1. Сущность бухгалтерского учета, его предмет, метод и объекты
       </h1>
     </div>
 
     <!-- Введение -->
     <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">
         Введение: Почему бухучет — это «язык бизнеса»?
       </h2>
       <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -83,7 +75,7 @@
       <p class="text-slate-800 dark:text-slate-300 font-semibold">Разберем ключевые слова этого определения:</p>
       <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
         <li class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">
-          <b class="text-blue-600 dark:text-emerald-400">Сплошной учет:</b> Фиксируется абсолютно всё. Нельзя «забыть» или пропустить мелкую покупку канцелярских скрепки или пачки бумаги.
+          <b class="text-blue-600 dark:text-emerald-400">Сплошной учет:</b> Фиксируется абсолютно всё. Нельзя «забыть» или пропустить мелкую покупку канцелярских скрепок или пачки бумаги.
         </li>
         <li class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">
           <b class="text-blue-600 dark:text-emerald-400">Непрерывный учет:</b> Учет ведется со дня регистрации предприятия и до момента его ликвидации (без перерывов на выходные или праздники).
@@ -98,8 +90,8 @@
     </section>
 
     <!-- 1 -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">
         1. Исторический экскурс: От восковых дощечек до Луки Пачоли
       </h2>
       <p class="text-slate-700 dark:text-slate-300">Потребность считать возникла тогда же, когда возникла торговля.</p>
@@ -131,8 +123,8 @@
     </section>
 
     <!-- 2 -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">
         2. Предмет и объекты бухгалтерского учета
       </h2>
       <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
@@ -146,17 +138,17 @@
       <!-- Схема объектов -->
       <div class="bg-white dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800 overflow-x-auto text-center shadow-sm">
         <div class="font-mono text-xs text-blue-600 dark:text-emerald-400 inline-block text-left whitespace-pre">
-                         ┌───────────────────────────────────────────┐
-                         │       ОБЪЕКТЫ БУХГАЛТЕРСКОГО УЧЕТА        │
-                         └─────────────────────┬─────────────────────┘
-                                               │
-        ┌──────────────────────────────────────┼──────────────────────────────────────┐
-        ▼                                      ▼                                      ▼
-┌──────────────┐                       ┌──────────────┐                       ┌──────────────┐
-│  Имущество   │                       │  Источники   │                       │ Хозяйственные│
-│  предприятия │                       │  имущества   │                       │   операции   │
-│  (АКТИВЫ)    │                       │  (ПАССИВЫ)   │                       │ (ПРОЦЕССЫ)   │
-└──────────────┘                       └──────────────┘                       └──────────────┘
+                 ┌───────────────────────────────────────────┐
+                 │       ОБЪЕКТЫ БУХГАЛТЕРСКОГО УЧЕТА        │
+                 └─────────────────────┬─────────────────────┘
+                                       │
+    ┌──────────────────────────────────┼──────────────────────────────────┐
+    ▼                                  ▼                                  ▼
+┌──────────────┐               ┌──────────────┐               ┌──────────────┐
+│  Имущество   │               │  Источники   │               │ Хозяйственные│
+│  предприятия │               │  имущества   │               │   операции   │
+│  (АКТИВЫ)    │               │  (ПАССИВЫ)   │               │ (ПРОЦЕССЫ)   │
+└──────────────┘               └──────────────┘               └──────────────┘
         </div>
       </div>
 
@@ -164,7 +156,7 @@
         <div class="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
           <div class="font-bold text-blue-600 dark:text-emerald-400 text-sm">1. Имущество организации (Активы)</div>
           <p class="text-slate-700 dark:text-slate-300 leading-relaxed">Это всё, чем владеет предприятие и что имеет стоимость. Активы должны приносить выгоду в будущем.</p>
-          <p class="text-slate-500 dark:text-slate-400"><b>Конкретные примеры:</b> Здание гостиницы, служебный автомобиль, деньги в кассе или на расчетном учете в банке, запасы стройматериалов, купленные для продажи товары.</p>
+          <p class="text-slate-500 dark:text-slate-400"><b>Конкретные примеры:</b> Здание гостиницы, служебный автомобиль, деньги в кассе или на расчетном счете в банке, запасы стройматериалов, купленные для продажи товары.</p>
         </div>
 
         <div class="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
@@ -182,8 +174,8 @@
     </section>
 
     <!-- 3 -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">
         3. Что такое хозяйственная операция?
       </h2>
       <p class="text-slate-700 dark:text-slate-300 text-sm">Не всякое событие в компании является хозяйственной операцией.</p>
@@ -197,7 +189,7 @@
           <thead class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 uppercase font-bold border-b border-slate-200 dark:border-slate-700">
             <tr>
               <th class="p-3">Событие в организации</th>
-              <th class="p-3 w-1/4">Является ли хозяйственной операцией?</th>
+              <th class="p-3 w-1/4">Является ли хоз. операцией?</th>
               <th class="p-3">Почему?</th>
             </tr>
           </thead>
@@ -228,8 +220,8 @@
     </section>
 
     <!-- 4 -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">
         4. Элементы метода бухгалтерского учета
       </h2>
       <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
@@ -279,7 +271,7 @@
           <b class="text-blue-600 dark:text-emerald-400">Калькуляция:</b> Расчет себестоимости единицы продукции, работы или услуги (например, во сколько обошлось производство одной тонны мандаринов или один день проживания в номере).
         </li>
         <li class="bg-white dark:bg-slate-800/40 p-3 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">
-          <b class="text-blue-600 dark:text-emerald-400">Счета бухгалтерского учета:</b> Инструмент группировки однородного имущества, долгов и операций. В Республики Абхазия действует свой утвержденный План счетов (например, счет 50 — «Касса», счет 51 — «Расчетный счет»).
+          <b class="text-blue-600 dark:text-emerald-400">Счета бухгалтерского учета:</b> Инструмент группировки однородного имущества, долгов и операций. В Республике Абхазия действует свой утвержденный План счетов (например, счет 50 — «Касса», счет 51 — «Расчетный счет»).
         </li>
         <li class="bg-white dark:bg-slate-800/40 p-3 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">
           <b class="text-blue-600 dark:text-emerald-400">Двойная запись:</b> Запись каждой операции одновременно на двух взаимосвязанных счетах (по Дебету одного и Кредиту другого).
@@ -305,8 +297,8 @@
     </section>
 
     <!-- 5 (Тест) -->
-    <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">
         5. Проверка знаний (Тесты)
       </h2>
 
@@ -403,18 +395,24 @@
           </div>
         </div>
 
-        <button onclick="checkAnswers()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-bold rounded-xl transition shadow-md">
+        <button onclick="checkAnswers()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white font-bold rounded-xl transition shadow-md">
           Проверить ответы
         </button>
 
-        <div id="result" class="hidden p-4 rounded-xl space-y-2"></div>
+        <div id="result" class="hidden p-4 rounded-xl space-y-2 text-center font-bold"></div>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500 bg-white dark:bg-slate-950">
-    <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 bg-white dark:bg-slate-950 mt-12">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+      <div class="flex space-x-4">
+        <a href="index.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Оглавление</a>
+        <a href="lesson2.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 2 →</a>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -440,11 +438,11 @@
       resDiv.classList.remove('hidden');
 
       if (score === total) {
-        resDiv.className = "p-4 rounded-xl bg-emerald-100 dark:bg-emerald-950 border border-emerald-500 text-emerald-800 dark:text-emerald-300 text-center font-bold";
-        resDiv.innerText = `Отлично! Вы правильно ответили на все ${score} из ${total} вопросов!`;
+        resDiv.className = "p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300";
+        resDiv.innerText = `🎉 Отлично! Вы правильно ответили на все ${score} из ${total} вопросов!`;
       } else {
-        resDiv.className = "p-4 rounded-xl bg-amber-100 dark:bg-slate-800 border border-amber-500 text-amber-900 dark:text-amber-300 text-center font-bold";
-        resDiv.innerText = `Ваш результат: ${score} из ${total}. Попробуйте пройти ещё раз!`;
+        resDiv.className = "p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300";
+        resDiv.innerText = `⚠️ Ваш результат: ${score} из ${total}. Попробуйте пройти ещё раз!`;
       }
     }
   </script>
