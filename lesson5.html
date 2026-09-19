@@ -206,7 +206,7 @@
 
       <!-- ИНТЕРАКТИВНАЯ ТАБЛИЦА ПРОВОДОК С МГНОВЕННОЙ ПРОВЕРКОЙ -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <h3 class="font-bold text-lg mb-3"> Заполните таблицу проводок</h3>
+        <h3 class="font-bold text-lg mb-3">📝 Заполните таблицу проводок</h3>
         <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Для каждой операции введите Дебет, Кредит, сумму и выберите тип операции. Статус проверки показывается автоматически при изменении любого поля.</p>
         
         <div class="overflow-x-auto">
@@ -229,64 +229,237 @@
         <div id="entries-summary" class="hidden mt-3 p-3 rounded-xl text-sm font-bold"></div>
       </div>
 
-      <!-- ИНТЕРАКТИВНЫЙ БАЛАНС -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <h3 class="font-bold text-lg mb-3">📊 Составьте баланс на 01.01.2027</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Введите конечные остатки по каждой статье. Итоги считаются автоматически.</p>
+      <!-- ЧАСТЬ 5: ФОРМЫ УЧЕТА (ИНТЕРАКТИВНЫЕ ВКЛАДКИ) -->
+      <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Часть 5. Как операции выглядят в разных формах учёта</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Посмотрите, как одни и те же 4 операции отражаются в разных формах бухгалтерского учёта. Переключайте вкладки ниже:</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- АКТИВ -->
-          <div>
-            <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3 border-b border-blue-200 dark:border-blue-800 pb-1">АКТИВ</h4>
-            <div class="space-y-2 text-sm" id="asset-fields">
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">10 Материалы</span>
-                <input type="number" id="a-10" data-correct="125000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">50 Касса</span>
-                <input type="number" id="a-50" data-correct="22000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">51 Расчетный счет</span>
-                <input type="number" id="a-51" data-correct="145000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
-                <span class="flex-1">ИТОГО АКТИВ</span>
-                <span id="a-total" class="w-32 text-right font-mono text-emerald-600 dark:text-emerald-400">0</span>
-              </div>
-            </div>
-          </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="switchTab('tab1', this)" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-emerald-600 text-white"> Журнал-Главная</button>
+          <button onclick="switchTab('tab2', this)" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600">📑 Мемориально-ордерная</button>
+          <button onclick="switchTab('tab3', this)" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600">📊 Журнально-ордерная</button>
+          <button onclick="switchTab('tab4', this)" class="tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600">💻 Автоматизированная</button>
+        </div>
 
-          <!-- ПАССИВ -->
-          <div>
-            <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-3 border-b border-purple-200 dark:border-purple-800 pb-1">ПАССИВ</h4>
-            <div class="space-y-2 text-sm" id="passive-fields">
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">85 Уставный капитал</span>
-                <input type="number" id="p-85" data-correct="200000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">60 Поставщики</span>
-                <input type="number" id="p-60" data-correct="90000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2">
-                <span class="flex-1">70 Оплата труда</span>
-                <input type="number" id="p-70" data-correct="2000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
-              </div>
-              <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
-                <span class="flex-1">ИТОГО ПАССИВ</span>
-                <span id="p-total" class="w-32 text-right font-mono text-emerald-600 dark:text-emerald-400">0</span>
-              </div>
-            </div>
+        <!-- Вкладка 1: Журнал-Главная -->
+        <div id="tab1" class="tab-content block bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-2">Форма «Журнал-Главная»</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Все операции записываются в одну книгу в хронологическом порядке.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead class="bg-slate-100 dark:bg-slate-700/60">
+                <tr>
+                  <th class="p-2 text-left">Дата</th>
+                  <th class="p-2 text-left">№ док.</th>
+                  <th class="p-2 text-left">Содержание операции</th>
+                  <th class="p-2 text-center">Дт</th>
+                  <th class="p-2 text-center">Кт</th>
+                  <th class="p-2 text-right">Сумма</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                <tr><td class="p-2">02.10</td><td class="p-2">Чек №1</td><td class="p-2">Снято с р/с в кассу</td><td class="p-2 text-center">50</td><td class="p-2 text-center">51</td><td class="p-2 text-right">20 000</td></tr>
+                <tr><td class="p-2">05.10</td><td class="p-2">ТТН №1</td><td class="p-2">Поступили материалы</td><td class="p-2 text-center">10</td><td class="p-2 text-center">60</td><td class="p-2 text-right">30 000</td></tr>
+                <tr><td class="p-2">10.10</td><td class="p-2">РКО №1</td><td class="p-2">Выдана зарплата</td><td class="p-2 text-center">70</td><td class="p-2 text-center">50</td><td class="p-2 text-right">10 000</td></tr>
+                <tr><td class="p-2">15.10</td><td class="p-2">ПП №1</td><td class="p-2">Оплачено поставщику</td><td class="p-2 text-center">60</td><td class="p-2 text-center">51</td><td class="p-2 text-right">15 000</td></tr>
+                <tr class="font-bold bg-slate-50 dark:bg-slate-700/30"><td class="p-2" colspan="5">Итого оборот за период</td><td class="p-2 text-right">75 000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+            <b>💡 Вывод:</b> Все операции в одной книге. Просто для малых предприятий, но при большом объёме операций искать нужное сложно.
           </div>
         </div>
 
-        <button onclick="checkBalance()" class="mt-6 w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition text-lg">
-          ✅ Проверить баланс
-        </button>
-        <div id="balance-result" class="hidden mt-3 p-4 rounded-xl text-sm font-bold"></div>
-      </div>
+        <!-- Вкладка 2: Мемориально-ордерная -->
+        <div id="tab2" class="tab-content hidden bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-2">Мемориально-ордерная форма</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Операции группируются по кредитуемому счёту в отдельные Мемориальные ордера (МО).</p>
+          
+          <div class="space-y-4">
+            <div class="border border-slate-300 dark:border-slate-600 p-3 rounded-lg">
+              <h4 class="font-bold text-sm text-center mb-2">МО №1 (Кредит счета 51 «Расчётный счёт»)</h4>
+              <table class="w-full text-xs">
+                <thead class="bg-slate-100 dark:bg-slate-700"><tr><th class="p-1">Дата</th><th class="p-1">Дт</th><th class="p-1">Содержание</th><th class="p-1 text-right">Сумма</th></tr></thead>
+                <tbody>
+                  <tr><td class="p-1 border-t dark:border-slate-600">02.10</td><td class="p-1 border-t dark:border-slate-600 text-center">50</td><td class="p-1 border-t dark:border-slate-600">Снято в кассу</td><td class="p-1 border-t dark:border-slate-600 text-right">20 000</td></tr>
+                  <tr><td class="p-1 border-t dark:border-slate-600">15.10</td><td class="p-1 border-t dark:border-slate-600 text-center">60</td><td class="p-1 border-t dark:border-slate-600">Оплата поставщику</td><td class="p-1 border-t dark:border-slate-600 text-right">15 000</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="border border-slate-300 dark:border-slate-600 p-3 rounded-lg">
+              <h4 class="font-bold text-sm text-center mb-2">МО №2 (Кредит счета 60 «Поставщики»)</h4>
+              <table class="w-full text-xs">
+                <thead class="bg-slate-100 dark:bg-slate-700"><tr><th class="p-1">Дата</th><th class="p-1">Дт</th><th class="p-1">Содержание</th><th class="p-1 text-right">Сумма</th></tr></thead>
+                <tbody>
+                  <tr><td class="p-1 border-t dark:border-slate-600">05.10</td><td class="p-1 border-t dark:border-slate-600 text-center">10</td><td class="p-1 border-t dark:border-slate-600">Поступили материалы</td><td class="p-1 border-t dark:border-slate-600 text-right">30 000</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="border border-slate-300 dark:border-slate-600 p-3 rounded-lg">
+              <h4 class="font-bold text-sm text-center mb-2">МО №3 (Кредит счета 50 «Касса»)</h4>
+              <table class="w-full text-xs">
+                <thead class="bg-slate-100 dark:bg-slate-700"><tr><th class="p-1">Дата</th><th class="p-1">Дт</th><th class="p-1">Содержание</th><th class="p-1 text-right">Сумма</th></tr></thead>
+                <tbody>
+                  <tr><td class="p-1 border-t dark:border-slate-600">10.10</td><td class="p-1 border-t dark:border-slate-600 text-center">70</td><td class="p-1 border-t dark:border-slate-600">Выдана зарплата</td><td class="p-1 border-t dark:border-slate-600 text-right">10 000</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+            <b>💡 Вывод:</b> Операции сгруппированы по счетам — удобно для анализа, но много регистров.
+          </div>
+        </div>
+
+        <!-- Вкладка 3: Журнально-ордерная -->
+        <div id="tab3" class="tab-content hidden bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-2">Журнально-ордерная форма</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Используются Журналы-ордера и Шахматная ведомость для контроля.</p>
+          
+          <h4 class="font-bold text-sm mb-2">Шахматная оборотная ведомость</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+              <thead class="bg-slate-100 dark:bg-slate-700">
+                <tr>
+                  <th class="p-2 border border-slate-300 dark:border-slate-600">Кредит \ Дебет</th>
+                  <th class="p-2 border border-slate-300 dark:border-slate-600 text-center">50 (Касса)</th>
+                  <th class="p-2 border border-slate-300 dark:border-slate-600 text-center">10 (Материалы)</th>
+                  <th class="p-2 border border-slate-300 dark:border-slate-600 text-center">60 (Поставщики)</th>
+                  <th class="p-2 border border-slate-300 dark:border-slate-600 text-center">70 (Зарплата)</th>
+                  <th class="p-2 border border-slate-300 dark:border-slate-600 text-center font-bold">Итого Кт</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 font-semibold">50 (Касса)</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">10 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center font-bold">10 000</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 font-semibold">51 (Р/с)</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">20 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">15 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center font-bold">35 000</td>
+                </tr>
+                <tr>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 font-semibold">60 (Поставщики)</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">30 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">-</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center font-bold">30 000</td>
+                </tr>
+                <tr class="bg-slate-50 dark:bg-slate-700/30 font-bold">
+                  <td class="p-2 border border-slate-300 dark:border-slate-600">Итого Дт</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">20 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">30 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">15 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">10 000</td>
+                  <td class="p-2 border border-slate-300 dark:border-slate-600 text-center">75 000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+            <b>💡 Вывод:</b> Шахматная ведомость сразу показывает соответствие Дебета и Кредита — отличный контроль. Итого Дт = Итого Кт = 75 000.
+          </div>
+        </div>
+
+        <!-- Вкладка 4: Автоматизированная -->
+        <div id="tab4" class="tab-content hidden bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-2">Автоматизированная форма (1С)</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Бухгалтер вводит документ, программа сама делает проводки.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-2 items-center text-center">
+            <div class="bg-blue-50 dark:bg-blue-950/30 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div class="text-3xl mb-2">📄</div>
+              <h4 class="font-bold text-sm mb-1">1. Ввод документа</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Бухгалтер создаёт «Платёжное поручение» на 15 000 руб. поставщику.</p>
+            </div>
+            <div class="text-emerald-500 text-2xl">→</div>
+            <div class="bg-purple-50 dark:bg-purple-950/30 p-4 rounded-xl border border-purple-200 dark:border-purple-800">
+              <div class="text-3xl mb-2">⚙️</div>
+              <h4 class="font-bold text-sm mb-1">2. Автопроводка</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Программа сама создаёт: <b>Дт 60 - Кт 51: 15 000 руб.</b></p>
+            </div>
+            <div class="text-emerald-500 text-2xl">→</div>
+            <div class="bg-emerald-50 dark:bg-emerald-950/30 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800">
+              <div class="text-3xl mb-2">📊</div>
+              <h4 class="font-bold text-sm mb-1">3. Отчёт</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Мгновенное формирование ОСВ и Баланса по нажатию кнопки.</p>
+            </div>
+          </div>
+          <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+            <b>💡 Вывод:</b> Программа сама определяет проводки, контролирует ошибки и формирует отчёты за секунды. Современный стандарт для всех организаций.
+          </div>
+        </div>
+      </section>
+
+      <!-- ИНТЕРАКТИВНЫЙ БАЛАНС -->
+      <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-3">📊 Составьте баланс на 01.01.2027</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Введите конечные остатки по каждой статье. Итоги считаются автоматически.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- АКТИВ -->
+            <div>
+              <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3 border-b border-blue-200 dark:border-blue-800 pb-1">АКТИВ</h4>
+              <div class="space-y-2 text-sm" id="asset-fields">
+                <div class="flex justify-between items-center gap-2">
+                  <span class="flex-1">10 Материалы</span>
+                  <input type="number" id="a-10" data-correct="125000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                </div>
+                <div class="flex justify-between items-center gap-2">
+                  <span class="flex-1">50 Касса</span>
+                  <input type="number" id="a-50" data-correct="22000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                </div>
+                <div class="flex justify-between items-center gap-2">
+                  <span class="flex-1">51 Расчетный счет</span>
+                  <input type="number" id="a-51" data-correct="145000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                </div>
+                <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
+                  <span class="flex-1">ИТОГО АКТИВ</span>
+                  <span id="a-total" class="w-32 text-right font-mono text-emerald-600 dark:text-emerald-400">0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ПАССИВ -->
+            <div>
+              <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-3 border-b border-purple-200 dark:border-purple-800 pb-1">ПАССИВ</h4>
+              <div class="space-y-2 text-sm" id="passive-fields">
+                <div class="flex justify-between items-center gap-2">
+                  <span class="flex-1">85 Уставный капитал</span>
+                  <input type="number" id="p-85" data-correct="200000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                </div>
+                <div class="flex justify-between items-center gap-2">
+                  <span class="flex-1">60 Поставщики</span>
+                  <input type="number" id="p-60" data-correct="90000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                </div>
+                <div class="flex justify-between items-center gap-2">
+                  <span class="flex-1">70 Оплата труда</span>
+                  <input type="number" id="p-70" data-correct="2000" class="w-32 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-right" oninput="calcBalance()">
+                </div>
+                <div class="flex justify-between items-center gap-2 font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2">
+                  <span class="flex-1">ИТОГО ПАССИВ</span>
+                  <span id="p-total" class="w-32 text-right font-mono text-emerald-600 dark:text-emerald-400">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="checkBalance()" class="mt-6 w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition text-lg">
+            ✅ Проверить баланс
+          </button>
+          <div id="balance-result" class="hidden mt-3 p-4 rounded-xl text-sm font-bold"></div>
+        </div>
+      </section>
 
       <!-- РЕШЕНИЕ (скрыто) -->
       <button onclick="toggleSolution()" class="w-full px-6 py-4 bg-slate-600 hover:bg-slate-700 text-white font-bold rounded-xl transition text-lg">
@@ -300,9 +473,9 @@
             <div>
               <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3 border-b border-blue-200 dark:border-blue-800 pb-1">АКТИВ</h4>
               <ul class="space-y-2 text-slate-700 dark:text-slate-300">
-                <li class="flex justify-between"><span>10 Материалы</span><span>125 000</span></li>
-                <li class="flex justify-between"><span>50 Касса</span><span>22 000</span></li>
-                <li class="flex justify-between"><span>51 Расчетный счет</span><span>145 000</span></li>
+                <li class="flex justify-between"><span>10 Материалы (50+30+20+25)</span><span>125 000</span></li>
+                <li class="flex justify-between"><span>50 Касса (10+20-10-5-8+15)</span><span>22 000</span></li>
+                <li class="flex justify-between"><span>51 Р/с (200-20-15+5-10-15)</span><span>145 000</span></li>
                 <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО АКТИВ</span><span class="text-emerald-600 dark:text-emerald-400">292 000</span></li>
               </ul>
             </div>
@@ -310,8 +483,8 @@
               <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-3 border-b border-purple-200 dark:border-purple-800 pb-1">ПАССИВ</h4>
               <ul class="space-y-2 text-slate-700 dark:text-slate-300">
                 <li class="flex justify-between"><span>85 Уставный капитал</span><span>200 000</span></li>
-                <li class="flex justify-between"><span>60 Поставщики</span><span>90 000</span></li>
-                <li class="flex justify-between"><span>70 Оплата труда</span><span>2 000</span></li>
+                <li class="flex justify-between"><span>60 Поставщики (40-15+30-10+20+25)</span><span>90 000</span></li>
+                <li class="flex justify-between"><span>70 Оплата труда (20-10-8)</span><span>2 000</span></li>
                 <li class="flex justify-between font-bold text-lg border-t-2 border-slate-300 dark:border-slate-600 pt-2 mt-2"><span>ИТОГО ПАССИВ</span><span class="text-emerald-600 dark:text-emerald-400">292 000</span></li>
               </ul>
             </div>
@@ -468,7 +641,6 @@
       const type = document.getElementById(`e${i}-type`).value;
       const status = document.getElementById(`e${i}-status`);
       
-      // Проверяем только если все поля заполнены
       if (dt === '' || kt === '' || sum === 0 || type === '') {
         status.innerHTML = '<span class="text-slate-400">—</span>';
         return;
@@ -490,7 +662,6 @@
         status.innerHTML = `<span class="text-rose-600 dark:text-rose-400 text-xs">❌ ${wrong.join(', ')}</span>`;
       }
       
-      // Обновляем сводку
       updateSummary();
     }
 
@@ -522,7 +693,23 @@
       }
     }
 
-    // ===== АВТОМАТИЧЕСКИЙ ПОДСЧЕТ БАЛАНСА =====
+    // ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК ФОРМ УЧЕТА
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('block');
+      });
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('bg-emerald-600', 'text-white');
+        el.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+      });
+      document.getElementById(tabId).classList.remove('hidden');
+      document.getElementById(tabId).classList.add('block');
+      btn.classList.remove('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+      btn.classList.add('bg-emerald-600', 'text-white');
+    }
+
+    // АВТОМАТИЧЕСКИЙ ПОДСЧЕТ БАЛАНСА
     function calcBalance() {
       const a10 = parseFloat(document.getElementById('a-10').value) || 0;
       const a50 = parseFloat(document.getElementById('a-50').value) || 0;
@@ -539,7 +726,7 @@
       document.getElementById('p-total').textContent = pTotal.toLocaleString('ru-RU');
     }
 
-    // ===== ПРОВЕРКА БАЛАНСА =====
+    // ПРОВЕРКА БАЛАНСА
     function checkBalance() {
       const fields = document.querySelectorAll('#asset-fields input[data-correct], #passive-fields input[data-correct]');
       let correctCount = 0;
@@ -570,7 +757,7 @@
         result.innerHTML = `🎉 Превосходно! Все статьи заполнены верно (${correctCount}/${totalCount}). Баланс сошелся: ${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}`;
       } else if (aTotal === pTotal && aTotal > 0) {
         result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-amber-50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
-        result.innerHTML = `⚖️ Баланс сошелся (${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}), но есть ошибки в отдельных статьях. Правильно: ${correctCount}/${totalCount}. Проверьте поля с красной рамкой.`;
+        result.innerHTML = `️ Баланс сошелся (${aTotal.toLocaleString('ru-RU')} = ${pTotal.toLocaleString('ru-RU')}), но есть ошибки в отдельных статьях. Правильно: ${correctCount}/${totalCount}. Проверьте поля с красной рамкой.`;
       } else if (aTotal !== pTotal && aTotal > 0 && pTotal > 0) {
         result.className = 'mt-3 p-4 rounded-xl text-sm font-bold bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800';
         result.innerHTML = `❌ Баланс не сходится! Актив: ${aTotal.toLocaleString('ru-RU')} ≠ Пассив: ${pTotal.toLocaleString('ru-RU')}. Разница: ${Math.abs(aTotal - pTotal).toLocaleString('ru-RU')}. Проверьте расчеты.`;
