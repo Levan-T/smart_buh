@@ -46,13 +46,13 @@ const courseStructure = {
           id: 6,
           title: "Учет кассовых операций",
           description: "Лимит кассы, ПКО и РКО, кассовая книга, инвентаризация",
-          status: "current"
+          status: "completed"
         },
         {
           id: 7,
           title: "Расчетный счет, валютный счет, переводы в пути",
           description: "Операции по расчетному счету, валютный счет, переводы в пути (инкассация, эквайринг)",
-          status: "locked"
+          status: "current"
         },
         {
           id: 8,
