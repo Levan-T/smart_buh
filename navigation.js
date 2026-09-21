@@ -40,7 +40,7 @@ const courseStructure = {
     {
       id: 2,
       title: "Учет денежных средств и расчетов",
-      icon: "💰",
+      icon: "",
       lessons: [
         {
           id: 6,
@@ -52,13 +52,13 @@ const courseStructure = {
           id: 7,
           title: "Расчетный счет, валютный счет, переводы в пути",
           description: "Операции по расчетному счету, валютный счет, переводы в пути (инкассация, эквайринг)",
-          status: "current"
+          status: "completed"
         },
         {
           id: 8,
           title: "Расчеты с подотчетными лицами",
           description: "Выдача денег под отчет, авансовый отчет, возврат неизрасходованных сумм",
-          status: "locked"
+          status: "current"
         },
         {
           id: 9,
@@ -126,7 +126,7 @@ const courseStructure = {
     {
       id: 4,
       title: "Капитал и финансовые результаты",
-      icon: "📊",
+      icon: "",
       lessons: [
         {
           id: 18,
