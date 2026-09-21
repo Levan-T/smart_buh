@@ -88,7 +88,7 @@
             Распоряжение владельца счета (плательщика) банку о перечислении определенной суммы денег со своего счета на счет получателя. Является <b>самым распространенным</b> видом расчетов и применяется при оплате поставщикам за товары, работы, услуги, перечислении налогов и взносов в бюджет и внебюджетные фонды, погашении кредитов и займов и прочих платежах и переводах. <b>Срок действия платежного поручения — 10 дней.</b>
           </p>
           <div class="bg-slate-900 dark:bg-slate-950 p-4 rounded-lg mb-4 overflow-x-auto">
-            <pre class="text-xs text-emerald-400 font-mono">[Покупатель (Плательщик)] ──── (1) Договор / Выставление счета ───> [Продавец (Получатель)]
+            <pre class="text-xs text-emerald-400 font-mono">[Покупатель (Плательщик)] ──── (1) Договор / Выставление счета ─> [Продавец (Получатель)]
          │                                                                   ▲
          │ (2) Передает платежное                                           │ (5) Зачисление
          │     поручение                                                     │     средств
@@ -126,11 +126,11 @@
                                                   ▼
                                             [БАНК ПЛАТЕЛЬЩИКА] ──▶ [ПЛАТЕЛЬЩИК]
                                                                           │
-                                                  (3. Плательщик дает ───┘
+                                                  (3. Плательщик дает ──┘
                                                        АКЦЕПТ)
                                                   │
                                                   ▼
-[ПОЛУЧАТЕЛЬ] ◀── (5. Зачисление) ── [БАНК ПОЛУЧАТЕЛЯ] ◀── (4. Списание) ── [БАНК ПЛАТЕЛЬЩИКА]</pre>
+[ПОЛУЧАТЕЛЬ] ── (5. Зачисление) ── [БАНК ПОЛУЧАТЕЛЯ] ── (4. Списание) ── [БАНК ПЛАТЕЛЬЩИКА]</pre>
           </div>
         </div>
 
@@ -535,66 +535,128 @@
 
     <!-- 10. Проверка знаний -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">10. Проверка знаний</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">10. Проверка знаний</h2>
+
+      <!-- Вопрос 1 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">1. Какой документ является основанием для записей по счету 51?</p>
+        <p class="font-semibold mb-3">1. Какой документ является основанием для записей по счету 51 «Расчетные счета»?</p>
         <div class="space-y-2 text-sm">
           <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Платежное поручение</button>
           <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Выписка банка с приложенными документами</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Чек</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Денежный чек</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Объявление на взнос наличными</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
+
+      <!-- Вопрос 2 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">2. Для какой операции используется счет 57 «Переводы в пути»?</p>
+        <p class="font-semibold mb-3">2. Какой срок действия у платежного поручения?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) 5 дней</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) 10 дней</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) 30 дней</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Не ограничен</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">3. Почему в банковской выписке дебет и кредит показываются «зеркально» по отношению к учету организации?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Это ошибка банковского программного обеспечения</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Потому что банк ведет учет со своей точки зрения: счет клиента для банка — это его обязательство</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Потому что организация использует другой план счетов</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Это особенность только валютных операций</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">4. Для какой операции используется счет 57 «Переводы в пути»?</p>
         <div class="space-y-2 text-sm">
           <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Оплата поставщику с расчетного счета</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Сдача наличной выручки через инкассацию</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Сдача наличной выручки инкассаторам</button>
           <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Снятие наличных с расчетного счета</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Перечисление налогов в бюджет</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
+
+      <!-- Вопрос 5 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">3. Счет 52 «Валютные счета» является:</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Пассивным</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Активным</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Активно-пассивным</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
-      </div>
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">4. Какая форма расчетов применяется при взыскании налогов и штрафов?</p>
+        <p class="font-semibold mb-3">5. Какая форма расчетов применяется при взыскании налогов и штрафов?</p>
         <div class="space-y-2 text-sm">
           <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Платежное поручение</button>
           <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Аккредитив</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Инкассовое поручение</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Платежное требование</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Инкассовое поручение</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
+
+      <!-- Вопрос 6 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">5. Составьте проводку: С расчетного счета сняты наличные деньги в кассу в сумме 50 000 руб.</p>
-        <div class="flex flex-wrap gap-2">
-          <input type="text" id="p1-dt" placeholder="Дт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-          <input type="text" id="p1-kt" placeholder="Кт" class="flex-1 min-w-[80px] p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-          <button onclick="checkEntry('p1', '50', '51')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+        <p class="font-semibold mb-3">6. Куда относится итоговая сумма курсовой разницы по валютному счету?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) На счет 51 «Расчетные счета»</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) На счет 80 «Прибыли и убытки»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) На счет 57 «Переводы в пути»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) На счет 55 «Специальные счета в банках»</button>
         </div>
-        <p id="p1-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
+
+      <!-- Вопрос 7 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">6. Задача на расчет остатка. На 1 октября остаток на расчетном счете составлял 100 000 руб. В течение октября:</p>
-        <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-1 mb-3 list-disc list-inside">
-          <li>Поступило от покупателей: 80 000 руб.</li>
-          <li>Оплачено поставщикам: 45 000 руб.</li>
-          <li>Снято в кассу: 30 000 руб.</li>
-        </ul>
-        <p class="text-sm font-semibold mb-2">Рассчитайте остаток на 31 октября:</p>
-        <div class="flex gap-2">
-          <input type="number" id="balance-answer" placeholder="Введите сумму" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-          <button onclick="checkBalanceTask()" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+        <p class="font-semibold mb-3">7. Оплата поставщику ООО «Стройматериалы» с расчетного счета на сумму 25 000 руб. Какая проводка?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 50 — Кт 51</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 60</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 62 — Кт 51</button>
         </div>
-        <p id="balance-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
+
+      <!-- Вопрос 8 -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">8. Поступление валютной выручки от иностранного покупателя в сумме 1000 USD по курсу 90 руб. Какая проводка?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 51 — Кт 62</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 52 — Кт 62</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 62 — Кт 52</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 57 — Кт 62</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <!-- Вопрос 9 -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">9. Сдача наличной выручки инкассаторам в сумме 30 000 руб. Какая проводка?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 51 — Кт 50</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 57 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 50 — Кт 57</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 57</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <!-- Вопрос 10 -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">10. Оплата поставщику за счет средств аккредитива. Какая проводка?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 55 — Кт 60</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 51</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 60 — Кт 55</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 55</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
     </section>
 
   </main>
@@ -610,6 +672,7 @@
   </footer>
 
   <script>
+    // Единая функция проверки тестов
     function checkTest(btn, isCorrect) {
       const parent = btn.parentElement.parentElement;
       const fb = parent.querySelector('.feedback');
@@ -622,31 +685,6 @@
         btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
         fb.classList.add('text-rose-600', 'dark:text-rose-400');
         fb.textContent = '❌ Неверно. Попробуйте еще раз.';
-      }
-    }
-    function checkEntry(id, correctDt, correctKt) {
-      const dt = document.getElementById(`${id}-dt`).value.trim();
-      const kt = document.getElementById(`${id}-kt`).value.trim();
-      const fb = document.getElementById(`${id}-feedback`);
-      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
-      if (dt === correctDt && kt === correctKt) {
-        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Верно!';
-      } else {
-        fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = `❌ Неверно. Правильно: Дт ${correctDt} — Кт ${correctKt}`;
-      }
-    }
-    function checkBalanceTask() {
-      const answer = parseFloat(document.getElementById('balance-answer').value);
-      const fb = document.getElementById('balance-feedback');
-      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
-      if (answer === 105000) {
-        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Верно! 100 000 + 80 000 − 45 000 − 30 000 = 105 000 руб.';
-      } else {
-        fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Формула: Остаток нач. + Поступление − Списание';
       }
     }
   </script>
