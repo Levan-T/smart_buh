@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 9. Расчеты с поставщиками и покупателями | smart_buh</title>
+  <script>
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
+
+  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="text-2xl font-black text-blue-600 dark:text-emerald-400">smart_buh</a>
+        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 9</span>
+      </div>
+      <nav class="hidden md:flex space-x-5 text-sm font-medium">
+        <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Оглавление</a>
+        <a href="lesson1.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 1</a>
+        <a href="lesson2.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 2</a>
+        <a href="lesson3.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 3</a>
+        <a href="lesson4.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 4</a>
+        <a href="lesson5.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 5</a>
+        <a href="lesson6.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 6</a>
+        <a href="lesson7.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 7</a>
+        <a href="lesson8.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 8</a>
+        <span class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-0.5">Урок 9</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+
+    <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 9. Расчеты с поставщиками (подрядчиками) и покупателями (заказчиками)</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем учет расчетов с контрагентами, использование счетов 60, 61, 62, 64, отражение авансовых операций и составление первичных документов.</p>
+    </div>
+
+    <!-- 1. Понятие расчетов с контрагентами -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Понятие расчетов с контрагентами</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Расчёты с поставщиками (подрядчиками) и расчёты с покупателями (заказчиками) — это две стороны одного и того же типа хозяйственных связей: организация одновременно кому-то должна и ей самой кто-то должен.</p>
+        <p><b>К поставщикам и подрядчикам</b> относят предприятия и организации, поставляющие товары, сырьё, материалы и прочие товарно-материальные ценности, а также выполняющие и оказывающие различного рода работы и услуги.</p>
+        <p><b>К покупателям и заказчикам</b>, наоборот, относятся организации, которые получили товарно-материальные ценности, работы или услуги от контрагента.</p>
+        <p>Для учёта этих двух направлений используются два зеркальных по логике счёта.</p>
+      </div>
+    </section>
+
+    <!-- 2. Счет 60 -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Счёт 60 «Расчёты с поставщиками и подрядчиками»</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Счёт 60 отражает обязательства организации перед теми, кто поставляет ей товары, материалы, выполняет работы или оказывает услуги — это <b>кредиторская задолженность</b>.</p>
+        
+        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
+          <h4 class="font-bold text-blue-800 dark:text-blue-300 mb-2">📌 Теоретическая и практическая природа счёта:</h4>
+          <p class="text-sm text-blue-800 dark:text-blue-300"><b>В теории</b> счёт 60 рассматривается как <b>пассивный</b>: типичное сальдо — кредитовое, долг перед поставщиком растёт по кредиту и гасится по дебету.</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2"><b>На практике</b> счёт 60 используется как <b>активно-пассивный</b>: сальдо может быть как дебетовым (переплата поставщику), так и кредитовым (задолженность перед поставщиком) в зависимости от наличия задолженности или авансов по тем или иным хозяйственным операциям.</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-3">Характеристика счёта 60:</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Кто перед кем должен</span><span class="font-semibold">Обычно компания должна поставщику</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Тип счёта (по умолчанию)</span><span class="font-semibold">Пассивный</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Растёт по</span><span class="font-semibold text-rose-600 dark:text-rose-400">Кредиту (получили товар — выросла задолженность)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Уменьшается по</span><span class="font-semibold text-emerald-600 dark:text-emerald-400">Дебету (оплатили — задолженность погашена)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Родственный счёт авансов</span><span class="font-semibold text-blue-600 dark:text-blue-400">61 «Расчёты по авансам выданным»</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Счет 61 -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Счёт 61 «Расчёты по авансам выданным»</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p><b>Счёт 61 — это активный счёт</b>, который используется строго для учёта сумм предоплаты (авансов), перечисленных поставщикам <b>до получения товаров или услуг</b>.</p>
+        
+        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
+          <h4 class="font-bold text-amber-800 dark:text-amber-300 mb-2">💡 Зачем нужен отдельный счёт 61?</h4>
+          <p class="text-sm text-amber-800 dark:text-amber-300">Если бы мы учитывали авансы на счёте 60, то дебетовое сальдо (аванс) смешивалось бы с кредитовым сальдо (задолженность перед поставщиком). Это создавало бы путаницу в учёте и отчётности. Поэтому в Плане счетов Республики Абхазия предусмотрен <b>отдельный активный счёт 61</b> для чёткого разделения авансов и основной задолженности.</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-3">Характеристика счёта 61:</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Кто перед кем должен</span><span class="font-semibold">Поставщик должен нам (товар или возврат денег)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Тип счёта</span><span class="font-semibold">Активный</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Растёт по</span><span class="font-semibold text-emerald-600 dark:text-emerald-400">Дебету (перечислили аванс)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Уменьшается по</span><span class="font-semibold text-rose-600 dark:text-rose-400">Кредиту (зачли аванс в счёт поставки)</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Счет 62 -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Счёт 62 «Расчёты с покупателями и заказчиками»</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Счёт 62 отражает обязательства покупателей перед организацией за то, что она им отгрузила или для них выполнила — это <b>дебиторская задолженность</b>.</p>
+        
+        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
+          <h4 class="font-bold text-blue-800 dark:text-blue-300 mb-2">📌 Теоретическая и практическая природа счёта:</h4>
+          <p class="text-sm text-blue-800 dark:text-blue-300"><b>В теории</b> счёт 62 рассматривается как <b>активный</b>: типичное сальдо — дебетовое, долг покупателя растёт по дебету и гасится по кредиту.</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2"><b>На практике</b> счёт 62 используется как <b>активно-пассивный</b>: сальдо может быть как дебетовым (покупатель должен нам), так и кредитовым (мы должны покупателю — получили аванс, но ещё не отгрузили товар).</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-3">Характеристика счёта 62:</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Кто перед кем должен</span><span class="font-semibold">Обычно покупатель должен компании</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Тип счёта (по умолчанию)</span><span class="font-semibold">Активный</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Растёт по</span><span class="font-semibold text-emerald-600 dark:text-emerald-400">Дебету (отгрузили товар — выросла задолженность покупателя)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Уменьшается по</span><span class="font-semibold text-rose-600 dark:text-rose-400">Кредиту (получили оплату — задолженность погашена)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Родственный счёт авансов</span><span class="font-semibold text-purple-600 dark:text-purple-400">64 «Расчёты по авансам полученным»</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Счет 64 -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Счёт 64 «Расчёты по авансам полученным»</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p><b>Счёт 64 — это пассивный счёт</b>, который используется строго для учёта сумм предоплаты (авансов), полученных от покупателей <b>до отгрузки товаров или оказания услуг</b>.</p>
+        
+        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
+          <h4 class="font-bold text-amber-800 dark:text-amber-300 mb-2">💡 Зачем нужен отдельный счёт 64?</h4>
+          <p class="text-sm text-amber-800 dark:text-amber-300">Аналогично счёту 61, если бы мы учитывали полученные авансы на счёте 62, то кредитовое сальдо (аванс) смешивалось бы с дебетовым сальдо (дебиторская задолженность покупателей). Поэтому в Плане счетов Республики Абхазия предусмотрен <b>отдельный пассивный счёт 64</b> для чёткого разделения авансов и основной дебиторской задолженности.</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg mb-3">Характеристика счёта 64:</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Кто перед кем должен</span><span class="font-semibold">Мы должны покупателю (товар или возврат денег)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Тип счёта</span><span class="font-semibold">Пассивный</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Растёт по</span><span class="font-semibold text-rose-600 dark:text-rose-400">Кредиту (получили аванс)</span></li>
+            <li class="flex justify-between p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Уменьшается по</span><span class="font-semibold text-emerald-600 dark:text-emerald-400">Дебету (зачли аванс в счёт отгрузки)</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Сводная таблица -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Сводная таблица счетов</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600 shadow-lg">
+          <thead>
+            <tr class="bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Параметр</th>
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Счёт 60</th>
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Счёт 61</th>
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Счёт 62</th>
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Счёт 64</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300">
+            <tr class="bg-white dark:bg-slate-800">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Название</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Расчёты с поставщиками</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Авансы выданные</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Расчёты с покупателями</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Авансы полученные</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/30">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Теоретический тип</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Пассивный</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Активный</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Активный</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Пассивный</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Практический тип</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Активно-пассивный</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Активный</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Активно-пассивный</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Пассивный</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/30">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Кто должен</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Мы поставщику</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Поставщик нам</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Покупатель нам</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Мы покупателю</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Растёт по</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-rose-600 dark:text-rose-400">Кредиту</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">Дебету</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">Дебету</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-rose-600 dark:text-rose-400">Кредиту</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/30">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Уменьшается по</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">Дебету</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-rose-600 dark:text-rose-400">Кредиту</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-rose-600 dark:text-rose-400">Кредиту</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">Дебету</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. Основные корреспонденции счетов -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Основные корреспонденции счетов</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Счет 60 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Счёт 60 «Расчёты с поставщиками»</h3>
+          <div class="space-y-2 text-sm">
+            <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
+              <p class="font-semibold text-xs">Дебет 60 — Кредит:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>51 — Оплата с расчётного счёта</li>
+                <li>50 — Оплата наличными из кассы</li>
+                <li>61 — Зачёт выданного аванса</li>
+              </ul>
+            </div>
+            <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
+              <p class="font-semibold text-xs">Кредит 60 — Дебет:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>10 — Поступление материалов</li>
+                <li>08 — Поступление оборудования</li>
+                <li>20 — Услуги подрядчика</li>
+                <li>26 — Общехозяйственные услуги</li>
+                <li>41 — Поступление товаров</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Счет 61 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg text-emerald-600 dark:text-emerald-400 mb-3">Счёт 61 «Авансы выданные»</h3>
+          <div class="space-y-2 text-sm">
+            <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
+              <p class="font-semibold text-xs">Дебет 61 — Кредит:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>51 — Перечислен аванс с р/с</li>
+                <li>50 — Выдан аванс наличными</li>
+              </ul>
+            </div>
+            <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
+              <p class="font-semibold text-xs">Кредит 61 — Дебет:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>60 — Зачёт аванса в счёт поставки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Счет 62 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg text-purple-600 dark:text-purple-400 mb-3">Счёт 62 «Расчёты с покупателями»</h3>
+          <div class="space-y-2 text-sm">
+            <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
+              <p class="font-semibold text-xs">Дебет 62 — Кредит:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>90 — Реализация продукции (выручка)</li>
+                <li>91 — Реализация прочих активов</li>
+              </ul>
+            </div>
+            <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
+              <p class="font-semibold text-xs">Кредит 62 — Дебет:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>51 — Оплата на расчётный счёт</li>
+                <li>50 — Оплата наличными в кассу</li>
+                <li>64 — Зачёт полученного аванса</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Счет 64 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-lg text-amber-600 dark:text-amber-400 mb-3">Счёт 64 «Авансы полученные»</h3>
+          <div class="space-y-2 text-sm">
+            <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
+              <p class="font-semibold text-xs">Дебет 64 — Кредит:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>62 — Зачёт аванса в счёт отгрузки</li>
+              </ul>
+            </div>
+            <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
+              <p class="font-semibold text-xs">Кредит 64 — Дебет:</p>
+              <ul class="text-xs mt-1 space-y-1 list-disc list-inside">
+                <li>51 — Получен аванс на р/с</li>
+                <li>50 — Получен аванс наличными</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Примеры типовых проводок -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">8. Примеры типовых проводок</h2>
+      
+      <div class="space-y-3 text-sm">
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold mb-2">Пример 1. Поступление материалов с последующей оплатой (без аванса):</h4>
+          <ol class="space-y-1 text-xs">
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 60: 50 000 руб.</span> — получены материалы от ООО «Стройматериалы»</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 60 — Кт 51: 50 000 руб.</span> — оплачено поставщику с расчётного счёта</li>
+          </ol>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold mb-2">Пример 2. Аванс поставщику и получение товара (с использованием счёта 61):</h4>
+          <ol class="space-y-1 text-xs">
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 61 — Кт 51: 30 000 руб.</span> — перечислен аванс поставщику ООО «Канцтовары»</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 60: 30 000 руб.</span> — получены канцелярские товары</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 60 — Кт 61: 30 000 руб.</span> — зачёт выданного аванса</li>
+          </ol>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold mb-2">Пример 3. Реализация продукции с последующей оплатой (без аванса):</h4>
+          <ol class="space-y-1 text-xs">
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 62 — Кт 90: 80 000 руб.</span> — отгружена продукция ООО «Турист»</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 51 — Кт 62: 80 000 руб.</span> — получена оплата от покупателя</li>
+          </ol>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold mb-2">Пример 4. Получение аванса от покупателя и отгрузка (с использованием счёта 64):</h4>
+          <ol class="space-y-1 text-xs">
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 51 — Кт 64: 40 000 руб.</span> — получен аванс от ООО «Партнёр»</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 62 — Кт 90: 40 000 руб.</span> — отгружены товары покупателю</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 64 — Кт 62: 40 000 руб.</span> — зачёт полученного аванса</li>
+          </ol>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold mb-2">Пример 5. Частичная предоплата и доплата:</h4>
+          <ol class="space-y-1 text-xs">
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 61 — Кт 51: 20 000 руб.</span> — перечислен аванс поставщику (50% от суммы)</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 60: 40 000 руб.</span> — получены материалы на полную сумму</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 60 — Кт 61: 20 000 руб.</span> — зачёт аванса</li>
+            <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 60 — Кт 51: 20 000 руб.</span> — доплата поставщику</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Т-образные формы счетов -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">9. Т-образные формы счетов</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Счет 60 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-center mb-3 text-sm bg-blue-100 dark:bg-blue-900/30 p-2 rounded">СЧЁТ 60 «Расчёты с поставщиками»</h3>
+          <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
+            <div class="p-3 border-r border-slate-400 dark:border-slate-600">
+              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10 (переплата)</span>
+                  <span>15 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Оплата ООО «Стройматериалы»</span>
+                  <span>50 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Оплата ООО «Связь»</span>
+                  <span>12 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Зачёт аванса ООО «Канцтовары»</span>
+                  <span>30 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1">
+                  <span>Оборот по Дт</span>
+                  <span>107 000</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-3">
+              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10 (долг)</span>
+                  <span>45 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Поступление материалов</span>
+                  <span>50 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Услуги ООО «Связь»</span>
+                  <span>12 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Поступление товаров</span>
+                  <span>25 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1">
+                  <span>Оборот по Кт</span>
+                  <span>132 000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
+            <p class="font-bold">Сальдо на 31.10:</p>
+            <p>• По ООО «Стройматериалы»: 0 руб.</p>
+            <p>• По ООО «Связь»: 0 руб.</p>
+            <p>• По ООО «Партнёр»: <b>25 000 руб. (Кт — мы должны)</b></p>
+          </div>
+        </div>
+
+        <!-- Счет 61 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-center mb-3 text-sm bg-emerald-100 dark:bg-emerald-900/30 p-2 rounded">СЧЁТ 61 «Авансы выданные»</h3>
+          <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
+            <div class="p-3 border-r border-slate-400 dark:border-slate-600">
+              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10</span>
+                  <span>0</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Аванс ООО «Канцтовары»</span>
+                  <span>30 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1">
+                  <span>Оборот по Дт</span>
+                  <span>30 000</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-3">
+              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10</span>
+                  <span>0</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Зачёт аванса</span>
+                  <span>30 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1">
+                  <span>Оборот по Кт</span>
+                  <span>30 000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
+            <p class="font-bold">Сальдо на 31.10: 0 руб. (аванс полностью зачтён)</p>
+          </div>
+        </div>
+
+        <!-- Счет 62 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-center mb-3 text-sm bg-purple-100 dark:bg-purple-900/30 p-2 rounded">СЧЁТ 62 «Расчёты с покупателями»</h3>
+          <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
+            <div class="p-3 border-r border-slate-400 dark:border-slate-600">
+              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10 (долг)</span>
+                  <span>35 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Отгрузка ООО «Турист»</span>
+                  <span>80 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Отгрузка ООО «Иванов»</span>
+                  <span>45 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1">
+                  <span>Оборот по Дт</span>
+                  <span>160 000</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-3">
+              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10</span>
+                  <span>0</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Оплата от ООО «Турист»</span>
+                  <span>80 000</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Оплата от ООО «Иванов»</span>
+                  <span>45 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1">
+                  <span>Оборот по Кт</span>
+                  <span>125 000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
+            <p class="font-bold">Сальдо на 31.10:</p>
+            <p>• По ООО «Турист»: 0 руб.</p>
+            <p>• По ООО «Иванов»: 0 руб.</p>
+            <p>• По ООО «Партнёр»: <b>35 000 руб. (Дт — покупатель должен)</b></p>
+          </div>
+        </div>
+
+        <!-- Счет 64 -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-center mb-3 text-sm bg-amber-100 dark:bg-amber-900/30 p-2 rounded">СЧЁТ 64 «Авансы полученные»</h3>
+          <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
+            <div class="p-3 border-r border-slate-400 dark:border-slate-600">
+              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10</span>
+                  <span>0</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Зачёт аванса ООО «Партнёр»</span>
+                  <span>40 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1">
+                  <span>Оборот по Дт</span>
+                  <span>40 000</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-3">
+              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Сальдо на 01.10</span>
+                  <span>0</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
+                  <span>Получен аванс от ООО «Партнёр»</span>
+                  <span>40 000</span>
+                </div>
+                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1">
+                  <span>Оборот по Кт</span>
+                  <span>40 000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
+            <p class="font-bold">Сальдо на 31.10: 0 руб. (аванс полностью зачтён)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Журнал-ордер и Ведомость -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">10. Журнал-ордер и Ведомость по счетам 60 и 62</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Журнал-ордер № 6 -->
+        <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
+          <h4 class="font-bold text-center mb-3 text-sm bg-blue-100 dark:bg-blue-900/30 p-2 rounded">ЖУРНАЛ-ОРДЕР № 6<br>за октябрь 2026 г. по кредиту счёта 60</h4>
+          <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="border border-slate-300 dark:border-slate-600 p-1">03.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">50 000</td></tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">07.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">26</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">12 000</td></tr>
+              <tr><td class="border border-slate-300 dark:border-slate-600 p-1">12.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">41</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">25 000</td></tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">15.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">08</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">45 000</td></tr>
+              <tr class="font-bold bg-blue-100 dark:bg-blue-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">132 000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Ведомость № 6 -->
+        <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
+          <h4 class="font-bold text-center mb-3 text-sm bg-emerald-100 dark:bg-emerald-900/30 p-2 rounded">ВЕДОМОСТЬ № 6<br>за октябрь 2026 г. по дебету счёта 60</h4>
+          <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="border border-slate-300 dark:border-slate-600 p-1">05.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">50 000</td></tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">08.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">12 000</td></tr>
+              <tr><td class="border border-slate-300 dark:border-slate-600 p-1">13.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">61</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">30 000</td></tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">18.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">15 000</td></tr>
+              <tr class="font-bold bg-emerald-100 dark:bg-emerald-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">107 000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Журнал-ордер № 4 -->
+        <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
+          <h4 class="font-bold text-center mb-3 text-sm bg-purple-100 dark:bg-purple-900/30 p-2 rounded">ЖУРНАЛ-ОРДЕР № 4<br>за октябрь 2026 г. по дебету счёта 62</h4>
+          <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="border border-slate-300 dark:border-slate-600 p-1">04.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">90</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">80 000</td></tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">09.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">90</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">45 000</td></tr>
+              <tr><td class="border border-slate-300 dark:border-slate-600 p-1">14.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">91</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">35 000</td></tr>
+              <tr class="font-bold bg-purple-100 dark:bg-purple-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">160 000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Ведомость № 4 -->
+        <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
+          <h4 class="font-bold text-center mb-3 text-sm bg-amber-100 dark:bg-amber-900/30 p-2 rounded">ВЕДОМОСТЬ № 4<br>за октябрь 2026 г. по кредиту счёта 62</h4>
+          <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="border border-slate-300 dark:border-slate-600 p-1">06.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">80 000</td></tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">11.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">45 000</td></tr>
+              <tr class="font-bold bg-amber-100 dark:bg-amber-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">125 000</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Проверка знаний -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">11. Проверка знаний</h2>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">1. Какой счёт используется для учёта расчётов с поставщиками и подрядчиками?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счёт 62 «Расчёты с покупателями и заказчиками»</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счёт 60 «Расчёты с поставщиками и подрядчиками»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счёт 76 «Расчёты с разными дебиторами и кредиторами»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счёт 71 «Расчёты с подотчётными лицами»</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">2. Какой счёт является активным и используется для учёта авансов, перечисленных поставщикам?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счёт 60</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счёт 61</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счёт 62</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счёт 64</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">3. Какой счёт является пассивным и используется для учёта авансов, полученных от покупателей?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счёт 60</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счёт 61</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счёт 62</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счёт 64</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">4. Какая проводка составляется при перечислении аванса поставщику с расчётного счёта?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 60 — Кт 51</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 61 — Кт 51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 61</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 60 — Кт 61</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">5. Какая проводка составляется при получении материалов от поставщика?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 60 — Кт 10</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 10 — Кт 60</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 61 — Кт 10</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">6. Какая проводка составляется при зачёте ранее выданного аванса в счёт поставки?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 61 — Кт 60</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 61</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 61</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 60 — Кт 10</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">7. Какая проводка составляется при отгрузке продукции покупателю?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 90 — Кт 62</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 62 — Кт 90</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 62 — Кт 51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 62</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">8. Какая проводка составляется при получении аванса от покупателя на расчётный счёт?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 64 — Кт 51</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 51 — Кт 64</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 62 — Кт 90</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 62</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">9. Какая проводка составляется при зачёте ранее полученного аванса в счёт отгрузки?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 62 — Кт 64</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 64 — Кт 62</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 64</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 62 — Кт 90</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">10. Задача. ООО «Smart_buh» перечислило аванс поставщику ООО «Канцтовары» в сумме 30 000 руб. с расчётного счёта. Затем получило канцелярские товары на ту же сумму и зачло аванс. Какие проводки нужно составить?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 61 — Кт 51: 30 000; Дт 10 — Кт 60: 30 000; Дт 60 — Кт 61: 30 000</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 51: 30 000; Дт 10 — Кт 60: 30 000</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 51: 30 000</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 61 — Кт 51: 30 000; Дт 10 — Кт 61: 30 000</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 bg-white dark:bg-slate-950 mt-12">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+      <div class="flex space-x-4">
+        <a href="lesson8.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 8</a>
+        <a href="lesson10.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 10 →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function checkTest(btn, isCorrect) {
+      const parent = btn.parentElement.parentElement;
+      const fb = parent.querySelector('.feedback');
+      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+      if (isCorrect) {
+        btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
+        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
+        fb.textContent = '✅ Верно!';
+      } else {
+        btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
+        fb.classList.add('text-rose-600', 'dark:text-rose-400');
+        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
+      }
+    }
+  </script>
+</body>
+</html>
