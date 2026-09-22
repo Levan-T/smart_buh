@@ -1,1 +1,482 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 10. Учет расчетов с персоналом по оплате труда | smart_buh</title>
+  <script>
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
 
+  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="text-2xl font-black text-blue-600 dark:text-emerald-400">smart_buh</a>
+        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 10</span>
+      </div>
+      <nav class="hidden md:flex space-x-5 text-sm font-medium">
+        <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Оглавление</a>
+        <a href="lesson1.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 1</a>
+        <a href="lesson2.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 2</a>
+        <a href="lesson3.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 3</a>
+        <a href="lesson4.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 4</a>
+        <a href="lesson5.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 5</a>
+        <a href="lesson6.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 6</a>
+        <a href="lesson7.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 7</a>
+        <a href="lesson8.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 8</a>
+        <a href="lesson9.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 9</a>
+        <span class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-0.5">Урок 10</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+
+    <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 10. Учет расчетов с персоналом по оплате труда</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем виды заработной платы, формы оплаты труда, документальное оформление, начисления, удержания (подоходный налог), отчисления во внебюджетные фонды РА и бухгалтерский учет на счетах 70, 68, 69, 73 и 76.</p>
+    </div>
+
+    <!-- 1. Понятие и виды -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Понятие заработной платы и её виды</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p><b>Заработная плата</b> — это вознаграждение за труд в зависимости от квалификации работника, сложности, количества, качества и условий выполняемой работы, а также компенсационные и стимулирующие выплаты.</p>
+        <p>В бухгалтерском учете заработную плату принято делить на три основные группы:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><b>Основная часть:</b> оклад, тарифная ставка за фактически отработанное время или выполненную работу.</li>
+          <li><b>Дополнительная часть:</b> премии, надбавки за выслугу лет, доплаты за работу в ночное время, в выходные и праздничные дни.</li>
+          <li><b>Компенсационные выплаты:</b> оплата ежегодных отпусков, оплата времени выполнения государственных обязанностей, выходные пособия.</li>
+        </ul>
+        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
+          <p class="text-sm text-blue-800 dark:text-blue-300"><b>💡 Важно различать:</b> <b>Начисленная заработная плата</b> — это полная сумма, которую организация начислила сотруднику за месяц. <b>Заработная плата к выплате (на руки)</b> — это сумма за вычетом всех удержаний (например, подоходного налога).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Формы и системы -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Формы и системы оплаты труда</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>На предприятиях Республики Абхазия применяются две основные формы оплаты труда: <b>повременная</b> и <b>сдельная</b>.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-emerald-600 dark:text-emerald-400 mb-2">⏱️ Повременная форма</h3>
+            <p class="text-sm mb-3">Оплата зависит от фактически отработанного времени и тарифной ставки (оклада).</p>
+            <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded text-xs font-mono">
+              <p class="font-bold mb-1">Пример расчета:</p>
+              <p>Оклад: 25 000 руб.</p>
+              <p>Отработано: 15 дней из 20 рабочих.</p>
+              <p class="mt-2">ЗП = 25 000 / 20 × 15 = <b>18 750 руб.</b></p>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-purple-600 dark:text-purple-400 mb-2"> Сдельная форма</h3>
+            <p class="text-sm mb-3">Оплата зависит от количества произведенной продукции (выполненных работ) по установленным расценкам.</p>
+            <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded text-xs font-mono">
+              <p class="font-bold mb-1">Пример расчета:</p>
+              <p>Расценка: 150 руб. за единицу.</p>
+              <p>Изготовлено: 200 единиц.</p>
+              <p class="mt-2">ЗП = 150 × 200 = <b>30 000 руб.</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Документальное оформление -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Документальное оформление</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Основанием для начисления заработной платы являются первичные документы:</p>
+        <ul class="list-disc list-inside space-y-1 ml-4">
+          <li><b>Табель учёта рабочего времени</b> — фиксирует явки, неявки, часы работы (основа для повременной оплаты).</li>
+          <li><b>Наряды на сдельную работу</b> — фиксируют объем выполненных работ (основа для сдельной оплаты).</li>
+          <li><b>Листки нетрудоспособности</b> (больничные) и заявления на отпуск.</li>
+        </ul>
+        <p>Для сводного учета начислений и выплат используются унифицированные формы ведомостей:</p>
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 my-4">
+          <h4 class="font-bold mb-2">📋 Основные формы ведомостей:</h4>
+          <ul class="text-sm space-y-2">
+            <li><b>Расчетная ведомость (форма Т-51):</b> составляется только для начисления заработной платы. Показывает все начисления и удержания по каждому сотруднику.</li>
+            <li><b>Расчетно-платежная ведомость (форма Т-53):</b> совмещает функции расчетной ведомости и платежного документа. Используется для начисления и последующей выдачи заработной платы наличными через кассу.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Начисление заработной платы -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Начисление заработной платы и примеры расчета</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Начисление заработной платы производится за отработанный месяц. Помимо основного оклада, сотрудникам часто начисляются премии и отпускные.</p>
+        
+        <div class="space-y-3 text-sm">
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold mb-2">Пример 1. Начисление оклада и премии:</h4>
+            <p class="text-xs mb-2">Сотруднику Иванову И.И. установлен оклад 30 000 руб. По итогам месяца ему начислена премия в размере 20% от оклада.</p>
+            <ul class="text-xs font-mono text-emerald-600 dark:text-emerald-400 space-y-1">
+              <li>Оклад: 30 000 руб.</li>
+              <li>Премия: 30 000 × 20% = 6 000 руб.</li>
+              <li>Итого начислено: 36 000 руб.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold mb-2">Пример 2. Расчет отпускных:</h4>
+            <p class="text-xs mb-2">Сотрудник Петров П.П. уходит в отпуск на 14 дней. Его средний дневной заработок составляет 1 200 руб.</p>
+            <ul class="text-xs font-mono text-emerald-600 dark:text-emerald-400 space-y-1">
+              <li>Сумма отпускных: 1 200 руб. × 14 дней = 16 800 руб.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Удержания из заработной платы -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Удержания из заработной платы</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Из начисленной заработной платы производится ряд удержаний. Самое основное — это <b>подоходный налог</b>, который организация выступает в роли налогового агента и удерживает из доходов сотрудника.</p>
+        <p>Также из зарплаты могут удерживаться:</p>
+        <ul class="list-disc list-inside space-y-1 ml-4">
+          <li>Алименты (по исполнительным листам).</li>
+          <li>Возврат сумм, выданных ранее под отчет (если сотрудник не предоставил авансовый отчет).</li>
+          <li>Возврат выданных ранее займов.</li>
+          <li>Ущербы, нанесенные организации по вине работника.</li>
+        </ul>
+        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
+          <p class="text-sm text-amber-800 dark:text-amber-300"><b>⚠️ Формула к выплате:</b><br>Сумма на руки = Начисленная ЗП − Подоходный налог − Прочие удержания.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Внебюджетные фонды -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Начисления на фонд заработной платы (Внебюджетные фонды РА)</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Помимо удержаний из зарплаты сотрудника, организация за свой счет (сверх начисленной зарплаты) производит отчисления во <b>внебюджетные фонды Республики Абхазия</b>. Эти суммы не вычитаются из зарплаты работника, а являются дополнительными расходами предприятия.</p>
+        <p>Основные фонды:</p>
+        <ul class="list-disc list-inside space-y-1 ml-4">
+          <li><b>Пенсионный фонд РА</b> — на пенсионное обеспечение граждан.</li>
+          <li><b>Фонд социального страхования РА</b> — на оплату больничных листов, пособий.</li>
+          <li><b>Фонд обязательного медицинского страхования РА</b> — на медицинское обслуживание.</li>
+        </ul>
+        <p class="text-sm mt-3">Базой для начисления взносов является сумма начисленной заработной платы (фонд оплаты труда).</p>
+      </div>
+    </section>
+
+    <!-- 7. Бухгалтерский учет -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Бухгалтерский учет (Счета 70, 68, 69)</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Для учета расчетов с персоналом по оплате труда используется <b>пассивный счет 70 «Расчеты с персоналом по оплате труда»</b>.</p>
+        <p>Для учета расчетов с бюджетом по подоходному налогу используется <b>пассивный счет 68 «Расчеты с бюджетом»</b>.</p>
+        <p>Для учета расчетов по социальному страхованию и обеспечению (внебюджетные фонды) используется <b>пассивный счет 69 «Расчеты по социальному страхованию и обеспечению»</b>.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Корреспонденция по счету 70</h3>
+            <div class="space-y-2 text-xs">
+              <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
+                <p class="font-semibold">Дебет 70 — Кредит:</p>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li>68 — Удержан подоходный налог</li>
+                  <li>73 — Удержан невозвращенный подотчет / займ</li>
+                  <li>76 — Депонирована невыплаченная ЗП</li>
+                  <li>50 — Выдана ЗП из кассы</li>
+                </ul>
+              </div>
+              <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
+                <p class="font-semibold">Кредит 70 — Дебет:</p>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li>20 — Начислена ЗП рабочим основного пр-ва</li>
+                  <li>26 — Начислена ЗП административному персоналу</li>
+                  <li>44 — Начислена ЗП персоналу торговли</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h3 class="font-bold text-lg text-purple-600 dark:text-purple-400 mb-3">Корреспонденция по счету 69</h3>
+            <div class="space-y-2 text-xs">
+              <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
+                <p class="font-semibold">Дебет 69 — Кредит:</p>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li>51 — Перечислены взносы в фонды с р/с</li>
+                </ul>
+              </div>
+              <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
+                <p class="font-semibold">Кредит 69 — Дебет:</p>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li>20 — Начислены взносы на основное пр-во</li>
+                  <li>26 — Начислены взносы на общехозяйственные нужды</li>
+                  <li>44 — Начислены взносы на нужды торговли</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Т-образные счета -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-center mb-3 text-sm bg-blue-100 dark:bg-blue-900/30 p-2 rounded">СЧЁТ 70 «Расчеты с персоналом по оплате труда»</h3>
+          <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
+            <div class="p-3 border-r border-slate-400 dark:border-slate-600">
+              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Удержан подоходный налог (68)</span><span>13 000</span></div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Депонирована ЗП (76)</span><span>5 000</span></div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Выдана ЗП из кассы (50)</span><span>82 000</span></div>
+                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1"><span>Оборот по Дт</span><span>100 000</span></div>
+              </div>
+            </div>
+            <div class="p-3">
+              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Сальдо на 01.10 (долг перед персоналом)</span><span>10 000</span></div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Начислена ЗП (20, 26, 44)</span><span>100 000</span></div>
+                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1"><span>Оборот по Кт</span><span>100 000</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
+            <p class="font-bold">Сальдо на 31.10: 10 000 руб. (Кт — задолженность организации перед персоналом).</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h3 class="font-bold text-center mb-3 text-sm bg-purple-100 dark:bg-purple-900/30 p-2 rounded">СЧЁТ 69 «Расчеты по соц. страхованию»</h3>
+          <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
+            <div class="p-3 border-r border-slate-400 dark:border-slate-600">
+              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Перечислено в фонды (51)</span><span>30 000</span></div>
+                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1"><span>Оборот по Дт</span><span>30 000</span></div>
+              </div>
+            </div>
+            <div class="p-3">
+              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
+              <div class="space-y-1 text-[10px]">
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Сальдо на 01.10</span><span>0</span></div>
+                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Начислены взносы (20, 26, 44)</span><span>30 000</span></div>
+                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1"><span>Оборот по Кт</span><span>30 000</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
+            <p class="font-bold">Сальдо на 31.10: 0 руб. (взносы полностью перечислены).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Прочие операции -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">8. Прочие операции с персоналом</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Помимо начисления и выплаты заработной платы, бухгалтерия ведет учет прочих расчетов с сотрудниками. Для этого используется <b>счет 73 «Расчеты с персоналом по прочим операциям»</b>.</p>
+        
+        <div class="space-y-3 text-sm">
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold mb-2">Выдача и погашение займов работникам:</h4>
+            <ul class="space-y-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
+              <li>Дт 73 — Кт 50 (51): Выдан займ работнику из кассы (с р/с)</li>
+              <li>Дт 70 — Кт 73: Погашение займа путем удержания из заработной платы</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold mb-2">Депонирование заработной платы:</h4>
+            <p class="text-xs mb-2">Если сотрудник не явился за получением заработной платы в установленные сроки, кассир ставит на ведомости штамп «Депонировано». Сумма невыплаченной зарплаты списывается с счета 70 на счет 76.</p>
+            <ul class="space-y-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
+              <li>Дт 70 — Кт 76 «Расчеты с разными дебиторами и кредиторами» (субсчет «Расчеты с депонентами»): Депонирована невыплаченная ЗП</li>
+              <li>Дт 76 — Кт 51: Перечислена депонированная сумма на спецсчет в банке (если требуется по кассовой дисциплине)</li>
+              <li>Дт 76 — Кт 50: Выплата депонированной суммы при явке сотрудника</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Комплексный пример -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">9. Комплексный пример операций за месяц</h2>
+      <div class="space-y-3 text-sm">
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold mb-2">Ситуация: Начисление ЗП, удержание налога и выплата</h4>
+          <p class="text-xs mb-2">Начислена зарплата рабочим основного производства 100 000 руб. Удержан подоходный налог 13 000 руб. Выдано из кассы 82 000 руб. Неявившемуся сотруднику депонировано 5 000 руб.</p>
+          <ol class="space-y-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
+            <li>1. Дт 20 — Кт 70: 100 000 руб. (Начислена ЗП рабочим)</li>
+            <li>2. Дт 70 — Кт 68: 13 000 руб. (Удержан подоходный налог)</li>
+            <li>3. Дт 70 — Кт 50: 82 000 руб. (Выдана ЗП из кассы)</li>
+            <li>4. Дт 70 — Кт 76: 5 000 руб. (Депонирована сумма неявившегося сотрудника)</li>
+          </ol>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold mb-2">Ситуация: Начисление взносов во внебюджетные фонды</h4>
+          <p class="text-xs mb-2">На сумму начисленной ЗП (100 000 руб.) начислены страховые взносы во внебюджетные фонды РА в сумме 30 000 руб.</p>
+          <ol class="space-y-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
+            <li>1. Дт 20 — Кт 69: 30 000 руб. (Начислены взносы на основное производство)</li>
+            <li>2. Дт 69 — Кт 51: 30 000 руб. (Перечислены взносы в фонды с расчетного счета)</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Проверка знаний -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">10. Проверка знаний</h2>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">1. Какой счет используется для учета расчетов с персоналом по оплате труда?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 68 «Расчеты с бюджетом»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 69 «Расчеты по социальному страхованию»</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 70 «Расчеты с персоналом по оплате труда»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 73 «Расчеты с персоналом по прочим операциям»</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">2. Какая проводка составляется при начислении заработной платы рабочим основного производства?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 70 — Кт 50</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 20 — Кт 70</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 20 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 20</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">3. Какая проводка составляется при удержании подоходного налога из заработной платы сотрудника?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 68 — Кт 70</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 70 — Кт 68</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 70 — Кт 51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 20 — Кт 68</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">4. На какой счет относятся начисления организации во внебюджетные фонды Республики Абхазия?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 68 «Расчеты с бюджетом»</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 69 «Расчеты по социальному страхованию и обеспечению»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 70 «Расчеты с персоналом по оплате труда»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 96 «Резервы предстоящих расходов»</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">5. Какая проводка составляется при начислении взносов во внебюджетные фонды на зарплату административного персонала?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 20 — Кт 69</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 69 — Кт 51</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 26 — Кт 69</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 69</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">6. Сотрудник не явился за получением заработной платы в установленный срок. Какая проводка составляется для депонирования суммы?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 50 — Кт 70</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 70 — Кт 76</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 76 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 50</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">7. Какой документ используется только для начисления заработной платы (без ее выплаты)?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Расчетно-платежная ведомость (Т-53)</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Расчетная ведомость (Т-51)</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Платежная ведомость (Т-53)</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Приходный кассовый ордер</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">8. Организация выдала работнику займ из кассы. Какая проводка?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 70 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 71 — Кт 50</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 73 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 50 — Кт 73</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">9. Работнику удержали из заработной платы сумму ранее выданного займа. Какая проводка?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 73 — Кт 70</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 70 — Кт 73</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 70 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 73 — Кт 50</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">10. Задача. Начислена зарплата сотруднику 50 000 руб. Удержан подоходный налог 10% (5 000 руб.). Выдано из кассы 45 000 руб. Какие проводки нужно составить?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 20 — Кт 70: 50 000; Дт 70 — Кт 50: 45 000</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 20 — Кт 70: 50 000; Дт 70 — Кт 68: 5 000; Дт 70 — Кт 50: 45 000</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 20 — Кт 70: 50 000; Дт 68 — Кт 70: 5 000; Дт 70 — Кт 50: 45 000</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 20: 50 000; Дт 70 — Кт 68: 5 000; Дт 50 — Кт 70: 45 000</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 bg-white dark:bg-slate-950 mt-12">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
+      <div class="flex space-x-4">
+        <a href="lesson9.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 9</a>
+        <a href="lesson11.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 11 →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function checkTest(btn, isCorrect) {
+      const parent = btn.parentElement.parentElement;
+      const fb = parent.querySelector('.feedback');
+      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+      if (isCorrect) {
+        btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
+        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
+        fb.textContent = '✅ Верно!';
+      } else {
+        btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
+        fb.classList.add('text-rose-600', 'dark:text-rose-400');
+        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
+      }
+    }
+  </script>
+</body>
+</html>
