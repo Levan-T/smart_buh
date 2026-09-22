@@ -3,7 +3,7 @@ const courseStructure = {
     {
       id: 1,
       title: "Основы бухгалтерского учета",
-      icon: "📚",
+      icon: "",
       lessons: [
         {
           id: 1,
@@ -40,7 +40,7 @@ const courseStructure = {
     {
       id: 2,
       title: "Учет денежных средств и расчетов",
-      icon: "",
+      icon: "💰",
       lessons: [
         {
           id: 6,
@@ -58,13 +58,13 @@ const courseStructure = {
           id: 8,
           title: "Расчеты с подотчетными лицами",
           description: "Выдача денег под отчет, авансовый отчет, возврат неизрасходованных сумм",
-          status: "current"
+          status: "completed"
         },
         {
           id: 9,
           title: "Расчеты с поставщиками и покупателями",
-          description: "Счета 60 и 62, авансы выданные и полученные, векселя, акты сверки",
-          status: "locked"
+          description: "Счета 60, 61, 62, 64, авансы выданные и полученные, векселя, акты сверки",
+          status: "current"
         },
         {
           id: 10,
@@ -126,7 +126,7 @@ const courseStructure = {
     {
       id: 4,
       title: "Капитал и финансовые результаты",
-      icon: "",
+      icon: "📊",
       lessons: [
         {
           id: 18,
