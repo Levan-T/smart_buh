@@ -7,11 +7,11 @@ const courseStructure = {
       id: 1,
       title: "Раздел 1. Основы бухгалтерского учета",
       lessons: [
-        { id: 1, title: "Сущность и предмет бухучета", file: "lesson1.html" },
-        { id: 2, title: "Счета и план счетов", file: "lesson2.html" },
-        { id: 3, title: "Бухгалтерский баланс", file: "lesson3.html" },
-        { id: 4, title: "Формы бухучета", file: "lesson4.html" },
-        { id: 5, title: "Практика по Разделу 1", file: "lesson5.html" }
+        { id: 1, title: "Сущность и предмет бухгалтерского учета", file: "lesson1.html" },
+        { id: 2, title: "Понятие бухгалтерского счета и плана счетов", file: "lesson2.html" },
+        { id: 3, title: "Бухгалтерский баланс и отчетность", file: "lesson3.html" },
+        { id: 4, title: "Формы бухгалтерского учета", file: "lesson4.html" },
+        { id: 5, title: "Практическое задание по Разделу 1", file: "lesson5.html" }
       ]
     },
     {
@@ -19,18 +19,18 @@ const courseStructure = {
       title: "Раздел 2. Учет денежных средств и расчетов",
       lessons: [
         { id: 6, title: "Учет кассовых операций", file: "lesson6.html" },
-        { id: 7, title: "Расчетный и валютный счета", file: "lesson7.html" },
-        { id: 8, title: "Расчеты с подотчетными лицами", file: "lesson8.html" },
-        { id: 9, title: "Расчеты с поставщиками и покупателями", file: "lesson9.html" },
-        { id: 10, title: "Учет расчетов с персоналом (ЗП)", file: "lesson10.html" },
-        { id: 11, title: "Расчеты с бюджетом (Налоги)", file: "lesson11.html" },
-        { id: 12, title: "Прочие расчеты (Счет 76)", file: "lesson12.html" },
-        { id: 13, title: "Практика по Разделу 2", file: "lesson13.html" }
+        { id: 7, title: "Учет расчетного и валютного счетов", file: "lesson7.html" },
+        { id: 8, title: "Учет расчетов с подотчетными лицами", file: "lesson8.html" },
+        { id: 9, title: "Учет расчетов с поставщиками и покупателями", file: "lesson9.html" },
+        { id: 10, title: "Учет расчетов с персоналом по оплате труда", file: "lesson10.html" },
+        { id: 11, title: "Учет расчетов с бюджетом и внебюджетными фондами", file: "lesson11.html" },
+        { id: 12, title: "Прочие расчеты с дебиторами и кредиторами", file: "lesson12.html" },
+        { id: 13, title: "Практическое задание по Разделу 2", file: "lesson13.html" }
       ]
     },
     {
       id: 3,
-      title: "Раздел 3. Учет имущества",
+      title: "Раздел 3. Учет имущества и финансовых вложений",
       lessons: [
         { id: 14, title: "Учет материалов", file: "lesson14.html" },
         { id: 15, title: "Учет основных средств", file: "lesson15.html" }
@@ -114,6 +114,18 @@ function renderHeader() {
           <!-- Кнопки Назад/Вперед -->
           ${prevLesson ? `<a href="${prevLesson.file}" class="text-slate-500 hover:text-blue-600 dark:hover:text-emerald-400 transition hidden sm:block" title="${prevLesson.title}">←</a>` : '<span class="text-slate-300 hidden sm:block">←</span>'}
           ${nextLesson ? `<a href="${nextLesson.file}" class="text-slate-500 hover:text-blue-600 dark:hover:text-emerald-400 transition hidden sm:block" title="${nextLesson.title}">→</a>` : '<span class="text-slate-300 hidden sm:block">→</span>'}
+
+          <!-- Кнопка смены темы -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-emerald-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Сменить тему">
+            <!-- Иконка Солнца (для темной темы) -->
+            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            <!-- Иконка Луны (для светлой темы) -->
+            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
         </nav>
       </div>
     </header>
@@ -156,4 +168,17 @@ function renderFooter() {
 document.addEventListener('DOMContentLoaded', () => {
   renderHeader();
   renderFooter();
+});
+
+// Обработчик кнопки смены темы
+document.addEventListener('click', (e) => {
+  if (e.target.closest('#theme-toggle')) {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  }
 });
