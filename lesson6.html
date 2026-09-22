@@ -13,27 +13,7 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
 
-  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <a href="index.html" class="text-2xl font-black text-blue-600 dark:text-emerald-400">smart_buh</a>
-        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 6</span>
-      </div>
-      <nav class="hidden md:flex space-x-5 text-sm font-medium">
-        <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Оглавление</a>
-        <a href="lesson1.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 1</a>
-        <a href="lesson2.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 2</a>
-        <a href="lesson3.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 3</a>
-        <a href="lesson4.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 4</a>
-        <a href="lesson5.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 5</a>
-        <span class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-0.5">Урок 6</span>
-        <a href="lesson7.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 7</a>
-        <a href="lesson8.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 8</a>
-        <a href="lesson9.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 9</a>
-        <a href="lesson10.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 10</a>
-      </nav>
-    </div>
-  </header>
+  <div id="smart-header"></div>
 
   <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
@@ -647,15 +627,7 @@
 
   </main>
 
-  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 bg-white dark:bg-slate-950 mt-12">
-    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
-      <div class="flex space-x-4">
-        <a href="lesson5.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 5</a>
-        <a href="lesson7.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 7 →</a>
-      </div>
-    </div>
-  </footer>
+  <div id="smart-footer"></div>
 
   <script>
     // Переключение документов
@@ -719,6 +691,11 @@
         fb.textContent = '❌ Неверно. Сверхлимитный остаток = Фактический остаток − Лимит.';
       }
     }
-  </script>
+    </script>
+
+  <div id="smart-footer"></div>
+
+  <!-- Подключаем умный скрипт навигации -->
+  <script src="navigation.js"></script>
 </body>
 </html>
