@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок 8. Учет расчетов с подотчетными лицами | smart_buh</title>
+  <title>Урок 7. Учет денежных средств на расчетных и валютных счетах | smart_buh</title>
   <script>
     if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
     else document.documentElement.classList.add('dark');
@@ -17,7 +17,7 @@
     <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-3">
         <a href="index.html" class="text-2xl font-black text-blue-600 dark:text-emerald-400">smart_buh</a>
-        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 8</span>
+        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-emerald-950/80 dark:text-emerald-400 font-mono font-bold">Урок 7</span>
       </div>
       <nav class="hidden md:flex space-x-5 text-sm font-medium">
         <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Оглавление</a>
@@ -27,8 +27,8 @@
         <a href="lesson4.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 4</a>
         <a href="lesson5.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 5</a>
         <a href="lesson6.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 6</a>
-        <a href="lesson7.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 7</a>
-        <span class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-0.5">Урок 8</span>
+        <span class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-0.5">Урок 7</span>
+        <a href="lesson8.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400">Урок 8</a>
       </nav>
     </div>
   </header>
@@ -36,639 +36,967 @@
   <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 8. Учет расчетов с подотчетными лицами</h1>
-      <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем порядок выдачи денег под отчет, авансовые отчеты, командировочные расходы и бухгалтерский учет на счете 71.</p>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 7. Учет денежных средств на расчетных и валютных счетах, переводы в пути</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем организацию безналичных расчетов, документооборот по банковским операциям и бухгалтерский учет средств на счетах 51, 52, 55, 57.</p>
     </div>
 
     <!-- 1. Введение -->
     <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Понятие подотчетных лиц</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Безналичные расчеты: понятие и преимущества</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Как ранее мы говорили, подавляющая часть операций между организациями происходит в безналичной форме. Однако в ходе ежедневной хозяйственной деятельности у компании неизбежно возникают мелкие оперативные расходы, которые не всегда удобно или возможно оплатить с расчетного счета: покупка хозтоваров, мелкой канцелярии, оплата командировочных расходов и так далее.</p>
-        <p>Для оперативного решения таких задач организация выдает денежные средства своим работникам, список которых утверждает приказом руководитель организации. Сотрудники, получившие денежные средства на покрытие расходов в интересах компании, становятся <b>подотчетными лицами</b>, а процесс взаимодействия с ними образует <b>учет расчетов с подотчетными лицами</b>.</p>
-        <p>Обязательным условием выдачи денежных средств под отчет является необходимость последующего отчета за израсходованные денежные средства, подкреплённые первичными документами. Сумма неизрасходованных средств возвращается в кассу организации приходным кассовым ордером, а в случае перерасхода оформляется расходный кассовый ордер.</p>
+        <p>В современной экономике подавляющая часть расчетов между организациями осуществляется <b>в безналичном порядке</b> — то есть без использования наличных денег. Денежные средства, на основании расчетных документов или электронных распоряжений владельца счета, перечисляются со счета плательщика на счет получателя через банковскую систему. Это быстрее, безопаснее и каждая операция подтверждается банковскими документами, что важно для учёта и контроля.</p>
       </div>
     </section>
 
-    <!-- 2. Нормативное регулирование -->
+    <!-- 2. Открытие расчетного счета -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Нормативное регулирование</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Открытие расчетного счета</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Порядок выдачи наличных денег под отчет регламентируется <b>Положением о ведении кассовых операций</b> и <b>Указом Президента РА от 19.12.2017г. № 315</b>.</p>
+        <p>Для ведения безналичных расчётов организация открывает <b>расчётный счёт</b> в банке на основании <b>договора банковского счёта</b>.</p>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-6">Документы для открытия расчетного счета:</h3>
+        <ol class="list-decimal list-inside text-slate-700 dark:text-slate-300 space-y-2 pl-2 text-sm">
+          <li>Заявление на открытие счета</li>
+          <li>Учредительные документы (устав, учредительный договор)</li>
+          <li>Свидетельство о государственной регистрации</li>
+          <li>Карточку с образцами подписей руководителя и главного бухгалтера, а также оттиска печати</li>
+          <li>Справки из налоговых органов</li>
+        </ol>
+        <p class="text-sm mt-4">Банк, в свою очередь, обязуется принимать и зачислять поступающие деньги, выполнять распоряжения владельца счёта об их перечислении и выдаче, а также предоставлять выписки о движении средств, для учета которых предприятию присваивается <b>двадцатизначный номер расчетного счета</b> и заводится лицевой счет.</p>
+      </div>
+    </section>
+
+    <!-- 3. Документы по расчетному счету -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Документы по операциям на расчетном счете</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Прием денег в банк осуществляется <b>Объявлением на взнос наличными</b>, состоящим из 3 частей: объявление, квитанция и ордер. <b>Объявление</b> – основная часть, остается в банке и служит основанием для зачисления денег на расчетный счет организации, <b>квитанция</b> выдается клиенту и служит подтверждением факта принятия банком наличных денежных средств, а <b>ордер</b> используется банком для отражения операции в своем бухгалтерском учете.</p>
+        <p>Основанием для снятия денег с расчетного счета является <b>денежный чек</b>, для получения которого в обслуживающее отделение банка предоставляется заявление на получение чековой книжки. Каждый лист чековой книжки является бланком строгой отчетности, исправления в котором строго запрещены. Подписи в чеке должны соответствовать образцам в факсимиле (карточка с образцами подписей, которая заполняется при открытии расчетного счета). Чек состоит из чека и корешка чека. Сам чек сдается в банк, а корешок остается в организации для отчета о совершенной операции.</p>
+      </div>
+
+      <!-- Кнопки для показа образцов -->
+      <div class="flex flex-wrap gap-3 mt-6">
+        <button onclick="showDoc('doc-obyavlenie', this)" class="doc-btn px-6 py-3 rounded-lg font-semibold text-sm transition bg-emerald-600 text-white hover:bg-emerald-700 shadow-md">📄 Объявление на взнос наличными</button>
+        <button onclick="showDoc('doc-chek', this)" class="doc-btn px-6 py-3 rounded-lg font-semibold text-sm transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600 shadow-md">💳 Денежный чек</button>
+      </div>
+
+      <!-- Объявление на взнос наличными (СТАНДАРТНЫЙ ЦВЕТ - как в ПКО/РКО) -->
+      <div id="doc-obyavlenie" class="doc-content bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700 mt-4">
+        <h3 class="font-bold text-lg mb-4 text-center">Объявление на взнос наличными (форма 0402001)</h3>
+        <div class="overflow-x-auto">
+          <div class="border-2 border-slate-500 dark:border-slate-400 p-4 rounded-lg text-[9px] font-mono bg-white dark:bg-slate-900 min-w-[600px]">
+            <div class="grid grid-cols-1 gap-6">
+              <!-- ОБЪЯВЛЕНИЕ -->
+              <div class="border-b-2 border-dashed border-slate-500 dark:border-slate-400 pb-4">
+                <div class="flex justify-between mb-2">
+                  <div class="font-bold">ОБЪЯВЛЕНИЕ № __________</div>
+                  <div class="border border-slate-500 dark:border-slate-400 px-2">0402001</div>
+                </div>
+                <div class="mb-2">на взнос наличными</div>
+                <div class="mb-3">"___" _____________ 20__ г.</div>
+                <div class="grid grid-cols-2 gap-4 mb-3">
+                  <div>
+                    <div class="mb-2">От кого: _________________________________</div>
+                    <div class="mb-2">Банк получателя: _________________________</div>
+                    <div>Получатель: ______________________________</div>
+                  </div>
+                  <div class="border border-slate-500 dark:border-slate-400 p-2">
+                    <div class="mb-1">Для зачисл. на счет №</div>
+                    <div class="h-8 border-b border-slate-500 dark:border-slate-400"></div>
+                    <div class="mt-3 mb-1">Сумма цифрами</div>
+                    <div class="h-8 border-b border-slate-500 dark:border-slate-400"></div>
+                  </div>
+                </div>
+                <div class="mb-2">Сумма прописью: _________________________________________________ руб. ______ коп.</div>
+                <div class="mb-3">Назначение взноса: _______________________________________________</div>
+                <div class="flex justify-between">
+                  <div>Подпись вносителя: _______________</div>
+                  <div>Бухгалтер: _______________</div>
+                  <div>Деньги принял кассир: _______________</div>
+                </div>
+              </div>
+
+              <!-- КВИТАНЦИЯ -->
+              <div class="border-b-2 border-dashed border-slate-500 dark:border-slate-400 pb-4">
+                <div class="flex justify-between mb-2">
+                  <div class="font-bold">КВИТАНЦИЯ № __________</div>
+                  <div class="border border-slate-500 dark:border-slate-400 px-2">0402001</div>
+                </div>
+                <div class="mb-3">"___" _____________ 20__ г.</div>
+                <div class="grid grid-cols-2 gap-4 mb-3">
+                  <div>
+                    <div class="mb-2">От кого: _________________________________</div>
+                    <div class="mb-2">Банк получателя: _________________________</div>
+                    <div>Получатель: ______________________________</div>
+                  </div>
+                  <div class="border border-slate-500 dark:border-slate-400 p-2 bg-slate-50 dark:bg-slate-800">
+                    <div class="mb-1">Для зачисл. на счет №</div>
+                    <div class="h-8 border-b border-slate-500 dark:border-slate-400"></div>
+                    <div class="mt-3 mb-1">Сумма цифрами</div>
+                    <div class="h-8 border-b border-slate-500 dark:border-slate-400"></div>
+                  </div>
+                </div>
+                <div class="mb-2">Сумма прописью: _________________________________________________ руб. ______ коп.</div>
+                <div class="mb-3">Назначение взноса: _______________________________________________</div>
+                <div class="flex justify-between">
+                  <div>М.П.</div>
+                  <div>Бухгалтер: _______________</div>
+                  <div>Деньги принял кассир: _______________</div>
+                </div>
+              </div>
+
+              <!-- ОРДЕР -->
+              <div>
+                <div class="flex justify-between mb-2">
+                  <div class="font-bold">ОРДЕР № __________</div>
+                  <div class="border border-slate-500 dark:border-slate-400 px-2">0402001</div>
+                </div>
+                <div class="mb-3">"___" _____________ 20__ г.</div>
+                <div class="mb-2">От кого: _______________________________________________________</div>
+                <div class="grid grid-cols-2 gap-4 mb-3">
+                  <div>
+                    <div class="font-bold text-center mb-1">ДЕБЕТ</div>
+                    <div class="border border-slate-500 dark:border-slate-400 p-2 text-center">сч. № 030</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-bold mb-1">Сумма</div>
+                    <div class="border border-slate-500 dark:border-slate-400 p-2"></div>
+                  </div>
+                </div>
+                <div class="font-bold text-center mb-1">КРЕДИТ</div>
+                <div class="border border-slate-500 dark:border-slate-400 p-2 mb-3">
+                  <div class="grid grid-cols-3 gap-2">
+                    <div><div>Банк получателя</div><div class="text-[7px] text-slate-500">код</div></div>
+                    <div><div>Получатель</div></div>
+                    <div><div>№ № сч.</div></div>
+                  </div>
+                </div>
+                <div class="mb-3">Назначение взноса: _______________________________________________</div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>Бухгалтер: _______________</div>
+                  <div>Кассир: _______________</div>
+                </div>
+                <div class="mt-3 border border-slate-500 dark:border-slate-400 p-2">
+                  <div class="font-bold mb-1">Общая</div>
+                  <div class="grid grid-cols-2 gap-2 text-[7px]">
+                    <div>частные</div>
+                    <div>код</div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-2">
+                    <div class="border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                    <div class="border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-2 text-[7px]">
+                    <div>Вид опер.</div>
+                    <div>Назн. плат.</div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-1 text-[7px]">
+                    <div>№ гр. банка</div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+          <b>💡 Обратите внимание:</b> Объявление состоит из 3 частей: <b>объявление</b> (остается в банке), <b>квитанция</b> (выдается клиенту), <b>ордер</b> (для учета банка).
+        </div>
+      </div>
+
+      <!-- Денежный чек (ЛИЦЕВАЯ СВЕРХУ, ТЫЛЬНАЯ СНИЗУ) -->
+      <div id="doc-chek" class="doc-content hidden bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700 mt-4">
+        <h3 class="font-bold text-lg mb-4 text-center">Денежный чек</h3>
         
-        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
-          <h4 class="font-bold text-blue-800 dark:text-blue-300 mb-2">📋 Максимальные сроки выдачи под отчет:</h4>
-          <ul class="text-sm text-blue-800 dark:text-blue-300 space-y-2">
-            <li><b>Общий случай:</b> не более <b>2 месяцев</b></li>
-            <li><b>Исключения (до 6 месяцев):</b>
-              <ul class="list-disc list-inside ml-4 mt-1">
-                <li>Приобретение материальных ценностей (товаров, сырья) за пределами РА</li>
-                <li>Направление работников в командировку за пределы РА</li>
-              </ul>
-            </li>
+        <!-- ЛИЦЕВАЯ ЧАСТЬ -->
+        <div class="mb-6">
+          <h4 class="font-bold text-center mb-3 text-sm bg-blue-100 dark:bg-blue-900/30 p-2 rounded">ЛИЦЕВАЯ ЧАСТЬ</h4>
+          <div class="overflow-x-auto">
+            <div class="border-2 border-slate-500 dark:border-slate-400 p-4 rounded-lg text-[8px] font-mono bg-white dark:bg-slate-900 min-w-[900px]">
+              <div class="grid grid-cols-3 gap-4">
+                <!-- КОРЕШОК -->
+                <div class="border-r-2 border-dashed border-slate-500 dark:border-slate-400 pr-3">
+                  <div class="font-bold text-center mb-2">Корешок денежного чека</div>
+                  <div class="text-center font-bold text-lg mb-3">НБ 4137006</div>
+                  <div class="mb-3">
+                    <div class="flex items-center gap-1 mb-1">
+                      <span>на</span>
+                      <div class="flex-1 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>руб.</span>
+                      <div class="w-12 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>коп.</span>
+                    </div>
+                    <div class="text-[7px] text-slate-500 text-center">(сумма цифрами)</div>
+                  </div>
+                  <div class="font-bold mb-2">ДЕНЕЖНЫЙ ЧЕК ВЫДАН</div>
+                  <div class="flex items-center gap-1 mb-1">
+                    <div class="w-8 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                    <span>20</span>
+                    <div class="flex-1 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                    <span>года</span>
+                  </div>
+                  <div class="text-[7px] text-slate-500">(число) (месяц прописью)</div>
+                  <div class="border-b border-slate-500 dark:border-slate-400 h-4 mt-2 mb-1"></div>
+                  <div class="text-[7px] text-slate-500">(фамилия, имя, отчество)</div>
+                  <div class="border-b border-slate-500 dark:border-slate-400 h-4 mt-2 mb-1"></div>
+                  <div class="text-[7px] text-slate-500">(наименование, серия, номер документа, удостоверяющего личность получателя денежного чека, кем и когда выдан)</div>
+                  <div class="mt-3 font-bold">Выписка</div>
+                  <div class="border-b border-slate-500 dark:border-slate-400 h-4 mt-1 mb-1"></div>
+                  <div class="text-[7px] text-slate-500">(фамилия)</div>
+                  <div class="mt-3 font-bold">ДЕНЕЖНЫЙ ЧЕК ПОЛУЧИЛ</div>
+                  <div class="flex items-center gap-1 mt-2 mb-1">
+                    <div class="w-8 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                    <span>20</span>
+                    <div class="flex-1 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                    <span>года</span>
+                  </div>
+                  <div class="text-[7px] text-slate-500">(число) (месяц прописью)</div>
+                  <div class="border-b border-slate-500 dark:border-slate-400 h-6 mt-3"></div>
+                  <div class="text-[7px] text-slate-500 text-center">(подпись)</div>
+                </div>
+
+                <!-- ЧЕК (ЦЕНТР) -->
+                <div class="col-span-1">
+                  <div class="text-center text-[7px] text-slate-500 mb-1">(№ счета чекодателя)</div>
+                  <div class="text-center font-bold text-lg mb-3">ДЕНЕЖНЫЙ ЧЕК &nbsp;&nbsp; НБ 4137006</div>
+                  <div class="mb-3">
+                    <div class="flex items-center gap-1 mb-1">
+                      <span>на</span>
+                      <div class="flex-1 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>руб.</span>
+                      <div class="w-12 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>коп.</span>
+                    </div>
+                    <div class="text-[7px] text-slate-500 text-center">(сумма цифрами) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&...... (сумма прописью)</div>
+                  </div>
+                  <div class="flex items-center gap-1 mb-1">
+                    <div class="w-8 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                    <span>20</span>
+                    <div class="flex-1 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                    <span>года</span>
+                  </div>
+                  <div class="text-[7px] text-slate-500">(место составления денежного чека) &nbsp;&nbsp;&nbsp;&nbsp; (число) (месяц прописью)</div>
+                  <div class="border-b border-slate-500 dark:border-slate-400 h-4 mt-3 mb-1"></div>
+                  <div class="text-[7px] text-slate-500">(наименование учреждения банка)</div>
+                  <div class="mt-4 text-[7px] text-slate-500">Место печати чекодателя</div>
+                  <div class="mt-6 font-bold text-lg">ЗАПЛАТИТЕ</div>
+                  <div class="border-b border-slate-500 dark:border-slate-400 h-4 mt-1 mb-1"></div>
+                  <div class="text-[7px] text-slate-500">(фамилия, имя, отчество)</div>
+                  <div class="border-b border-slate-500 dark:border-slate-400 h-4 mt-3 mb-1"></div>
+                  <div class="text-[7px] text-slate-500">(сумма прописью)</div>
+                  <div class="mt-4 font-bold text-lg">ПОДПИСИ</div>
+                </div>
+
+                <!-- КОНТРОЛЬНАЯ МАРКА -->
+                <div class="border-l-2 border-dashed border-slate-500 dark:border-slate-400 pl-3">
+                  <div class="text-center font-bold text-lg mb-2">НБ 4137006</div>
+                  <div class="text-center text-[9px] mb-4">В КАССУ - контрольная<br>марка</div>
+                  <div class="border-2 border-dotted border-slate-400 dark:border-slate-500 p-4 min-h-[120px] flex items-center justify-center">
+                    <div class="text-[7px] text-slate-500 text-center">МЕСТО ДЛЯ НАКЛЕЙКИ<br>КОНТРОЛЬНОЙ МАРКИ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ТЫЛЬНАЯ ЧАСТЬ -->
+        <div>
+          <h4 class="font-bold text-center mb-3 text-sm bg-purple-100 dark:bg-purple-900/30 p-2 rounded">ТЫЛЬНАЯ ЧАСТЬ</h4>
+          <div class="overflow-x-auto">
+            <div class="border-2 border-slate-500 dark:border-slate-400 p-4 rounded-lg text-[8px] font-mono bg-white dark:bg-slate-900 min-w-[900px]">
+              <div class="grid grid-cols-2 gap-6">
+                <!-- ТАБЛИЦА СИМВОЛОВ (СЛЕВА) -->
+                <div>
+                  <table class="w-full border-collapse border border-slate-500 dark:border-slate-400 mb-4">
+                    <thead>
+                      <tr class="bg-slate-100 dark:bg-slate-800">
+                        <th class="border border-slate-500 dark:border-slate-400 p-1 w-16">Символ</th>
+                        <th class="border border-slate-500 dark:border-slate-400 p-1">Направление выдачи</th>
+                        <th class="border border-slate-500 dark:border-slate-400 p-1 w-32">Сумма (цифрами)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1 text-center">40</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1">Выдача на заработную плату и выплаты социального характера</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1"></td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1 text-center">46</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1">Выдача на закупку сельскохозяйственных продуктов</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1"></td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1 text-center">50</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1">Выдача на выплату пенсий, пособий и страховых возмещений</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1"></td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1 text-center">53</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1">Прочие выдачи</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1"></td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1 text-center">58</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1">Выдача со счетов индивидуальных предпринимателей</td>
+                        <td class="border border-slate-500 dark:border-slate-400 p-1"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="h-6 border-b border-slate-500 dark:border-slate-400 mb-2"></div>
+                  <div class="text-xs mb-4">Подписи</div>
+                  
+                  <div class="mt-4">
+                    <div class="font-bold mb-2">Указанную в настоящем денежном чеке сумму получил</div>
+                    <div class="h-6 border-b border-slate-500 dark:border-slate-400 mb-2"></div>
+                    <div class="text-[7px] text-slate-500">(подпись)</div>
+                  </div>
+
+                  <div class="mt-4">
+                    <div class="font-bold mb-2">Предъявил:</div>
+                    <div class="h-6 border-b border-slate-500 dark:border-slate-400 mb-2"></div>
+                    <div class="text-[7px] text-slate-500">(наименование, серия, номер документа, удостоверяющего личность получателя наличных денег, кем и когда выдан)</div>
+                  </div>
+
+                  <div class="mt-4 border-t-2 border-slate-500 dark:border-slate-400 pt-3">
+                    <div class="font-bold mb-2">ПРОВЕРЕНО ОПЛАТИТЬ</div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <div class="w-8 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>20</span>
+                      <div class="flex-1 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>года</span>
+                    </div>
+                    <div class="text-[7px] text-slate-500">(число) (месяц прописью)</div>
+                    <div class="grid grid-cols-2 gap-4 mt-3">
+                      <div>
+                        <div>Контролер</div>
+                        <div class="h-6 border-b border-slate-500 dark:border-slate-400 mt-2"></div>
+                      </div>
+                      <div>
+                        <div>Бухгалтерский работник</div>
+                        <div class="h-6 border-b border-slate-500 dark:border-slate-400 mt-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ОПРИХОДОВАНИЕ (СПРАВА) -->
+                <div>
+                  <div class="text-right font-bold mb-4">ОПРИХОДОВАНО<br>приходный кассовый ордер</div>
+                  <div class="mb-4">
+                    <div>№ __________</div>
+                    <div class="mt-4 flex items-center gap-2">
+                      <div class="w-8 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>20</span>
+                      <div class="flex-1 border-b border-slate-500 dark:border-slate-400 h-4"></div>
+                      <span>года</span>
+                    </div>
+                    <div class="text-[7px] text-slate-500">(число) (месяц прописью)</div>
+                  </div>
+                  <div class="mb-4">
+                    <div>Главный бухгалтер</div>
+                    <div class="h-8 border-b border-slate-500 dark:border-slate-400 mt-2"></div>
+                    <div class="text-[7px] text-slate-500">(подпись)</div>
+                  </div>
+
+                  <div class="mt-8 border-t-2 border-slate-500 dark:border-slate-400 pt-3">
+                    <div class="font-bold mb-2">Оплачено</div>
+                    <div>Кассовый работник</div>
+                    <div class="h-8 border-b border-slate-500 dark:border-slate-400 mt-2"></div>
+                    <div class="text-[7px] text-slate-500">(подпись)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+          <b>💡 Обратите внимание:</b> Чек состоит из <b>корешка</b> (остается в организации), <b>чека</b> (сдается в банк) и <b>контрольной марки</b>. На тыльной стороне указываются символы назначения выдачи и проставляются подписи банковских работников.
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Основные виды безналичных расчетов -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Основные виды безналичных расчетов</h2>
+      
+      <div class="space-y-6">
+        <!-- Платежное поручение -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+          <h3 class="font-bold text-lg text-blue-600 dark:text-emerald-400 mb-3 flex items-center">
+            <span class="bg-blue-100 dark:bg-blue-900/50 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+            Платежное поручение
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 mb-4">
+            Распоряжение владельца счета (плательщика) банку о перечислении определенной суммы денег со своего счета на счет получателя. Является <b>самым распространенным</b> видом расчетов и применяется при оплате поставщикам за товары, работы, услуги, перечислении налогов и взносов в бюджет и внебюджетные фонды, погашении кредитов и займов и прочих платежах и переводах. <b>Срок действия платежного поручения — 10 дней.</b>
+          </p>
+          <div class="bg-slate-900 dark:bg-slate-950 p-4 rounded-lg mb-4 overflow-x-auto">
+            <pre class="text-xs text-emerald-400 font-mono">[Покупатель (Плательщик)] ──── (1) Договор / Выставление счета > [Продавец (Получатель)]
+         │                                                                   ▲
+         │ (2) Передает платежное                                           │ (5) Зачисление
+         │     поручение                                                     │     средств
+         ▼                                                                   │
+[Банк плательщика] ──── (3) Списание средств и перевод ─────> [Банк получателя]
+                           через межбанковскую систему (4)</pre>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-bold text-sm mb-2">Обязательные реквизиты:</p>
+            <ul class="text-xs text-slate-700 dark:text-slate-300 space-y-1 list-disc list-inside">
+              <li>Номер и дата платежного поручения</li>
+              <li>Сумма платежа (цифрами и прописью)</li>
+              <li>Плательщик: наименование, ИНН, номер счета, банк</li>
+              <li>Получатель: наименование, ИНН, номер счета, банк</li>
+              <li>Назначение платежа (за что оплата)</li>
+              <li>Код очередности платежа (обычно 5 — текущие платежи)</li>
+              <li>Подписи руководителя и главного бухгалтера</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Платежное требование -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+          <h3 class="font-bold text-lg text-blue-600 dark:text-emerald-400 mb-3 flex items-center">
+            <span class="bg-blue-100 dark:bg-blue-900/50 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+            Платежное требование
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 mb-4">
+            Расчетный документ, содержащий требование получателя средств к плательщику об уплате определенной суммы. В отличие от платежного поручения, инициатором здесь выступает не тот, кто платит, а тот, кто получает деньги. Особенность данной формы является наличие <b>акцепта (согласия) плательщика</b>, либо без акцепта — если это предусмотрено договором. Часто применяется при регулярных оплатах по долгосрочным договорам за товары, работы и услуги с отсрочкой платежа. Акцепт может быть полным или частичным.
+          </p>
+          <div class="bg-slate-900 dark:bg-slate-950 p-4 rounded-lg mb-4 overflow-x-auto">
+            <pre class="text-xs text-purple-400 font-mono">[ПОЛУЧАТЕЛЬ] ──(1. Выставляет требование)──▶ [БАНК ПОЛУЧАТЕЛЯ]
+                                                  │
+                                                  │ (2. Пересылает плательщику)
+                                                  ▼
+                                            [БАНК ПЛАТЕЛЬЩИКА] ──▶ [ПЛАТЕЛЬЩИК]
+                                                                          │
+                                                  (3. Плательщик дает ──┘
+                                                       АКЦЕПТ)
+                                                  │
+                                                  ▼
+[ПОЛУЧАТЕЛЬ] ── (5. Зачисление) ── [БАНК ПОЛУЧАТЕЛЯ] ── (4. Списание) ── [БАНК ПЛАТЕЛЬЩИКА]</pre>
+          </div>
+        </div>
+
+        <!-- Аккредитив -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+          <h3 class="font-bold text-lg text-blue-600 dark:text-emerald-400 mb-3 flex items-center">
+            <span class="bg-blue-100 dark:bg-blue-900/50 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+            Аккредитив
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 mb-4">
+            Условное денежное обязательство банка произвести платеж получателю средств <b>после представления им документов</b>, подтверждающих выполнение условий договора (отгрузку товаров, оказание услуг). Применяется в основном при работе с новыми контрагентами, при крупных сделках, при международных расчетах или когда продавцу нужны гарантии оплаты, а покупателю — гарантии того, что товар будет отгружен.
+          </p>
+          <div class="bg-slate-900 dark:bg-slate-950 p-4 rounded-lg mb-4 overflow-x-auto">
+            <pre class="text-xs text-amber-400 font-mono">ПОКУПАТЕЛЬ         БАНК ПОКУПАТЕЛЯ        БАНК ПРОДАВЦА         ПРОДАВЕЦ
+    │                    │                      │                     │
+    │ 1. Открывает       │                      │                     │
+    │    аккредитив      │                      │                     │
+    ├───────────────────▶│                      │                     │
+    │                    │                      │                     │
+    │                    │ 2. Блокирует сумму   │                     │
+    │                    │    на счете          │                     │
+    │                    │                      │                     │
+    │                    │ 3. Уведомляет        │                     │
+    │                    │─────────────────────▶│                     │
+    │                    │                      │                     │
+    │                    │                      │ 4. Отгружает товар  │
+    │                    │                      │◀────────────────────│
+    │                    │                      │                     │
+    │                    │ 5. Представляет      │                     │
+    │                    │    документы         │                     │
+    │                    │─────────────────────│                     │
+    │                    │                      │                     │
+    │                    │ 6. Проверяет         │                     │
+    │                    │    документы         │                     │
+    │                    │                      │                     │
+    │ 7. Списание        │                      │ 8. Перевод денег    │
+    │◀───────────────────│                      │────────────────────▶│</pre>
+          </div>
+          <div class="bg-blue-50 dark:bg-blue-950/30 p-3 rounded-lg border border-blue-200 dark:border-blue-800 mb-3">
+            <p class="font-bold text-xs mb-2">Виды аккредитивов:</p>
+            <ul class="text-xs text-blue-800 dark:text-blue-300 list-disc list-inside space-y-1">
+              <li><b>Отзывной</b> — можно отозвать в любой момент (редко используется)</li>
+              <li><b>Безотзывной</b> — нельзя отозвать (самый надежный для продавца)</li>
+              <li><b>Покрытый (депонированный)</b> — банк блокирует сумму на счете покупателя</li>
+              <li><b>Непокрытый (гарантированный)</b> — банк дает гарантию без блокировки средств</li>
+            </ul>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-bold text-sm mb-2">Обязательные реквизиты:</p>
+            <ul class="text-xs text-slate-700 dark:text-slate-300 space-y-1 list-disc list-inside">
+              <li>Номер и дата аккредитива</li>
+              <li>Сумма аккредитива</li>
+              <li>Вид аккредитива (отзывной/безотзывной)</li>
+              <li>Срок действия аккредитива</li>
+              <li>Наименование плательщика и получателя</li>
+              <li>Наименование банков</li>
+              <li>Перечень документов для получения средств</li>
+              <li>Способ извещения об открытии аккредитива</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Инкассовое поручение -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+          <h3 class="font-bold text-lg text-blue-600 dark:text-emerald-400 mb-3 flex items-center">
+            <span class="bg-blue-100 dark:bg-blue-900/50 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">4</span>
+            Инкассовое поручение
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 mb-4">
+            Распоряжение получателя средств банку о списании определенной суммы денег со счета плательщика в <b>безакцептном</b> (согласия не требуется) порядке. Банк списывает деньги принудительно. В документе обязательно должна быть ссылка на нормативный документ, постановление, судебный акт или пункт договора, дающий право на такое бесспорное взыскание. Применяется при взыскании налогов, сборов, страховых взносов и штрафов (по решению налогового органа), при взыскании по исполнительным листам (судебные решения), при взыскании задолженности по договору, если в нем прямо прописано право получателя на бесспорное списание средств (например, за просрочку оплаты).
+          </p>
+          <div class="bg-slate-900 dark:bg-slate-950 p-4 rounded-lg mb-4 overflow-x-auto">
+            <pre class="text-xs text-rose-400 font-mono">ПОЛУЧАТЕЛЬ                    БАНК                       ПЛАТЕЛЬЩИК
+    │                           │                            │
+    │ 1. Выставляет ИП          │                            │
+    ├──────────────────────────▶│                            │
+    │                           │                            │
+    │                           │ 2. Списывает бесспорно     │
+    │                           │───────────────────────────▶│
+    │                           │                            │
+    │ 3. Зачисление             │                            │
+    │◀──────────────────────────│                            │</pre>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-bold text-sm mb-2">Обязательные реквизиты:</p>
+            <ul class="text-xs text-slate-700 dark:text-slate-300 space-y-1 list-disc list-inside">
+              <li>Номер и дата инкассового поручения</li>
+              <li>Сумма взыскания</li>
+              <li>Наименование взыскателя и плательщика</li>
+              <li>Номер счета взыскателя и плательщика</li>
+              <li>Наименование банков</li>
+              <li>Основание для бесспорного списания (нормативный акт, постановление, договор, исполнительный лист)</li>
+              <li>Подписи уполномоченных лиц</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Чек -->
+        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+          <h3 class="font-bold text-lg text-blue-600 dark:text-emerald-400 mb-3 flex items-center">
+            <span class="bg-blue-100 dark:bg-blue-900/50 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">5</span>
+            Чек
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 mb-4">
+            Письменное поручение чекодателя (владельца счета) банку произвести платеж указанной в чеке суммы чекодержателю. В современных реалиях расчетные чеки используются крайне редко. В основном организации используют денежные чеки исключительно для снятия наличных денежных средств с расчетного счета в кассу организации.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Сравнительная таблица -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Сравнительная таблица видов расчетов</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600 shadow-lg">
+          <thead>
+            <tr class="bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Вид расчета</th>
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Инициатор</th>
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Требуется согласие</th>
+              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Когда используется</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300">
+            <tr class="bg-white dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-slate-700/50 transition">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold text-blue-600 dark:text-blue-400">Платежное поручение</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Плательщик</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">—</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Основная форма расчетов</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/30 hover:bg-purple-50 dark:hover:bg-slate-700/50 transition">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold text-purple-600 dark:text-purple-400">Платежное требование</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Получатель</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-amber-600 dark:text-amber-400">Да (акцепт)</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Регулярные платежи по договору</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-slate-700/50 transition">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold text-amber-600 dark:text-amber-400">Аккредитив</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Плательщик</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">—</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">С ненадежными партнерами, крупные сделки</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/30 hover:bg-rose-50 dark:hover:bg-slate-700/50 transition">
+              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold text-rose-600 dark:text-rose-400">Инкассовое поручение</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Получатель</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3 text-rose-600 dark:text-rose-400 font-bold">Нет (бесспорно)</td>
+              <td class="border border-slate-300 dark:border-slate-600 p-3">Налоги, штрафы, суд</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. Учет на счете 51 -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Учет на счете 51 «Расчетные счета»</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Для учета наличия и движения денежных средств используется <b>активный счет 51 «Расчетный счет»</b>, в дебете которого отражается поступление, в кредите — списание денежных средств.</p>
+        <p class="text-sm">Основным документом для учета операций по расчетному счету является <b>выписка банка</b>, в которой отражаются все операции по расчётному счёту за период (поступления и списания) с остатком на начало и конец периода.</p>
+        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
+          <h4 class="font-bold text-amber-800 dark:text-amber-300 mb-2">⚠️ Важная особенность:</h4>
+          <p class="text-sm text-amber-800 dark:text-amber-300">С точки зрения банка расчётный счёт клиента — это обязательство банка перед клиентом (банк должен клиенту деньги), поэтому в выписке банк показывает дебет и кредит <b>зеркально</b> по отношению к тому, как их видит сам клиент в своём учёте: <b>поступление денег банк показывает по кредиту</b> (у себя), а <b>списание — по дебету</b>. Это следствие того, что банк ведёт учёт со своей точки зрения, а не с точки зрения клиента.</p>
+        </div>
+      </div>
+
+      <!-- Пример выписки банка -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mt-6">
+        <h3 class="font-bold text-lg mb-3 text-center">Пример выписки по расчетному счету ООО «Smart_buh»</h3>
+        <p class="text-xs text-center mb-3">за октябрь 2026 года (10 операций)</p>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-xs shadow-lg">
+            <thead>
+              <tr class="bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Дата</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">№ док.</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Содержание операции</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-rose-100 dark:bg-rose-900/30">Дебет<br><span class="text-[9px]">(списание)</span></th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-emerald-100 dark:bg-emerald-900/30">Кредит<br><span class="text-[9px]">(поступление)</span></th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-right">Остаток</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700 dark:text-slate-300">
+              <tr class="bg-slate-50 dark:bg-slate-900/30 font-bold">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">01.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Остаток на начало месяца</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">200 000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">02.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">ПП №15</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Оплата поставщику ООО «Стройматериалы»</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-rose-50 dark:bg-rose-950/20">25 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">175 000</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">03.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Выписка</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Поступление от покупателя ООО «Турист»</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-emerald-50 dark:bg-emerald-950/20">50 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">225 000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">04.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Чек №8</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Снятие наличных на зарплату</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-rose-50 dark:bg-rose-950/20">100 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">125 000</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">05.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">ПП №16</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Перечисление налогов в бюджет</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-rose-50 dark:bg-rose-950/20">15 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">110 000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">08.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Выписка</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Поступление от покупателя ИП Иванов</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-emerald-50 dark:bg-emerald-950/20">30 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">140 000</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">10.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">ПП №17</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Оплата аренды офиса</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-rose-50 dark:bg-rose-950/20">20 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">120 000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">12.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Выписка</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Поступление кредита от банка</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-emerald-50 dark:bg-emerald-950/20">150 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">270 000</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">15.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">ПП №18</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Оплата коммунальных услуг</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-rose-50 dark:bg-rose-950/20">8 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">262 000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">18.10</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Выписка</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Поступление от покупателя ООО «Партнер»</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">-</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-emerald-50 dark:bg-emerald-950/20">45 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">307 000</td>
+              </tr>
+              <tr class="bg-gradient-to-r from-blue-100 to-emerald-100 dark:from-blue-900/50 dark:to-emerald-900/50 font-bold">
+                <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="3">Итого обороты за период</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-rose-100 dark:bg-rose-900/30">168 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right bg-emerald-100 dark:bg-emerald-900/30">275 000</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-right">307 000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 dark:text-blue-300">
+          <b>💡 Как читать выписку (с точки зрения банка):</b>
+          <ul class="list-disc list-inside space-y-1 mt-1">
+            <li><b>Дебет выписки</b> = списание средств (уменьшение обязательств банка перед клиентом)</li>
+            <li><b>Кредит выписки</b> = поступление средств (увеличение обязательств банка)</li>
+            <li><b>Остаток</b> = Предыдущий остаток + Кредит (поступление) − Дебет (списание)</li>
           </ul>
         </div>
+      </div>
 
-        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl">
-          <h4 class="font-bold text-amber-800 dark:text-amber-300 mb-2">️ Важное правило:</h4>
-          <p class="text-sm text-amber-800 dark:text-amber-300"><b>Запрещено</b> выдавать сотруднику под отчет новой суммы в случае, если он не отчитался по предыдущему авансу.</p>
+      <!-- Журнал-ордер и ведомость -->
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mt-6">
+        <h3 class="font-bold text-lg mb-4">Журнал-ордер № 2 и Ведомость № 2 по счету 51</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
+            <h4 class="font-bold text-center mb-3 text-sm bg-slate-100 dark:bg-slate-700 p-2 rounded">ЖУРНАЛ-ОРДЕР № 2<br>за октябрь 2026 г. по кредиту счета 51</h4>
+            <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
+              <thead>
+                <tr class="bg-slate-100 dark:bg-slate-700">
+                  <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">02.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">60</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">25 000</td></tr>
+                <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">04.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">50</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">100 000</td></tr>
+                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">05.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">68</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">15 000</td></tr>
+                <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">10.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">26</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">20 000</td></tr>
+                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">15.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">26</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">8 000</td></tr>
+                <tr class="font-bold bg-blue-100 dark:bg-blue-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">168 000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
+            <h4 class="font-bold text-center mb-3 text-sm bg-slate-100 dark:bg-slate-700 p-2 rounded">ВЕДОМОСТЬ № 2<br>за октябрь 2026 г. по дебету счета 51</h4>
+            <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
+              <thead>
+                <tr class="bg-slate-100 dark:bg-slate-700">
+                  <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">03.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">62</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">50 000</td></tr>
+                <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">08.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">62</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">30 000</td></tr>
+                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">12.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">66</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">150 000</td></tr>
+                <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">18.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">62</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">45 000</td></tr>
+                <tr class="font-bold bg-emerald-100 dark:bg-emerald-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">275 000</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Порядок выдачи денег под отчет -->
+    <!-- 7. Учет на счете 52 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Порядок выдачи денег под отчет</h2>
-      
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-        <h3 class="font-bold text-lg mb-4">📝 Пошаговая процедура:</h3>
-        <ol class="space-y-3 text-sm">
-          <li class="flex items-start">
-            <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">1</span>
-            <div>
-              <b>Сотрудник подаёт заявление</b> (или служебную записку) с указанием истребуемой суммы в подотчет
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">2</span>
-            <div>
-              <b>Руководитель</b> своей резолюцией утверждает сумму, указанную в заявлении (или отдельным приказом — для командировки)
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">3</span>
-            <div>
-              <b>Бухгалтерия</b> оформляет выдачу из кассы денежных средств
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">4</span>
-            <div>
-              <b>Сотрудник</b> расходует деньги на заявленные цели, собирая подтверждающие документы (чеки, квитанции, билеты)
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">5</span>
-            <div>
-              По окончании срока (или по возвращении из командировки) <b>сотрудник составляет авансовый отчёт</b>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 4. Командировочные расходы -->
-    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Командировочные расходы</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Учет на счете 52 «Валютные счета»</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Обособленной частью подотчетных сумм являются <b>командировочные расходы</b>. Выдача наличных денег под отчет на расходы, связанные со служебными командировками, производится в пределах сумм, причитающихся командированным лицам на эти цели.</p>
-        
+        <p>Помимо расчетов в национальной валюте, организации могут вести расчеты и в иностранной валюте. Для учета этих операций открывается счет <b>52 «Валютный счет»</b>.</p>
+        <p class="text-sm">В отличие от расчетного счета, на валютном счете необходимо вести учет <b>как в валюте счета, так и в пересчете на рубли</b> по курсу Национального банка на день совершения операции.</p>
         <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl my-4">
-          <h4 class="font-bold text-emerald-800 dark:text-emerald-300 mb-2">📊 Нормы командировочных расходов:</h4>
-          <p class="text-sm text-emerald-800 dark:text-emerald-300 mb-2"><b>Постановление Кабинета Министров РА от 27 декабря 2017 г. N 181</b> регламентирует нормы предельных размеров затрат на командировочные расходы.</p>
-          <p class="text-sm text-emerald-800 dark:text-emerald-300"><b>Пример:</b> Суточный размер затрат при командировке по территории РА составляет <b>200 руб.</b></p>
+          <h4 class="font-bold text-emerald-800 dark:text-emerald-300 mb-2">💱 Курсовая разница</h4>
+          <p class="text-sm text-emerald-800 dark:text-emerald-300 mb-2">Это разница между валютной оценкой актива или обязательства и его рублевого эквивалента. Проще говоря, это разница возникает, когда одну и ту же сумму в валюте пересчитывают в рубли по разным курсам. Курсовая разница может быть как положительной, так и отрицательной.</p>
+          <p class="text-xs text-emerald-800 dark:text-emerald-300">Итоговая сумма курсовой разницы относится в счет прибылей и убытков организации (счет 80 «Прибыли и Убытки»).</p>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-6">Пример проводок по валютному счету:</h3>
+        <div class="space-y-2 text-sm">
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">1. Поступление валютной выручки от покупателя (1000 USD по курсу 90,00 руб. на дату операции):</p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Дт 52 — Кт 62: 90 000 руб. (1000 USD × 90,00)</p>
+          </div>
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">2. На 1 октября курс увеличился и стал 90,38 руб. Рассчитываем положительную курсовую разницу:</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Расчет: 1000 USD × 90,38 = 90 380 руб. (новая стоимость)<br>Курсовая разница: 90 380 − 90 000 = <b>380 руб.</b></p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400 mt-2">Разница в сумме 380 руб. относится в счет прибыли организации.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. Авансовый отчет -->
+    <!-- 8. Счет 55 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Авансовый отчет</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">8. Счет 55 «Специальные счета в банках»</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Документ, который сотрудник составляет по итогам использования подотчетных сумм называется <b>Авансовый отчет</b>. В нём указывается:</p>
-        <ul class="list-disc list-inside text-sm space-y-1 ml-4">
-          <li>Сколько получено</li>
-          <li>Сколько и на какие нужды потрачено (с приложением подтверждающих документов — чеков, квитанций, билетов)</li>
-          <li>Остаток к возврату или сумма перерасхода к возмещению</li>
-        </ul>
-        <p>Авансовый отчёт проверяет бухгалтер (правильность оформления и обоснованность расходов), а утверждает руководитель организации — только после утверждения расходы можно списать на затраты.</p>
-      </div>
-
-      <!-- Кнопка для показа образца -->
-      <div class="mt-6">
-        <button onclick="toggleDoc('doc-avansovyj')" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow-md transition">
-          📄 Показать образец авансового отчета
-        </button>
-      </div>
-
-      <!-- Образец авансового отчета -->
-      <div id="doc-avansovyj" class="hidden mt-4 bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-        <h3 class="font-bold text-lg mb-4 text-center">Образец бланка авансового отчета (форма АО-1)</h3>
-        <p class="text-xs text-center mb-4 text-slate-600 dark:text-slate-400">На мобильных устройствах пролистывайте каждую часть вбок</p>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <!-- Лицевая часть -->
-          <div class="overflow-x-auto">
-            <h4 class="font-bold text-center mb-3 text-sm bg-emerald-100 dark:bg-emerald-900/30 p-2 rounded">ЛИЦЕВАЯ ЧАСТЬ</h4>
-            <div class="border-2 border-slate-400 p-3 rounded text-[7px] font-mono bg-white dark:bg-slate-900 min-w-[400px]">
-              <div class="text-center mb-3">
-                <p class="font-bold text-[9px]">АВАНСОВЫЙ ОТЧЕТ</p>
-                <p>Унифицированная форма № АО-1</p>
-                <p>Код по ОКУД: 0302001</p>
-              </div>
-              
-              <div class="grid grid-cols-2 gap-2 mb-3">
-                <div>
-                  <p>Организация: _________________________________</p>
-                  <p>Структурное подразделение: ___________________</p>
-                </div>
-                <div class="text-right">
-                  <p>УТВЕРЖДАЮ</p>
-                  <p>Руководитель _____________ /__________/</p>
-                  <p>"___" ____________ 20__ г.</p>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <p>Подотчетное лицо: ________________________________________</p>
-                <p>Табельный номер: _________</p>
-                <p>Профессия (должность): ___________________________________</p>
-                <p>Назначение аванса: _______________________________________</p>
-              </div>
-
-              <table class="w-full border-collapse border border-slate-400 mb-3">
-                <thead>
-                  <tr class="bg-slate-200 dark:bg-slate-700">
-                    <th class="border border-slate-400 p-1">Наименование показателя</th>
-                    <th class="border border-slate-400 p-1">Сумма, руб. коп.</th>
-                    <th class="border border-slate-400 p-1" colspan="2">Бухгалтерская запись</th>
-                  </tr>
-                  <tr class="bg-slate-200 dark:bg-slate-700">
-                    <th class="border border-slate-400 p-1"></th>
-                    <th class="border border-slate-400 p-1"></th>
-                    <th class="border border-slate-400 p-1">Дебет</th>
-                    <th class="border border-slate-400 p-1">Кредит</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Предыдущий остаток (аванс/перерасход)</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Получен аванс (из кассы)</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30 font-bold">
-                    <td class="border border-slate-400 p-1">Итого получено</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1" colspan="2"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Израсходовано</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30">
-                    <td class="border border-slate-400 p-1">Остаток</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Перерасход</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="mb-3">
-                <p>Приложение: _______ документов на _______ листах</p>
-              </div>
-
-              <div class="grid grid-cols-2 gap-2 mb-3">
-                <div>
-                  <p>Отчет проверен. К утверждению в сумме:</p>
-                  <p>________________________ руб. _____ коп.</p>
-                  <p>(_______________________________)</p>
-                  <p>сумма прописью</p>
-                </div>
-                <div>
-                  <p>Главный бухгалтер __________ /__________/</p>
-                  <p>Бухгалтер _________________ /__________/</p>
-                </div>
-              </div>
-
-              <div class="border-t-2 border-slate-400 pt-3">
-                <p>Остаток внесен в сумме _______________ руб. _____ коп.</p>
-                <p>Перерасход выдан по кассовому ордеру № ___ от "___" ________ 20__ г.</p>
-                <p class="mt-3">Бухгалтер (кассир) __________ /__________/ "___" ________ 20__ г.</p>
-              </div>
-            </div>
+        <p>Существуют еще и <b>специальные счета в банках (счет 55)</b>, на которых учитываются, например, аккредитивы. Это активный счет для учета денежных средств, которые находятся в банке, но на особых условиях, под конкретные задачи и инструменты (не на обычном расчетном счете).</p>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-6">Примеры операций:</h3>
+        <div class="space-y-2 text-sm">
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">Оплата поставщику за счет средств аккредитива:</p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Дт 60 — Кт 55</p>
           </div>
-
-          <!-- Тыльная часть -->
-          <div class="overflow-x-auto">
-            <h4 class="font-bold text-center mb-3 text-sm bg-purple-100 dark:bg-purple-900/30 p-2 rounded">ТЫЛЬНАЯ ЧАСТЬ</h4>
-            <div class="border-2 border-slate-400 p-3 rounded text-[7px] font-mono bg-white dark:bg-slate-900 min-w-[400px]">
-              <div class="text-center mb-3">
-                <p class="font-bold text-[9px]">РАСПИСКА</p>
-                <p class="text-[8px]">Принят к проверке от ____________________ авансовый отчет №_____ от «____»_______________ 20__ г.</p>
-                <p class="text-[8px]">на сумму______________________ руб._____ коп., количество документов__________ на________ листах</p>
-                <p class="mt-2">Бухгалтер_________________ _________________________________ «____» _________________ 20__ г.</p>
-                <p class="text-[8px]">подпись расшифровка подписи</p>
-              </div>
-
-              <table class="w-full border-collapse border border-slate-400">
-                <thead>
-                  <tr class="bg-slate-200 dark:bg-slate-700">
-                    <th class="border border-slate-400 p-1">№ пп.</th>
-                    <th class="border border-slate-400 p-1" colspan="2">Документ, подтверждающий произведенные расходы</th>
-                    <th class="border border-slate-400 p-1">Наименование документа (расхода)</th>
-                    <th class="border border-slate-400 p-1" colspan="2">Сумма расхода</th>
-                    <th class="border border-slate-400 p-1">Дебет счета, субсчета</th>
-                  </tr>
-                  <tr class="bg-slate-200 dark:bg-slate-700">
-                    <th class="border border-slate-400 p-1"></th>
-                    <th class="border border-slate-400 p-1">дата</th>
-                    <th class="border border-slate-400 p-1">номер</th>
-                    <th class="border border-slate-400 p-1"></th>
-                    <th class="border border-slate-400 p-1">в руб. коп.</th>
-                    <th class="border border-slate-400 p-1">в валюте</th>
-                    <th class="border border-slate-400 p-1"></th>
-                  </tr>
-                  <tr class="bg-slate-200 dark:bg-slate-700">
-                    <th class="border border-slate-400 p-1">1</th>
-                    <th class="border border-slate-400 p-1">2</th>
-                    <th class="border border-slate-400 p-1">3</th>
-                    <th class="border border-slate-400 p-1">4</th>
-                    <th class="border border-slate-400 p-1">5</th>
-                    <th class="border border-slate-400 p-1">6</th>
-                    <th class="border border-slate-400 p-1">7</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30">
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30">
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="font-bold bg-emerald-100 dark:bg-emerald-900/30">
-                    <td class="border border-slate-400 p-1" colspan="4">Итого</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="mt-3">
-                <p>Подотчетное лицо__________________________ ______________________________________________</p>
-                <p class="text-[8px]">подпись расшифровка подписи</p>
-              </div>
-            </div>
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">Возврат неиспользованного остатка (закрытие аккредитива) на расчетный счет:</p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Дт 51 — Кт 55</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. Бухгалтерский учет (счет 71) -->
+    <!-- 9. Счет 57 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Бухгалтерский учет (счет 71)</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">9. Счет 57 «Переводы в пути»</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Синтетический учет расчетов с подотчетными лицами ведется на <b>активно-пассивном счете 71 «Расчеты с подотчетными лицами»</b>.</p>
-        
-        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h3 class="font-bold text-lg mb-4">📊 Корреспонденция счета 71:</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div>
-              <h4 class="font-bold text-emerald-600 dark:text-emerald-400 mb-2">По дебету (выдача под отчет):</h4>
-              <ul class="space-y-1 text-xs">
-                <li>• Дт 71 — Кт 50 (из кассы)</li>
-                <li>• Дт 71 — Кт 51 (с расчетного счета)</li>
-                <li>• Дт 71 — Кт 52 (с валютного счета)</li>
-                <li>• Дт 71 — Кт 55 (со специальных счетов)</li>
-                <li>• Дт 71 — Кт 56 (денежные документы)</li>
-                <li>• Дт 71 — Кт 76 (расчеты с разными дебиторами)</li>
-                <li>• Дт 71 — Кт 80 (прибыли и убытки)</li>
-                <li>• Дт 71 — Кт 83 (доходы будущих периодов)</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-2">По кредиту (списание/возврат):</h4>
-              <ul class="space-y-1 text-xs">
-                <li>• Дт 07 — Кт 71 (оборудование к установке)</li>
-                <li>• Дт 08 — Кт 71 (капитальные вложения)</li>
-                <li>• Дт 10 — Кт 71 (материалы)</li>
-                <li>• Дт 20 — Кт 71 (основное производство)</li>
-                <li>• Дт 26 — Кт 71 (общехозяйственные расходы)</li>
-                <li>• Дт 41 — Кт 71 (товары)</li>
-                <li>• Дт 44 — Кт 71 (издержки обращения)</li>
-                <li>• Дт 50 — Кт 71 (возврат в кассу)</li>
-                <li>• Дт 70 — Кт 71 (удержание из зарплаты)</li>
-                <li>• Дт 84 — Кт 71 (недостачи)</li>
-              </ul>
-            </div>
+        <p>При сдаче наличной выручки зачастую бывает, что деньги «ушли» (выручка сдается инкассаторам) с кассы, а на расчетный счет банка еще не поступили. Для учета таких операций используется активный счет <b>57 «Переводы в пути»</b>. Это фактически транзитный счет, используемый для учета операций, когда деньги формально уже не в кассе, но ещё не зачислены банком.</p>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-6">Типовые операции:</h3>
+        <div class="space-y-2 text-sm">
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">1. Сдача выручки инкассаторам:</p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Дт 57 — Кт 50</p>
           </div>
-        </div>
-      </div>
-
-      <!-- Примеры проводок -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mt-6">
-        <h3 class="font-bold text-lg mb-4">Примеры типовых проводок:</h3>
-        <div class="space-y-3 text-sm">
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
-            <p class="font-semibold mb-1">1. Выдача денег под отчет из кассы:</p>
-            <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 71 — Кт 50: 5 000 руб.</p>
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">2. Зачисление этой суммы на расчётный счёт на следующий день:</p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Дт 51 — Кт 57</p>
           </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
-            <p class="font-semibold mb-1">2. Приобретение материалов подотчетным лицом:</p>
-            <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 71: 3 200 руб.</p>
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">3. Оплата покупателем через банковскую карту (эквайринг):</p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Дт 57 — Кт 62</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Деньги списаны у клиента, но банк зачислит их нам с задержкой.</p>
           </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
-            <p class="font-semibold mb-1">3. Возврат неизрасходованной суммы в кассу:</p>
-            <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 50 — Кт 71: 1 800 руб.</p>
-          </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
-            <p class="font-semibold mb-1">4. Командировочные расходы (суточные):</p>
-            <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 26 — Кт 71: 2 000 руб.</p>
-          </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
-            <p class="font-semibold mb-1">5. Перерасход выдан из кассы:</p>
-            <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 71 — Кт 50: 500 руб.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Т-образный счет 71 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mt-6">
-        <h3 class="font-bold text-lg mb-4 text-center">Т-образная форма счета 71 «Расчеты с подотчетными лицами»</h3>
-        <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
-          <div class="p-4 border-r border-slate-400 dark:border-slate-600">
-            <h4 class="font-bold text-center mb-3 text-emerald-600 dark:text-emerald-400">Дебет</h4>
-            <div class="space-y-2 text-xs">
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Сальдо на 01.10</span>
-                <span>2 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Выдача под отчет (Иванов)</span>
-                <span>5 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Выдача под отчет (Петров)</span>
-                <span>3 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Перерасход (Сидоров)</span>
-                <span>500</span>
-              </div>
-              <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1">
-                <span>Оборот по дебету</span>
-                <span>8 500</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-4">
-            <h4 class="font-bold text-center mb-3 text-purple-600 dark:text-purple-400">Кредит</h4>
-            <div class="space-y-2 text-xs">
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Приобретение материалов</span>
-                <span>3 200</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Командировочные расходы</span>
-                <span>2 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Возврат в кассу</span>
-                <span>1 800</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Хозяйственные расходы</span>
-                <span>1 500</span>
-              </div>
-              <div class="flex justify-between font-bold bg-purple-100 dark:bg-purple-900/50 p-1">
-                <span>Оборот по кредиту</span>
-                <span>8 500</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mt-4 p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
-          <div class="flex justify-between text-sm font-bold">
-            <span>Сальдо на 31.10:</span>
-            <span>2 000 руб. (активное или пассивное в зависимости от ситуации)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Журнал-ордер и Ведомость -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mt-6">
-        <h3 class="font-bold text-lg mb-4">Журнал-ордер и Ведомость по счету 71</h3>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <!-- Журнал-ордер -->
-          <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
-            <h4 class="font-bold text-center mb-3 text-sm bg-slate-100 dark:bg-slate-700 p-2 rounded">ЖУРНАЛ-ОРДЕР<br>за октябрь 2026 г. по кредиту счета 71</h4>
-            <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-              <thead>
-                <tr class="bg-slate-100 dark:bg-slate-700">
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">05.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">3 200</td></tr>
-                <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">10.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">26</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">2 000</td></tr>
-                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">15.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">50</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">1 800</td></tr>
-                <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">20.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">26</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">1 500</td></tr>
-                <tr class="font-bold bg-purple-100 dark:bg-purple-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">8 500</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Ведомость -->
-          <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
-            <h4 class="font-bold text-center mb-3 text-sm bg-slate-100 dark:bg-slate-700 p-2 rounded">ВЕДОМОСТЬ<br>за октябрь 2026 г. по дебету счета 71</h4>
-            <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-              <thead>
-                <tr class="bg-slate-100 dark:bg-slate-700">
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">03.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">50</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">5 000</td></tr>
-                <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">08.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">50</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">3 000</td></tr>
-                <tr><td class="border border-slate-300 dark:border-slate-600 p-1">25.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">50</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">500</td></tr>
-                <tr class="font-bold bg-emerald-100 dark:bg-emerald-900/50"><td class="border border-slate-300 dark:border-slate-600 p-1" colspan="2">Итого за месяц</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">8 500</td></tr>
-              </tbody>
-            </table>
+          <div class="bg-white dark:bg-slate-800/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+            <p class="font-semibold mb-1">4. Банк фактически зачислил деньги на расчетный счет:</p>
+            <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Дт 51 — Кт 57</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Банк фактически зачислил деньги (от инкассации или эквайринга) на наш расчетный счет.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. Проверка знаний -->
+    <!-- 10. Проверка знаний -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Проверка знаний</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">10. Проверка знаний</h2>
 
       <!-- Вопрос 1 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">1. На каком счете ведется синтетический учет расчетов с подотчетными лицами?</p>
+        <p class="font-semibold mb-3">1. Какой документ является основанием для записей по счету 51 «Расчетные счета»?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 50 «Касса»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 60 «Расчеты с поставщиками»</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 71 «Расчеты с подотчетными лицами»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 76 «Расчеты с разными дебиторами и кредиторами»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Платежное поручение</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Выписка банка с приложенными документами</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Денежный чек</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Объявление на взнос наличными</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 2 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">2. Какой максимальный срок выдачи денег под отчет по общему правилу?</p>
+        <p class="font-semibold mb-3">2. Какой срок действия у платежного поручения?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) 1 месяц</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) 2 месяца</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) 3 месяца</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) 6 месяцев</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) 5 дней</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) 10 дней</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) 30 дней</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Не ограничен</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 3 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">3. Какой документ составляет сотрудник по итогам использования подотчетных сумм?</p>
+        <p class="font-semibold mb-3">3. Почему в банковской выписке дебет и кредит показываются «зеркально» по отношению к учету организации?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Приходный кассовый ордер</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Расходный кассовый ордер</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Авансовый отчет</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Платежное поручение</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Это ошибка банковского программного обеспечения</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Потому что банк ведет учет со своей точки зрения: счет клиента для банка — это его обязательство</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Потому что организация использует другой план счетов</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Это особенность только валютных операций</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 4 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">4. Можно ли выдать сотруднику новую сумму под отчет, если он не отчитался по предыдущему авансу?</p>
+        <p class="font-semibold mb-3">4. Для какой операции используется счет 57 «Переводы в пути»?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Да, если сумма небольшая</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Да, с разрешения руководителя</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Нет, запрещено</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Да, если это командировка</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Оплата поставщику с расчетного счета</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Сдача наличной выручки инкассаторам</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Снятие наличных с расчетного счета</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Перечисление налогов в бюджет</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 5 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">5. Какая проводка составляется при выдаче денег под отчет из кассы?</p>
+        <p class="font-semibold mb-3">5. Какая форма расчетов применяется при взыскании налогов и штрафов?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 50 — Кт 71</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 71 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 71 — Кт 51</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 71</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Платежное поручение</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Аккредитив</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Платежное требование</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Инкассовое поручение</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 6 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">6. Какая проводка составляется при возврате неизрасходованной суммы в кассу?</p>
+        <p class="font-semibold mb-3">6. Куда относится итоговая сумма курсовой разницы по валютному счету?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 71 — Кт 50</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 50 — Кт 71</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 71</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 71 — Кт 51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) На счет 51 «Расчетные счета»</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) На счет 80 «Прибыли и убытки»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) На счет 57 «Переводы в пути»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) На счет 55 «Специальные счета в банках»</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 7 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">7. Какая проводка составляется при приобретении материалов подотчетным лицом?</p>
+        <p class="font-semibold mb-3">7. Оплата поставщику ООО «Стройматериалы» с расчетного счета на сумму 25 000 руб. Какая проводка?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 71 — Кт 10</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 10 — Кт 50</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 71</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 71 — Кт 60</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 50 — Кт 51</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 60</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 62 — Кт 51</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 8 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">8. Какой счет используется для учета командировочных расходов (суточных)?</p>
+        <p class="font-semibold mb-3">8. Поступление валютной выручки от иностранного покупателя в сумме 1000 USD по курсу 90 руб. Какая проводка?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 20 «Основное производство»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 44 «Издержки обращения»</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 26 «Общехозяйственные расходы»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 91 «Прочие доходы и расходы»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 51 — Кт 62</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 52 — Кт 62</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 62 — Кт 52</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 57 — Кт 62</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 9 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">9. Какой тип счета 71 «Расчеты с подотчетными лицами»?</p>
+        <p class="font-semibold mb-3">9. Сдача наличной выручки инкассаторам в сумме 30 000 руб. Какая проводка?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Активный</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Пассивный</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Активно-пассивный</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Забалансовый</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 51 — Кт 50</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 57 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 50 — Кт 57</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 57</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <!-- Вопрос 10 -->
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">10. Сотрудник не израсходовал 1 500 руб. из выданных 5 000 руб. Какая проводка при возврате?</p>
+        <p class="font-semibold mb-3">10. Оплата поставщику за счет средств аккредитива. Какая проводка?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 71 — Кт 50: 1 500 руб.</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 50 — Кт 71: 1 500 руб.</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 26 — Кт 71: 1 500 руб.</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 71 — Кт 26: 1 500 руб.</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 55 — Кт 60</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 51</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 60 — Кт 55</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 55</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
@@ -681,13 +1009,27 @@
     <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
       <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
       <div class="flex space-x-4">
-        <a href="lesson7.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 7</a>
-        <a href="lesson9.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 9 →</a>
+        <a href="lesson6.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">← Урок 6</a>
+        <a href="lesson8.html" class="hover:text-blue-600 dark:hover:text-emerald-400 font-medium">Урок 8 →</a>
       </div>
     </div>
   </footer>
 
   <script>
+    function showDoc(id, btn) {
+      document.querySelectorAll('.doc-content').forEach(el => {
+        el.classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+      
+      document.querySelectorAll('.doc-btn').forEach(el => {
+        el.classList.remove('bg-emerald-600', 'text-white');
+        el.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+      });
+      btn.classList.remove('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+      btn.classList.add('bg-emerald-600', 'text-white');
+    }
+
     function checkTest(btn, isCorrect) {
       const parent = btn.parentElement.parentElement;
       const fb = parent.querySelector('.feedback');
@@ -699,13 +1041,8 @@
       } else {
         btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
         fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
+        fb.textContent = ' Неверно. Попробуйте еще раз.';
       }
-    }
-
-    function toggleDoc(id) {
-      const doc = document.getElementById(id);
-      doc.classList.toggle('hidden');
     }
   </script>
 </body>
