@@ -67,21 +67,7 @@
   <div class="max-w-5xl mx-auto px-4 py-8">
     
     <!-- Шапка -->
-    <header class="flex justify-between items-center mb-8 pb-6 border-b border-slate-200 dark:border-slate-700">
-      <div>
-        <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">
-          smart_buh
-        </h1>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
-          Курс по бухгалтерскому учету • Республика Абхазия
-        </p>
-      </div>
-      <button id="theme-toggle" onclick="toggleTheme()" class="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition shadow-sm" title="Переключить тему">
-        <span class="dark:hidden text-xl">🌙</span>
-        <span class="hidden dark:inline text-xl">☀️</span>
-      </button>
-    </header>
-
+    <div id="smart-header"></div>
     <!-- Общий прогресс -->
     <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
       <div class="flex justify-between items-center mb-3">
@@ -102,9 +88,7 @@
     <div id="sections-container" class="space-y-4"></div>
 
     <!-- Футер -->
-    <footer class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-700 text-center text-xs text-slate-500 dark:text-slate-400">
-      <p>© 2026 smart_buh. Курс по бухгалтерскому учету.</p>
-    </footer>
+    <div id="smart-footer"></div>
   </div>
 
   <script src="navigation.js"></script>
@@ -229,6 +213,11 @@
     }
 
     document.addEventListener('DOMContentLoaded', renderCourse);
-  </script>
+    </script>
+
+  <div id="smart-footer"></div>
+
+  <!-- Подключаем умный скрипт навигации -->
+  <script src="navigation.js"></script>
 </body>
 </html>
