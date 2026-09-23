@@ -8,11 +8,11 @@ const courseStructure = {
       title: "Раздел 1. Основы бухгалтерского учета",
       icon: "📚",
       lessons: [
-        { id: 1, title: "Сущность и предмет бухгалтерского учета", file: "lesson1.html" },
-        { id: 2, title: "Понятие бухгалтерского счета и плана счетов", file: "lesson2.html" },
-        { id: 3, title: "Бухгалтерский баланс и отчетность", file: "lesson3.html" },
-        { id: 4, title: "Формы бухгалтерского учета", file: "lesson4.html" },
-        { id: 5, title: "Практическое задание по Разделу 1", file: "lesson5.html" }
+        { id: 1, title: "Сущность и предмет бухгалтерского учета", file: "lesson1.html", status: "completed" },
+        { id: 2, title: "Понятие бухгалтерского счета и плана счетов", file: "lesson2.html", status: "completed" },
+        { id: 3, title: "Бухгалтерский баланс и отчетность", file: "lesson3.html", status: "completed" },
+        { id: 4, title: "Формы бухгалтерского учета", file: "lesson4.html", status: "completed" },
+        { id: 5, title: "Практическое задание по Разделу 1", file: "lesson5.html", status: "completed" }
       ]
     },
     {
@@ -20,14 +20,14 @@ const courseStructure = {
       title: "Раздел 2. Учет денежных средств и расчетов",
       icon: "💰",
       lessons: [
-        { id: 6, title: "Учет кассовых операций", file: "lesson6.html" },
-        { id: 7, title: "Учет расчетного и валютного счетов", file: "lesson7.html" },
-        { id: 8, title: "Учет расчетов с подотчетными лицами", file: "lesson8.html" },
-        { id: 9, title: "Учет расчетов с поставщиками и покупателями", file: "lesson9.html" },
-        { id: 10, title: "Учет расчетов с персоналом по оплате труда", file: "lesson10.html" },
-        { id: 11, title: "Учет расчетов с бюджетом и внебюджетными фондами", file: "lesson11.html" },
-        { id: 12, title: "Прочие расчеты с дебиторами и кредиторами", file: "lesson12.html" },
-        { id: 13, title: "Практическое задание по Разделу 2", file: "lesson13.html" }
+        { id: 6, title: "Учет кассовых операций", file: "lesson6.html", status: "completed" },
+        { id: 7, title: "Учет расчетного и валютного счетов", file: "lesson7.html", status: "completed" },
+        { id: 8, title: "Учет расчетов с подотчетными лицами", file: "lesson8.html", status: "completed" },
+        { id: 9, title: "Учет расчетов с поставщиками и покупателями", file: "lesson9.html", status: "completed" },
+        { id: 10, title: "Учет расчетов с персоналом по оплате труда", file: "lesson10.html", status: "current" },
+        { id: 11, title: "Учет расчетов с бюджетом и внебюджетными фондами", file: "lesson11.html", status: "locked" },
+        { id: 12, title: "Прочие расчеты с дебиторами и кредиторами", file: "lesson12.html", status: "locked" },
+        { id: 13, title: "Практическое задание по Разделу 2", file: "lesson13.html", status: "locked" }
       ]
     },
     {
@@ -35,8 +35,8 @@ const courseStructure = {
       title: "Раздел 3. Учет имущества и финансовых вложений",
       icon: "🏢",
       lessons: [
-        { id: 14, title: "Учет материалов", file: "lesson14.html" },
-        { id: 15, title: "Учет основных средств", file: "lesson15.html" }
+        { id: 14, title: "Учет материалов", file: "lesson14.html", status: "locked" },
+        { id: 15, title: "Учет основных средств", file: "lesson15.html", status: "locked" }
       ]
     }
   ]
@@ -71,7 +71,6 @@ function renderHeader() {
   const nextLesson = currentIndex < allLessons.length - 1 ? allLessons[currentIndex + 1] : null;
   const currentLesson = allLessons[currentIndex];
 
-  // Генерация выпадающего меню с иконками
   let dropdownHTML = '';
   courseStructure.sections.forEach(sec => {
     const icon = sec.icon || '';
@@ -109,17 +108,13 @@ function renderHeader() {
           </div>
           ${prevLesson ? `<a href="${prevLesson.file}" class="text-slate-500 hover:text-blue-600 dark:hover:text-emerald-400 transition hidden sm:block" title="${prevLesson.title}">←</a>` : '<span class="text-slate-300 hidden sm:block">←</span>'}
           ${nextLesson ? `<a href="${nextLesson.file}" class="text-slate-500 hover:text-blue-600 dark:hover:text-emerald-400 transition hidden sm:block" title="${nextLesson.title}">→</a>` : '<span class="text-slate-300 hidden sm:block">→</span>'}
-          
-          <!-- КРАСИВАЯ КНОПКА СМЕНЫ ТЕМЫ -->
           <button id="theme-toggle" class="relative w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-orange-200 dark:from-indigo-900 dark:to-slate-800 p-0.5 transition-all duration-500 hover:scale-110 shadow-md" title="Сменить тему">
             <div class="relative w-full h-full rounded-full overflow-hidden bg-white dark:bg-slate-900 transition-all duration-500">
-              <!-- Солнце (видно в темной теме) -->
               <div class="absolute inset-0 flex items-center justify-center transition-all duration-500 opacity-0 dark:opacity-100 scale-75 dark:scale-100">
                 <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
                 </svg>
               </div>
-              <!-- Луна (видно в светлой теме) -->
               <div class="absolute inset-0 flex items-center justify-center transition-all duration-500 opacity-100 dark:opacity-0 scale-100 dark:scale-75">
                 <svg class="w-5 h-5 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
                   <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"/>
