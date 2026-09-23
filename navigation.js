@@ -1,11 +1,12 @@
 // ==========================================
-// ДАННЫЕ КУРСА (Меняйте только этот блок при добавлении уроков)
+// ДАННЫЕ КУРСА
 // ==========================================
 const courseStructure = {
   sections: [
     {
       id: 1,
       title: "Раздел 1. Основы бухгалтерского учета",
+      icon: "📚",
       lessons: [
         { id: 1, title: "Сущность и предмет бухгалтерского учета", file: "lesson1.html" },
         { id: 2, title: "Понятие бухгалтерского счета и плана счетов", file: "lesson2.html" },
@@ -17,6 +18,7 @@ const courseStructure = {
     {
       id: 2,
       title: "Раздел 2. Учет денежных средств и расчетов",
+      icon: "💰",
       lessons: [
         { id: 6, title: "Учет кассовых операций", file: "lesson6.html" },
         { id: 7, title: "Учет расчетного и валютного счетов", file: "lesson7.html" },
@@ -31,17 +33,17 @@ const courseStructure = {
     {
       id: 3,
       title: "Раздел 3. Учет имущества и финансовых вложений",
+      icon: "",
       lessons: [
         { id: 14, title: "Учет материалов", file: "lesson14.html" },
         { id: 15, title: "Учет основных средств", file: "lesson15.html" }
-        // Добавляйте новые уроки сюда...
       ]
     }
   ]
 };
 
 // ==========================================
-// ЛОГИКА ОТРИСОВКИ (Не трогайте, если не знаете JS)
+// ЛОГИКА ОТРИСОВКИ
 // ==========================================
 
 function getCurrentFile() {
@@ -69,11 +71,12 @@ function renderHeader() {
   const nextLesson = currentIndex < allLessons.length - 1 ? allLessons[currentIndex + 1] : null;
   const currentLesson = allLessons[currentIndex];
 
-  // Генерация выпадающего меню
+  // Генерация выпадающего меню с иконками
   let dropdownHTML = '';
   courseStructure.sections.forEach(sec => {
+    const icon = sec.icon || '📄'; // Если иконки нет, используем 📄
     dropdownHTML += `<div class="px-4 py-2 bg-slate-50 dark:bg-slate-900/50">
-      <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider mb-1">${sec.title}</p>
+      <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider mb-1">${icon} ${sec.title}</p>
       <div class="space-y-1">`;
     sec.lessons.forEach(les => {
       const isActive = les.file === currentFile ? 'text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-900/20' : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700';
@@ -87,18 +90,12 @@ function renderHeader() {
   const headerHTML = `
     <header class="border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-950/90 sticky top-0 z-50 backdrop-blur-md">
       <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        
-        <!-- Логотип и текущий урок -->
         <div class="flex items-center space-x-4">
           <a href="index.html" class="text-xl font-black text-blue-600 dark:text-emerald-400">smart_buh</a>
           ${currentLesson ? `<span class="hidden sm:inline text-xs px-2 py-1 rounded bg-blue-100 text-blue-700 dark:bg-emerald-900/30 dark:text-emerald-400 font-mono">Урок ${currentLesson.id}</span>` : ''}
         </div>
-
-        <!-- Навигация -->
         <nav class="flex items-center space-x-2 md:space-x-4 text-sm font-medium">
           <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-emerald-400 transition">Оглавление</a>
-          
-          <!-- Выпадающее меню "Все уроки" -->
           <div class="relative group">
             <button class="flex items-center space-x-1 text-slate-600 dark:text-slate-400 hover:text-emerald-400 transition py-2">
               <span>Уроки</span>
@@ -110,21 +107,11 @@ function renderHeader() {
               </div>
             </div>
           </div>
-
-          <!-- Кнопки Назад/Вперед -->
           ${prevLesson ? `<a href="${prevLesson.file}" class="text-slate-500 hover:text-blue-600 dark:hover:text-emerald-400 transition hidden sm:block" title="${prevLesson.title}">←</a>` : '<span class="text-slate-300 hidden sm:block">←</span>'}
           ${nextLesson ? `<a href="${nextLesson.file}" class="text-slate-500 hover:text-blue-600 dark:hover:text-emerald-400 transition hidden sm:block" title="${nextLesson.title}">→</a>` : '<span class="text-slate-300 hidden sm:block">→</span>'}
-
-          <!-- Кнопка смены темы -->
           <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-emerald-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Сменить тему">
-            <!-- Иконка Солнца (для темной темы) -->
-            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
-            <!-- Иконка Луны (для светлой темы) -->
-            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-            </svg>
+            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
           </button>
         </nav>
       </div>
@@ -150,12 +137,8 @@ function renderFooter() {
       <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
         <p class="text-xs text-slate-500">© 2026 smart_buh. Курс по бухгалтерскому учету Республики Абхазия.</p>
         <div class="flex space-x-4 w-full md:w-auto justify-between md:justify-end">
-          ${prevLesson 
-            ? `<a href="${prevLesson.file}" class="flex-1 md:flex-none text-center px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition">← Урок ${prevLesson.id}</a>` 
-            : '<div class="flex-1 md:flex-none"></div>'}
-          ${nextLesson 
-            ? `<a href="${nextLesson.file}" class="flex-1 md:flex-none text-center px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm hover:bg-emerald-700 transition">Урок ${nextLesson.id} →</a>` 
-            : '<div class="flex-1 md:flex-none"></div>'}
+          ${prevLesson ? `<a href="${prevLesson.file}" class="flex-1 md:flex-none text-center px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition">← Урок ${prevLesson.id}</a>` : '<div class="flex-1 md:flex-none"></div>'}
+          ${nextLesson ? `<a href="${nextLesson.file}" class="flex-1 md:flex-none text-center px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm hover:bg-emerald-700 transition">Урок ${nextLesson.id} →</a>` : '<div class="flex-1 md:flex-none"></div>'}
         </div>
       </div>
     </footer>
@@ -164,13 +147,11 @@ function renderFooter() {
   container.innerHTML = footerHTML;
 }
 
-// Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
   renderHeader();
   renderFooter();
 });
 
-// Обработчик кнопки смены темы
 document.addEventListener('click', (e) => {
   if (e.target.closest('#theme-toggle')) {
     if (document.documentElement.classList.contains('dark')) {
