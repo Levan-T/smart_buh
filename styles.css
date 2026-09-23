@@ -1,5 +1,5 @@
 /* ==========================================
-   ЕДИНЫЕ СТИЛИ КУРСА smart_buh
+   ЕДИНЫЕ СТИЛИ КУРСА smart_buh (Vanilla CSS)
    ========================================== */
 
 /* Подключение шрифтов */
@@ -23,175 +23,312 @@ code, .font-mono, pre {
 
 /* Заголовки уроков */
 h1 {
-  @apply text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 leading-tight;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #059669; /* emerald-600 */
+  line-height: 1.25;
 }
+@media (min-width: 768px) {
+  h1 { font-size: 2.25rem; }
+}
+.dark h1 { color: #34d399; }
 
 h2 {
-  @apply text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2 mt-8;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #059669;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+.dark h2 {
+  color: #34d399;
+  border-bottom-color: #1e293b;
 }
 
 h3 {
-  @apply text-xl font-bold text-blue-600 dark:text-blue-400 mt-6;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2563eb; /* blue-600 */
+  margin-top: 1.5rem;
 }
+.dark h3 { color: #60a5fa; }
 
 /* Информационные блоки */
 .info-block {
-  @apply p-4 rounded-xl my-4 border-l-4;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-left-width: 4px;
+  border-left-style: solid;
 }
 
 .info-block.blue {
-  @apply bg-blue-50 dark:bg-blue-950/30 border-blue-500 text-blue-800 dark:text-blue-300;
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+  color: #1e40af;
+}
+.dark .info-block.blue {
+  background-color: rgba(30, 58, 138, 0.3);
+  color: #93c5fd;
 }
 
 .info-block.amber {
-  @apply bg-amber-50 dark:bg-amber-950/30 border-amber-500 text-amber-800 dark:text-amber-300;
+  background-color: #fffbeb;
+  border-left-color: #f59e0b;
+  color: #92400e;
+}
+.dark .info-block.amber {
+  background-color: rgba(120, 53, 15, 0.3);
+  color: #fcd34d;
 }
 
 .info-block.emerald {
-  @apply bg-emerald-50 dark:bg-emerald-950/30 border-emerald-500 text-emerald-800 dark:text-emerald-300;
+  background-color: #ecfdf5;
+  border-left-color: #10b981;
+  color: #065f46;
+}
+.dark .info-block.emerald {
+  background-color: rgba(6, 78, 59, 0.3);
+  color: #6ee7b7;
 }
 
 .info-block.gray {
-  @apply bg-slate-100 dark:bg-slate-800/50 border-slate-400 text-slate-800 dark:text-slate-300;
+  background-color: #f1f5f9;
+  border-left-color: #94a3b8;
+  color: #1e293b;
+}
+.dark .info-block.gray {
+  background-color: rgba(30, 41, 59, 0.5);
+  color: #cbd5e1;
 }
 
 /* Таблицы */
 .data-table {
-  @apply w-full text-sm border-collapse border border-slate-300 dark:border-slate-600 my-4;
+  width: 100%;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+  border: 1px solid #cbd5e1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-
 .data-table thead {
-  @apply bg-gradient-to-r from-blue-600 to-emerald-600 text-white;
+  background: linear-gradient(to right, #2563eb, #059669);
+  color: white;
 }
-
 .data-table th {
-  @apply border border-slate-300 dark:border-slate-600 p-3 text-left font-bold;
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 700;
 }
-
 .data-table td {
-  @apply border border-slate-300 dark:border-slate-600 p-3;
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem;
 }
+.data-table tbody tr:nth-child(even) { background-color: #f8fafc; }
+.data-table tbody tr:nth-child(odd) { background-color: #ffffff; }
 
-.data-table tbody tr:nth-child(even) {
-  @apply bg-slate-50 dark:bg-slate-900/30;
-}
-
-.data-table tbody tr:nth-child(odd) {
-  @apply bg-white dark:bg-slate-800;
-}
+.dark .data-table { border-color: #475569; }
+.dark .data-table th, .dark .data-table td { border-color: #475569; }
+.dark .data-table tbody tr:nth-child(even) { background-color: rgba(15, 23, 42, 0.3); }
+.dark .data-table tbody tr:nth-child(odd) { background-color: #1e293b; }
 
 /* Т-счета */
 .t-account {
-  @apply bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 my-6;
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
-
+.dark .t-account {
+  background-color: rgba(30, 41, 59, 0.5);
+  border-color: #334155;
+}
 .t-account-header {
-  @apply text-center mb-3 text-sm font-bold p-2 rounded;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
 }
-
-.t-account-header.debit {
-  @apply bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300;
-}
-
-.t-account-header.credit {
-  @apply bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300;
-}
+.t-account-header.debit { background-color: #dbeafe; color: #1e40af; }
+.dark .t-account-header.debit { background-color: rgba(30, 58, 138, 0.3); color: #93c5fd; }
+.t-account-header.credit { background-color: #f3e8ff; color: #6b21a8; }
+.dark .t-account-header.credit { background-color: rgba(88, 28, 135, 0.3); color: #d8b4fe; }
 
 .t-account-grid {
-  @apply grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid #94a3b8;
 }
+.dark .t-account-grid { border-color: #475569; }
 
-.t-account-side {
-  @apply p-3;
-}
-
-.t-account-side.left {
-  @apply border-r border-slate-400 dark:border-slate-600;
-}
+.t-account-side { padding: 0.75rem; }
+.t-account-side.left { border-right: 1px solid #94a3b8; }
+.dark .t-account-side.left { border-right-color: #475569; }
 
 .t-account-side-title {
-  @apply font-bold text-center mb-2 text-xs;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
 }
-
-.t-account-side-title.debit {
-  @apply text-emerald-600 dark:text-emerald-400;
-}
-
-.t-account-side-title.credit {
-  @apply text-rose-600 dark:text-rose-400;
-}
+.t-account-side-title.debit { color: #059669; }
+.dark .t-account-side-title.debit { color: #34d399; }
+.t-account-side-title.credit { color: #e11d48; }
+.dark .t-account-side-title.credit { color: #fb7185; }
 
 .t-account-item {
-  @apply flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1 text-xs;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
 }
+.dark .t-account-item { border-bottom-color: #334155; }
 
 .t-account-total {
-  @apply flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1 mt-2 text-xs;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  background-color: #d1fae5;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
 }
+.dark .t-account-total { background-color: rgba(6, 78, 59, 0.5); }
 
 /* Тесты */
 .quiz-question {
-  @apply bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mb-4;
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+}
+.dark .quiz-question {
+  background-color: rgba(30, 41, 59, 0.5);
+  border-color: #334155;
 }
 
 .quiz-question-title {
-  @apply font-semibold text-slate-900 dark:text-white mb-3;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
 }
+.dark .quiz-question-title { color: #ffffff; }
 
 .quiz-option {
-  @apply w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition mb-2;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
+.dark .quiz-option { border-color: #334155; }
+.quiz-option:hover { background-color: #f8fafc; }
+.dark .quiz-option:hover { background-color: rgba(51, 65, 85, 0.5); }
 
 .quiz-option.correct {
-  @apply bg-emerald-100 dark:bg-emerald-900/50 border-emerald-500;
+  background-color: #d1fae5 !important;
+  border-color: #10b981 !important;
 }
+.dark .quiz-option.correct { background-color: rgba(6, 78, 59, 0.5) !important; }
 
 .quiz-option.incorrect {
-  @apply bg-rose-100 dark:bg-rose-900/50 border-rose-500;
+  background-color: #fee2e2 !important;
+  border-color: #ef4444 !important;
 }
+.dark .quiz-option.incorrect { background-color: rgba(127, 29, 29, 0.5) !important; }
 
 .quiz-feedback {
-  @apply mt-3 p-3 rounded-xl text-sm font-bold hidden;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: none;
 }
+.quiz-feedback.show { display: block; }
 
 .quiz-feedback.correct {
-  @apply bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+.dark .quiz-feedback.correct {
+  background-color: rgba(6, 78, 59, 0.3);
+  color: #6ee7b7;
+  border-color: #064e3b;
 }
 
 .quiz-feedback.incorrect {
-  @apply bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800;
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+.dark .quiz-feedback.incorrect {
+  background-color: rgba(127, 29, 29, 0.3);
+  color: #fca5a5;
+  border-color: #7f1d1d;
 }
 
 /* Флеш-карточки */
 .flashcard {
-  @apply h-48 cursor-pointer;
+  height: 12rem;
+  cursor: pointer;
   perspective: 1000px;
 }
-
 .flashcard-inner {
-  @apply relative w-full h-full transition-transform duration-600;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
 }
-
 .flashcard.flipped .flashcard-inner {
   transform: rotateY(180deg);
 }
-
-.flashcard-front,
-.flashcard-back {
-  @apply absolute w-full h-full rounded-xl shadow-md flex flex-col items-center justify-center p-6 text-white;
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: white;
   backface-visibility: hidden;
 }
-
 .flashcard-front {
-  @apply bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700;
+  background: linear-gradient(to bottom right, #3b82f6, #2563eb);
 }
-
+.dark .flashcard-front {
+  background: linear-gradient(to bottom right, #2563eb, #1d4ed8);
+}
 .flashcard-back {
-  @apply bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700;
+  background: linear-gradient(to bottom right, #10b981, #059669);
   transform: rotateY(180deg);
 }
-
+.dark .flashcard-back {
+  background: linear-gradient(to bottom right, #059669, #047857);
+}
 .flashcard:hover {
   transform: translateY(-4px);
   transition: transform 0.3s;
@@ -199,20 +336,8 @@ h3 {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-  h1 {
-    @apply text-2xl;
-  }
-  
-  h2 {
-    @apply text-xl;
-  }
-  
-  .data-table {
-    @apply text-xs;
-  }
-  
-  .data-table th,
-  .data-table td {
-    @apply p-2;
-  }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  .data-table { font-size: 0.75rem; }
+  .data-table th, .data-table td { padding: 0.5rem; }
 }
