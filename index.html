@@ -8,8 +8,8 @@
   <script>
     const savedTheme = localStorage.getItem('theme') || 
       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', savedTheme);
     if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
   </script>
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,25 +19,22 @@
 
   <style>
     :root {
-      --bg-color: #f4f6f9;
+      --bg-color: #f8fafc;
       --card-bg: #ffffff;
-      --text-color: #2c3e50;
-      --text-muted: #666666;
+      --text-color: #0f172a;
+      --text-muted: #64748b;
       --accent-color: #2563eb;
       --accent-green: #10b981;
-      --shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     .dark {
       --bg-color: #0f172a;
       --card-bg: #1e293b;
-      --text-color: #e0e0e0;
+      --text-color: #f1f5f9;
       --text-muted: #94a3b8;
       --accent-color: #60a5fa;
       --accent-green: #34d399;
-      --shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.3s, color 0.3s;
@@ -62,12 +59,13 @@
     }
   </style>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen font-sans">
 
   <div class="max-w-5xl mx-auto px-4 py-8">
     
-    <!-- Шапка -->
+    <!-- Шапка (заполняется из navigation.js) -->
     <div id="smart-header"></div>
+
     <!-- Общий прогресс -->
     <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
       <div class="flex justify-between items-center mb-3">
@@ -87,31 +85,19 @@
     <!-- Контейнер для разделов -->
     <div id="sections-container" class="space-y-4"></div>
 
-    <!-- Футер -->
+    <!-- Футер (заполняется из navigation.js) -->
     <div id="smart-footer"></div>
   </div>
 
-  <script src="navigation.js"></script>
-
+  <!-- Основной скрипт логики главной страницы -->
   <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        html.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.classList.add('dark');
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    }
-
     function toggleSection(sectionId) {
       const content = document.getElementById(`section-${sectionId}-content`);
       const chevron = document.getElementById(`chevron-${sectionId}`);
-      content.classList.toggle('open');
-      chevron.classList.toggle('rotated');
+      if (content && chevron) {
+        content.classList.toggle('open');
+        chevron.classList.toggle('rotated');
+      }
     }
 
     function getStatusIcon(status) {
@@ -129,7 +115,14 @@
     }
 
     function renderCourse() {
+      // Проверяем, загрузился ли navigation.js
+      if (typeof courseStructure === 'undefined') {
+        console.error('courseStructure не найден. Проверьте navigation.js');
+        return;
+      }
+
       const container = document.getElementById('sections-container');
+      if (!container) return;
       container.innerHTML = '';
 
       let totalLessons = 0;
@@ -172,10 +165,13 @@
           `;
         }).join('');
 
+        // ИСПРАВЛЕНИЕ: если иконки нет, ставим 📄
+        const icon = section.icon || '📄';
+
         sectionEl.innerHTML = `
           <button onclick="toggleSection(${section.id})" class="w-full p-5 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/30 transition text-left">
             <div class="flex items-center gap-4 flex-1 min-w-0">
-              <div class="text-3xl flex-shrink-0">${section.icon}</div>
+              <div class="text-3xl flex-shrink-0">${icon}</div>
               <div class="flex-1 min-w-0">
                 <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-1">Раздел ${section.id}</div>
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white truncate">${section.title}</h3>
@@ -201,23 +197,26 @@
 
       // Обновляем общий прогресс
       const totalPercent = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
-      document.getElementById('progress-percent').textContent = `${totalPercent}%`;
-      document.getElementById('progress-bar').style.width = `${totalPercent}%`;
-      document.getElementById('progress-text').textContent = `Пройдено ${completedLessons} из ${totalLessons} уроков`;
+      const percentEl = document.getElementById('progress-percent');
+      const barEl = document.getElementById('progress-bar');
+      const textEl = document.getElementById('progress-text');
+      
+      if (percentEl) percentEl.textContent = `${totalPercent}%`;
+      if (barEl) barEl.style.width = `${totalPercent}%`;
+      if (textEl) textEl.textContent = `Пройдено ${completedLessons} из ${totalLessons} уроков`;
 
       // Автоматически раскрываем раздел с текущим уроком
       const currentSection = courseStructure.sections.find(s => s.lessons.some(l => l.status === 'current'));
       if (currentSection) {
-        toggleSection(currentSection.id);
+        // Небольшая задержка, чтобы анимация сработала корректно
+        setTimeout(() => toggleSection(currentSection.id), 100);
       }
     }
 
     document.addEventListener('DOMContentLoaded', renderCourse);
-    </script>
+  </script>
 
-  <div id="smart-footer"></div>
-
-  <!-- Подключаем умный скрипт навигации -->
-  <script src="navigation.js"></script>
+  <!-- Подключаем умный скрипт навигации (ОДИН РАЗ, с версией для сброса кэша) -->
+  <script src="navigation.js?v=2"></script>
 </body>
 </html>
