@@ -17,6 +17,16 @@
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
+
+  <!-- ДОБАВЛЕНО: Стили для 3D флеш-карточек -->
+  <style>
+    .flashcard { perspective: 1000px; }
+    .flashcard-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+    .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+    .flashcard-front, .flashcard-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .flashcard-back { transform: rotateY(180deg); }
+    .flashcard:hover { transform: translateY(-4px); transition: transform 0.3s; }
+  </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
 
@@ -134,7 +144,7 @@
       </div>
     </section>
 
-    <!-- 🆕 Раздел 5: Примеры типовых проводок -->
+    <!-- Раздел 5: Примеры типовых проводок -->
     <section class="space-y-6">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
         <span>5.</span> Примеры типовых проводок
@@ -431,13 +441,118 @@
           </div>
         </div>
       </div>
-
     </section>
 
-    <!-- Раздел 6: Тест -->
+    <!-- 🆕 РАЗДЕЛ 6: Интерактивные карточки (ДОБАВЛЕНО) -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>6.</span> Проверка знаний
+        <span>6.</span> Интерактивные карточки для запоминания счетов
+      </h2>
+      <p class="text-slate-700 dark:text-slate-300">Кликайте на карточки, чтобы перевернуть их и проверить свои знания! Старайтесь сначала вспомнить название и тип счета.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Карточка 1 -->
+        <div class="flashcard h-48 cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-front bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-4xl mb-2">🏦</div>
+              <div class="text-3xl font-bold mb-2">Счет 50</div>
+              <div class="text-sm opacity-90">Нажмите, чтобы перевернуть</div>
+            </div>
+            <div class="flashcard-back bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-2xl font-bold mb-3">«Касса»</div>
+              <div class="text-sm mb-2">Тип: <span class="font-bold bg-white/20 px-3 py-1 rounded-full">Активный</span></div>
+              <div class="text-xs text-center opacity-90">Учет наличных денег в кассе организации</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="flashcard h-48 cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-front bg-gradient-to-br from-purple-500 to-purple-600 dark:from-purple-600 dark:to-purple-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-4xl mb-2">🏢</div>
+              <div class="text-3xl font-bold mb-2">Счет 51</div>
+              <div class="text-sm opacity-90">Нажмите, чтобы перевернуть</div>
+            </div>
+            <div class="flashcard-back bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-2xl font-bold mb-3">«Расчетный счет»</div>
+              <div class="text-sm mb-2">Тип: <span class="font-bold bg-white/20 px-3 py-1 rounded-full">Активный</span></div>
+              <div class="text-xs text-center opacity-90">Учет безналичных средств на счетах в банке</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="flashcard h-48 cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-front bg-gradient-to-br from-amber-500 to-amber-600 dark:from-amber-600 dark:to-amber-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-4xl mb-2">👥</div>
+              <div class="text-3xl font-bold mb-2">Счет 60</div>
+              <div class="text-sm opacity-90">Нажмите, чтобы перевернуть</div>
+            </div>
+            <div class="flashcard-back bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-2xl font-bold mb-3">«Расчеты с поставщиками»</div>
+              <div class="text-sm mb-2">Тип: <span class="font-bold bg-white/20 px-3 py-1 rounded-full">Активно-пассивный</span></div>
+              <div class="text-xs text-center opacity-90">Расчеты за товары, материалы, услуги</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4 -->
+        <div class="flashcard h-48 cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-front bg-gradient-to-br from-rose-500 to-rose-600 dark:from-rose-600 dark:to-rose-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-4xl mb-2">💼</div>
+              <div class="text-3xl font-bold mb-2">Счет 62</div>
+              <div class="text-sm opacity-90">Нажмите, чтобы перевернуть</div>
+            </div>
+            <div class="flashcard-back bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-2xl font-bold mb-3">«Расчеты с покупателями»</div>
+              <div class="text-sm mb-2">Тип: <span class="font-bold bg-white/20 px-3 py-1 rounded-full">Активно-пассивный</span></div>
+              <div class="text-xs text-center opacity-90">Расчеты за отгруженную продукцию</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5 -->
+        <div class="flashcard h-48 cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-front bg-gradient-to-br from-cyan-500 to-cyan-600 dark:from-cyan-600 dark:to-cyan-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-4xl mb-2">👤</div>
+              <div class="text-3xl font-bold mb-2">Счет 70</div>
+              <div class="text-sm opacity-90">Нажмите, чтобы перевернуть</div>
+            </div>
+            <div class="flashcard-back bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-2xl font-bold mb-3">«Расчеты с персоналом»</div>
+              <div class="text-sm mb-2">Тип: <span class="font-bold bg-white/20 px-3 py-1 rounded-full">Пассивный</span></div>
+              <div class="text-xs text-center opacity-90">Учет зарплаты и расчетов с сотрудниками</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 6 -->
+        <div class="flashcard h-48 cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-front bg-gradient-to-br from-indigo-500 to-indigo-600 dark:from-indigo-600 dark:to-indigo-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-4xl mb-2">🎒</div>
+              <div class="text-3xl font-bold mb-2">Счет 71</div>
+              <div class="text-sm opacity-90">Нажмите, чтобы перевернуть</div>
+            </div>
+            <div class="flashcard-back bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 flex flex-col items-center justify-center p-6 text-white">
+              <div class="text-2xl font-bold mb-3">«Расчеты с подотчетными лицами»</div>
+              <div class="text-sm mb-2">Тип: <span class="font-bold bg-white/20 px-3 py-1 rounded-full">Активно-пассивный</span></div>
+              <div class="text-xs text-center opacity-90">Выдача денег под отчет, командировки</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- РАЗДЕЛ 7: Тест (БЫЛ 6, ПЕРЕИМЕНОВАН ДЛЯ СОХРАНЕНИЯ НУМЕРАЦИИ) -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+        <span>7.</span> Проверка знаний
       </h2>
       <p class="text-slate-600 dark:text-slate-400 text-sm">Ответьте на 5 вопросов, чтобы закрепить материал урока.</p>
 
@@ -721,7 +836,7 @@
       else { fb.classList.add('bg-rose-50','text-rose-800','dark:bg-rose-950/60','dark:text-rose-300','border','border-rose-200','dark:border-rose-800'); fb.innerHTML = `<b>❌ ${ex[qId].n}</b>`; }
     }
 
-        document.addEventListener('DOMContentLoaded', () => { switchAccountType('active'); renderPlanSchetov(); });
+    document.addEventListener('DOMContentLoaded', () => { switchAccountType('active'); renderPlanSchetov(); });
   </script>
 
   <!-- Подвал (заполняется скриптом navigation.js) -->
