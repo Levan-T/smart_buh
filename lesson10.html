@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок 10. Учет расчетов с персоналом по оплате труда | smart_buh</title>
+  <title>Урок 10. Учёт расчётов с персоналом по оплате труда | smart_buh</title>
   <script>
     if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
     else document.documentElement.classList.add('dark');
@@ -18,7 +18,7 @@
   <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 10. Учет расчетов с персоналом по оплате труда</h1>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 10. Учёт расчётов с персоналом по оплате труда</h1>
       <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем виды заработной платы, документальное оформление, порядок начисления окладов, премий, отпускных и больничных, удержание подоходного налога, начисление взносов во внебюджетные фонды РА и полный цикл бухгалтерских проводок.</p>
     </div>
 
@@ -26,15 +26,46 @@
     <section class="space-y-4">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Понятие заработной платы и её виды</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p><b>Заработная плата</b> — это вознаграждение за труд в зависимости от квалификации работника, сложности, количества, качества и условий выполняемой работы, а также компенсационные и стимулирующие выплаты (согласно Трудовому кодексу Республики Абхазия).</p>
-        <p>В бухгалтерском учете заработную плату принято делить на три основные группы:</p>
+        <p><b>Заработная плата (оплата труда)</b> — это вознаграждение за труд в зависимости от квалификации работника, сложности, количества, качества и условий выполняемой работы, а также компенсационные и стимулирующие выплаты (согласно Трудовому кодексу Республики Абхазия — ТК РА).</p>
+        
+        <p>Заработная плата сотрудника состоит из трех основных блоков:</p>
+        
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl font-mono text-sm">
+          <p class="font-bold mb-2">Состав заработной платы (Брутто-начисление)</p>
+          <div class="ml-4 space-y-1">
+            <p>├── 1. Основная часть (Оклад / Тарифная ставка)</p>
+            <p>── 2. Дополнительная часть (Премии, надбавки, доплаты)</p>
+            <p>└── 3. Компенсационные и гарантийные выплаты (Отпускные, больничные, выходные пособия)</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-4">1. Основная часть</h3>
         <ul class="list-disc list-inside space-y-2 ml-4">
-          <li><b>Основная часть:</b> оклад или тарифная ставка за фактически отработанное время или выполненную работу.</li>
-          <li><b>Дополнительная часть:</b> премии, надбавки за выслугу лет, доплаты за работу в ночное время, в выходные и праздничные дни.</li>
-          <li><b>Компенсационные выплаты:</b> оплата ежегодных отпусков, оплата листов нетрудоспособности (больничных), выходные пособия.</li>
+          <li><b>Должностной оклад</b> — фиксированный размер оплаты труда работника за исполнение трудовых (должностных) обязанностей определенной сложности за календарный месяц без учета компенсационных, стимулирующих и социальных выплат.</li>
+          <li><b>Тарифная ставка</b> — фиксированный размер оплаты труда за выполнение нормы труда определенной сложности (квалификации) за единицу времени (час, день).</li>
         </ul>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-4">2. Дополнительная часть (Стимулирующие выплаты)</h3>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><b>Премии</b> — стимулирующие выплаты за выполнение ключевых показателей эффективности (KPI), превышение плана продаж, качество продукции или по итогам работы за период (месяц, квартал, год).</li>
+          <li><b>Надбавки и доплаты</b> — выплаты за выслугу лет, совмещение профессий, расширение зон обслуживания, работу в ночное время, выходные дни или в особых климатических/условиях труда.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-4">3. Компенсационные и гарантийные выплаты</h3>
+        <p>Выплаты, гарантированные законодательством при реализации права на отдых или при наступлении страховых случаев:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><b>Отпускные</b> — сохранение среднего заработка на период ежегодного оплачиваемого отпуска.</li>
+          <li><b>Пособие по временной нетрудоспособности (больничные)</b> — компенсация утраченного заработка при болезни или травме.</li>
+          <li><b>Выходное пособие</b> — компенсация при расторжении трудового договора (при сокращении штата или ликвидации).</li>
+        </ul>
+
         <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
-          <p class="text-sm text-blue-800 dark:text-blue-300"><b>💡 Важно различать:</b> <br>• <b>Начисленная заработная плата</b> («грязными») — полная сумма, заработанная сотрудником за месяц.<br>• <b>Заработная плата к выплате</b> («на руки» или «чистыми») — сумма за вычетом всех удержаний (в первую очередь, подоходного налога).</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300"><b>💡 Важно различать:</b></p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2"><b>Начисленная заработная плата («Брутто» / Gross)</b> — полная сумма дохода, причитающаяся работнику за отработанное время и выполненную работу до произведения законодательных и административных удержаний. Именно эта сумма отражается по Кредиту счёта 70 и включается в расходы предприятия.</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2"><b>Выплаченная заработная плата («Нетто» / «К выплате» / Net)</b> — фактическая сумма денежных средств, перечисляемая на банковскую карту или выдаваемая из кассы работнику «на руки».</p>
+          <div class="mt-3 p-3 bg-white dark:bg-slate-900/50 rounded font-mono text-xs">
+            <p>Сумма к выплате (Net) = Начислено (Gross) − Законодательные и прочие удержания</p>
+          </div>
         </div>
       </div>
     </section>
@@ -43,30 +74,93 @@
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Формы и системы оплаты труда</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>На предприятиях РА применяются две основные формы оплаты труда: <b>повременная</b> и <b>сдельная</b>.</p>
+        <p>Форма оплаты труда определяет алгоритм, по которому физический объем труда пересчитывается в денежное выражение.</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h3 class="font-bold text-emerald-600 dark:text-emerald-400 mb-2">⏱️ Повременная форма</h3>
-            <p class="text-sm mb-3">Оплата зависит от фактически отработанного времени и установленной тарифной ставки (оклада). Применяется, когда результат труда трудно измерить в натуральных единицах (офисные сотрудники, охрана).</p>
-            <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded text-xs font-mono">
-              <p class="font-bold mb-1">Пример расчёта:</p>
-              <p>Оклад: 25 000 руб.</p>
-              <p>Отработано: 15 дней из 20 рабочих по норме.</p>
-              <p class="mt-2">ЗП = 25 000 / 20 × 15 = <b>18 750 руб.</b></p>
-            </div>
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl font-mono text-sm">
+          <p class="font-bold mb-2">Формы оплаты труда</p>
+          <div class="ml-4 space-y-1">
+            <p>├── Повременная (оплата за отработанное время)</p>
+            <p>│   ├── Простая повременная</p>
+            <p>│   └── Повременно-премиальная</p>
+            <p>── Сдельная (оплата за объем выполненной работы/продукции)</p>
+            <p>    ├── Прямая сдельная</p>
+            <p>    ├── Сдельно-премиальная</p>
+            <p>    └── Сдельно-прогрессивная</p>
           </div>
-          
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h3 class="font-bold text-purple-600 dark:text-purple-400 mb-2">📦 Сдельная форма</h3>
-            <p class="text-sm mb-3">Оплата зависит от количества произведенной продукции (выполненных работ) по установленным сдельным расценкам. Применяется в производстве, строительстве.</p>
-            <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded text-xs font-mono">
-              <p class="font-bold mb-1">Пример расчёта:</p>
-              <p>Сдельная расценка: 150 руб. за единицу.</p>
-              <p>Изготовлено: 200 единиц.</p>
-              <p class="mt-2">ЗП = 150 × 200 = <b>30 000 руб.</b></p>
-            </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-4">1. Повременная форма оплаты труда</h3>
+        <p>Применяется, когда результат труда нельзя строго измерить в штуках или когда важнее качество, а не количество (бухгалтеры, администраторы, ИТР, охрана).</p>
+        
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 my-4">
+          <p class="font-bold mb-2">Простая повременная:</p>
+          <p class="text-sm mb-3">Оплата производится за фактически отработанное время исходя из установленного оклада или часовой ставки.</p>
+          <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm">
+            <p class="mb-2">Формула:</p>
+            <p>ЗП = (Оклад / Рабочие дни месяца) × Фактически отработанные дни</p>
           </div>
+          <div class="mt-3 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded">
+            <p class="font-bold mb-2 text-sm">Пример расчёта:</p>
+            <ul class="text-xs space-y-1">
+              <li>• Оклад сотрудника: 25 000 руб.</li>
+              <li>• По графику в месяце: 20 рабочих дней</li>
+              <li>• Фактически отработано: 18 дней</li>
+              <li class="mt-2 font-bold">ЗП = (25 000 / 20) × 18 = 1 250 × 18 = <span class="text-emerald-600 dark:text-emerald-400">22 500 руб.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p><b>Повременно-премиальная:</b> к базовому окладу за отработанное время добавляется премия в процентах от оклада за выполнение качественных или количественных показателей.</p>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-4">2. Сдельная форма оплаты труда</h3>
+        <p>Применяется, когда есть возможность точного учета объема выработки продукции/услуг и необходимость стимулировать увеличение объема (рабочие на производстве, менеджеры по продажам, сборщики, швеи).</p>
+        
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 my-4">
+          <p class="font-bold mb-2">Прямая сдельная:</p>
+          <p class="text-sm mb-3">Заработок зависит напрямую от количества изготовленной продукции и установленной расценки за единицу.</p>
+          <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm">
+            <p class="mb-2">Формула:</p>
+            <p>ЗП = Сдельная расценка за ед. (руб.) × Количество произведенной продукции</p>
+          </div>
+          <div class="mt-3 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded">
+            <p class="font-bold mb-2 text-sm">Пример расчёта:</p>
+            <ul class="text-xs space-y-1">
+              <li>• Сдельная расценка: 150 руб./ед.</li>
+              <li>• Изготовлено за месяц: 220 единиц</li>
+              <li class="mt-2 font-bold">ЗП = 150 × 220 = <span class="text-emerald-600 dark:text-emerald-400">33 000 руб.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p><b>Сдельно-премиальная:</b> помимо сдельного заработка начисляется премия за отсутствие брака или выполнение плана.</p>
+        <p><b>Сдельно-прогрессивная:</b> выработка в пределах нормы оплачивается по базовым расценкам, а выработка сверх нормы — по повышенным (прогрессивным) расценкам.</p>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-4">Кратко: когда какую форму применять</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Форма оплаты</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Когда применять</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Главный плюс</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Главный минус</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">Повременная</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Офисный персонал, управленцы, сервисные службы, автоматизированные производства</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Стабильность, ориентация на качество и соблюдение регламентов</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Слабая мотивация к сверхрезультату</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">Сдельная</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Массовое производство, строительно-монтажные работы, прямые продажи</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Прямая связь между выработкой и доходом, высокая производительность</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Риск снижения качества при гонке за объемом</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -75,19 +169,93 @@
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Документальное оформление</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Основанием для начисления заработной платы являются первичные документы:</p>
-        <ul class="list-disc list-inside space-y-1 ml-4">
-          <li><b>Штатное расписание</b> и <b>Трудовой договор</b> (определяют оклад и условия).</li>
-          <li><b>Табель учёта рабочего времени</b> (формы Т-12 или Т-13) — фиксирует явки, неявки, часы работы, отпуска и больничные.</li>
-          <li><b>Листки нетрудоспособности</b> и заявления на предоставление отпуска.</li>
+        <p>Все начисления и выплаты зарплаты производятся исключительно на основании строго оформленных первичных документов:</p>
+        
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl font-mono text-sm">
+          <p class="font-bold mb-2">Первичный документооборот по оплате труда</p>
+          <div class="ml-4 space-y-1">
+            <p>├── 1. Штатное расписание (форма Т-3) → Фиксирует должности и оклады</p>
+            <p>├── 2. Трудовой договор → Закрепляет условия оплаты конкретного сотрудника</p>
+            <p>├── 3. Табель учета времени (Т-12/Т-13) → Фиксирует отработанные дни/часы</p>
+            <p>└── 4. Расчетные/Платежные ведомости → Оформляют начисления и выплату</p>
+          </div>
+        </div>
+
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><b>Штатное расписание (Форма Т-3):</b> локальный нормативный акт, содержащий перечень структурных подразделений, должностей, сведений о количестве штатных единиц, должностных оклада и надбавках.</li>
+          <li><b>Трудовой договор:</b> индивидуальное соглашение, в котором обязательно указывается размер оклада/тарифной ставки и условия выплаты премий.</li>
+          <li><b>Табель учёта рабочего времени (Формы Т-12 / Т-13):</b> документ, в котором ежедневно отмечается явка/неявка каждого сотрудника (Я — рабочий день, В — выходной, ОТ — отпуск, Б — больничный). Без табеля начисление оклада неправомерно!</li>
+          <li><b>Расчётная ведомость (Форма Т-51):</b> используется для расчета и отражения всех видов начислений (оклад, премии, отпускные) и удержаний (подоходный налог, алименты). На руки работнику не передается, выдачу денег не оформляет.</li>
+          <li><b>Расчётно-платёжная ведомость (Форма Т-49) / Платёжная ведомость (Форма Т-53):</b> применяется для непосредственной выдачи наличных денег из кассы. Содержит графы для расписания работника в получении средств.</li>
         </ul>
-        <p>Для сводного учета начислений и выплат используются унифицированные формы ведомостей:</p>
-        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 my-4">
-          <h4 class="font-bold mb-2">📋 Основные формы ведомостей:</h4>
-          <ul class="text-sm space-y-2">
-            <li><b>Расчетная ведомость (форма Т-51):</b> составляется только для <u>начисления</u> заработной платы. Показывает все начисления и удержания по каждому сотруднику. Выплата по ней не производится.</li>
-            <li><b>Расчетно-платежная ведомость (форма Т-53):</b> совмещает функции расчетной ведомости и платежного документа. Используется для начисления и последующей выдачи заработной платы наличными через кассу.</li>
-          </ul>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-4">Образцы структуры заполнения ведомостей</h3>
+        
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-3">Структура Расчётной ведомости (Форма Т-51)</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+              <thead>
+                <tr class="bg-slate-100 dark:bg-slate-700">
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Таб. №</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">ФИО</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Должность</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Оклад</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Премия</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">ИТОГО</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Подох. налог (10%)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Пенс. взнос (1%)</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">К выплате</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-slate-800">
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">001</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Авидзба А. Т.</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Бухгалтер</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">30 000</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">5 000</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">35 000</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">3 500</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">350</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold text-emerald-600 dark:text-emerald-400">31 150</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-3">Структура Платёжной ведомости (Форма Т-53)</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+              <thead>
+                <tr class="bg-slate-100 dark:bg-slate-700">
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">№ п/п</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Таб. №</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">ФИО</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Сумма к выплате, руб.</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Роспись в получении</th>
+                  <th class="border border-slate-300 dark:border-slate-600 p-2">Примечание</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-slate-800">
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">1</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">001</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Авидзба А. Т.</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold text-emerald-600 dark:text-emerald-400">31 150</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">Авидзба</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2">—</td>
+                </tr>
+                <tr class="bg-slate-50 dark:bg-slate-900/30 font-bold">
+                  <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="3">ИТОГО:</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">31 150</td>
+                  <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="2"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -96,35 +264,75 @@
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Начисление заработной платы (с примерами)</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Начисление производится за отработанный месяц на основании табеля и приказов. Рассмотрим ключевые виды начислений:</p>
+        <p>Начисление заработной платы формирует общую (брутто) сумму дохода сотрудника за отчетный месяц.</p>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">1. Расчёт оклада за отработанное время</h3>
+        <p>При неполностью отработанном месяце оклад рассчитывается пропорционально рабочим дням по табелю.</p>
+        <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm my-3">
+          <p>Оклад за отработанные дни = (Полный оклад / Рабочие дни в месяце) × Фактически отработанные дни</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">2. Начисление премий</h3>
+        <p>Премия может быть установлена в фиксированной сумме или в процентах от начисленного оклада:</p>
+        <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm my-3">
+          <p>Сумма премии = Начисленный оклад × (% премии / 100)</p>
+        </div>
+        <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded my-3">
+          <p class="text-sm"><b>Пример:</b> Оклад за отработанное время 30 000 руб., премия 20%.</p>
+          <p class="text-sm font-mono mt-1">Премия = 30 000 × 0,20 = <b>6 000 руб.</b></p>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">3. Расчёт отпускных</h3>
+        <p>Оплата ежегодного отпуска рассчитывается исходя из среднего дневного заработка (СДЗ) за последние 12 календарных месяцев.</p>
+        <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm my-3">
+          <p class="mb-2">Формула СДЗ:</p>
+          <p>СДЗ = Совокупный заработок за расчетный период (12 мес.) / (12 × 29,3)</p>
+          <p class="mt-2 text-xs">(где 29,3 — среднемесячное число календарных дней)</p>
+          <p class="mt-3 mb-2">Формула отпускных:</p>
+          <p>Сумма отпускных = СДЗ × Количество календарных дней отпуска</p>
+        </div>
+        <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded my-3">
+          <p class="text-sm font-bold mb-2">Пример расчёта отпускных:</p>
+          <ul class="text-xs space-y-1">
+            <li>• Заработок за последние 12 месяцев: 360 000 руб.</li>
+            <li>• Длительность отпуска: 14 календарных дней</li>
+            <li class="mt-2">СДЗ = 360 000 / (12 × 29,3) = 360 000 / 351,6 ≈ 1 023,89 руб./день</li>
+            <li class="font-bold">Сумма отпускных = 1 023,89 × 14 = <span class="text-emerald-600 dark:text-emerald-400">14 334,46 руб.</span></li>
+          </ul>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">4. Расчёт больничных (Пособие по временной нетрудоспособности)</h3>
+        <p>Основанием для начисления является официальный Листок нетрудоспособности (больничный лист).</p>
         
-        <div class="space-y-3 text-sm">
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h4 class="font-bold mb-2">Пример А. Оклад и премия:</h4>
-            <p class="text-xs mb-2">Сотруднику Иванову И.И. установлен оклад 30 000 руб. По итогам месяца ему начислена премия в размере 20% от оклада.</p>
-            <ul class="text-xs font-mono text-emerald-600 dark:text-emerald-400 space-y-1">
-              <li>Оклад за отработанное время: 30 000 руб.</li>
-              <li>Премия: 30 000 × 20% = 6 000 руб.</li>
-              <li><b>Итого начислено:</b> 36 000 руб.</li>
-            </ul>
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 my-3">
+          <p class="font-bold mb-2">Алгоритм расчёта:</p>
+          <ol class="list-decimal list-inside space-y-2 text-sm">
+            <li>Вычисляется среднедневной заработок (СДЗ) за предшествующий период.</li>
+            <li>Корректируется на процент страхового стажа работника:
+              <ul class="list-disc list-inside ml-6 mt-1">
+                <li>До 5 лет стажа — 60% от СДЗ</li>
+                <li>От 5 до 8 лет стажа — 80% от СДЗ</li>
+                <li>Свыше 8 лет стажа — 100% от СДЗ</li>
+              </ul>
+            </li>
+            <li>Умножается на количество календарных дней болезни.</li>
+          </ol>
+          <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm mt-3">
+            <p>Больничный = СДЗ × % за стаж × Дни болезни</p>
           </div>
+        </div>
 
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h4 class="font-bold mb-2">Пример Б. Расчет отпускных:</h4>
-            <p class="text-xs mb-2">Сотрудник Петров П.П. уходит в отпуск на 14 календарных дней. Его средний дневной заработок за расчетный период составляет 1 200 руб.</p>
-            <ul class="text-xs font-mono text-emerald-600 dark:text-emerald-400 space-y-1">
-              <li>Сумма отпускных: 1 200 руб. × 14 дней = <b>16 800 руб.</b></li>
-            </ul>
-          </div>
+        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl my-3">
+          <p class="font-bold text-sm mb-2">Источники финансирования больничного:</p>
+          <ul class="text-xs space-y-1">
+            <li>• <b>Первые дни заболевания</b> (обычно 3 дня) выплачиваются за счет средств работодателя (включаются в расходы предприятия: Дт 20, 26, 44 — Кт 70)</li>
+            <li>• <b>Начиная со 2-го/4-го дня</b> пособие выплачивается за счет средств Фонда социального страхования (ФСС РА) (не является расходом предприятия: Дт 69.01 — Кт 70)</li>
+          </ul>
+        </div>
 
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h4 class="font-bold mb-2">Пример В. Расчет больничных (кратко):</h4>
-            <p class="text-xs mb-2">Сотрудник болел 5 дней. Средний дневной заработок = 1 000 руб. Страховой стаж более 8 лет (оплата 100%).</p>
-            <ul class="text-xs font-mono text-emerald-600 dark:text-emerald-400 space-y-1">
-              <li>Пособие по нетрудоспособности: 1 000 руб. × 5 дней = <b>5 000 руб.</b></li>
-              <li class="text-amber-600 dark:text-amber-400 mt-1">⚠️ Важно: Больничные начисляются <b>включая</b> суммы для удержания подоходного налога и начисления взносов во внебюджетные фонды (за счет средств ФСС РА или работодателя, в зависимости от первых дней болезни).</li>
-            </ul>
-          </div>
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Итоговая сумма к начислению (Брутто-доход за месяц)</h3>
+        <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm">
+          <p>Итого начислено = Оклад за отработанное время + Премия + Отпускные + Больничные</p>
         </div>
       </div>
     </section>
@@ -133,142 +341,351 @@
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Удержания из заработной платы</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Из начисленной («грязной») заработной платы производится ряд удержаний. Самое основное — это <b>подоходный налог</b>, который организация выступает в роли налогового агента и удерживает из доходов сотрудника по ставке, установленной законодательством РА (например, 10%).</p>
-        <p>Также из зарплаты могут удерживаться:</p>
+        <p>Удержания — это суммы, которые законодательно или по исполнительным документам вычитаются из начисленного дохода работника до выдачи денег на руки.</p>
+        
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl font-mono text-sm">
+          <p class="font-bold mb-2">Удержания из заработной платы (Дебет 70)</p>
+          <div class="ml-4 space-y-1">
+            <p>├── 1. Обязательные законодательные удержания</p>
+            <p>│   ├── Подоходный налог (10% по законодательству РА)</p>
+            <p>│   └── Социальный страховой взнос с работника (1% в Пенсионный фонд РА)</p>
+            <p>── 2. Удержания по инициативе работодателя</p>
+            <p>│   ├── Возврат неиспользованных подотчетных сумм</p>
+            <p>│   └── Погашение займов, ранее выданных работнику</p>
+            <p>└── 3. Удержания по исполнительным листам</p>
+            <p>    ├── Алименты на несовершеннолетних детей</p>
+            <p>    └── Штрафы, судебные взыскания</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">1. Подоходный налог (Законодательство РА)</h3>
+        <p>В соответствии с Законом Республики Абхазия «О подоходном налоге с физических лиц» основная ставка подоходного налога составляет <b>10%</b>.</p>
+        
+        <p class="font-bold">Подоходным налогом облагаются:</p>
         <ul class="list-disc list-inside space-y-1 ml-4">
-          <li>Алименты и другие удержания по исполнительным листам.</li>
-          <li>Возврат сумм, выданных ранее под отчет (если сотрудник не предоставил авансовый отчет).</li>
-          <li>Погашение ранее выданных займов работнику.</li>
-          <li>Удержание суммы материального ущерба, нанесенного организации по вине работника.</li>
+          <li>Начисленный оклад и тарифные ставки</li>
+          <li>Премии и надбавки</li>
+          <li>Отпускные выплаты</li>
+          <li><b>Пособия по временной нетрудоспособности (больничные)</b> — внимание: в отличие от государственных пособий по беременности и родам, больничные листы облагаются подоходным налогом в полном объеме!</li>
         </ul>
-        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
-          <p class="text-sm text-amber-800 dark:text-amber-300"><b>⚠️ Формула к выплате:</b><br>Сумма на руки = Начисленная ЗП (оклад + премия + отпускные + больничные) − Подоходный налог − Прочие удержания.</p>
+        
+        <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm my-3">
+          <p>Подоходный налог (10%) = Итого начислено (все виды доходов) × 0,10</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">2. Страховой взнос с работника в Пенсионный фонд РА</h3>
+        <p>По законодательству РА непосредственно из заработной платы самого сотрудника удерживается <b>1%</b> в Пенсионный фонд РА.</p>
+        <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm my-3">
+          <p>Пенсионный взнос с работника (1%) = Начисленная оплата труда (без больничных) × 0,01</p>
+        </div>
+        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-3 rounded-r-xl my-3">
+          <p class="text-xs text-amber-800 dark:text-amber-300"><b>Примечание:</b> С сумм пособий по временной нетрудоспособности (больничных) пенсионный взнос не удерживается.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">3. Алименты и удержания по исполнительным документам</h3>
+        <p>Исчисляются после вычета подоходного налога.</p>
+        <p class="font-bold">Стандартные размеры алиментов на несовершеннолетних детей:</p>
+        <ul class="list-disc list-inside space-y-1 ml-4">
+          <li>На 1 ребенка — 25% (1/4) дохода</li>
+          <li>На 2 детей — 33,33% (1/3) дохода</li>
+          <li>На 3 и более детей — 50% (1/2) дохода</li>
+        </ul>
+        <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm my-3">
+          <p>База для алиментов = Начислено − Подоходный налог</p>
+          <p class="mt-1">Алименты = База для алиментов × % по исполнительному листу</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Сводная структура формирования выплаты («Начислено» vs «К выплате»)</h3>
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl font-mono text-sm">
+          <p class="mb-2">[ Начислено: Оклад + Премия + Отпускные + Больничные ] ← Кредит счёта 70</p>
+          <div class="ml-4 border-l-2 border-slate-400 pl-4 my-2">
+            <p>├── МИНУС: Подоходный налог (10%)</p>
+            <p>├── МИНУС: Взнос в ПФ с работника (1%)</p>
+            <p>├── МИНУС: Алименты / Исполнительные листы</p>
+            <p>└── МИНУС: Возврат подотчета / Займы</p>
+          </div>
+          <p class="mt-2 font-bold text-emerald-600 dark:text-emerald-400">[ Сумма к выдаче "На руки" (Нетто) ] ← Выплата из кассы/банка</p>
         </div>
       </div>
     </section>
 
     <!-- 6. Внебюджетные фонды -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Начисления на фонд заработной платы (Внебюджетные фонды РА)</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Начисления на фонд заработной платы (Внебюджетные фонды)</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Помимо удержаний из зарплаты сотрудника, организация <b>за свой счет (сверх начисленной зарплаты)</b> производит отчисления во внебюджетные фонды Республики Абхазия. Эти суммы <u>не вычитаются</u> из зарплаты работника, а являются дополнительными расходами предприятия.</p>
-        <p><b>Важнейшее правило:</b> Страховые взносы начисляются на <u>всю сумму начислений</u> в пользу работника: на основной оклад, на премии, на отпускные и на больничные листы.</p>
-        <p>Основные фонды и примерные ставки (уточняйте актуальные ставки в законе РА):</p>
-        <ul class="list-disc list-inside space-y-1 ml-4">
-          <li><b>Пенсионный фонд РА</b> (например, 22%) — на пенсионное обеспечение.</li>
-          <li><b>Фонд социального страхования РА</b> (например, 2.9%) — на оплату больничных листов и пособий.</li>
-          <li><b>Фонд обязательного медицинского страхования РА</b> (например, 5.1%) — на медицинское обслуживание.</li>
-        </ul>
-        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 my-4">
-          <h4 class="font-bold mb-2">Пример расчета взносов:</h4>
-          <p class="text-xs mb-2">Сотруднику начислено всего за месяц: 36 000 руб. (оклад 30 000 + премия 6 000). Общая ставка взносов = 30%.</p>
-          <p class="text-xs font-mono text-emerald-600 dark:text-emerald-400">Сумма взносов = 36 000 × 30% = <b>10 800 руб.</b> (Эту сумму платит организация сверх 36 000 руб.)</p>
+        <div class="bg-rose-50 dark:bg-rose-950/30 border-l-4 border-rose-500 p-4 rounded-r-xl my-4">
+          <p class="font-bold text-sm text-rose-800 dark:text-rose-300">⚠️ ГЛАВНОЕ ПРАВИЛО БУХГАЛТЕРА:</p>
+          <p class="text-sm text-rose-800 dark:text-rose-300 mt-2">Страховые взносы во внебюджетные фонды — это <b>НЕ удержания из зарплаты работника!</b> Это прямые расходы работодателя, которые начисляются сверху на фонд оплаты труда (ФОТ) и уплачиваются предприятием в бюджет за свой счет.</p>
         </div>
+
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl font-mono text-sm">
+          <p class="font-bold mb-2">Внебюджетные фонды Республики Абхазия (Взносы работодателя)</p>
+          <div class="ml-4 space-y-1">
+            <p>├── 1. Пенсионный фонд РА</p>
+            <p>├── 2. Фонд социального страхования РА (ФСС РА)</p>
+            <p>├── 3. Фонд обязательного медицинского страхования РА (ФОМС РА)</p>
+            <p>└── 4. Другие целевые социальные фонды (например, Фонд инвалидов ОВВНЯ)</p>
+          </div>
+        </div>
+
+        <p>Суммарный тариф обязательных страховых взносов работодателя в РА составляет <b>20%</b> от начисленного ФОТ (или 18% при внедрении единого социального платежа в соответствии с актуальными нормами законов РА).</p>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Сводная матрица налогообложения выплат сотрудникам</h3>
+        <p>Чтобы никогда не путаться, на какие выплаты начисляются налоги и взносы, используйте эту матрицу-шпаргалку:</p>
+        
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Вид выплат</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Удерживается Подоходный налог (10%)?</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Удерживается Взнос в ПФ с работника (1%)?</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Начисляются Страховые взносы работодателя (20%)?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">Оклад / Тарифная ставка</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">Премии и надбавки</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">Отпускные</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">Больничные (пособие по нетрудоспособности)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-emerald-600 dark:text-emerald-400">ДА</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-rose-600 dark:text-rose-400">НЕТ</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-rose-600 dark:text-rose-400">НЕТ (0%)</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2 font-bold">Материальная помощь (в пределах лимита)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-rose-600 dark:text-rose-400">НЕТ (освобождена)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-rose-600 dark:text-rose-400">НЕТ</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-rose-600 dark:text-rose-400">НЕТ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
+          <p class="font-bold text-sm text-blue-800 dark:text-blue-300">Почему на больничный не начисляются страховые взносы?</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2">Пособие по нетрудоспособности — это социальная выплата страхового характера (компенсация утраченного здоровья), а не оплата за трудовую функцию. Взносы в фонды начисляются строго на выплаты за выполненный труд.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Бухгалтерские проводки по начислению страховых взносов</h3>
+        <p>Страховые взносы относят на те же счета затрат, куда начислялась заработная плата конкретного сотрудника:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4 font-mono text-sm">
+          <li>Дебет 20 (25, 26, 44) — Кредит 69.01 — начислены взносы в Фонд социального страхования (ФСС РА)</li>
+          <li>Дебет 20 (25, 26, 44) — Кредит 69.02 — начислены взносы в Пенсионный фонд РА</li>
+          <li>Дебет 20 (25, 26, 44) — Кредит 69.03 — начислены взносы в Фонд обязательного медицинского страхования (ФОМС РА)</li>
+        </ul>
       </div>
     </section>
 
     <!-- 7. Бухгалтерский учет -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Бухгалтерский учёт (Счета 70, 68, 69)</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Бухгалтерский учёт (Счёт 70)</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Для учета расчетов с персоналом по оплате труда используется <b>пассивный счет 70 «Расчеты с персоналом по оплате труда»</b>.</p>
-        <p>Для учета расчетов с бюджетом по подоходному налогу используется <b>пассивный счет 68 «Расчеты с бюджетом»</b>.</p>
-        <p>Для учета расчетов по социальному страхованию (внебюджетные фонды) используется <b>пассивный счет 69 «Расчеты по социальному страхованию и обеспечению»</b>.</p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Корреспонденция по счету 70</h3>
-            <div class="space-y-2 text-xs">
-              <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
-                <p class="font-semibold">Дебет 70 — Кредит:</p>
-                <ul class="mt-1 space-y-1 list-disc list-inside">
-                  <li>68 — Удержан подоходный налог</li>
-                  <li>73 — Удержан невозвращенный подотчет / займ</li>
-                  <li>76 — Депонирована невыплаченная ЗП</li>
-                  <li>50 — Выдана ЗП из кассы</li>
-                </ul>
-              </div>
-              <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
-                <p class="font-semibold">Кредит 70 — Дебет:</p>
-                <ul class="mt-1 space-y-1 list-disc list-inside">
-                  <li>20 — Начислена ЗП рабочим основного пр-ва</li>
-                  <li>26 — Начислена ЗП административному персоналу</li>
-                  <li>44 — Начислена ЗП персоналу торговли</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h3 class="font-bold text-lg text-purple-600 dark:text-purple-400 mb-3">Корреспонденция по счету 69</h3>
-            <div class="space-y-2 text-xs">
-              <div class="p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded border-l-4 border-emerald-500">
-                <p class="font-semibold">Дебет 69 — Кредит:</p>
-                <ul class="mt-1 space-y-1 list-disc list-inside">
-                  <li>51 — Перечислены взносы в фонды с р/с</li>
-                </ul>
-              </div>
-              <div class="p-2 bg-rose-50 dark:bg-rose-950/30 rounded border-l-4 border-rose-500">
-                <p class="font-semibold">Кредит 69 — Дебет:</p>
-                <ul class="mt-1 space-y-1 list-disc list-inside">
-                  <li>20 — Начислены взносы на основное пр-во</li>
-                  <li>26 — Начислены взносы на общехозяйственные нужды</li>
-                  <li>44 — Начислены взносы на нужды торговли</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <p>Для учёта всех видов расчётов с сотрудниками по оплате труда используется <b>Счёт 70 «Расчёты с персоналом по оплате труда»</b>.</p>
+        
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-2">Характеристика счёта 70:</p>
+          <ul class="list-disc list-inside space-y-2 text-sm">
+            <li><b>Тип счёта:</b> Пассивный</li>
+            <li><b>Кредитовое сальдо (по Кредиту):</b> отражает текущую задолженность организации перед сотрудниками по невыплаченной заработной плате на начало/конец периода</li>
+            <li><b>Оборот по Кредиту:</b> отражает все начисления в пользу работников (оклад, премии, отпускные, больничные)</li>
+            <li><b>Оборот по Дебету:</b> отражает все удержания (налоги, алименты, возвраты) и фактическую выплату денежных средств</li>
+          </ul>
         </div>
-      </div>
 
-      <!-- Т-образные счета -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h3 class="font-bold text-center mb-3 text-sm bg-blue-100 dark:bg-blue-900/30 p-2 rounded">СЧЁТ 70 «Расчеты с персоналом по оплате труда»</h3>
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Т-образная схема счёта 70</h3>
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl font-mono text-xs overflow-x-auto">
+          <p class="text-center font-bold mb-3">Счёт 70 «Расчёты с персоналом по оплате труда»</p>
           <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
             <div class="p-3 border-r border-slate-400 dark:border-slate-600">
-              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
-              <div class="space-y-1 text-[10px]">
-                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Удержан подоходный налог (68)</span><span>3 600</span></div>
-                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Выдана ЗП из кассы (50)</span><span>32 400</span></div>
-                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1"><span>Оборот по Дт</span><span>36 000</span></div>
+              <p class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400">Дебет</p>
+              <div class="space-y-1">
+                <p class="font-bold text-slate-500">1. Удержания:</p>
+                <p class="ml-2">- Подоходный налог (Кт 68)</p>
+                <p class="ml-2">- Взнос в ПФ с работника (Кт 69)</p>
+                <p class="ml-2">- Алименты / Исполнительные (Кт 76)</p>
+                <p class="ml-2">- Возврат подотчета/займа (Кт 71, 73)</p>
+                <p class="font-bold text-slate-500 mt-2">2. Депонирование незабранной ЗП (Кт 76.04)</p>
+                <p class="font-bold text-slate-500 mt-2">3. Выплата зарплаты:</p>
+                <p class="ml-2">- Из кассы (Кт 50)</p>
+                <p class="ml-2">- С расчетного счета (Кт 51)</p>
               </div>
             </div>
             <div class="p-3">
-              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
-              <div class="space-y-1 text-[10px]">
-                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Начислена ЗП (20, 26, 44)</span><span>36 000</span></div>
-                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1"><span>Оборот по Кт</span><span>36 000</span></div>
+              <p class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400">Кредит</p>
+              <div class="space-y-1">
+                <p class="font-bold text-slate-500">Сальдо начальное (Сн) — Долг предприятия перед персоналом</p>
+                <p class="font-bold text-slate-500 mt-2">1. Начисления:</p>
+                <p class="ml-2">- Оклад/Премии основных рабочих (Дт 20)</p>
+                <p class="ml-2">- Зарплата цехового персонала (Дт 25)</p>
+                <p class="ml-2">- Зарплата админ. персонала (Дт 26)</p>
+                <p class="ml-2">- Зарплата продавцов/склада (Дт 44)</p>
+                <p class="ml-2">- Больничные за счет ФСС (Дт 69.01)</p>
+                <p class="ml-2">- Прочие доходы (Дт 91.02)</p>
+                <p class="font-bold text-slate-500 mt-2">Сальдо конечное (Ск) — Задолженность по зарплате на конец месяца</p>
               </div>
             </div>
-          </div>
-          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
-            <p class="font-bold">Сальдо на конец месяца: 0 руб. (все начислено и выплачено/удержано).</p>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h3 class="font-bold text-center mb-3 text-sm bg-purple-100 dark:bg-purple-900/30 p-2 rounded">СЧЁТ 69 «Расчеты по соц. страхованию»</h3>
-          <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
-            <div class="p-3 border-r border-slate-400 dark:border-slate-600">
-              <h4 class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400 text-xs">Дебет</h4>
-              <div class="space-y-1 text-[10px]">
-                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Перечислено в фонды (51)</span><span>10 800</span></div>
-                <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1"><span>Оборот по Дт</span><span>10 800</span></div>
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Полная таблица корреспонденций счёта 70</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Содержание хозяйственной операции</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2">Дебет</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2">Кредит</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Первичный документ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="4" class="font-bold bg-slate-50 dark:bg-slate-700">1. Начисления (Кредит 70)</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислена ЗП рабочим основного производства</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">20</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Табель (Т-13), Расчетная ведомость (Т-51)</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислена ЗП управленческому персоналу</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">26</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Табель (Т-13), Расчетная ведомость (Т-51)</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислена ЗП сотрудникам отдела продаж/склада</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">44</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Табель (Т-13), Расчетная ведомость (Т-51)</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислена премия из прочих расходов</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">91.02</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Приказ о премировании</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислено пособие по больничному за счет ФСС</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">69.01</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Листок нетрудоспособности, Расчет пособия</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="4" class="font-bold bg-slate-50 dark:bg-slate-700">2. Удержания (Дебет 70)</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Удержан подоходный налог (10%)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">68.01</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Расчетная ведомость (Т-51)</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Удержан пенсионный взнос с работника (1%)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">69.02</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Расчетная ведомость (Т-51)</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Удержаны алименты по исполнительному листу</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">76.05</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Исполнительный лист, Ведомость</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Удержан неотработанный аванс/подотчет</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">71</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Авансовый отчет, Приказ руководителя</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Удержан платеж по займу работника</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">73.01</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Договор займа, Расчетная ведомость</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2" colspan="4" class="font-bold bg-slate-50 dark:bg-slate-700">3. Выплата и депонирование (Дебет 70)</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Выплачена зарплата наличными из кассы</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">50</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Платежная ведомость (Т-53), Расходный кассовый ордер (РКО)</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Перечислена зарплата на карты в банк</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">51</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Платежное поручение, Выписка банка</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Депонирована не полученная в срок зарплата</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">76.04</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Реестр депонированных сумм</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Практическая Т-схема счёта 70 (Числовой пример)</h3>
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-2">Дано:</p>
+          <ul class="text-sm space-y-1 mb-3">
+            <li>• Начальный долг по зарплате (Сн) = 0 руб.</li>
+            <li>• Начислена зарплата: 100 000 руб. (Кт 70)</li>
+            <li>• Удержан подоходный налог (10%): 10 000 руб. (Дт 70 Кт 68)</li>
+            <li>• Удержан пенсионный взнос (1%): 1 000 руб. (Дт 70 Кт 69)</li>
+            <li>• Выплачено через банк: 89 000 руб. (Дт 70 Кт 51)</li>
+          </ul>
+          
+          <div class="bg-slate-100 dark:bg-slate-900/50 p-4 rounded font-mono text-xs">
+            <p class="text-center font-bold mb-3">Счёт 70 «Расчёты с персоналом по оплате труда»</p>
+            <div class="grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600">
+              <div class="p-3 border-r border-slate-400 dark:border-slate-600">
+                <p class="font-bold text-center mb-2 text-emerald-600 dark:text-emerald-400">Дебет</p>
+                <div class="space-y-1">
+                  <p>(2) Кт 68 — 10 000 руб. (Подох)</p>
+                  <p>(3) Кт 69 — 1 000 руб. (ПФ 1%)</p>
+                  <p>(4) Кт 51 — 89 000 руб. (Выплата)</p>
+                  <p class="mt-2 pt-2 border-t border-slate-400 dark:border-slate-600 font-bold">Оборот Дт = 100 000 руб.</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400">Кредит</p>
+                <div class="space-y-1">
+                  <p>Сн = 0 руб.</p>
+                  <p>(1) Дт 26 — 100 000 руб. (Начислено)</p>
+                  <p class="mt-2 pt-2 border-t border-slate-400 dark:border-slate-600 font-bold">Оборот Кт = 100 000 руб.</p>
+                  <p class="mt-2 pt-2 border-t border-slate-400 dark:border-slate-600 font-bold text-emerald-600 dark:text-emerald-400">Ск = 0 руб. (Долга нет)</p>
+                </div>
               </div>
             </div>
-            <div class="p-3">
-              <h4 class="font-bold text-center mb-2 text-rose-600 dark:text-rose-400 text-xs">Кредит</h4>
-              <div class="space-y-1 text-[10px]">
-                <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Начислены взносы (20, 26, 44)</span><span>10 800</span></div>
-                <div class="flex justify-between font-bold bg-rose-100 dark:bg-rose-900/50 p-1"><span>Оборот по Кт</span><span>10 800</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 p-2 bg-slate-100 dark:bg-slate-700 rounded text-xs">
-            <p class="font-bold">Сальдо на конец месяца: 0 руб. (взносы полностью перечислены).</p>
           </div>
         </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Аналитический учёт: Журнал-ордер и ведомость по счёту 70</h3>
+        <p>Ведомость по счёту 70 ведётся в разрезе каждого конкретного сотрудника (табельного номера). Бухгалтер должен точно знать, сколько компания должна Петрову, а сколько — Иванову.</p>
+        <p>Журнал-ордер № 10 (или 10/1) обобщает данные кредитового оборота счёта 70 за месяц в разрезе счетов затрат (Дт 20, 23, 25, 26, 44 — Кт 70) для перенесения итоговых сумм в Главную книгу.</p>
       </div>
     </section>
 
@@ -276,160 +693,298 @@
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">8. Прочие операции с персоналом</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Помимо начисления и выплаты заработной платы, бухгалтерия ведет учет прочих расчетов с сотрудниками. Для этого используется <b>счет 73 «Расчеты с персоналом по прочим операциям»</b>.</p>
-        
-        <div class="space-y-3 text-sm">
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h4 class="font-bold mb-2">Выдача и погашение займов работникам:</h4>
-            <ul class="space-y-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
-              <li>Дт 73 — Кт 50 (51): Выдан займ работнику из кассы (с р/с)</li>
-              <li>Дт 70 — Кт 73: Погашение займа путем удержания из заработной платы</li>
-            </ul>
-          </div>
+        <p>Расчеты с сотрудниками не ограничиваются только зарплатой. Существуют особые операции, регулируемые счетами 73 и 76.</p>
 
-          <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h4 class="font-bold mb-2">Депонирование заработной платы:</h4>
-            <p class="text-xs mb-2">Если сотрудник не явился за получением заработной платы в установленные сроки, кассир ставит на ведомости штамп «Депонировано». Сумма невыплаченной зарплаты списывается со счета 70 на счет 76.</p>
-            <ul class="space-y-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
-              <li>Дт 70 — Кт 76 «Расчеты с разными дебиторами и кредиторами» (субсчет «Расчеты с депонентами»): Депонирована невыплаченная ЗП</li>
-              <li>Дт 76 — Кт 51: Перечислена депонированная сумма на спецсчет в банке (при необходимости по кассовой дисциплине)</li>
-              <li>Дт 76 — Кт 50: Выплата депонированной суммы при явке сотрудника</li>
-            </ul>
-          </div>
-        </div>
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">1. Выдача займов работникам (Счёт 73.01)</h3>
+        <p>Если компания выдает сотруднику процентный или беспроцентный денежный заем, используются следующие проводки:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4 font-mono text-sm">
+          <li>Дебет 73.01 — Кредит 50 (51) — выдан денежный заем сотруднику</li>
+          <li>Дебет 70 — Кредит 73.01 — ежемесячное удержание суммы погашения займа из зарплаты работника</li>
+          <li>Дебет 50 (51) — Кредит 73.01 — внесение сотрудником взноса в погашение займа наличными или на счет</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">2. Материальная помощь</h3>
+        <p>Материальная помощь — это социальная выплата при наступлении особых жизненных событий (рождение ребенка, свадьба, стихийное бедствие, смерть родственника).</p>
+        <ul class="list-disc list-inside space-y-2 ml-4 font-mono text-sm">
+          <li>Дебет 91.02 (или 84) — Кредит 73.02 (или 70) — начислена материальная помощь сотруднику</li>
+          <li>Дебет 73.02 (70) — Кредит 50 (51) — выплачена материальная помощь из кассы или банка</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">3. Депонирование заработной платы (Счёт 76.04)</h3>
+        <p>Если зарплата выдается из кассы наличными по ведомости Т-53, законодательство отводит на выдачу денег 3 рабочих дня.</p>
+        <p>Если сотрудник не явился за зарплатой (болезнь, командировка, отпуск):</p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li>Кассир напротив фамилии сотрудника в ведомости Т-53 ставит штамп или отметку «Депонировано».</li>
+          <li>Сумма возвращается из кассы обратно на расчетный счет в банк.</li>
+          <li>Бухгалтер делает проводку депонирования: <b>Дебет 70 — Кредит 76.04 «Расчёты по депонированным суммам»</b> — сформирована кредиторская задолженность по неполученной зарплате.</li>
+        </ol>
+        <p>При обращении сотрудника за депонированной зарплатой:</p>
+        <p class="font-mono text-sm"><b>Дебет 76.04 — Кредит 50 (51)</b> — депонированная зарплата выдана работнику из кассы или перечислена на карту.</p>
       </div>
     </section>
 
     <!-- 9. Комплексный пример -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">9. Комплексный пример операций за месяц</h2>
-      <div class="space-y-3 text-sm">
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">9. Комплексный пример (Сквозная задача)</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
+          <p class="font-bold text-sm text-blue-800 dark:text-blue-300">Условие задачи:</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2">В ООО «Апсны-Трейд» работает менеджер отдела продаж Бения Г. Р.</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2">За текущий месяц ему согласно документам начислено:</p>
+          <ul class="list-disc list-inside text-sm text-blue-800 dark:text-blue-300 ml-4 mt-2 space-y-1">
+            <li>Оклад за отработанное время (по табелю): 40 000 руб.</li>
+            <li>Премия за выполнение плана продаж: 10 000 руб.</li>
+            <li>Пособие по больничному листу (всего 5 дней болезни): 5 000 руб. (в т.ч. первые 3 дня за счет работодателя — 3 000 руб., 2 дня за счет ФСС — 2 000 руб.)</li>
+          </ul>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2">Сотрудник имеет 1 ребенка, алименты не платит.</p>
+          <p class="text-sm text-blue-800 dark:text-blue-300 mt-2">Ставки: Подоходный налог — 10%, Взнос в ПФ с работника — 1%, Взносы работодателя во фонды — 20%.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Пошаговый расчёт:</h3>
+        
         <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h4 class="font-bold mb-2">Ситуация: Полный цикл по сотруднику Иванову И.И.</h4>
-          <p class="text-xs mb-2">Начислена зарплата рабочим основного производства: оклад 30 000 руб. + премия 6 000 руб. (Итого 36 000 руб.). Удержан подоходный налог 10% (3 600 руб.). Выдано из кассы 32 400 руб. На сумму начислений (36 000 руб.) начислены взносы во внебюджетные фонды РА в сумме 30% (10 800 руб.), которые затем перечислены с расчетного счета.</p>
-          <ol class="space-y-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
-            <li>1. Дт 20 — Кт 70: 36 000 руб. (Начислена ЗП рабочим: оклад + премия)</li>
-            <li>2. Дт 70 — Кт 68: 3 600 руб. (Удержан подоходный налог)</li>
-            <li>3. Дт 70 — Кт 50: 32 400 руб. (Выдана ЗП из кассы)</li>
-            <li>4. Дт 20 — Кт 69: 10 800 руб. (Начислены взносы во внебюджетные фонды РА)</li>
-            <li>5. Дт 69 — Кт 51: 10 800 руб. (Перечислены взносы в фонды с расчетного счета)</li>
-          </ol>
+          <p class="font-bold mb-2">Шаг 1. Расчёт общей начисленной суммы (Брутто)</p>
+          <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm">
+            <p>Начислено всего = 40 000 (Оклад) + 10 000 (Премия) + 5 000 (Больничный) = <b class="text-emerald-600 dark:text-emerald-400">55 000 руб.</b></p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-2">Шаг 2. Расчёт удержаний из зарплаты</p>
+          <div class="space-y-3">
+            <div>
+              <p class="text-sm font-bold">Подоходный налог (10%):</p>
+              <p class="text-xs mb-1">Облагаются все выплаты (включая больничный!)</p>
+              <div class="bg-slate-100 dark:bg-slate-900/50 p-2 rounded font-mono text-xs">
+                <p>Подоходный налог = 55 000 × 10% = <b>5 500 руб.</b></p>
+              </div>
+            </div>
+            <div>
+              <p class="text-sm font-bold">Пенсионный взнос с работника (1%):</p>
+              <p class="text-xs mb-1">Больничный не входит в базу!</p>
+              <div class="bg-slate-100 dark:bg-slate-900/50 p-2 rounded font-mono text-xs">
+                <p>База для ПФ = 40 000 + 10 000 = 50 000 руб.</p>
+                <p>Взнос в ПФ = 50 000 × 1% = <b>500 руб.</b></p>
+              </div>
+            </div>
+            <div class="bg-emerald-50 dark:bg-emerald-950/30 p-2 rounded">
+              <p class="text-sm font-bold">Итого удержаний:</p>
+              <p class="text-xs font-mono">Всего удержано = 5 500 + 500 = <b class="text-emerald-600 dark:text-emerald-400">6 000 руб.</b></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-2">Шаг 3. Расчёт суммы к выдаче «На руки» (Нетто)</p>
+          <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm">
+            <p>К выплате = 55 000 (Начислено) − 6 000 (Удержано) = <b class="text-emerald-600 dark:text-emerald-400">49 000 руб.</b></p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+          <p class="font-bold mb-2">Шаг 4. Расчёт страховых взносов работодателя (20%)</p>
+          <p class="text-sm mb-2">Взносы начисляются на оклад и премию (50 000 руб.). На больничный (5 000 руб.) взносы не начисляются!</p>
+          <div class="bg-slate-100 dark:bg-slate-900/50 p-3 rounded font-mono text-sm">
+            <p>Взносы работодателя во фонды = 50 000 × 20% = <b class="text-emerald-600 dark:text-emerald-400">10 000 руб.</b></p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Журнал хозяйственных операций (Проводки):</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-700">
+                <th class="border border-slate-300 dark:border-slate-600 p-2">№</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2 text-left">Содержание операции</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2">Дт</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2">Кт</th>
+                <th class="border border-slate-300 dark:border-slate-600 p-2">Сумма, руб.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">1</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислен оклад и премия менеджера по продажам</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">44</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">50 000</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">2</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислено пособие по больничному за счет работодателя (3 дня)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">44</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">3 000</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">3</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислено пособие по больничному за счет средств ФСС РА (2 дня)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">69.01</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">2 000</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">4</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Удержан подоходный налог (10%) из доходов работника</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">68.01</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">5 500</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">5</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Удержан пенсионный взнос (1%) из заработной платы работника</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">69.02</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">500</td>
+              </tr>
+              <tr class="bg-slate-50 dark:bg-slate-900/30">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">6</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Начислены страховые взносы работодателя во внебюджетные фонды (20%)</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">44</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">69</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">10 000</td>
+              </tr>
+              <tr class="bg-white dark:bg-slate-800">
+                <td class="border border-slate-300 dark:border-slate-600 p-2">7</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">Выплачена заработная плата с расчетного счета на банковскую карту</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">70</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2 text-center">51</td>
+                <td class="border border-slate-300 dark:border-slate-600 p-2">49 000</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <!-- 10. Проверка знаний -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">10. Проверка знаний</h2>
+      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">10. Проверка знаний (10 Тестов)</h2>
 
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">1. Какой счет используется для учета расчетов с персоналом по оплате труда?</p>
+        <p class="font-semibold mb-3">1. Какой первично-учётный документ служит непосредственным основанием для расчёта оклада за отработанные дни месяца?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 68 «Расчеты с бюджетом»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 69 «Расчеты по социальному страхованию»</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 70 «Расчеты с персоналом по оплате труда»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 73 «Расчеты с персоналом по прочим операциям»</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Трудовой договор</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Табель учёта рабочего времени (Форма Т-12/Т-13)</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Расчётно-платёжная ведомость (Форма Т-53)</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Штатное расписание</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">2. Какая проводка составляется при начислении заработной платы рабочим основного производства?</p>
+        <p class="font-semibold mb-3">2. По какому экономическому типу квалифицируется счёт 70 «Расчёты с персоналом по оплате труда»?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 70 — Кт 50</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 20 — Кт 70</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 20 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 20</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Активный</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Пассивный</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Активно-пассивный</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Регулирующий</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">3. Какая проводка составляется при удержании подоходного налога из заработной платы сотрудника?</p>
+        <p class="font-semibold mb-3">3. По какой формуле рассчитывается сумма простой повременной оплаты труда при неполностью отработанном месяце?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Оклад × Количество произведенной продукции</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) (Оклад / Рабочие дни по графику) × Фактически отработанные дни</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Сдельная расценка × Часы работы</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Оклад − 10%</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">4. Каким документом оформляется фактическая выдача наличных денежных средств из кассы компании персоналу?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Расчётная ведомость Т-51</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Приходный кассовый ордер (ПКО)</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Платёжная ведомость Т-53 (или Расчётно-платёжная Т-49)</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Авансовый отчёт</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">5. Какая ставка подоходного налога с заработной платы установлена базовым законодательством Республики Абхазия?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) 13%</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) 20%</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) 10%</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) 15%</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">6. Облагается ли пособие по временной нетрудоспособности (больничный) подоходным налогом и начисляются ли на него страховые взносы работодателя?</p>
+        <div class="space-y-2 text-sm">
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Облагается подоходным налогом, страховые взносы НЕ начисляются</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Не облагается подоходным налогом, страховые взносы начисляются</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Облагается и налогом, и страховыми взносами</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Полностью освобождено от налогов и взносов</button>
+        </div>
+        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+        <p class="font-semibold mb-3">7. Какая бухгалтерская проводка отражает удержание подоходного налога из начисленной заработной платы?</p>
         <div class="space-y-2 text-sm">
           <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 68 — Кт 70</button>
           <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 70 — Кт 68</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 70 — Кт 51</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 20 — Кт 68</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 20 — Кт 68</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 51</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">4. На какой счет относятся начисления организации во внебюджетные фонды Республики Абхазия?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 68 «Расчеты с бюджетом»</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 69 «Расчеты по социальному страхованию и обеспечению»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 70 «Расчеты с персоналом по оплате труда»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 96 «Резервы предстоящих расходов»</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
-      </div>
-
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">5. Какая проводка составляется при начислении взносов во внебюджетные фонды на зарплату административного персонала?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 20 — Кт 69</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 69 — Кт 51</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 26 — Кт 69</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 69</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
-      </div>
-
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">6. Сотрудник не явился за получением заработной платы в установленный срок. Какая проводка составляется для депонирования суммы?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 50 — Кт 70</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 70 — Кт 76</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 76 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 50</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
-      </div>
-
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">7. Какой документ используется только для начисления заработной платы (без ее выплаты)?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Расчетно-платежная ведомость (Т-53)</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Расчетная ведомость (Т-51)</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Платежная ведомость</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Приходный кассовый ордер</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
-      </div>
-
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">8. Организация выдала работнику займ из кассы. Какая проводка?</p>
+        <p class="font-semibold mb-3">8. Какая запись делается в бухгалтерском учёте при депонировании не полученной сотрудником заработной платы?</p>
         <div class="space-y-2 text-sm">
           <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 70 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 71 — Кт 50</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 73 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 50 — Кт 73</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 51 — Кт 70</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 70 — Кт 76.04</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 76.04 — Кт 50</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">9. Работнику удержали из заработной платы сумму ранее выданного займа. Какая проводка?</p>
+        <p class="font-semibold mb-3">9. На какой счёт относятся расходы работодателя по начислению страховых взносов во внебюджетные фонды с зарплаты административного персонала?</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 73 — Кт 70</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 70 — Кт 73</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 70 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 73 — Кт 50</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 70</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 26</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 99</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 84</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
       </div>
 
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">10. Задача. Начислена зарплата сотруднику 50 000 руб. Удержан подоходный налог 10% (5 000 руб.). Выдано из кассы 45 000 руб. Какие проводки нужно составить?</p>
+        <p class="font-semibold mb-3">10. Удержания по алиментам на детей рассчитываются исходя из:</p>
         <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 20 — Кт 70: 50 000; Дт 70 — Кт 50: 45 000</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 20 — Кт 70: 50 000; Дт 70 — Кт 68: 5 000; Дт 70 — Кт 50: 45 000</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 20 — Кт 70: 50 000; Дт 68 — Кт 70: 5 000; Дт 70 — Кт 50: 45 000</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 70 — Кт 20: 50 000; Дт 70 — Кт 68: 5 000; Дт 50 — Кт 70: 45 000</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Полной начисленной суммы брутто-зарплаты</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Суммы оклада без учета премий</button>
+          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Начисленной суммы за вычетом удерживаемого подоходного налога</button>
+          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Суммы, оставшейся после уплаты всех страховых взносов работодателя</button>
         </div>
         <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      </div>
+
+      <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
+        <p class="font-bold text-sm text-emerald-800 dark:text-emerald-300 mb-2">Ответы и пояснения:</p>
+        <ol class="text-xs text-emerald-800 dark:text-emerald-300 space-y-1 list-decimal list-inside">
+          <li><b>Б.</b> Основанием для учета отработанного времени является Табель (Т-12/Т-13).</li>
+          <li><b>Б.</b> Счёт 70 — пассивный. Кредитовое сальдо показывает задолженность организации перед работниками.</li>
+          <li><b>Б.</b> Формула повременной оплаты учитывает дневную ставку (оклад / рабочие дни) и число отработанных дней.</li>
+          <li><b>В.</b> Ведомость Т-51 — только для расчётов, а выплата оформляется ведомостью Т-53 или Т-49.</li>
+          <li><b>В.</b> Ставка подоходного налога в Республике Абхазия составляет 10%.</li>
+          <li><b>А.</b> Пособие по нетрудоспособности облагается подоходным налогом (10%), но страховые взносы во фонды на него НЕ начисляются, так как это социальная выплата.</li>
+          <li><b>Б.</b> Удержание налога уменьшает долг перед сотрудником (Дт 70) и увеличивает долг перед бюджетом (Кт 68).</li>
+          <li><b>В.</b> Депонирование оформляется проводкой Дт 70 — Кт 76.04.</li>
+          <li><b>Б.</b> Страховые взносы начисляются на те же счета затрат, что и сама зарплата (для админперсонала — Дт 26).</li>
+          <li><b>В.</b> Алименты рассчитываются строго из «чистого» дохода сотрудника после удержания подоходного налога.</li>
+        </ol>
       </div>
     </section>
 
