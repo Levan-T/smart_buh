@@ -1,0 +1,218 @@
+/* ==========================================
+   ЕДИНЫЕ СТИЛИ КУРСА smart_buh
+   ========================================== */
+
+/* Подключение шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Базовые стили */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+code, .font-mono, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Заголовки уроков */
+h1 {
+  @apply text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 leading-tight;
+}
+
+h2 {
+  @apply text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2 mt-8;
+}
+
+h3 {
+  @apply text-xl font-bold text-blue-600 dark:text-blue-400 mt-6;
+}
+
+/* Информационные блоки */
+.info-block {
+  @apply p-4 rounded-xl my-4 border-l-4;
+}
+
+.info-block.blue {
+  @apply bg-blue-50 dark:bg-blue-950/30 border-blue-500 text-blue-800 dark:text-blue-300;
+}
+
+.info-block.amber {
+  @apply bg-amber-50 dark:bg-amber-950/30 border-amber-500 text-amber-800 dark:text-amber-300;
+}
+
+.info-block.emerald {
+  @apply bg-emerald-50 dark:bg-emerald-950/30 border-emerald-500 text-emerald-800 dark:text-emerald-300;
+}
+
+.info-block.gray {
+  @apply bg-slate-100 dark:bg-slate-800/50 border-slate-400 text-slate-800 dark:text-slate-300;
+}
+
+/* Таблицы */
+.data-table {
+  @apply w-full text-sm border-collapse border border-slate-300 dark:border-slate-600 my-4;
+}
+
+.data-table thead {
+  @apply bg-gradient-to-r from-blue-600 to-emerald-600 text-white;
+}
+
+.data-table th {
+  @apply border border-slate-300 dark:border-slate-600 p-3 text-left font-bold;
+}
+
+.data-table td {
+  @apply border border-slate-300 dark:border-slate-600 p-3;
+}
+
+.data-table tbody tr:nth-child(even) {
+  @apply bg-slate-50 dark:bg-slate-900/30;
+}
+
+.data-table tbody tr:nth-child(odd) {
+  @apply bg-white dark:bg-slate-800;
+}
+
+/* Т-счета */
+.t-account {
+  @apply bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 my-6;
+}
+
+.t-account-header {
+  @apply text-center mb-3 text-sm font-bold p-2 rounded;
+}
+
+.t-account-header.debit {
+  @apply bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300;
+}
+
+.t-account-header.credit {
+  @apply bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300;
+}
+
+.t-account-grid {
+  @apply grid grid-cols-2 gap-0 border-2 border-slate-400 dark:border-slate-600;
+}
+
+.t-account-side {
+  @apply p-3;
+}
+
+.t-account-side.left {
+  @apply border-r border-slate-400 dark:border-slate-600;
+}
+
+.t-account-side-title {
+  @apply font-bold text-center mb-2 text-xs;
+}
+
+.t-account-side-title.debit {
+  @apply text-emerald-600 dark:text-emerald-400;
+}
+
+.t-account-side-title.credit {
+  @apply text-rose-600 dark:text-rose-400;
+}
+
+.t-account-item {
+  @apply flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1 text-xs;
+}
+
+.t-account-total {
+  @apply flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1 mt-2 text-xs;
+}
+
+/* Тесты */
+.quiz-question {
+  @apply bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mb-4;
+}
+
+.quiz-question-title {
+  @apply font-semibold text-slate-900 dark:text-white mb-3;
+}
+
+.quiz-option {
+  @apply w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition mb-2;
+}
+
+.quiz-option.correct {
+  @apply bg-emerald-100 dark:bg-emerald-900/50 border-emerald-500;
+}
+
+.quiz-option.incorrect {
+  @apply bg-rose-100 dark:bg-rose-900/50 border-rose-500;
+}
+
+.quiz-feedback {
+  @apply mt-3 p-3 rounded-xl text-sm font-bold hidden;
+}
+
+.quiz-feedback.correct {
+  @apply bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800;
+}
+
+.quiz-feedback.incorrect {
+  @apply bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800;
+}
+
+/* Флеш-карточки */
+.flashcard {
+  @apply h-48 cursor-pointer;
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  @apply relative w-full h-full transition-transform duration-600;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  @apply absolute w-full h-full rounded-xl shadow-md flex flex-col items-center justify-center p-6 text-white;
+  backface-visibility: hidden;
+}
+
+.flashcard-front {
+  @apply bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700;
+}
+
+.flashcard-back {
+  @apply bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700;
+  transform: rotateY(180deg);
+}
+
+.flashcard:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  h1 {
+    @apply text-2xl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  .data-table {
+    @apply text-xs;
+  }
+  
+  .data-table th,
+  .data-table td {
+    @apply p-2;
+  }
+}
