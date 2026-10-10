@@ -14,12 +14,17 @@
   </script>
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
-
-  <!-- ДОБАВЛЕНО: Стили для 3D флеш-карточек -->
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  
+  <!-- Единые стили -->
+  <link rel="stylesheet" href="styles.css">
+  
   <style>
+    /* Формат A4 (860px) */
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+    
+    /* Стили для флеш-карточек (сохранены из оригинала, так как они специфичны) */
     .flashcard { perspective: 1000px; }
     .flashcard-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
     .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
@@ -30,16 +35,13 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
 
-  <!-- Шапка -->
   <div id="smart-header"></div>
 
-  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+  <main class="mx-auto px-4 py-8 space-y-12">
 
     <!-- Заголовок -->
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 leading-tight">
-        УРОК 2. Понятие бухгалтерского счета и плана счетов
-      </h1>
+      <h1>УРОК 2. Понятие бухгалтерского счета и плана счетов</h1>
       <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
         Изучаем устройство бухгалтерских счетов, двойную запись, разделение на Дебет и Кредит, а также единую систему Плана счетов.
       </p>
@@ -47,9 +49,7 @@
 
     <!-- Раздел 1 -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>1.</span> Зачем нужна система счетов?
-      </h2>
+      <h2>1. Зачем нужна система счетов?</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p>Бухгалтерский учет невозможен без системы, позволяющей упорядочить огромное количество разнородных операций хозяйственной жизни организации. Каждый день на предприятии происходят десятки, а то и сотни операций: поступают материалы, отпускаются в производство, начисляется зарплата, приходят деньги от покупателей, уходят платежи поставщикам и так далее.</p>
         <p>Если бы бухгалтер для каждой операции придумывал свое собственное название и порядок учета, очень быстро возник бы хаос. Невозможно было бы сопоставить данные разных организаций, проверить отчетность или понять, что именно отражено в тех или иных записях.</p>
@@ -57,28 +57,28 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-slate-900 dark:text-white">Синтетические счета</h3>
+        <div class="info-block gray">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="!mt-0 !mb-0 text-base">Синтетические счета</h3>
             <span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 font-semibold">Обобщение</span>
           </div>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p class="text-sm">
             Обобщают информацию об объектах учета только в денежном выражении (например, счет 10 «Материалы» показывает общую стоимость всех материалов).
           </p>
         </div>
-        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-2">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-slate-900 dark:text-white">Аналитические счета</h3>
+        <div class="info-block gray">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="!mt-0 !mb-0 text-base">Аналитические счета</h3>
             <span class="text-xs px-2 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 font-semibold">Детализация</span>
           </div>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p class="text-sm">
             Детализируют конкретные показатели синтетических счетов. Открываются в дополнение к ним для получения частных показателей по каждому отдельному виду имущества, обязательств или процессов (в денежном и натуральном выражении).
           </p>
         </div>
       </div>
 
-      <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
-        <p class="text-sm text-emerald-800 dark:text-emerald-300">
+      <div class="info-block blue">
+        <p class="text-sm">
           <b>💡 Главное правило связи:</b> Между синтетическими и аналитическими счетами существует прямая связь. Остатки и обороты синтетического счета <b>всегда должны быть равны</b> сумме остатков и оборотов всех аналитических счетов, открытых в дополнение к нему.
         </p>
       </div>
@@ -86,19 +86,17 @@
 
     <!-- Раздел 2 -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>2.</span> Строение бухгалтерского счета («Т-счет»)
-      </h2>
+      <h2>2. Строение бухгалтерского счета («Т-счет»)</h2>
       <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
         Графически бухгалтерский счет представляет собой двухстороннюю таблицу, в которой левая сторона называется <b>Дебет (Дт)</b>, а правая — <b>Кредит (Кт)</b>. Остатки на счете на начало и конец периода называются <b>Сальдо</b>, а сумма операций за период — <b>Оборотом</b>.
       </p>
 
-      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <h3 class="font-bold text-slate-900 dark:text-white text-lg">Классификация счетов по структуре</h3>
-        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+      <div class="info-block gray">
+        <h3 class="!mt-0 text-lg">Классификация счетов по структуре</h3>
+        <p class="text-sm mb-3">
           В соответствии с делением бухгалтерского баланса на актив и пассив различают <b>активные</b>, <b>пассивные</b> и <b>активно-пассивные</b> счета бухгалтерского учета.
         </p>
-        <div class="space-y-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+        <div class="space-y-3 text-sm">
           <p><b class="text-blue-600 dark:text-emerald-400">Активные</b> — счета для учета имущества. Такие счета имеют только дебетовое сальдо, увеличение отражается по дебету, уменьшение по кредиту.</p>
           <p><b class="text-purple-600 dark:text-purple-400">Пассивные</b> — счета для учета капитала и некоторых обязательств, они имеют только кредитовое сальдо, увеличение отражается по кредиту, уменьшение по дебету.</p>
           <p><b class="text-amber-600 dark:text-amber-400">Активно-пассивные</b> — счета для учета расчетов (расчеты с сотрудниками по зарплате, расчеты с подотчетными лицами, расчеты с поставщиками и так далее). Конечное сальдо здесь может быть как дебетовым, так и кредитовым, в зависимости от того, какая задолженность на них образуется.</p>
@@ -123,9 +121,7 @@
 
     <!-- Раздел 3 -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>3.</span> Двойная запись и План счетов
-      </h2>
+      <h2>3. Двойная запись и План счетов</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p>Любая хозяйственная операция вызывает равновеликие изменения в двух статьях баланса, при этом равенство итогов актива и пассива не нарушается. В этом и заключается суть <b>двойной записи</b>.</p>
         <p>Счета, между которыми возникает двойная запись, называются <b>корреспондирующими</b>, а отображаемые с помощью счетов операции – <b>корреспонденцией счетов</b> или бухгалтерской проводкой.</p>
@@ -135,9 +131,7 @@
 
     <!-- Раздел 4 -->
     <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>4.</span> Справочник: План счетов
-      </h2>
+      <h2>4. Справочник: План счетов</h2>
       <div class="space-y-3 pt-2">
         <input id="account-search" type="text" placeholder="🔍 Поиск счета (например: 46, 85, Касса, Прибыль)..." onkeyup="filterAccounts()" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 text-sm shadow-sm">
         <div id="plan-schetov-container" class="space-y-3 max-h-[600px] overflow-y-auto pr-1"></div>
@@ -146,9 +140,7 @@
 
     <!-- Раздел 5: Примеры типовых проводок -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>5.</span> Примеры типовых проводок
-      </h2>
+      <h2>5. Примеры типовых проводок</h2>
       <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
         Рассмотрим несколько типовых хозяйственных операций и проследим, как каждая из них отражается на Т-счетах. Нажимайте на кнопку, чтобы увидеть проводку и движение по счетам.
       </p>
@@ -443,11 +435,9 @@
       </div>
     </section>
 
-    <!-- 🆕 РАЗДЕЛ 6: Интерактивные карточки (ДОБАВЛЕНО) -->
+    <!-- РАЗДЕЛ 6: Интерактивные карточки -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>6.</span> Интерактивные карточки для запоминания счетов
-      </h2>
+      <h2>6. Интерактивные карточки для запоминания счетов</h2>
       <p class="text-slate-700 dark:text-slate-300">Кликайте на карточки, чтобы перевернуть их и проверить свои знания! Старайтесь сначала вспомнить название и тип счета.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -499,7 +489,7 @@
           </div>
         </div>
 
-                <!-- Карточка 4 -->
+        <!-- Карточка 4 -->
         <div class="flashcard h-48 cursor-pointer" onclick="this.classList.toggle('flipped')">
           <div class="flashcard-inner">
             <div class="flashcard-front bg-gradient-to-br from-rose-500 to-rose-600 dark:from-rose-600 dark:to-rose-700 flex flex-col items-center justify-center p-6 text-white">
@@ -549,61 +539,49 @@
       </div>
     </section>
 
-    <!-- РАЗДЕЛ 7: Тест (БЫЛ 6, ПЕРЕИМЕНОВАН ДЛЯ СОХРАНЕНИЯ НУМЕРАЦИИ) -->
+    <!-- РАЗДЕЛ 7: Тест -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>7.</span> Проверка знаний
-      </h2>
+      <h2>7. Проверка знаний</h2>
       <p class="text-slate-600 dark:text-slate-400 text-sm">Ответьте на 5 вопросов, чтобы закрепить материал урока.</p>
 
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">1. Как называется левая сторона бухгалтерского счета?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q1',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Кредит</button>
-          <button onclick="checkAnswer('q1',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Дебет</button>
-          <button onclick="checkAnswer('q1',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Сальдо</button>
-        </div>
-        <div id="q1-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">1. Как называется левая сторона бухгалтерского счета?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Кредит</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дебет</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Сальдо</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">2. На каком счете отражается выручка от реализации продукции?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q2',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) 80 «Прибыли и убытки»</button>
-          <button onclick="checkAnswer('q2',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) 46 «Реализация продукции»</button>
-          <button onclick="checkAnswer('q2',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) 62 «Расчеты с покупателями»</button>
-        </div>
-        <div id="q2-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">2. На каком счете отражается выручка от реализации продукции?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 80 «Прибыли и убытки»</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) 46 «Реализация продукции»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) 62 «Расчеты с покупателями»</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">3. Какое сальдо всегда имеет пассивный счет?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q3',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Дебетовое</button>
-          <button onclick="checkAnswer('q3',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Кредитовое</button>
-          <button onclick="checkAnswer('q3',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Нулевое</button>
-        </div>
-        <div id="q3-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">3. Какое сальдо всегда имеет пассивный счет?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дебетовое</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Кредитовое</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Нулевое</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">4. Что такое корреспонденция счетов?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q4',0,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Взаимная связь между счетами при двойной записи</button>
-          <button onclick="checkAnswer('q4',1,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Письменное доказательство совершения операции</button>
-          <button onclick="checkAnswer('q4',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Итоговая сумма баланса</button>
-        </div>
-        <div id="q4-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">4. Что такое корреспонденция счетов?</p>
+        <button class="quiz-option" onclick="checkTest(this, true)">А) Взаимная связь между счетами при двойной записи</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Письменное доказательство совершения операции</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Итоговая сумма баланса</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">5. Как называется счет, который может иметь как дебетовое, так и кредитовое сальдо?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q5',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Активный</button>
-          <button onclick="checkAnswer('q5',1,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Пассивный</button>
-          <button onclick="checkAnswer('q5',2,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Активно-пассивный</button>
-        </div>
-        <div id="q5-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">5. Как называется счет, который может иметь как дебетовое, так и кредитовое сальдо?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Активный</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Пассивный</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Активно-пассивный</button>
+        <div class="quiz-feedback"></div>
       </div>
     </section>
 
@@ -822,27 +800,28 @@
 
     function filterAccounts() { renderPlanSchetov(document.getElementById('account-search').value.trim()); }
 
-    function checkAnswer(qId, idx, ok) {
-      const fb = document.getElementById(`${qId}-feedback`);
-      fb.classList.remove('hidden','bg-emerald-50','text-emerald-800','dark:bg-emerald-950/60','dark:text-emerald-300','bg-rose-50','text-rose-800','dark:bg-rose-950/60','dark:text-rose-300','border','border-emerald-200','dark:border-emerald-800','border-rose-200','dark:border-rose-800');
-      const ex = {
-        q1: { y: "Верно! Левая сторона счета — Дебет (Дт), правая — Кредит (Кт).", n: "Неверно. Левая сторона — Дебет (Дт)." },
-        q2: { y: "Верно! Выручка от реализации отражается на счете 46.", n: "Неверно. Выручка отражается на счете 46 «Реализация продукции»." },
-        q3: { y: "Верно! Пассивные счета всегда имеют кредитовое сальдо.", n: "Неверно. Пассивные счета имеют кредитовое сальдо." },
-        q4: { y: "Верно! Корреспонденция — это взаимосвязь между счетами при двойной записи.", n: "Неверно. Корреспонденция — это связь между счетами при двойной записи." },
-        q5: { y: "Верно! Активно-пассивные счета могут иметь и дебетовое, и кредитовое сальдо.", n: "Неверно. Такой счет называется активно-пассивным." }
-      };
-      if (ok) { fb.classList.add('bg-emerald-50','text-emerald-800','dark:bg-emerald-950/60','dark:text-emerald-300','border','border-emerald-200','dark:border-emerald-800'); fb.innerHTML = `<b>✅ ${ex[qId].y}</b>`; }
-      else { fb.classList.add('bg-rose-50','text-rose-800','dark:bg-rose-950/60','dark:text-rose-300','border','border-rose-200','dark:border-rose-800'); fb.innerHTML = `<b>❌ ${ex[qId].n}</b>`; }
+    function checkTest(btn, isCorrect) {
+      const question = btn.closest('.quiz-question');
+      const feedback = question.querySelector('.quiz-feedback');
+      const allOptions = question.querySelectorAll('.quiz-option');
+      
+      allOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+      feedback.classList.remove('correct', 'incorrect', 'show');
+      
+      if (isCorrect) {
+        btn.classList.add('correct');
+        feedback.classList.add('correct', 'show');
+        feedback.textContent = '✅ Верно!';
+      } else {
+        btn.classList.add('incorrect');
+        feedback.classList.add('incorrect', 'show');
+        feedback.textContent = '❌ Неверно. Попробуйте ещё раз.';
+      }
     }
 
     document.addEventListener('DOMContentLoaded', () => { switchAccountType('active'); renderPlanSchetov(); });
   </script>
 
-  <!-- Подвал (заполняется скриптом navigation.js) -->
-  <div id="smart-footer"></div>
-
-  <!-- 🔥 Подключаем умный скрипт навигации (ОБЯЗАТЕЛЬНО!) -->
   <script src="navigation.js"></script>
 </body>
 </html>
