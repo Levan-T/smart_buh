@@ -13,18 +13,46 @@
   <script>tailwind.config = { darkMode: 'class' }</script>
   <link rel="stylesheet" href="styles.css">
   <style>
-    main { max-width: 794px !important; }
-    @media (max-width: 850px) { main { max-width: 100% !important; } }
-    .doc-preview { max-height: 200px; overflow: hidden; position: relative; transition: max-height 0.4s ease; }
-    .doc-preview.expanded { max-height: 2000px; }
-    .doc-preview:not(.expanded)::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
-      background: linear-gradient(to bottom, transparent, var(--bg-color));
-      pointer-events: none;
+    /* Читабельный формат, близкий к A4, но шире для мобильных */
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+    
+    /* Интерактивные ведомости */
+    .doc-card {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      transition: all 0.3s ease;
     }
-    .dark .doc-preview:not(.expanded)::after {
-      background: linear-gradient(to bottom, transparent, #1e293b);
+    .dark .doc-card { background: rgba(30, 41, 59, 0.5); border-color: #334155; }
+    
+    .doc-header {
+      padding: 12px 16px;
+      background: linear-gradient(to right, #eff6ff, #ecfdf5);
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
     }
+    .dark .doc-header { background: linear-gradient(to right, rgba(30, 58, 138, 0.2), rgba(6, 78, 59, 0.2)); border-color: #334155; }
+    
+    .doc-header:hover { opacity: 0.9; }
+    
+    .doc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .doc-body.open { max-height: 1000px; }
+    
+    .doc-toggle-icon {
+      transition: transform 0.3s ease;
+      font-size: 12px;
+    }
+    .doc-body.open + .doc-header .doc-toggle-icon,
+    .doc-header.active .doc-toggle-icon { transform: rotate(180deg); }
   </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
@@ -63,25 +91,68 @@
           <li><b>Платежная ведомость</b> — предназначена исключительно для выплаты.</li>
           <li><b>Расчётно-платёжная ведомость</b> — совмещенный документ (начисление + выплата).</li>
         </ol>
-        <p>На каждого сотрудника заводится <b>лицевой счет</b> — регистр аналитического учета, где накапливаются сведения о начислениях и удержаниях за год. Он является основанием для выдачи справок и начисления пенсий.</p>
 
         <h3>Примеры документов (сотрудник Иванов И.И.)</h3>
         
         <!-- Расчётная ведомость -->
-        <div class="space-y-2 mt-4">
-          <div class="flex items-center justify-between">
-            <p class="font-bold text-sm text-blue-600 dark:text-blue-400">📋 Фрагмент расчётной ведомости за январь</p>
-            <button onclick="toggleDoc(this)" class="text-xs px-3 py-1 rounded-lg bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 hover:opacity-80 transition">Показать полный документ</button>
+        <div class="doc-card my-4">
+          <div class="doc-header" onclick="toggleDoc(this)">
+            <span class="font-bold text-sm text-blue-700 dark:text-blue-300">📋 Расчётная ведомость за январь (фрагмент)</span>
+            <span class="doc-toggle-icon">▼</span>
           </div>
-          <div class="doc-preview">
-            <div class="overflow-x-auto">
+          <div class="doc-body">
+            <div class="p-4 overflow-x-auto">
               <table class="data-table text-xs">
-                <thead><tr><th>Таб.№</th><th>ФИО</th><th>Должность</th><th>Оклад</th><th>Премия</th><th>Больничный</th><th>Итого начислено</th><th>Подоходный (10%)</th><th>ПФ (1%)</th><th>Алименты</th><th>К выплате</th></tr></thead>
+                <thead>
+                  <tr>
+                    <th>Таб.№</th>
+                    <th>ФИО</th>
+                    <th>Должность</th>
+                    <th>Оклад</th>
+                    <th>Премия</th>
+                    <th>Больничный</th>
+                    <th>Итого начислено</th>
+                    <th>Подоходный (10%)</th>
+                    <th>ПФ (1%)</th>
+                    <th>Алименты</th>
+                    <th>К выплате</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <tr><td>001</td><td>Иванов И.И.</td><td>Менеджер</td><td>30 000</td><td>5 000</td><td>3 000</td><td class="font-bold">38 000</td><td>3 794</td><td>350</td><td>8 551</td><td class="font-bold text-emerald-600 dark:text-emerald-400">25 305</td></tr>
-                  <tr><td>002</td><td>Петров П.П.</td><td>Бухгалтер</td><td>25 000</td><td>3 000</td><td>—</td><td class="font-bold">28 000</td><td>2 794</td><td>280</td><td>—</td><td class="font-bold text-emerald-600 dark:text-emerald-400">24 926</td></tr>
-                  <tr><td>003</td><td>Сидоров С.С.</td><td>Рабочий</td><td>22 000</td><td>—</td><td>—</td><td class="font-bold">22 000</td><td>2 194</td><td>220</td><td>—</td><td class="font-bold text-emerald-600 dark:text-emerald-400">19 586</td></tr>
-                  <tr class="font-bold bg-slate-100 dark:bg-slate-800"><td colspan="6">ИТОГО:</td><td>88 000</td><td>8 782</td><td>850</td><td>8 551</td><td class="text-emerald-600 dark:text-emerald-400">69 817</td></tr>
+                  <tr>
+                    <td>001</td>
+                    <td>Иванов И.И.</td>
+                    <td>Менеджер</td>
+                    <td>30 000</td>
+                    <td>5 000</td>
+                    <td>3 000</td>
+                    <td class="font-bold">38 000</td>
+                    <td>3 794</td>
+                    <td>350</td>
+                    <td>8 551</td>
+                    <td class="font-bold text-emerald-600 dark:text-emerald-400">25 305</td>
+                  </tr>
+                  <tr>
+                    <td>002</td>
+                    <td>Петров П.П.</td>
+                    <td>Бухгалтер</td>
+                    <td>25 000</td>
+                    <td>3 000</td>
+                    <td>—</td>
+                    <td class="font-bold">28 000</td>
+                    <td>2 794</td>
+                    <td>280</td>
+                    <td>—</td>
+                    <td class="font-bold text-emerald-600 dark:text-emerald-400">24 926</td>
+                  </tr>
+                  <tr class="font-bold bg-slate-100 dark:bg-slate-800">
+                    <td colspan="6">ИТОГО:</td>
+                    <td>66 000</td>
+                    <td>6 588</td>
+                    <td>630</td>
+                    <td>8 551</td>
+                    <td class="text-emerald-600 dark:text-emerald-400">50 231</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -89,42 +160,58 @@
         </div>
 
         <!-- Платежная ведомость -->
-        <div class="space-y-2 mt-6">
-          <div class="flex items-center justify-between">
-            <p class="font-bold text-sm text-blue-600 dark:text-blue-400">💰 Фрагмент платежной ведомости за январь</p>
-            <button onclick="toggleDoc(this)" class="text-xs px-3 py-1 rounded-lg bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 hover:opacity-80 transition">Показать полный документ</button>
+        <div class="doc-card my-4">
+          <div class="doc-header" onclick="toggleDoc(this)">
+            <span class="font-bold text-sm text-blue-700 dark:text-blue-300">💰 Платежная ведомость за январь (фрагмент)</span>
+            <span class="doc-toggle-icon">▼</span>
           </div>
-          <div class="doc-preview">
-            <div class="overflow-x-auto">
+          <div class="doc-body">
+            <div class="p-4 overflow-x-auto">
               <table class="data-table text-xs">
-                <thead><tr><th>№</th><th>Таб.№</th><th>ФИО</th><th>Сумма к выплате</th><th>Роспись</th><th>Примечание</th></tr></thead>
+                <thead>
+                  <tr>
+                    <th>№</th>
+                    <th>Таб.№</th>
+                    <th>ФИО</th>
+                    <th>Начислено</th>
+                    <th>Удержано</th>
+                    <th>К выплате</th>
+                    <th>Роспись</th>
+                    <th>Депонировано</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <tr><td>1</td><td>001</td><td>Иванов И.И.</td><td class="font-bold text-emerald-600 dark:text-emerald-400">25 305</td><td>Иванов</td><td>—</td></tr>
-                  <tr><td>2</td><td>002</td><td>Петров П.П.</td><td class="font-bold text-emerald-600 dark:text-emerald-400">24 926</td><td>Петров</td><td>—</td></tr>
-                  <tr><td>3</td><td>003</td><td>Сидоров С.С.</td><td class="font-bold text-emerald-600 dark:text-emerald-400">19 586</td><td>Сидоров</td><td>—</td></tr>
-                  <tr class="font-bold bg-slate-100 dark:bg-slate-800"><td colspan="3">ИТОГО:</td><td class="text-emerald-600 dark:text-emerald-400">69 817</td><td colspan="2"></td></tr>
+                  <tr>
+                    <td>1</td>
+                    <td>001</td>
+                    <td>Иванов И.И.</td>
+                    <td>38 000</td>
+                    <td>12 695</td>
+                    <td class="font-bold text-emerald-600 dark:text-emerald-400">25 305</td>
+                    <td>Иванов</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>002</td>
+                    <td>Петров П.П.</td>
+                    <td>28 000</td>
+                    <td>3 074</td>
+                    <td class="font-bold text-emerald-600 dark:text-emerald-400">24 926</td>
+                    <td>—</td>
+                    <td class="text-amber-600 dark:text-amber-400 font-bold">24 926</td>
+                  </tr>
+                  <tr class="font-bold bg-slate-100 dark:bg-slate-800">
+                    <td colspan="3">ИТОГО:</td>
+                    <td>66 000</td>
+                    <td>15 769</td>
+                    <td class="text-emerald-600 dark:text-emerald-400">50 231</td>
+                    <td></td>
+                    <td class="text-amber-600 dark:text-amber-400">24 926</td>
+                  </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- Лицевой счет -->
-        <div class="space-y-2 mt-6">
-          <div class="flex items-center justify-between">
-            <p class="font-bold text-sm text-blue-600 dark:text-blue-400">📑 Фрагмент лицевого счета Иванова И.И. за январь</p>
-            <button onclick="toggleDoc(this)" class="text-xs px-3 py-1 rounded-lg bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 hover:opacity-80 transition">Показать полный документ</button>
-          </div>
-          <div class="doc-preview">
-            <div class="overflow-x-auto">
-              <table class="data-table text-xs">
-                <thead><tr><th>Месяц</th><th>Начислено</th><th>Подоходный налог</th><th>Взнос ПФ</th><th>Алименты</th><th>Займ</th><th>Выплачено</th></tr></thead>
-                <tbody>
-                  <tr><td>Январь</td><td>38 000</td><td>3 794</td><td>350</td><td>8 551</td><td>—</td><td>25 305</td></tr>
-                  <tr><td>Февраль</td><td>35 000</td><td>3 494</td><td>350</td><td>7 789</td><td>—</td><td>23 367</td></tr>
-                  <tr><td>Март</td><td>36 000</td><td>3 594</td><td>350</td><td>8 014</td><td>2 000</td><td>22 042</td></tr>
-                </tbody>
-              </table>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 italic">* Петров П.П. не получил зарплату в установленный срок, сумма депонирована</p>
             </div>
           </div>
         </div>
@@ -230,10 +317,8 @@
         <div class="info-block emerald">
           <p class="font-bold mb-2">Пример расчета отпускных:</p>
           <p class="text-sm">Сотрудник уходит в отпуск на 14 дней. Совокупный заработок за последние 12 месяцев составил 420 000 руб.</p>
-          <p class="font-mono text-sm mt-2">Среднедневной оклад = 420 000 / 12 / 29,3 ≈ 1 194,54 руб.</p>
-          <p class="font-mono text-sm">❌ Нет, считаем проще: Среднемесячный заработок = 420 000 / 12 = 35 000 руб.</p>
-          <p class="font-mono text-sm">Среднедневной = 35 000 / 29,3 ≈ 1 194,54 руб.</p>
-          <p class="font-mono text-sm mt-1 italic text-slate-500">(Если в организации принято считать через рабочие дни месяца, то: 35 000 / 22 ≈ 1 590,91 руб.)</p>
+          <p class="text-sm mt-2">На многих предприятиях для расчета среднедневного заработка используется средний показатель количества дней в месяце. Среднемесячный заработок = 420 000 / 12 = 35 000 руб.</p>
+          <p class="font-mono text-sm mt-2">Среднедневной = 35 000 / 22 ≈ 1 590,91 руб.</p>
           <p class="font-mono text-sm mt-2 font-bold">Сумма отпускных = 1 590,91 × 14 = <b>22 272,74 руб.</b></p>
           <p class="text-xs mt-2 font-mono">Проводка: Дт 89 «Резервы предстоящих расходов» — Кт 70</p>
         </div>
@@ -263,7 +348,7 @@
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
       <h2>Синтетический учет расчетов и удержания из заработной платы</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>Синтетический учет ведется на <b>пассивном счете 70 «Расчеты с персоналом по оплате труда»</b>. По кредиту — начисление (растёт обязательство компании перед сотрудниками),в том числе и пособия по временной нетрудоспособности по дебету — удержания и выплата.</p>
+        <p>Синтетический учет ведется на <b>пассивном счете 70 «Расчеты с персоналом по оплате труда»</b>. По кредиту — начисление (включая больничные), по дебету — удержания и выплата.</p>
 
         <h3>Обязательные удержания</h3>
         <div class="info-block gray">
@@ -427,37 +512,27 @@
 
     <!-- Корреспонденция счета 70 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2>Корреспонденция счета 70</h2>
+      <h2>Основные корреспонденции по счету 70</h2>
       <div class="overflow-x-auto">
         <table class="data-table text-xs">
           <thead><tr><th class="w-1/2">По дебету 70</th><th class="w-1/2">По кредиту 70</th></tr></thead>
           <tbody>
             <tr><td>23 «Вспомогательные производства»</td><td>07 «Оборудование к установке»</td></tr>
             <tr><td>25 «Общепроизводственные расходы»</td><td>08 «Капитальные вложения»</td></tr>
-            <tr><td>26 «Общехозяйственные расходы»</td><td>10 «Материалы»</td></tr>
-            <tr><td>27 «Общехоз. расходы Комитета по управлению гос. имуществом»</td><td>11 «Животные на выращивании и откорме»</td></tr>
-            <tr><td>28 «Брак в производстве»</td><td>12 «Малоценные и быстроизнашивающиеся предметы»</td></tr>
-            <tr><td>29 «Обслуживающие производства и хозяйства»</td><td>15 «Заготовление и приобретение материалов»</td></tr>
-            <tr><td>46 «Реализация продукции (работ, услуг)»</td><td>20 «Основное производство»</td></tr>
-            <tr><td>50 «Касса»</td><td>23 «Вспомогательные производства»</td></tr>
-            <tr><td>51 «Расчетный счет»</td><td>25 «Общепроизводственные расходы»</td></tr>
-            <tr><td>52 «Валютный счет»</td><td>26 «Общехозяйственные расходы»</td></tr>
-            <tr><td>55 «Специальные счета в банках»</td><td>28 «Брак в производстве»</td></tr>
-            <tr><td>68 «Расчеты с бюджетом»</td><td>29 «Обслуживающие производства и хозяйства»</td></tr>
-            <tr><td>71 «Расчеты с подотчетными лицами»</td><td>30 «Некапитальные работы»</td></tr>
-            <tr><td>73 «Расчеты с персоналом по прочим операциям»</td><td>31 «Расходы будущих периодов»</td></tr>
-            <tr><td>75 «Расчеты с учредителями»</td><td>43 «Коммерческие расходы»</td></tr>
-            <tr><td>76 «Расчеты с разными дебиторами и кредиторами»</td><td>44 «Издержки обращения»</td></tr>
-            <tr><td>79 «Внутрихозяйственные расчеты»</td><td>47 «Реализация и прочее выбытие ОС»</td></tr>
-            <tr><td>84 «Недостачи и потери от порчи ценностей»</td><td>50 «Касса»</td></tr>
-            <tr><td>94 «Краткосрочные займы»</td><td>69 «Расчеты по социальному страхованию»</td></tr>
-            <tr><td>95 «Долгосрочные займы»</td><td>76 «Расчеты с разными дебиторами и кредиторами»</td></tr>
-            <tr><td></td><td>80 «Прибыли и убытки»</td></tr>
-            <tr><td></td><td>84 «Недостачи и потери от порчи ценностей»</td></tr>
-            <tr><td></td><td>86 «Резервный капитал»</td></tr>
+            <tr><td>26 «Общехозяйственные расходы»</td><td>20 «Основное производство»</td></tr>
+            <tr><td>27 «Общехоз. расходы Комитета по управлению гос. имуществом»</td><td>23 «Вспомогательные производства»</td></tr>
+            <tr><td>28 «Брак в производстве»</td><td>25 «Общепроизводственные расходы»</td></tr>
+            <tr><td>29 «Обслуживающие производства и хозяйства»</td><td>26 «Общехозяйственные расходы»</td></tr>
+            <tr><td>46 «Реализация продукции (работ, услуг)»</td><td>28 «Брак в производстве»</td></tr>
+            <tr><td>50 «Касса»</td><td>29 «Обслуживающие производства и хозяйства»</td></tr>
+            <tr><td>51 «Расчетный счет»</td><td>44 «Издержки обращения»</td></tr>
+            <tr><td>68 «Расчеты с бюджетом»</td><td>47 «Реализация и прочее выбытие ОС»</td></tr>
+            <tr><td>71 «Расчеты с подотчетными лицами»</td><td>50 «Касса»</td></tr>
+            <tr><td>73 «Расчеты с персоналом по прочим операциям»</td><td>69 «Расчеты по социальному страхованию»</td></tr>
+            <tr><td>76 «Расчеты с разными дебиторами и кредиторами»</td><td>76 «Расчеты с разными дебиторами и кредиторами»</td></tr>
+            <tr><td>84 «Недостачи и потери от порчи ценностей»</td><td>84 «Недостачи и потери от порчи ценностей»</td></tr>
             <tr><td></td><td>88 «Нераспределенная прибыль»</td></tr>
             <tr><td></td><td>89 «Резервы предстоящих расходов и платежей»</td></tr>
-            <tr><td></td><td>96 «Целевые финансирования и поступления»</td></tr>
           </tbody>
         </table>
       </div>
@@ -564,10 +639,10 @@
   <div id="smart-footer"></div>
 
   <script>
-    function toggleDoc(btn) {
-      const preview = btn.closest('.space-y-2').querySelector('.doc-preview');
-      preview.classList.toggle('expanded');
-      btn.textContent = preview.classList.contains('expanded') ? 'Свернуть документ' : 'Показать полный документ';
+    function toggleDoc(header) {
+      const body = header.nextElementSibling;
+      body.classList.toggle('open');
+      header.classList.toggle('active');
     }
 
     function checkTest(btn, isCorrect) {
