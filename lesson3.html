@@ -6,30 +6,29 @@
   <title>Урок 3. Бухгалтерский баланс и отчетность | smart_buh</title>
   
   <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
   </script>
-  
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  
+  <!-- Единые стили -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Формат A4 (860px) */
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+  </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
 
-  <!-- Шапка -->
-<div id="smart-header"></div>
+  <div id="smart-header"></div>
 
-  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+  <main class="mx-auto px-4 py-8 space-y-12">
 
     <!-- Заголовок -->
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 leading-tight">
-        УРОК 3. Бухгалтерский баланс и отчетность
-      </h1>
+      <h1>УРОК 3. Бухгалтерский баланс и отчетность</h1>
       <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
         Изучаем главную форму бухгалтерской отчетности — баланс, его структуру, а также 4 типа хозяйственных операций, влияющих на валюту баланса.
       </p>
@@ -37,16 +36,14 @@
 
     <!-- Раздел 1: Бухгалтерская отчетность -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>1.</span> Бухгалтерская отчетность
-      </h2>
+      <h2>1. Бухгалтерская отчетность</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p><b>Бухгалтерская отчётность</b> — это единая система показателей об имущественном и финансовом положении организации и о результатах её хозяйственной деятельности, составленная на основе данных бухгалтерского учёта по установленным формам за определённый период.</p>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
-        <h3 class="font-bold text-slate-900 dark:text-white text-lg">Основные формы бухгалтерской отчетности</h3>
-        <ol class="space-y-2 text-sm text-slate-700 dark:text-slate-300 list-decimal list-inside">
+      <div class="info-block gray">
+        <h3 class="!mt-0 text-lg">Основные формы бухгалтерской отчетности</h3>
+        <ol class="space-y-2 text-sm list-decimal list-inside">
           <li><b>Бухгалтерский баланс</b> (Форма №1)</li>
           <li><b>Отчет о прибылях и убытках</b> (Форма №2)</li>
           <li><b>Справка к отчету о прибылях и убытках</b> (справка к Форме №2)</li>
@@ -54,8 +51,8 @@
         </ol>
       </div>
 
-      <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
-        <p class="text-sm text-emerald-800 dark:text-emerald-300">
+      <div class="info-block blue">
+        <p class="text-sm">
           <b>💡 Важно:</b> В этом уроке мы сосредоточимся на главной форме отчётности — <b>бухгалтерском балансе</b>, который показывает имущественное положение организации на конкретную дату.
         </p>
       </div>
@@ -63,29 +60,27 @@
 
     <!-- Раздел 2: Бухгалтерский баланс -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>2.</span> Бухгалтерский баланс
-      </h2>
+      <h2>2. Бухгалтерский баланс</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p><b>Бухгалтерский баланс</b> — это один из элементов методологической основы бухгалтерского учёта. В нём в обобщённом виде отражаются средства организации по составу и размещению (<b>активы</b>), а также по источникам формирования и целевому назначению (<b>пассивы</b>).</p>
         <p>Иными словами, бухгалтерский баланс — способ обобщения и группировки имущества (активов) хозяйствующего субъекта и источников их образования (пассивов) на определённую дату в денежном выражении.</p>
         <p><b>В балансе отражается сальдо по всем счетам на дату составления баланса.</b></p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
-          <h3 class="font-bold text-blue-800 dark:text-blue-300 mb-2">📦 АКТИВ</h3>
-          <p class="text-sm text-blue-700 dark:text-blue-300">Чем владеет организация (имущество, деньги, дебиторская задолженность). <b>Куда вложены средства.</b></p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+        <div class="info-block blue">
+          <h3 class="!mt-0 mb-2">📦 АКТИВ</h3>
+          <p class="text-sm">Чем владеет организация (имущество, деньги, дебиторская задолженность). <b>Куда вложены средства.</b></p>
         </div>
-        <div class="bg-purple-50 dark:bg-purple-950/30 border-l-4 border-purple-500 p-4 rounded-r-xl">
-          <h3 class="font-bold text-purple-800 dark:text-purple-300 mb-2">💼 ПАССИВ</h3>
-          <p class="text-sm text-purple-700 dark:text-purple-300">За счёт чего это имущество приобретено (капитал, кредиты, кредиторская задолженность). <b>Источники средств.</b></p>
+        <div class="info-block gray" style="border-left-color: #a855f7;">
+          <h3 class="!mt-0 mb-2 text-purple-700 dark:text-purple-400">💼 ПАССИВ</h3>
+          <p class="text-sm">За счёт чего это имущество приобретено (капитал, кредиты, кредиторская задолженность). <b>Источники средств.</b></p>
         </div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
-        <h3 class="font-bold text-slate-900 dark:text-white text-lg">🔑 Ключевые понятия</h3>
-        <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+      <div class="info-block gray">
+        <h3 class="!mt-0 text-lg">🔑 Ключевые понятия</h3>
+        <ul class="text-sm space-y-2 mt-2">
           <li><b>Балансовая статья</b> — показатель (строка) актива и пассива баланса, характеризующий отдельные виды имущества, источников его формирования, обязательств предприятия. Исходя из их экономического содержания балансовые статьи объединяют в группы, а группы — в разделы.</li>
           <li><b>Основное балансовое уравнение</b> заключается в постоянном равенстве активов и пассивов. Актив и пассив всегда должны быть равны.</li>
           <li><b>Валюта баланса</b> — итоги по активу и по пассиву бухгалтерского баланса.</li>
@@ -93,8 +88,8 @@
         </ul>
       </div>
 
-      <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl">
-        <p class="text-sm text-emerald-800 dark:text-emerald-300">
+      <div class="info-block emerald">
+        <p class="text-sm">
           <b>💡 Важно:</b> Баланс даёт представление об изменениях структуры, объёма и удельного веса отдельных статей имущества организации (активов) и обязательств (пассивов) организации за отчётный период.
         </p>
       </div>
@@ -102,9 +97,7 @@
 
     <!-- Раздел 3: Форма баланса РА -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>3.</span> Форма бухгалтерского баланса Республики Абхазия
-      </h2>
+      <h2>3. Форма бухгалтерского баланса Республики Абхазия</h2>
       <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
         Ниже представлена утверждённая Министерством финансов РА форма бухгалтерского баланса. Нажимайте на разделы, чтобы раскрыть их статьи. В скобках указаны номера счетов, данные которых формируют соответствующие строки.
       </p>
@@ -116,17 +109,13 @@
             <span class="text-xl">📦</span>
             <h3 class="font-bold text-slate-900 dark:text-white">АКТИВ</h3>
           </div>
-          <svg id="chevron-a1" class="chevron w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
+          <svg id="chevron-a1" class="chevron w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div id="balance-a1" class="hidden">
           <!-- Раздел I -->
           <button onclick="toggleBalanceSection('a1-1')" class="w-full p-3 flex items-center justify-between bg-slate-100 dark:bg-slate-700/40 hover:bg-slate-200 dark:hover:bg-slate-700/60 transition text-left border-t border-slate-200 dark:border-slate-700">
             <span class="font-semibold text-sm text-slate-900 dark:text-white">I. Основные средства и другие долгосрочные вложения (Внеоборотные активы)</span>
-            <svg id="chevron-a1-1" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <svg id="chevron-a1-1" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div id="balance-a1-1" class="hidden">
             <table class="w-full text-xs">
@@ -152,9 +141,7 @@
           <!-- Раздел II -->
           <button onclick="toggleBalanceSection('a1-2')" class="w-full p-3 flex items-center justify-between bg-slate-100 dark:bg-slate-700/40 hover:bg-slate-200 dark:hover:bg-slate-700/60 transition text-left border-t border-slate-200 dark:border-slate-700">
             <span class="font-semibold text-sm text-slate-900 dark:text-white">II. Запасы и затраты</span>
-            <svg id="chevron-a1-2" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <svg id="chevron-a1-2" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div id="balance-a1-2" class="hidden">
             <table class="w-full text-xs">
@@ -179,9 +166,7 @@
           <!-- Раздел III -->
           <button onclick="toggleBalanceSection('a1-3')" class="w-full p-3 flex items-center justify-between bg-slate-100 dark:bg-slate-700/40 hover:bg-slate-200 dark:hover:bg-slate-700/60 transition text-left border-t border-slate-200 dark:border-slate-700">
             <span class="font-semibold text-sm text-slate-900 dark:text-white">III. Денежные средства, расчёты и прочие активы</span>
-            <svg id="chevron-a1-3" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <svg id="chevron-a1-3" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div id="balance-a1-3" class="hidden">
             <table class="w-full text-xs">
@@ -234,17 +219,13 @@
             <span class="text-xl">💼</span>
             <h3 class="font-bold text-slate-900 dark:text-white">ПАССИВ</h3>
           </div>
-          <svg id="chevron-p1" class="chevron w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
+          <svg id="chevron-p1" class="chevron w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div id="balance-p1" class="hidden">
           <!-- Раздел I -->
           <button onclick="toggleBalanceSection('p1-1')" class="w-full p-3 flex items-center justify-between bg-slate-100 dark:bg-slate-700/40 hover:bg-slate-200 dark:hover:bg-slate-700/60 transition text-left border-t border-slate-200 dark:border-slate-700">
             <span class="font-semibold text-sm text-slate-900 dark:text-white">I. Источники собственных средств</span>
-            <svg id="chevron-p1-1" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <svg id="chevron-p1-1" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div id="balance-p1-1" class="hidden">
             <table class="w-full text-xs">
@@ -269,9 +250,7 @@
           <!-- Раздел II -->
           <button onclick="toggleBalanceSection('p1-2')" class="w-full p-3 flex items-center justify-between bg-slate-100 dark:bg-slate-700/40 hover:bg-slate-200 dark:hover:bg-slate-700/60 transition text-left border-t border-slate-200 dark:border-slate-700">
             <span class="font-semibold text-sm text-slate-900 dark:text-white">II. Расчёты и прочие пассивы</span>
-            <svg id="chevron-p1-2" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <svg id="chevron-p1-2" class="chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div id="balance-p1-2" class="hidden">
             <table class="w-full text-xs">
@@ -314,17 +293,15 @@
       </div>
 
       <!-- Сноска -->
-      <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 p-4 rounded-xl text-xs text-amber-800 dark:text-amber-300">
-        <p><b>* Данные по этим строкам в валюту баланса не входят.</b></p>
-        <p class="mt-2">К таким строкам относятся: первоначальная стоимость и износ нематериальных активов (010, 011), первоначальная (восстановительная) стоимость и износ основных средств (020, 021), первоначальная стоимость и износ малоценных и быстроизнашивающихся предметов (120, 121), прибыль отчётного года и использовано (470, 471).</p>
+      <div class="info-block amber">
+        <p class="text-xs"><b>* Данные по этим строкам в валюту баланса не входят.</b></p>
+        <p class="text-xs mt-2">К таким строкам относятся: первоначальная стоимость и износ нематериальных активов (010, 011), первоначальная (восстановительная) стоимость и износ основных средств (020, 021), первоначальная стоимость и износ малоценных и быстроизнашивающихся предметов (120, 121), прибыль отчётного года и использовано (470, 471).</p>
       </div>
     </section>
 
     <!-- Раздел 4: 4 типа хозяйственных операций -->
     <section class="space-y-6">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>4.</span> 4 типа хозяйственных операций
-      </h2>
+      <h2>4. 4 типа хозяйственных операций</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
         <p>Разнообразие хозяйственных операций организации безгранично, но с точки зрения воздействия на бухгалтерский баланс все они строго делятся на <b>4 типа</b>. Нажимайте на карточки, чтобы увидеть примеры.</p>
       </div>
@@ -433,107 +410,85 @@
       </div>
 
       <!-- Сводная таблица -->
-      <div class="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-        <div class="p-4 bg-slate-100 dark:bg-slate-700/40 border-b border-slate-200 dark:border-slate-700">
-          <h3 class="font-bold text-slate-900 dark:text-white">📊 Сводная таблица типов изменений</h3>
-        </div>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead class="bg-slate-50 dark:bg-slate-900/40">
-              <tr>
-                <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Тип операции</th>
-                <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Затрагиваемые стороны</th>
-                <th class="p-3 text-left font-bold text-slate-900 dark:text-white">Влияние на итог (валюту) баланса</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
-                <td class="p-3"><span class="font-bold text-blue-600 dark:text-blue-400">I. Активный</span> <span class="text-xs text-slate-500">(+А, −А)</span></td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">Только АКТИВ</td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">Не меняется</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
-                <td class="p-3"><span class="font-bold text-purple-600 dark:text-purple-400">II. Пассивный</span> <span class="text-xs text-slate-500">(+П, −П)</span></td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">Только ПАССИВ</td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">Не меняется</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
-                <td class="p-3"><span class="font-bold text-emerald-600 dark:text-emerald-400">III. Увеличивающий</span> <span class="text-xs text-slate-500">(+А, +П)</span></td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">АКТИВ и ПАССИВ</td>
-                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">Увеличивается (+X)</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30">
-                <td class="p-3"><span class="font-bold text-rose-600 dark:text-rose-400">IV. Уменьшающий</span> <span class="text-xs text-slate-500">(−А, −П)</span></td>
-                <td class="p-3 text-slate-700 dark:text-slate-300">АКТИВ и ПАССИВ</td>
-                <td class="p-3 text-rose-600 dark:text-rose-400 font-semibold">Уменьшается (−X)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="overflow-x-auto my-6">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Тип операции</th>
+              <th>Затрагиваемые стороны</th>
+              <th>Влияние на итог (валюту) баланса</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="font-bold text-blue-600 dark:text-blue-400">I. Активный</span> <span class="text-xs text-slate-500">(+А, −А)</span></td>
+              <td>Только АКТИВ</td>
+              <td>Не меняется</td>
+            </tr>
+            <tr>
+              <td><span class="font-bold text-purple-600 dark:text-purple-400">II. Пассивный</span> <span class="text-xs text-slate-500">(+П, −П)</span></td>
+              <td>Только ПАССИВ</td>
+              <td>Не меняется</td>
+            </tr>
+            <tr>
+              <td><span class="font-bold text-emerald-600 dark:text-emerald-400">III. Увеличивающий</span> <span class="text-xs text-slate-500">(+А, +П)</span></td>
+              <td>АКТИВ и ПАССИВ</td>
+              <td class="text-emerald-600 dark:text-emerald-400 font-semibold">Увеличивается (+X)</td>
+            </tr>
+            <tr>
+              <td><span class="font-bold text-rose-600 dark:text-rose-400">IV. Уменьшающий</span> <span class="text-xs text-slate-500">(−А, −П)</span></td>
+              <td>АКТИВ и ПАССИВ</td>
+              <td class="text-rose-600 dark:text-rose-400 font-semibold">Уменьшается (−X)</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <!-- Раздел 5: Тесты -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-        <span>5.</span> Проверка знаний
-      </h2>
+      <h2>5. Проверка знаний</h2>
       <p class="text-slate-600 dark:text-slate-400 text-sm">Ответьте на 5 вопросов, чтобы закрепить материал урока.</p>
 
-      <!-- Вопрос 1 -->
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">1. Что такое валюта баланса?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q1',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Только сумма активов организации</button>
-          <button onclick="checkAnswer('q1',1,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Разница между активами и пассивами</button>
-          <button onclick="checkAnswer('q1',2,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Итоги по активу и пассиву, которые всегда равны между собой</button>
-        </div>
-        <div id="q1-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">1. Что такое валюта баланса?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Только сумма активов организации</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Разница между активами и пассивами</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Итоги по активу и пассиву, которые всегда равны между собой</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 2 -->
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">2. К какому типу относится операция «Снятие наличных с расчётного счёта в кассу»?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q2',0,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Тип I (+А, −А)</button>
-          <button onclick="checkAnswer('q2',1,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Тип II (+П, −П)</button>
-          <button onclick="checkAnswer('q2',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Тип III (+А, +П)</button>
-          <button onclick="checkAnswer('q2',3,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Г) Тип IV (−А, −П)</button>
-        </div>
-        <div id="q2-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">2. К какому типу относится операция «Снятие наличных с расчётного счёта в кассу»?</p>
+        <button class="quiz-option" onclick="checkTest(this, true)">А) Тип I (+А, −А)</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Тип II (+П, −П)</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Тип III (+А, +П)</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Тип IV (−А, −П)</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 3 -->
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">3. На каком счёте согласно Плану счетов Республики Абхазия отражается Уставный капитал в балансе?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q3',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Счёт 80</button>
-          <button onclick="checkAnswer('q3',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Счёт 85</button>
-          <button onclick="checkAnswer('q3',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Счёт 88</button>
-        </div>
-        <div id="q3-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">3. На каком счёте согласно Плану счетов Республики Абхазия отражается Уставный капитал в балансе?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Счёт 80</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Счёт 85</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Счёт 88</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 4 -->
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">4. Организация получила банковский кредит на расчётный счёт. Как это повлияет на валюту баланса?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q4',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Не изменится</button>
-          <button onclick="checkAnswer('q4',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Увеличится на сумму кредита</button>
-          <button onclick="checkAnswer('q4',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Уменьшится на сумму кредита</button>
-        </div>
-        <div id="q4-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">4. Организация получила банковский кредит на расчётный счёт. Как это повлияет на валюту баланса?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Не изменится</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Увеличится на сумму кредита</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Уменьшится на сумму кредита</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 5 -->
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
-        <p class="font-semibold text-slate-900 dark:text-white">5. Что отражается в ПАССИВЕ бухгалтерского баланса?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkAnswer('q5',0,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">А) Имущество организации по составу и размещению</button>
-          <button onclick="checkAnswer('q5',1,true)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">Б) Источники формирования имущества (капитал, обязательства)</button>
-          <button onclick="checkAnswer('q5',2,false)" class="w-full text-left p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">В) Только прибыль организации</button>
-        </div>
-        <div id="q5-feedback" class="hidden p-4 rounded-xl text-xs leading-relaxed"></div>
+      <div class="quiz-question">
+        <p class="quiz-question-title">5. Что отражается в ПАССИВЕ бухгалтерского баланса?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Имущество организации по составу и размещению</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Источники формирования имущества (капитал, обязательства)</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Только прибыль организации</button>
+        <div class="quiz-feedback"></div>
       </div>
     </section>
 
@@ -557,31 +512,26 @@
     }
 
     // Тесты
-    function checkAnswer(qId, idx, ok) {
-      const fb = document.getElementById(`${qId}-feedback`);
-      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/60', 'dark:text-emerald-300', 'bg-rose-50', 'text-rose-800', 'dark:bg-rose-950/60', 'dark:text-rose-300', 'border', 'border-emerald-200', 'dark:border-emerald-800', 'border-rose-200', 'dark:border-rose-800');
+    function checkTest(btn, isCorrect) {
+      const question = btn.closest('.quiz-question');
+      const feedback = question.querySelector('.quiz-feedback');
+      const allOptions = question.querySelectorAll('.quiz-option');
       
-      const ex = {
-        q1: { y: "Верно! Валюта баланса — это итоги по активу и пассиву, которые всегда равны между собой (А = П).", n: "Неверно. Валюта баланса — это итоги по активу и пассиву, которые всегда равны между собой." },
-        q2: { y: "Верно! Это тип I (+А, −А): Касса (актив) увеличилась, а Расчётный счёт (актив) уменьшился на ту же сумму. Валюта баланса не изменилась.", n: "Неверно. Это тип I (+А, −А): меняется только структура Актива, валюта баланса не меняется." },
-        q3: { y: "Верно! В Республике Абхазия Уставный капитал учитывается на счёте 85 (строка 400 баланса).", n: "Неверно. В Республике Абхазия Уставный капитал учитывается на счёте 85." },
-        q4: { y: "Верно! Это операция типа III (+А, +П): деньги на счёте (актив) выросли, и долг перед банком (пассив) вырос. Валюта баланса увеличилась.", n: "Неверно. Получение кредита — это тип III (+А, +П), валюта баланса увеличивается." },
-        q5: { y: "Верно! В пассиве отражаются источники формирования имущества: капитал, обязательства, кредиторская задолженность.", n: "Неверно. В пассиве отражаются источники формирования имущества (капитал и обязательства)." }
-      };
+      allOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+      feedback.classList.remove('correct', 'incorrect', 'show');
       
-      if (ok) {
-        fb.classList.add('bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/60', 'dark:text-emerald-300', 'border', 'border-emerald-200', 'dark:border-emerald-800');
-        fb.innerHTML = `<b>✅ ${ex[qId].y}</b>`;
+      if (isCorrect) {
+        btn.classList.add('correct');
+        feedback.classList.add('correct', 'show');
+        feedback.textContent = '✅ Верно!';
       } else {
-        fb.classList.add('bg-rose-50', 'text-rose-800', 'dark:bg-rose-950/60', 'dark:text-rose-300', 'border', 'border-rose-200', 'dark:border-rose-800');
-        fb.innerHTML = `<b>❌ ${ex[qId].n}</b>`;
+        btn.classList.add('incorrect');
+        feedback.classList.add('incorrect', 'show');
+        feedback.textContent = '❌ Неверно. Попробуйте ещё раз.';
       }
     }
-    </script>
+  </script>
 
-  <div id="smart-footer"></div>
-
-  <!-- Подключаем умный скрипт навигации -->
   <script src="navigation.js"></script>
 </body>
 </html>
