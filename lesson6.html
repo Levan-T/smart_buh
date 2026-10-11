@@ -10,21 +10,29 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' }</script>
+  
+  <!-- Единые стили -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Формат A4 (860px) */
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+  </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
 
   <div id="smart-header"></div>
 
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+  <main class="mx-auto px-4 py-8 space-y-12">
 
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 6. Учет кассовых операций</h1>
-      <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем порядок ведения кассовых операций, кассовую дисциплину, первичные документы и бухгалтерский учет наличных денежных средств по Плану счетов РА.</p>
+      <h1>УРОК 6. Учет кассовых операций</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">Изучаем порядок ведения кассовых операций, кассовую дисциплину, первичные документы и бухгалтерский учет наличных денежных средств по Плану счетов РА.</p>
     </div>
 
     <!-- 1. Понятие кассы и нормативное регулирование -->
     <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Понятие кассы и нормативное регулирование</h2>
+      <h2>1. Понятие кассы и нормативное регулирование</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p><b>Касса</b> — это специально оборудованное помещение или рабочее место, предназначенное для приема, хранения и расходования наличных денежных средств.</p>
         <p>Порядок ведения кассовых операций определяется <b>Положением Национального Банка от 30.12.2014 г. «О Порядке ведения кассовых операций»</b>, согласно которому организации могут иметь в своих кассах наличные деньги в пределах лимитов, установленных банками, осуществляющими их расчетно-кассовое обслуживание.</p>
@@ -33,26 +41,26 @@
 
     <!-- 2. Лимит остатка кассы -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Лимит остатка кассы</h2>
+      <h2>2. Лимит остатка кассы</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Лимиты остатка кассы устанавливаются банками <b>ежеквартально</b> по представлении клиентами заявки в произвольной форме за <b>5 рабочих дней до начала квартала</b>.</p>
         <p>В случае непредоставления указанной заявки лимит считается установленным и <b>равным нулю</b>.</p>
         <p>Сверх лимита все организации, независимо от формы собственности, должны сдавать наличные денежные средства в учреждения банка. <b>Срок сдачи в банк денежной наличности сверх установленных лимитов остатка наличных денег в кассе не должен превышать трех рабочих дней.</b></p>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
-        <h3 class="font-bold text-slate-900 dark:text-white">📋 Правило об источниках наличных денег в кассе</h3>
-        <p class="text-sm text-slate-700 dark:text-slate-300">Важно различать, из какого источника можно брать наличные для разных целей:</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
-          <div class="p-4 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl border border-emerald-200 dark:border-emerald-800">
-            <h4 class="font-bold text-emerald-700 dark:text-emerald-400 mb-2">✅ Можно выдавать из наличных в кассе (в пределах лимита):</h4>
-            <ul class="text-sm text-emerald-800 dark:text-emerald-300 list-disc list-inside space-y-1">
+      <div class="info-block gray">
+        <h3 class="!mt-0 text-lg">📋 Правило об источниках наличных денег в кассе</h3>
+        <p class="text-sm mb-3">Важно различать, из какого источника можно брать наличные для разных целей:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="info-block emerald !my-0">
+            <h4 class="!mt-0 !mb-2 text-sm">✅ Можно выдавать из наличных в кассе (в пределах лимита):</h4>
+            <ul class="text-sm list-disc list-inside space-y-1">
               <li>Выдача наличных материально-ответственным лицам <b>под отчет</b> в пределах лимита кассы</li>
             </ul>
           </div>
-          <div class="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-xl border border-blue-200 dark:border-blue-800">
-            <h4 class="font-bold text-blue-700 dark:text-blue-400 mb-2">🏦 Нужно сначала снять с банковского счета:</h4>
-            <ul class="text-sm text-blue-800 dark:text-blue-300 list-disc list-inside space-y-1">
+          <div class="info-block blue !my-0">
+            <h4 class="!mt-0 !mb-2 text-sm">🏦 Нужно сначала снять с банковского счета:</h4>
+            <ul class="text-sm list-disc list-inside space-y-1">
               <li>Выплата заработной платы</li>
               <li>Другие выплаты социального характера</li>
               <li>Оплата по договорам аренды</li>
@@ -60,37 +68,37 @@
             </ul>
           </div>
         </div>
-        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">Таким образом, <b>нельзя</b> использовать наличную выручку, поступившую в кассу от покупателей, для выплаты зарплаты, аренды или командировочных за пределы РА. Для этих целей необходимо сначала оформить снятие наличных с расчетного счета в банке.</p>
+        <p class="text-xs mt-3">Таким образом, <b>нельзя</b> использовать наличную выручку, поступившую в кассу от покупателей, для выплаты зарплаты, аренды или командировочных за пределы РА. Для этих целей необходимо сначала оформить снятие наличных с расчетного счета в банке.</p>
       </div>
 
-      <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl">
-        <p class="text-sm text-blue-800 dark:text-blue-300"><b>💡 Пример:</b> Лимит кассы ООО «Smart_buh» составляет 50 000 рублей. На конец рабочего дня в кассе фактически находится 75 000 рублей. Сверхлимитный остаток составляет 25 000 рублей (75 000 − 50 000). Эти 25 000 рублей кассир должен сдать в банк в течение 3 рабочих дней.</p>
+      <div class="info-block blue">
+        <p class="text-sm"><b>💡 Пример:</b> Лимит кассы ООО «Smart_buh» составляет 50 000 рублей. На конец рабочего дня в кассе фактически находится 75 000 рублей. Сверхлимитный остаток составляет 25 000 рублей (75 000 − 50 000). Эти 25 000 рублей кассир должен сдать в банк в течение 3 рабочих дней.</p>
       </div>
     </section>
 
     <!-- 3. Материальная ответственность кассира -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Материальная ответственность кассира</h2>
+      <h2>3. Материальная ответственность кассира</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Ведение кассовых операций возложено на <b>кассира</b>, который несет <b>полную материальную ответственность</b> за сохранность принятых ценностей (денежных средств, денежных документов).</p>
         <p>Это означает, что в случае <b>недостачи</b>, кассир обязан возместить ущерб организации. Если обнаруживаются <b>излишки</b>, они приходуются в доход организации.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-rose-50 dark:bg-rose-950/30 p-4 rounded-xl border border-rose-200 dark:border-rose-800">
-          <h4 class="font-bold text-rose-600 dark:text-rose-400 mb-2">❌ Недостача</h4>
-          <p class="text-sm text-rose-800 dark:text-rose-300">В случае недостачи кассир обязан возместить ущерб организации.</p>
+        <div class="info-block amber" style="border-left-color: #e11d48;">
+          <h4 class="!mt-0 !mb-2 text-rose-700 dark:text-rose-400">❌ Недостача</h4>
+          <p class="text-sm">В случае недостачи кассир обязан возместить ущерб организации.</p>
         </div>
-        <div class="bg-emerald-50 dark:bg-emerald-950/30 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800">
-          <h4 class="font-bold text-emerald-600 dark:text-emerald-400 mb-2">✅ Излишки</h4>
-          <p class="text-sm text-emerald-800 dark:text-emerald-300">Если обнаруживаются излишки, они приходуются в доход организации.</p>
+        <div class="info-block emerald">
+          <h4 class="!mt-0 !mb-2">✅ Излишки</h4>
+          <p class="text-sm">Если обнаруживаются излишки, они приходуются в доход организации.</p>
         </div>
       </div>
     </section>
 
     <!-- 4. Первичные документы -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Первичные документы</h2>
+      <h2>4. Первичные документы</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Поступление денег в кассу и выдачу из кассы оформляют <b>приходными и расходными кассовыми ордерами</b>.</p>
         <p>Суммы операций записывают в ордерах не только цифрами, но и <b>прописью</b>.</p>
@@ -98,14 +106,14 @@
         <p>Подчистки, помарки или исправления, хотя бы и оговоренные, в этих документах <b>не допускаются</b>. Прием и выдача денег по кассовым ордерам могут производиться <b>только в день их составления</b>.</p>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
-        <h3 class="font-bold text-slate-900 dark:text-white">💰 Выплата заработной платы и подобных выплат</h3>
-        <p class="text-sm text-slate-700 dark:text-slate-300">Заработную плату, пособия по временной нетрудоспособности, премии и прочие подобные выплаты выдают из кассы <b>не по кассовым ордерам, а по платежным и расчетно-платежным ведомостям</b>, подписанным руководителем организации и главным бухгалтером. При получении денег сотрудники расписываются в платежной ведомости.</p>
+      <div class="info-block gray">
+        <h3 class="!mt-0 text-lg">💰 Выплата заработной платы и подобных выплат</h3>
+        <p class="text-sm">Заработную плату, пособия по временной нетрудоспособности, премии и прочие подобные выплаты выдают из кассы <b>не по кассовым ордерам, а по платежным и расчетно-платежным ведомостям</b>, подписанным руководителем организации и главным бухгалтером. При получении денег сотрудники расписываются в платежной ведомости.</p>
       </div>
 
-      <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl">
-        <h4 class="font-bold text-amber-800 dark:text-amber-300 mb-2">📌 Кто подписывает документы?</h4>
-        <ul class="text-sm text-amber-800 dark:text-amber-300 space-y-1">
+      <div class="info-block amber">
+        <h4 class="!mt-0 !mb-2">📌 Кто подписывает документы?</h4>
+        <ul class="text-sm space-y-1">
           <li>📄 <b>Приходный кассовый ордер (ПКО)</b> — подписывается <b>главным бухгалтером</b>.</li>
           <li>📄 <b>Расходный кассовый ордер (РКО)</b> — подписывается <b>руководителем и главным бухгалтером</b>.</li>
         </ul>
@@ -114,7 +122,7 @@
 
     <!-- 5. Журнал регистрации и кассовая книга -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Журнал регистрации и кассовая книга</h2>
+      <h2>5. Журнал регистрации и кассовая книга</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Приходные кассовые ордера и расходные кассовые ордера <b>до передачи в кассу</b> регистрируются в журнале регистрации приходных и расходных кассовых документов.</p>
         <p>Все операции по поступлению и расходованию денежных средств кассир записывает в <b>кассовую книгу</b>, которая должна быть <b>пронумерована, прошнурована и опечатана сургучной или мастичной печатью</b>.</p>
@@ -125,9 +133,9 @@
         <p>При условии обеспечения полной сохранности кассовых документов кассовая книга может вестись <b>автоматизированным способом</b>.</p>
       </div>
 
-      <div class="bg-rose-50 dark:bg-rose-950/30 border-l-4 border-rose-500 p-4 rounded-r-xl">
-        <h4 class="font-bold text-rose-800 dark:text-rose-300 mb-2">⚠️ Правила исправления ошибок в кассовой книге:</h4>
-        <ol class="text-sm text-rose-800 dark:text-rose-300 list-decimal list-inside space-y-1">
+      <div class="info-block amber" style="border-left-color: #e11d48;">
+        <h4 class="!mt-0 !mb-2 text-rose-700 dark:text-rose-400">⚠️ Правила исправления ошибок в кассовой книге:</h4>
+        <ol class="text-sm list-decimal list-inside space-y-1">
           <li>Исправляемая сумма перечеркивается одной чертой.</li>
           <li>Сверху надписывается новая сумма.</li>
           <li>Заверяется подписями кассира, а также главного бухгалтера (или руководителя при его отсутствии).</li>
@@ -137,28 +145,28 @@
 
     <!-- 6. Бухгалтерский учет (счет 50) -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Бухгалтерский учет денежных средств в кассе</h2>
+      <h2>6. Бухгалтерский учет денежных средств в кассе</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Денежные средства, хранящиеся в кассе, учитывают на <b>активном синтетическом счете 50 «Касса»</b>. В дебет его записывают поступление денежных средств в кассу, а в кредит — выбытие денежных средств из кассы.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h3 class="font-bold text-blue-600 dark:text-blue-400 mb-3">Поступление в кассу (Дебет 50)</h3>
+        <div class="info-block blue">
+          <h3 class="!mt-0 !mb-3">Поступление в кассу (Дебет 50)</h3>
           <ul class="space-y-2 text-sm">
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Снятие наличных с р/с</span><span class="font-mono font-bold">Дт 50 — Кт 51</span></li>
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Выручка от покупателей</span><span class="font-mono font-bold">Дт 50 — Кт 62</span></li>
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Возврат подотчетных сумм</span><span class="font-mono font-bold">Дт 50 — Кт 71</span></li>
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Возврат займов от сотрудников</span><span class="font-mono font-bold">Дт 50 — Кт 73</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Снятие наличных с р/с</span><span class="font-mono font-bold">Дт 50 — Кт 51</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Выручка от покупателей</span><span class="font-mono font-bold">Дт 50 — Кт 62</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Возврат подотчетных сумм</span><span class="font-mono font-bold">Дт 50 — Кт 71</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Возврат займов от сотрудников</span><span class="font-mono font-bold">Дт 50 — Кт 73</span></li>
           </ul>
         </div>
-        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h3 class="font-bold text-purple-600 dark:text-purple-400 mb-3">Выбытие из кассы (Кредит 50)</h3>
+        <div class="info-block gray" style="border-left-color: #a855f7;">
+          <h3 class="!mt-0 !mb-3 text-purple-700 dark:text-purple-400">Выбытие из кассы (Кредит 50)</h3>
           <ul class="space-y-2 text-sm">
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Сдача наличных на р/с</span><span class="font-mono font-bold">Дт 51 — Кт 50</span></li>
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Выдача под отчет</span><span class="font-mono font-bold">Дт 71 — Кт 50</span></li>
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Выплата заработной платы</span><span class="font-mono font-bold">Дт 70 — Кт 50</span></li>
-            <li class="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-900/50 rounded"><span>Выдача займов сотрудникам</span><span class="font-mono font-bold">Дт 73 — Кт 50</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Сдача наличных на р/с</span><span class="font-mono font-bold">Дт 51 — Кт 50</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Выдача под отчет</span><span class="font-mono font-bold">Дт 71 — Кт 50</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Выплата заработной платы</span><span class="font-mono font-bold">Дт 70 — Кт 50</span></li>
+            <li class="flex justify-between items-center p-2 bg-white dark:bg-slate-900/50 rounded"><span>Выдача займов сотрудникам</span><span class="font-mono font-bold">Дт 73 — Кт 50</span></li>
           </ul>
         </div>
       </div>
@@ -166,7 +174,7 @@
 
     <!-- 7. Ревизия кассы -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Ревизия кассы</h2>
+      <h2>7. Ревизия кассы</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>В сроки, установленные руководителем организации, но <b>не реже 1 раза в квартал</b>, проводится внезапная ревизия денежных средств и денежных документов, находящихся в кассе.</p>
         <p>Ревизия кассы проводится также при <b>смене кассира</b>.</p>
@@ -174,25 +182,25 @@
       </div>
 
       <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border-2 border-emerald-500 dark:border-emerald-400">
-        <h3 class="font-bold text-emerald-600 dark:text-emerald-400 mb-3"> Проводки при ревизии кассы (по Плану счетов РА)</h3>
+        <h3 class="font-bold text-emerald-600 dark:text-emerald-400 mb-3">Проводки при ревизии кассы (по Плану счетов РА)</h3>
         <div class="space-y-3 text-sm">
-          <div class="p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg border border-emerald-200 dark:border-emerald-800">
+          <div class="info-block emerald !my-0">
             <p class="font-semibold mb-1">✅ Если ревизией выявлены излишки, они приходуются кассовым ордером:</p>
-            <p class="font-mono font-bold text-emerald-800 dark:text-emerald-300">Дт 50 «Касса» — Кт 80 «Прибыли и убытки»</p>
+            <p class="font-mono font-bold">Дт 50 «Касса» — Кт 80 «Прибыли и убытки»</p>
           </div>
-          <div class="p-3 bg-rose-50 dark:bg-rose-950/30 rounded-lg border border-rose-200 dark:border-rose-800">
+          <div class="info-block amber !my-0" style="border-left-color: #e11d48;">
             <p class="font-semibold mb-1">❌ В случае выявления недостачи осуществляется запись:</p>
-            <p class="font-mono font-bold text-rose-800 dark:text-rose-300 mb-2">Дт 84 «Недостачи и потери от порчи ценностей» — Кт 50 «Касса»</p>
+            <p class="font-mono font-bold mb-2">Дт 84 «Недостачи и потери от порчи ценностей» — Кт 50 «Касса»</p>
             <p class="font-semibold mt-2 mb-1">⚖️ А при вине кассира (подлежит возмещению):</p>
-            <p class="font-mono font-bold text-rose-800 dark:text-rose-300">Дт 73 «Расчеты с персоналом по прочим операциям» — Кт 84 «Недостачи и потери от порчи ценностей»</p>
+            <p class="font-mono font-bold">Дт 73 «Расчеты с персоналом по прочим операциям» — Кт 84 «Недостачи и потери от порчи ценностей»</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. Образцы документов (ПЕРЕРАБОТАНО ПО WORD С АБХАЗСКИМИ НОРМАМИ) -->
+    <!-- 8. Образцы документов -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">8. Образцы документов</h2>
+      <h2>8. Образцы документов</h2>
       <p class="text-sm text-slate-600 dark:text-slate-400">Нажмите на кнопки, чтобы посмотреть образцы документов. На мобильном устройстве документы можно пролистывать вбок.</p>
 
       <div class="flex flex-wrap gap-2">
@@ -567,60 +575,49 @@
 
     <!-- 9. Проверка знаний -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">9. Проверка знаний</h2>
+      <h2>9. Проверка знаний</h2>
 
-      <!-- Тест 1 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">1. В какой срок организации должны сдавать в банк наличные денежные средства сверх установленного лимита?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) В течение 1 рабочего дня</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Не позднее 3 рабочих дней</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) В течение 5 рабочих дней</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">1. В какой срок организации должны сдавать в банк наличные денежные средства сверх установленного лимита?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) В течение 1 рабочего дня</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Не позднее 3 рабочих дней</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) В течение 5 рабочих дней</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Тест 2 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">2. Кто подписывает Расходный кассовый ордер (РКО)?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Только главный бухгалтер</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Только руководитель организации</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Руководитель и главный бухгалтер</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">2. Кто подписывает Расходный кассовый ордер (РКО)?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Только главный бухгалтер</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Только руководитель организации</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Руководитель и главный бухгалтер</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Тест 3 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">3. Какая проводка составляется при выявлении недостачи в кассе?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 50 — Кт 80</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 84 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 73 — Кт 50</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">3. Какая проводка составляется при выявлении недостачи в кассе?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 50 — Кт 80</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 84 — Кт 50</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 73 — Кт 50</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Тест 4 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">4. Какой документ нужно оформить: Кассир выдал деньги сотруднику Иванову И.И. на командировочные расходы?</p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">4. Какой документ нужно оформить: Кассир выдал деньги сотруднику Иванову И.И. на командировочные расходы?</p>
         <div class="flex flex-wrap gap-2">
-          <button onclick="checkDocType(this, false)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Приходный кассовый ордер (ПКО)</button>
-          <button onclick="checkDocType(this, true)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Расходный кассовый ордер (РКО)</button>
-          <button onclick="checkDocType(this, false)" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">Платежная ведомость</button>
+          <button class="quiz-option !w-auto !mb-0" onclick="checkTest(this, false)">Приходный кассовый ордер (ПКО)</button>
+          <button class="quiz-option !w-auto !mb-0" onclick="checkTest(this, true)">Расходный кассовый ордер (РКО)</button>
+          <button class="quiz-option !w-auto !mb-0" onclick="checkTest(this, false)">Платежная ведомость</button>
         </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Тест 5 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">5. Задача на лимит кассы. Лимит остатка кассы ООО «Smart_buh» составляет 40 000 рублей. На конец рабочего дня в кассе фактически находится 67 000 рублей. Какую сумму кассир должен сдать в банк?</p>
-        <div class="flex gap-2">
+      <div class="quiz-question">
+        <p class="quiz-question-title">5. Задача на лимит кассы. Лимит остатка кассы ООО «Smart_buh» составляет 40 000 рублей. На конец рабочего дня в кассе фактически находится 67 000 рублей. Какую сумму кассир должен сдать в банк?</p>
+        <div class="flex gap-2 items-center">
           <input type="number" id="limit-answer" placeholder="Введите сумму" class="flex-1 p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm">
-          <button onclick="checkLimit()" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Проверить</button>
+          <button onclick="checkLimit()" class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-sm font-bold whitespace-nowrap">Проверить</button>
         </div>
-        <p id="limit-feedback" class="hidden mt-2 text-xs font-bold"></p>
+        <div id="limit-feedback" class="quiz-feedback"></div>
       </div>
 
     </section>
@@ -632,9 +629,7 @@
   <script>
     // Переключение документов
     function showDoc(id, btn) {
-      document.querySelectorAll('.doc-content').forEach(el => {
-        el.classList.add('hidden');
-      });
+      document.querySelectorAll('.doc-content').forEach(el => el.classList.add('hidden'));
       document.getElementById(id).classList.remove('hidden');
       
       document.querySelectorAll('.doc-btn').forEach(el => {
@@ -647,33 +642,21 @@
 
     // Проверка тестов
     function checkTest(btn, isCorrect) {
-      const parent = btn.parentElement.parentElement;
-      const fb = parent.querySelector('.feedback');
-      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+      const question = btn.closest('.quiz-question');
+      const feedback = question.querySelector('.quiz-feedback');
+      const allOptions = question.querySelectorAll('.quiz-option');
+      
+      allOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+      feedback.classList.remove('correct', 'incorrect', 'show');
+      
       if (isCorrect) {
-        btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
-        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Верно!';
+        btn.classList.add('correct');
+        feedback.classList.add('correct', 'show');
+        feedback.textContent = '✅ Верно!';
       } else {
-        btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
-        fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
-      }
-    }
-
-    // Проверка типа документа
-    function checkDocType(btn, isCorrect) {
-      const parent = btn.parentElement.parentElement;
-      const fb = parent.querySelector('.feedback');
-      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
-      if (isCorrect) {
-        btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
-        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Верно! Выдача денег оформляется РКО.';
-      } else {
-        btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
-        fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Подумайте: деньги выдаются или принимаются?';
+        btn.classList.add('incorrect');
+        feedback.classList.add('incorrect', 'show');
+        feedback.textContent = '❌ Неверно. Попробуйте еще раз.';
       }
     }
 
@@ -681,21 +664,19 @@
     function checkLimit() {
       const answer = parseFloat(document.getElementById('limit-answer').value);
       const fb = document.getElementById('limit-feedback');
-      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+      
+      fb.classList.remove('correct', 'incorrect', 'show');
       
       if (answer === 27000) {
-        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
+        fb.classList.add('correct', 'show');
         fb.textContent = '✅ Верно! 67 000 − 40 000 = 27 000 руб. (сверхлимитный остаток).';
       } else {
-        fb.classList.add('text-rose-600', 'dark:text-rose-400');
+        fb.classList.add('incorrect', 'show');
         fb.textContent = '❌ Неверно. Сверхлимитный остаток = Фактический остаток − Лимит.';
       }
     }
-    </script>
+  </script>
 
-  <div id="smart-footer"></div>
-
-  <!-- Подключаем умный скрипт навигации -->
   <script src="navigation.js"></script>
 </body>
 </html>
