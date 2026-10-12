@@ -10,21 +10,27 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' }</script>
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+  </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
 
   <div id="smart-header"></div>
 
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+  <main class="mx-auto px-4 py-8 space-y-12">
 
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 8. Учет расчетов с подотчетными лицами</h1>
-      <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем порядок выдачи денег под отчет, авансовые отчеты, командировочные расходы и бухгалтерский учет на счете 71.</p>
+      <h1>УРОК 8. Учет расчетов с подотчетными лицами</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">Изучаем порядок выдачи денег под отчет, авансовые отчеты, командировочные расходы и бухгалтерский учет на счете 71.</p>
     </div>
 
     <!-- 1. Введение -->
     <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Понятие подотчетных лиц</h2>
+      <h2>1. Понятие подотчетных лиц</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Как ранее мы говорили, подавляющая часть операций между организациями происходит в безналичной форме. Однако в ходе ежедневной хозяйственной деятельности у компании неизбежно возникают мелкие оперативные расходы, которые не всегда удобно или возможно оплатить с расчетного счета: покупка хозтоваров, мелкой канцелярии, оплата командировочных расходов и так далее.</p>
         <p>Для оперативного решения таких задач организация выдает денежные средства своим работникам, список которых утверждает приказом руководитель организации. Сотрудники, получившие денежные средства на покрытие расходов в интересах компании, становятся <b>подотчетными лицами</b>, а процесс взаимодействия с ними образует <b>учет расчетов с подотчетными лицами</b>.</p>
@@ -34,13 +40,13 @@
 
     <!-- 2. Нормативное регулирование -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Нормативное регулирование</h2>
+      <h2>2. Нормативное регулирование</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Порядок выдачи наличных денег под отчет регламентируется <b>Положением о ведении кассовых операций</b> и <b>Указом Президента РА от 19.12.2017г. № 315</b>.</p>
         
-        <div class="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 rounded-r-xl my-4">
-          <h4 class="font-bold text-blue-800 dark:text-blue-300 mb-2">📋 Максимальные сроки выдачи под отчет:</h4>
-          <ul class="text-sm text-blue-800 dark:text-blue-300 space-y-2">
+        <div class="info-block blue">
+          <h4 class="!mt-0 !mb-2">📋 Максимальные сроки выдачи под отчет:</h4>
+          <ul class="text-sm space-y-2">
             <li><b>Общий случай:</b> не более <b>2 месяцев</b></li>
             <li><b>Исключения (до 6 месяцев):</b>
               <ul class="list-disc list-inside ml-4 mt-1">
@@ -51,49 +57,39 @@
           </ul>
         </div>
 
-        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl">
-          <h4 class="font-bold text-amber-800 dark:text-amber-300 mb-2">️ Важное правило:</h4>
-          <p class="text-sm text-amber-800 dark:text-amber-300"><b>Запрещено</b> выдавать сотруднику под отчет новой суммы в случае, если он не отчитался по предыдущему авансу.</p>
+        <div class="info-block amber">
+          <h4 class="!mt-0 !mb-2">⚠️ Важное правило:</h4>
+          <p class="text-sm"><b>Запрещено</b> выдавать сотруднику под отчет новой суммы в случае, если он не отчитался по предыдущему авансу.</p>
         </div>
       </div>
     </section>
 
     <!-- 3. Порядок выдачи денег под отчет -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Порядок выдачи денег под отчет</h2>
+      <h2>3. Порядок выдачи денег под отчет</h2>
       
-      <div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-        <h3 class="font-bold text-lg mb-4">📝 Пошаговая процедура:</h3>
+      <div class="info-block gray">
+        <h3 class="!mt-0 !mb-4">📝 Пошаговая процедура:</h3>
         <ol class="space-y-3 text-sm">
           <li class="flex items-start">
             <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">1</span>
-            <div>
-              <b>Сотрудник подаёт заявление</b> (или служебную записку) с указанием истребуемой суммы в подотчет
-            </div>
+            <div><b>Сотрудник подаёт заявление</b> (или служебную записку) с указанием истребуемой суммы в подотчет</div>
           </li>
           <li class="flex items-start">
             <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">2</span>
-            <div>
-              <b>Руководитель</b> своей резолюцией утверждает сумму, указанную в заявлении (или отдельным приказом — для командировки)
-            </div>
+            <div><b>Руководитель</b> своей резолюцией утверждает сумму, указанную в заявлении (или отдельным приказом — для командировки)</div>
           </li>
           <li class="flex items-start">
             <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">3</span>
-            <div>
-              <b>Бухгалтерия</b> оформляет выдачу из кассы денежных средств
-            </div>
+            <div><b>Бухгалтерия</b> оформляет выдачу из кассы денежных средств</div>
           </li>
           <li class="flex items-start">
             <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">4</span>
-            <div>
-              <b>Сотрудник</b> расходует деньги на заявленные цели, собирая подтверждающие документы (чеки, квитанции, билеты)
-            </div>
+            <div><b>Сотрудник</b> расходует деньги на заявленные цели, собирая подтверждающие документы (чеки, квитанции, билеты)</div>
           </li>
           <li class="flex items-start">
             <span class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">5</span>
-            <div>
-              По окончании срока (или по возвращении из командировки) <b>сотрудник составляет авансовый отчёт</b>
-            </div>
+            <div>По окончании срока (или по возвращении из командировки) <b>сотрудник составляет авансовый отчёт</b></div>
           </li>
         </ol>
       </div>
@@ -101,21 +97,21 @@
 
     <!-- 4. Командировочные расходы -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Командировочные расходы</h2>
+      <h2>4. Командировочные расходы</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Обособленной частью подотчетных сумм являются <b>командировочные расходы</b>. Выдача наличных денег под отчет на расходы, связанные со служебными командировками, производится в пределах сумм, причитающихся командированным лицам на эти цели.</p>
         
-        <div class="bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-xl my-4">
-          <h4 class="font-bold text-emerald-800 dark:text-emerald-300 mb-2">📊 Нормы командировочных расходов:</h4>
-          <p class="text-sm text-emerald-800 dark:text-emerald-300 mb-2"><b>Постановление Кабинета Министров РА от 27 декабря 2017 г. N 181</b> регламентирует нормы предельных размеров затрат на командировочные расходы.</p>
-          <p class="text-sm text-emerald-800 dark:text-emerald-300"><b>Пример:</b> Суточный размер затрат при командировке по территории РА составляет <b>200 руб.</b></p>
+        <div class="info-block emerald">
+          <h4 class="!mt-0 !mb-2">📊 Нормы командировочных расходов:</h4>
+          <p class="text-sm mb-2"><b>Постановление Кабинета Министров РА от 27 декабря 2017 г. N 181</b> регламентирует нормы предельных размеров затрат на командировочные расходы.</p>
+          <p class="text-sm"><b>Пример:</b> Суточный размер затрат при командировке по территории РА составляет <b>200 руб.</b></p>
         </div>
       </div>
     </section>
 
     <!-- 5. Авансовый отчет -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Авансовый отчет</h2>
+      <h2>5. Авансовый отчет</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Документ, который сотрудник составляет по итогам использования подотчетных сумм называется <b>Авансовый отчет</b>. В нём указывается:</p>
         <ul class="list-disc list-inside text-sm space-y-1 ml-4">
@@ -128,8 +124,8 @@
 
       <!-- Кнопка для показа образца -->
       <div class="mt-6">
-        <button onclick="toggleDoc('doc-avansovyj')" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow-md transition">
-          📄 Показать образец авансового отчета
+        <button onclick="toggleDoc('doc-avansovyj', this)" id="btn-doc-avansovyj" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90">
+          👁 Показать образец авансового отчета
         </button>
       </div>
 
@@ -183,41 +179,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Предыдущий остаток (аванс/перерасход)</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Получен аванс (из кассы)</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30 font-bold">
-                    <td class="border border-slate-400 p-1">Итого получено</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1" colspan="2"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Израсходовано</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30">
-                    <td class="border border-slate-400 p-1">Остаток</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1">Перерасход</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
+                  <tr><td class="border border-slate-400 p-1">Предыдущий остаток (аванс/перерасход)</td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr><td class="border border-slate-400 p-1">Получен аванс (из кассы)</td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr class="bg-slate-50 dark:bg-slate-900/30 font-bold"><td class="border border-slate-400 p-1">Итого получено</td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1" colspan="2"></td></tr>
+                  <tr><td class="border border-slate-400 p-1">Израсходовано</td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-400 p-1">Остаток</td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr><td class="border border-slate-400 p-1">Перерасход</td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
                 </tbody>
               </table>
 
@@ -287,57 +254,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30">
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="bg-slate-50 dark:bg-slate-900/30">
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
-                  <tr class="font-bold bg-emerald-100 dark:bg-emerald-900/30">
-                    <td class="border border-slate-400 p-1" colspan="4">Итого</td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                    <td class="border border-slate-400 p-1"></td>
-                  </tr>
+                  <tr><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
+                  <tr class="font-bold bg-emerald-100 dark:bg-emerald-900/30"><td class="border border-slate-400 p-1" colspan="4">Итого</td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td><td class="border border-slate-400 p-1"></td></tr>
                 </tbody>
               </table>
 
@@ -353,12 +275,12 @@
 
     <!-- 6. Бухгалтерский учет (счет 71) -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Бухгалтерский учет (счет 71)</h2>
+      <h2>6. Бухгалтерский учет (счет 71)</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Синтетический учет расчетов с подотчетными лицами ведется на <b>активно-пассивном счете 71 «Расчеты с подотчетными лицами»</b>.</p>
         
-        <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h3 class="font-bold text-lg mb-4">📊 Корреспонденция счета 71:</h3>
+        <div class="info-block gray">
+          <h3 class="!mt-0 !mb-4">📊 Корреспонденция счета 71:</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div>
               <h4 class="font-bold text-emerald-600 dark:text-emerald-400 mb-2">По дебету (выдача под отчет):</h4>
@@ -393,26 +315,26 @@
       </div>
 
       <!-- Примеры проводок -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mt-6">
-        <h3 class="font-bold text-lg mb-4">Примеры типовых проводок:</h3>
+      <div class="info-block gray mt-6">
+        <h3 class="!mt-0 !mb-4">Примеры типовых проводок:</h3>
         <div class="space-y-3 text-sm">
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
+          <div class="bg-white dark:bg-slate-900/50 p-3 rounded-lg">
             <p class="font-semibold mb-1">1. Выдача денег под отчет из кассы:</p>
             <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 71 — Кт 50: 5 000 руб.</p>
           </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
+          <div class="bg-white dark:bg-slate-900/50 p-3 rounded-lg">
             <p class="font-semibold mb-1">2. Приобретение материалов подотчетным лицом:</p>
             <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 71: 3 200 руб.</p>
           </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
+          <div class="bg-white dark:bg-slate-900/50 p-3 rounded-lg">
             <p class="font-semibold mb-1">3. Возврат неизрасходованной суммы в кассу:</p>
             <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 50 — Кт 71: 1 800 руб.</p>
           </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
+          <div class="bg-white dark:bg-slate-900/50 p-3 rounded-lg">
             <p class="font-semibold mb-1">4. Командировочные расходы (суточные):</p>
             <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 26 — Кт 71: 2 000 руб.</p>
           </div>
-          <div class="bg-slate-50 dark:bg-slate-900/30 p-3 rounded-lg">
+          <div class="bg-white dark:bg-slate-900/50 p-3 rounded-lg">
             <p class="font-semibold mb-1">5. Перерасход выдан из кассы:</p>
             <p class="font-mono text-emerald-600 dark:text-emerald-400">Дт 71 — Кт 50: 500 руб.</p>
           </div>
@@ -426,51 +348,21 @@
           <div class="p-4 border-r border-slate-400 dark:border-slate-600">
             <h4 class="font-bold text-center mb-3 text-emerald-600 dark:text-emerald-400">Дебет</h4>
             <div class="space-y-2 text-xs">
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Сальдо на 01.10</span>
-                <span>2 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Выдача под отчет (Иванов)</span>
-                <span>5 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Выдача под отчет (Петров)</span>
-                <span>3 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Перерасход (Сидоров)</span>
-                <span>500</span>
-              </div>
-              <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1">
-                <span>Оборот по дебету</span>
-                <span>8 500</span>
-              </div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Сальдо на 01.10</span><span>2 000</span></div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Выдача под отчет (Иванов)</span><span>5 000</span></div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Выдача под отчет (Петров)</span><span>3 000</span></div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Перерасход (Сидоров)</span><span>500</span></div>
+              <div class="flex justify-between font-bold bg-emerald-100 dark:bg-emerald-900/50 p-1"><span>Оборот по дебету</span><span>8 500</span></div>
             </div>
           </div>
           <div class="p-4">
             <h4 class="font-bold text-center mb-3 text-purple-600 dark:text-purple-400">Кредит</h4>
             <div class="space-y-2 text-xs">
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Приобретение материалов</span>
-                <span>3 200</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Командировочные расходы</span>
-                <span>2 000</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Возврат в кассу</span>
-                <span>1 800</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1">
-                <span>Хозяйственные расходы</span>
-                <span>1 500</span>
-              </div>
-              <div class="flex justify-between font-bold bg-purple-100 dark:bg-purple-900/50 p-1">
-                <span>Оборот по кредиту</span>
-                <span>8 500</span>
-              </div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Приобретение материалов</span><span>3 200</span></div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Командировочные расходы</span><span>2 000</span></div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Возврат в кассу</span><span>1 800</span></div>
+              <div class="flex justify-between border-b border-slate-300 dark:border-slate-700 pb-1"><span>Хозяйственные расходы</span><span>1 500</span></div>
+              <div class="flex justify-between font-bold bg-purple-100 dark:bg-purple-900/50 p-1"><span>Оборот по кредиту</span><span>8 500</span></div>
             </div>
           </div>
         </div>
@@ -491,13 +383,7 @@
           <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
             <h4 class="font-bold text-center mb-3 text-sm bg-slate-100 dark:bg-slate-700 p-2 rounded">ЖУРНАЛ-ОРДЕР<br>за октябрь 2026 г. по кредиту счета 71</h4>
             <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-              <thead>
-                <tr class="bg-slate-100 dark:bg-slate-700">
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th>
-                </tr>
-              </thead>
+              <thead><tr class="bg-slate-100 dark:bg-slate-700"><th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th><th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th><th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th></tr></thead>
               <tbody>
                 <tr><td class="border border-slate-300 dark:border-slate-600 p-1">05.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">3 200</td></tr>
                 <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">10.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">26</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">2 000</td></tr>
@@ -512,13 +398,7 @@
           <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
             <h4 class="font-bold text-center mb-3 text-sm bg-slate-100 dark:bg-slate-700 p-2 rounded">ВЕДОМОСТЬ<br>за октябрь 2026 г. по дебету счета 71</h4>
             <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-              <thead>
-                <tr class="bg-slate-100 dark:bg-slate-700">
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th>
-                  <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th>
-                </tr>
-              </thead>
+              <thead><tr class="bg-slate-100 dark:bg-slate-700"><th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th><th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счета</th><th class="border border-slate-300 dark:border-slate-600 p-1">Сумма</th></tr></thead>
               <tbody>
                 <tr><td class="border border-slate-300 dark:border-slate-600 p-1">03.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">50</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">5 000</td></tr>
                 <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">08.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">50</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">3 000</td></tr>
@@ -533,158 +413,140 @@
 
     <!-- 7. Проверка знаний -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Проверка знаний</h2>
+      <h2>7. Проверка знаний</h2>
 
-      <!-- Вопрос 1 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">1. На каком счете ведется синтетический учет расчетов с подотчетными лицами?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 50 «Касса»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 60 «Расчеты с поставщиками»</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 71 «Расчеты с подотчетными лицами»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 76 «Расчеты с разными дебиторами и кредиторами»</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">1. На каком счете ведется синтетический учет расчетов с подотчетными лицами?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Счет 50 «Касса»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Счет 60 «Расчеты с поставщиками»</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Счет 71 «Расчеты с подотчетными лицами»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Счет 76 «Расчеты с разными дебиторами и кредиторами»</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 2 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">2. Какой максимальный срок выдачи денег под отчет по общему правилу?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) 1 месяц</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) 2 месяца</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) 3 месяца</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) 6 месяцев</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">2. Какой максимальный срок выдачи денег под отчет по общему правилу?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 1 месяц</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) 2 месяца</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) 3 месяца</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) 6 месяцев</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 3 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">3. Какой документ составляет сотрудник по итогам использования подотчетных сумм?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Приходный кассовый ордер</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Расходный кассовый ордер</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Авансовый отчет</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Платежное поручение</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">3. Какой документ составляет сотрудник по итогам использования подотчетных сумм?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Приходный кассовый ордер</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Расходный кассовый ордер</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Авансовый отчет</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Платежное поручение</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 4 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">4. Можно ли выдать сотруднику новую сумму под отчет, если он не отчитался по предыдущему авансу?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Да, если сумма небольшая</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Да, с разрешения руководителя</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Нет, запрещено</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Да, если это командировка</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">4. Можно ли выдать сотруднику новую сумму под отчет, если он не отчитался по предыдущему авансу?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Да, если сумма небольшая</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Да, с разрешения руководителя</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Нет, запрещено</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Да, если это командировка</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 5 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">5. Какая проводка составляется при выдаче денег под отчет из кассы?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 50 — Кт 71</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 71 — Кт 50</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 71 — Кт 51</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 71</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">5. Какая проводка составляется при выдаче денег под отчет из кассы?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 50 — Кт 71</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 71 — Кт 50</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 71 — Кт 51</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 51 — Кт 71</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 6 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">6. Какая проводка составляется при возврате неизрасходованной суммы в кассу?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 71 — Кт 50</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 50 — Кт 71</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 71</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 71 — Кт 51</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">6. Какая проводка составляется при возврате неизрасходованной суммы в кассу?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 71 — Кт 50</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 50 — Кт 71</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 51 — Кт 71</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 71 — Кт 51</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 7 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">7. Какая проводка составляется при приобретении материалов подотчетным лицом?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 71 — Кт 10</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 10 — Кт 50</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 71</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 71 — Кт 60</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">7. Какая проводка составляется при приобретении материалов подотчетным лицом?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 71 — Кт 10</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Дт 10 — Кт 50</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Дт 10 — Кт 71</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 71 — Кт 60</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 8 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">8. Какой счет используется для учета командировочных расходов (суточных)?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счет 20 «Основное производство»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счет 44 «Издержки обращения»</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счет 26 «Общехозяйственные расходы»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счет 91 «Прочие доходы и расходы»</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">8. Какой счет используется для учета командировочных расходов (суточных)?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Счет 20 «Основное производство»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Счет 44 «Издержки обращения»</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Счет 26 «Общехозяйственные расходы»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Счет 91 «Прочие доходы и расходы»</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 9 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">9. Какой тип счета 71 «Расчеты с подотчетными лицами»?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Активный</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Пассивный</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Активно-пассивный</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Забалансовый</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">9. Какой тип счета 71 «Расчеты с подотчетными лицами»?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Активный</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Пассивный</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Активно-пассивный</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Забалансовый</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <!-- Вопрос 10 -->
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">10. Сотрудник не израсходовал 1 500 руб. из выданных 5 000 руб. Какая проводка при возврате?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 71 — Кт 50: 1 500 руб.</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 50 — Кт 71: 1 500 руб.</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 26 — Кт 71: 1 500 руб.</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 71 — Кт 26: 1 500 руб.</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">10. Сотрудник не израсходовал 1 500 руб. из выданных 5 000 руб. Какая проводка при возврате?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 71 — Кт 50: 1 500 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 50 — Кт 71: 1 500 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 26 — Кт 71: 1 500 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 71 — Кт 26: 1 500 руб.</button>
+        <div class="quiz-feedback"></div>
       </div>
 
     </section>
 
   </main>
 
+  <div id="smart-footer"></div>
 
   <script>
-    function checkTest(btn, isCorrect) {
-      const parent = btn.parentElement.parentElement;
-      const fb = parent.querySelector('.feedback');
-      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
-      if (isCorrect) {
-        btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
-        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Верно!';
+    // Функция точно как в Уроках 4 и 7: переключает hidden + меняет текст и цвет кнопки
+    function toggleDoc(id, btn) {
+      const content = document.getElementById(id);
+      
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        btn.innerHTML = '🙈 Скрыть документ';
+        btn.className = 'w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:opacity-90';
       } else {
-        btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
-        fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
+        content.classList.add('hidden');
+        btn.innerHTML = '👁 Показать образец авансового отчета';
+        btn.className = 'w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90';
       }
     }
 
-    function toggleDoc(id) {
-      const doc = document.getElementById(id);
-      doc.classList.toggle('hidden');
+    function checkTest(btn, isCorrect) {
+      const question = btn.closest('.quiz-question');
+      const feedback = question.querySelector('.quiz-feedback');
+      const allOptions = question.querySelectorAll('.quiz-option');
+      
+      allOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+      feedback.classList.remove('correct', 'incorrect', 'show');
+      
+      if (isCorrect) {
+        btn.classList.add('correct');
+        feedback.classList.add('correct', 'show');
+        feedback.textContent = '✅ Верно!';
+      } else {
+        btn.classList.add('incorrect');
+        feedback.classList.add('incorrect', 'show');
+        feedback.textContent = '❌ Неверно. Попробуйте еще раз.';
+      }
     }
-    </script>
+  </script>
 
-  <div id="smart-footer"></div>
-
-  <!-- Подключаем умный скрипт навигации -->
   <script src="navigation.js"></script>
 </body>
 </html>
