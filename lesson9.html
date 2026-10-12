@@ -10,21 +10,27 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' }</script>
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+  </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
 
   <div id="smart-header"></div>
 
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+  <main class="mx-auto px-4 py-8 space-y-12">
 
     <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">УРОК 9. Учет расчетов с поставщиками (подрядчиками) и покупателями (заказчиками)</h1>
-      <p class="text-slate-600 dark:text-slate-400 text-base">Изучаем учет расчетов с контрагентами, использование счетов 60, 61, 62, 64, отражение авансовых операций и составление первичных документов.</p>
+      <h1>УРОК 9. Учет расчетов с поставщиками (подрядчиками) и покупателями (заказчиками)</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">Изучаем учет расчетов с контрагентами, использование счетов 60, 61, 62, 64, отражение авансовых операций и составление первичных документов.</p>
     </div>
 
     <!-- 1. Понятие расчетов с контрагентами -->
     <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">1. Понятие расчетов с контрагентами</h2>
+      <h2>1. Понятие расчетов с контрагентами</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Расчёты с поставщиками (подрядчиками) и расчёты с покупателями (заказчиками) — это две стороны одного и того же типа хозяйственных связей: организация одновременно кому-то должна и ей самой кто-то должен.</p>
         <p><b>К поставщикам и подрядчикам</b> относят предприятия и организации, поставляющие товары, сырьё, материалы и прочие товарно-материальные ценности, а также выполняющие и оказывающие различного рода работы и услуги.</p>
@@ -35,7 +41,7 @@
 
     <!-- 2. Счет 60 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">2. Счёт 60 «Расчёты с поставщиками и подрядчиками»</h2>
+      <h2>2. Счёт 60 «Расчёты с поставщиками и подрядчиками»</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Счёт 60 «Расчёты с поставщиками и подрядчиками» отражает обязательства организации перед теми, кто поставляет ей товары, материалы, выполняет работы или оказывает услуги — это <b>кредиторская задолженность</b>, поэтому счёт 60 в классическом варианте рассматривается как <b>пассивный</b>: типичное сальдо — кредитовое, долг перед поставщиком растёт по кредиту и гасится по дебету.</p>
         <p>Если же поставщику оплатили предоплату (фактический аванс, т.е. поставщик теперь должен либо отгрузить товар на эту сумму, либо вернуть деньги), то для учёта подобных операций используется <b>активный счёт 61 «Расчёты по авансам выданным»</b>.</p>
@@ -45,7 +51,7 @@
 
     <!-- 3. Счет 62 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">3. Счёт 62 «Расчёты с покупателями и заказчиками»</h2>
+      <h2>3. Счёт 62 «Расчёты с покупателями и заказчиками»</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Счёт 62 «Расчёты с покупателями и заказчиками», наоборот, отражает обязательства покупателей перед организацией за то, что она им отгрузила или для них выполнила — это <b>дебиторская задолженность</b>, поэтому счёт 62 рассматривается как <b>активный (по умолчанию)</b>: типичное сальдо — дебетовое, долг покупателя растёт по дебету и гасится по кредиту.</p>
         <p>При наличии же полученного аванса (организация получила деньги от покупателя вперёд, до отгрузки — она теперь должна либо отгрузить товар на эту сумму, либо вернуть деньги, это уже не актив, а наше обязательство), используется <b>пассивный счёт 64 «Расчёты по авансам полученным»</b>.</p>
@@ -54,39 +60,39 @@
 
       <!-- Сводная таблица -->
       <div class="overflow-x-auto mt-6">
-        <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600 shadow-lg">
+        <table class="data-table">
           <thead>
-            <tr class="bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
-              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Параметр</th>
-              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Счёт 60</th>
-              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left">Счёт 62</th>
+            <tr>
+              <th>Параметр</th>
+              <th>Счёт 60</th>
+              <th>Счёт 62</th>
             </tr>
           </thead>
-          <tbody class="text-slate-700 dark:text-slate-300">
-            <tr class="bg-white dark:bg-slate-800">
-              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Кто перед кем должен</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3">Обычно компания должна поставщику</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3">Обычно покупатель должен компании</td>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Кто перед кем должен</td>
+              <td>Обычно компания должна поставщику</td>
+              <td>Обычно покупатель должен компании</td>
             </tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30">
-              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Тип счёта</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3">Пассивный (по умолчанию)</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3">Активный (по умолчанию)</td>
+            <tr>
+              <td class="font-semibold">Тип счёта</td>
+              <td>Пассивный (по умолчанию)</td>
+              <td>Активный (по умолчанию)</td>
             </tr>
-            <tr class="bg-white dark:bg-slate-800">
-              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Растёт по</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3 text-rose-600 dark:text-rose-400">Кредиту (получили товар — выросла задолженность)</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">Дебету (отгрузили товар — выросла задолженность покупателя)</td>
+            <tr>
+              <td class="font-semibold">Растёт по</td>
+              <td class="text-rose-600 dark:text-rose-400">Кредиту (получили товар — выросла задолженность)</td>
+              <td class="text-emerald-600 dark:text-emerald-400">Дебету (отгрузили товар — выросла задолженность покупателя)</td>
             </tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30">
-              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Уменьшается по</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3 text-emerald-600 dark:text-emerald-400">Дебету (оплатили — задолженность погашена)</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3 text-rose-600 dark:text-rose-400">Кредиту (получили оплату — задолженность погашена)</td>
+            <tr>
+              <td class="font-semibold">Уменьшается по</td>
+              <td class="text-emerald-600 dark:text-emerald-400">Дебету (оплатили — задолженность погашена)</td>
+              <td class="text-rose-600 dark:text-rose-400">Кредиту (получили оплату — задолженность погашена)</td>
             </tr>
-            <tr class="bg-white dark:bg-slate-800">
-              <td class="border border-slate-300 dark:border-slate-600 p-3 font-semibold">Родственный счёт авансов</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3">61 «Расчёты по авансам выданным» — если заплатили вперёд, ДО получения товара</td>
-              <td class="border border-slate-300 dark:border-slate-600 p-3">64 «Расчёты по авансам полученным» — если получили деньги вперёд, ДО отгрузки</td>
+            <tr>
+              <td class="font-semibold">Родственный счёт авансов</td>
+              <td>61 «Расчёты по авансам выданным» — если заплатили вперёд, ДО получения товара</td>
+              <td>64 «Расчёты по авансам полученным» — если получили деньги вперёд, ДО отгрузки</td>
             </tr>
           </tbody>
         </table>
@@ -95,63 +101,63 @@
 
     <!-- 4. Договор и первичные документы -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">4. Договор и первичные документы</h2>
+      <h2>4. Договор и первичные документы</h2>
       <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
         <p>Расчёты с контрагентами всегда опираются на договор — поставки, подряда, купли-продажи, оказания услуг и т.д. Договор определяет условия: цену, сроки поставки/оплаты, порядок перехода права собственности.</p>
         <p>На основании договора и по факту его исполнения оформляются <b>первичные документы</b>, такие как накладная, акт выполненных работ или оказанных услуг, счёт-фактура. Оплата осуществляется на основании счёта, который не является учётным документом, но служит основанием для оплаты.</p>
         
-        <div class="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
-          <h4 class="font-bold text-amber-800 dark:text-amber-300 mb-2">⚠️ Важно понимать:</h4>
-          <p class="text-sm text-amber-800 dark:text-amber-300">В бухгалтерском учёте перечисление денег само по себе <b>не означает</b> покупку товара или получение услуги. Переход права собственности привязан не к движению денежных средств, а к фактическому получению товара, работы или услуги, которое оформляется первичным документом.</p>
-          <p class="text-sm text-amber-800 dark:text-amber-300 mt-2">Именно <b>дата на документе</b> определяет отчётный период (месяц, квартал, год), в котором операция по переходу права собственности должна отразиться в бухгалтерском учёте.</p>
-          <p class="text-sm text-amber-800 dark:text-amber-300 mt-2">Также, с момента подписания накладной покупатель получает не только право распоряжаться товаром, но и принимает на себя все риски его случайной порчи или утраты. До этого момента за товар отвечает продавец.</p>
+        <div class="info-block amber">
+          <h4 class="!mt-0 !mb-2">⚠️ Важно понимать:</h4>
+          <p class="text-sm">В бухгалтерском учёте перечисление денег само по себе <b>не означает</b> покупку товара или получение услуги. Переход права собственности привязан не к движению денежных средств, а к фактическому получению товара, работы или услуги, которое оформляется первичным документом.</p>
+          <p class="text-sm mt-2">Именно <b>дата на документе</b> определяет отчётный период (месяц, квартал, год), в котором операция по переходу права собственности должна отразиться в бухгалтерском учёте.</p>
+          <p class="text-sm mt-2">Также, с момента подписания накладной покупатель получает не только право распоряжаться товаром, но и принимает на себя все риски его случайной порчи или утраты. До этого момента за товар отвечает продавец.</p>
         </div>
       </div>
     </section>
 
     <!-- 5. Корреспонденция счета 60 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">5. Счёт 60 «Расчёты с поставщиками и подрядчиками» — корреспонденция счетов</h2>
+      <h2>5. Счёт 60 «Расчёты с поставщиками и подрядчиками» — корреспонденция счетов</h2>
       <div class="overflow-x-auto">
-        <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600 shadow-lg">
+        <table class="data-table text-xs">
           <thead>
-            <tr class="bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
-              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left w-1/2">По дебету счёта 60</th>
-              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left w-1/2">По кредиту счёта 60</th>
+            <tr>
+              <th class="w-1/2">По дебету счёта 60</th>
+              <th class="w-1/2">По кредиту счёта 60</th>
             </tr>
           </thead>
-          <tbody class="text-slate-700 dark:text-slate-300">
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">46 «Реализация продукции (работ, услуг)»</td><td class="border border-slate-300 dark:border-slate-600 p-2">07 «Оборудование к установке»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">47 «Реализация и прочее выбытие основных средств»</td><td class="border border-slate-300 dark:border-slate-600 p-2">08 «Капитальные вложения»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">48 «Реализация прочих активов»</td><td class="border border-slate-300 dark:border-slate-600 p-2">10 «Материалы»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">50 «Касса»</td><td class="border border-slate-300 dark:border-slate-600 p-2">11 «Животные на выращивании и откорме»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">51 «Расчётный счёт»</td><td class="border border-slate-300 dark:border-slate-600 p-2">12 «Малоценные и быстроизнашивающиеся предметы»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">52 «Валютный счёт»</td><td class="border border-slate-300 dark:border-slate-600 p-2">15 «Заготовление и приобретение материалов»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">55 «Специальные счета в банках»</td><td class="border border-slate-300 dark:border-slate-600 p-2">19 «НДС по приобретённым ценностям»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">60 «Расчёты с поставщиками и подрядчиками»</td><td class="border border-slate-300 dark:border-slate-600 p-2">20 «Основное производство»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">61 «Расчёты по авансам выданным»</td><td class="border border-slate-300 dark:border-slate-600 p-2">23 «Вспомогательные производства»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">62 «Расчёты с покупателями и заказчиками»</td><td class="border border-slate-300 dark:border-slate-600 p-2">25 «Общепроизводственные расходы»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">76 «Расчёты с разными дебиторами и кредиторами»</td><td class="border border-slate-300 dark:border-slate-600 p-2">26 «Общехозяйственные расходы»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">78 «Расчёты с дочерними (зависимыми) организациями»</td><td class="border border-slate-300 dark:border-slate-600 p-2">27 «Общехозяйственные расходы Комитета по управлению гос. имуществом и приватизации»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">80 «Прибыли и убытки»</td><td class="border border-slate-300 dark:border-slate-600 p-2">28 «Брак в производстве»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">90 «Краткосрочные кредиты банков»</td><td class="border border-slate-300 dark:border-slate-600 p-2">29 «Обслуживающие производства и хозяйства»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">92 «Долгосрочные кредиты банков»</td><td class="border border-slate-300 dark:border-slate-600 p-2">30 «Некапитальные работы»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">31 «Расходы будущих периодов»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">41 «Товары»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">43 «Коммерческие расходы»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">44 «Издержки обращения»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">45 «Товары отгруженные»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">50 «Касса»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">51 «Расчётный счёт»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">52 «Валютный счёт»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">60 «Расчёты с поставщиками и подрядчиками»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">62 «Расчёты с покупателями и заказчиками»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">63 «Расчёты по претензиям»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">78 «Расчёты с дочерними (зависимыми) организациями»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">79 «Внутрихозяйственные расчёты»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">80 «Прибыли и убытки»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">83 «Доходы будущих периодов»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2"></td><td class="border border-slate-300 dark:border-slate-600 p-2">84 «Недостачи и потери от порчи ценностей»</td></tr>
+          <tbody>
+            <tr><td>46 «Реализация продукции (работ, услуг)»</td><td>07 «Оборудование к установке»</td></tr>
+            <tr><td>47 «Реализация и прочее выбытие основных средств»</td><td>08 «Капитальные вложения»</td></tr>
+            <tr><td>48 «Реализация прочих активов»</td><td>10 «Материалы»</td></tr>
+            <tr><td>50 «Касса»</td><td>11 «Животные на выращивании и откорме»</td></tr>
+            <tr><td>51 «Расчётный счёт»</td><td>12 «Малоценные и быстроизнашивающиеся предметы»</td></tr>
+            <tr><td>52 «Валютный счёт»</td><td>15 «Заготовление и приобретение материалов»</td></tr>
+            <tr><td>55 «Специальные счета в банках»</td><td>19 «НДС по приобретённым ценностям»</td></tr>
+            <tr><td>60 «Расчёты с поставщиками и подрядчиками»</td><td>20 «Основное производство»</td></tr>
+            <tr><td>61 «Расчёты по авансам выданным»</td><td>23 «Вспомогательные производства»</td></tr>
+            <tr><td>62 «Расчёты с покупателями и заказчиками»</td><td>25 «Общепроизводственные расходы»</td></tr>
+            <tr><td>76 «Расчёты с разными дебиторами и кредиторами»</td><td>26 «Общехозяйственные расходы»</td></tr>
+            <tr><td>78 «Расчёты с дочерними (зависимыми) организациями»</td><td>27 «Общехоз. расходы Комитета по управлению гос. имуществом»</td></tr>
+            <tr><td>80 «Прибыли и убытки»</td><td>28 «Брак в производстве»</td></tr>
+            <tr><td>90 «Краткосрочные кредиты банков»</td><td>29 «Обслуживающие производства и хозяйства»</td></tr>
+            <tr><td>92 «Долгосрочные кредиты банков»</td><td>30 «Некапитальные работы»</td></tr>
+            <tr><td></td><td>31 «Расходы будущих периодов»</td></tr>
+            <tr><td></td><td>41 «Товары»</td></tr>
+            <tr><td></td><td>43 «Коммерческие расходы»</td></tr>
+            <tr><td></td><td>44 «Издержки обращения»</td></tr>
+            <tr><td></td><td>45 «Товары отгруженные»</td></tr>
+            <tr><td></td><td>50 «Касса»</td></tr>
+            <tr><td></td><td>51 «Расчётный счёт»</td></tr>
+            <tr><td></td><td>52 «Валютный счёт»</td></tr>
+            <tr><td></td><td>60 «Расчёты с поставщиками и подрядчиками»</td></tr>
+            <tr><td></td><td>62 «Расчёты с покупателями и заказчиками»</td></tr>
+            <tr><td></td><td>63 «Расчёты по претензиям»</td></tr>
+            <tr><td></td><td>78 «Расчёты с дочерними (зависимыми) организациями»</td></tr>
+            <tr><td></td><td>79 «Внутрихозяйственные расчёты»</td></tr>
+            <tr><td></td><td>80 «Прибыли и убытки»</td></tr>
+            <tr><td></td><td>83 «Доходы будущих периодов»</td></tr>
+            <tr><td></td><td>84 «Недостачи и потери от порчи ценностей»</td></tr>
           </tbody>
         </table>
       </div>
@@ -159,27 +165,27 @@
 
     <!-- 6. Корреспонденция счета 62 -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">6. Счёт 62 «Расчёты с покупателями и заказчиками» — корреспонденция счетов</h2>
+      <h2>6. Счёт 62 «Расчёты с покупателями и заказчиками» — корреспонденция счетов</h2>
       <div class="overflow-x-auto">
-        <table class="w-full text-xs border-collapse border border-slate-300 dark:border-slate-600 shadow-lg">
+        <table class="data-table text-xs">
           <thead>
-            <tr class="bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
-              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left w-1/2">По дебету счёта 62</th>
-              <th class="border border-slate-300 dark:border-slate-600 p-3 text-left w-1/2">По кредиту счёта 62</th>
+            <tr>
+              <th class="w-1/2">По дебету счёта 62</th>
+              <th class="w-1/2">По кредиту счёта 62</th>
             </tr>
           </thead>
-          <tbody class="text-slate-700 dark:text-slate-300">
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">30 «Некапитальные работы»</td><td class="border border-slate-300 dark:border-slate-600 p-2">50 «Касса»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">36 «Выполненные этапы по незавершённым работам»</td><td class="border border-slate-300 dark:border-slate-600 p-2">51 «Расчётный счёт»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">46 «Реализация продукции (работ, услуг)»</td><td class="border border-slate-300 dark:border-slate-600 p-2">52 «Валютный счёт»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">47 «Реализация и выбытие основных средств»</td><td class="border border-slate-300 dark:border-slate-600 p-2">57 «Переводы в пути»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">48 «Реализация прочих активов»</td><td class="border border-slate-300 dark:border-slate-600 p-2">63 «Расчёты по претензиям»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">50 «Касса»</td><td class="border border-slate-300 dark:border-slate-600 p-2">64 «Расчёты по авансам полученным»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">51 «Расчётный счёт»</td><td class="border border-slate-300 dark:border-slate-600 p-2">80 «Прибыли и убытки»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">52 «Валютный счёт»</td><td class="border border-slate-300 dark:border-slate-600 p-2">82 «Оценочные резервы»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">60 «Расчёты с поставщиками и подрядчиками»</td><td class="border border-slate-300 dark:border-slate-600 p-2">83 «Доходы будущих периодов»</td></tr>
-            <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-2">80 «Прибыли и убытки»</td><td class="border border-slate-300 dark:border-slate-600 p-2">90 «Краткосрочные кредиты банков»</td></tr>
-            <tr class="bg-white dark:bg-slate-800"><td class="border border-slate-300 dark:border-slate-600 p-2">83 «Доходы будущих периодов»</td><td class="border border-slate-300 dark:border-slate-600 p-2">92 «Долгосрочные кредиты банков»</td></tr>
+          <tbody>
+            <tr><td>30 «Некапитальные работы»</td><td>50 «Касса»</td></tr>
+            <tr><td>36 «Выполненные этапы по незавершённым работам»</td><td>51 «Расчётный счёт»</td></tr>
+            <tr><td>46 «Реализация продукции (работ, услуг)»</td><td>52 «Валютный счёт»</td></tr>
+            <tr><td>47 «Реализация и выбытие основных средств»</td><td>57 «Переводы в пути»</td></tr>
+            <tr><td>48 «Реализация прочих активов»</td><td>63 «Расчёты по претензиям»</td></tr>
+            <tr><td>50 «Касса»</td><td>64 «Расчёты по авансам полученным»</td></tr>
+            <tr><td>51 «Расчётный счёт»</td><td>80 «Прибыли и убытки»</td></tr>
+            <tr><td>52 «Валютный счёт»</td><td>82 «Оценочные резервы»</td></tr>
+            <tr><td>60 «Расчёты с поставщиками и подрядчиками»</td><td>83 «Доходы будущих периодов»</td></tr>
+            <tr><td>80 «Прибыли и убытки»</td><td>90 «Краткосрочные кредиты банков»</td></tr>
+            <tr><td>83 «Доходы будущих периодов»</td><td>92 «Долгосрочные кредиты банков»</td></tr>
           </tbody>
         </table>
       </div>
@@ -187,19 +193,19 @@
 
     <!-- 7. Примеры проводок -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">7. Примеры типовых операций и проводок</h2>
+      <h2>7. Примеры типовых операций и проводок</h2>
       
       <div class="space-y-3 text-sm">
-        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h4 class="font-bold mb-2">Пример 1. Поступление материалов от поставщика с последующей оплатой:</h4>
+        <div class="info-block gray !my-0">
+          <h4 class="!mt-0 !mb-2">Пример 1. Поступление материалов от поставщика с последующей оплатой:</h4>
           <ol class="space-y-1 text-xs">
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 60: 50 000 руб.</span> — получены материалы от ООО «Стройматериалы» (накладная)</li>
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 60 — Кт 51: 50 000 руб.</span> — оплачено поставщику с расчётного счёта</li>
           </ol>
         </div>
 
-        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h4 class="font-bold mb-2">Пример 2. Аванс поставщику и получение товара (с использованием счёта 61):</h4>
+        <div class="info-block gray !my-0">
+          <h4 class="!mt-0 !mb-2">Пример 2. Аванс поставщику и получение товара (с использованием счёта 61):</h4>
           <ol class="space-y-1 text-xs">
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 61 — Кт 51: 30 000 руб.</span> — перечислен аванс поставщику ООО «Канцтовары»</li>
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 60: 30 000 руб.</span> — получены канцелярские товары (накладная)</li>
@@ -207,16 +213,16 @@
           </ol>
         </div>
 
-        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h4 class="font-bold mb-2">Пример 3. Реализация продукции покупателю с последующей оплатой:</h4>
+        <div class="info-block gray !my-0">
+          <h4 class="!mt-0 !mb-2">Пример 3. Реализация продукции покупателю с последующей оплатой:</h4>
           <ol class="space-y-1 text-xs">
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 62 — Кт 46: 80 000 руб.</span> — отгружена продукция ООО «Турист» (накладная)</li>
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 51 — Кт 62: 80 000 руб.</span> — получена оплата от покупателя</li>
           </ol>
         </div>
 
-        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h4 class="font-bold mb-2">Пример 4. Получение аванса от покупателя и отгрузка (с использованием счёта 64):</h4>
+        <div class="info-block gray !my-0">
+          <h4 class="!mt-0 !mb-2">Пример 4. Получение аванса от покупателя и отгрузка (с использованием счёта 64):</h4>
           <ol class="space-y-1 text-xs">
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 51 — Кт 64: 40 000 руб.</span> — получен аванс от ООО «Партнёр»</li>
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 62 — Кт 46: 40 000 руб.</span> — отгружены товары покупателю (накладная)</li>
@@ -224,8 +230,8 @@
           </ol>
         </div>
 
-        <div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
-          <h4 class="font-bold mb-2">Пример 5. Частичная предоплата и доплата:</h4>
+        <div class="info-block gray !my-0">
+          <h4 class="!mt-0 !mb-2">Пример 5. Частичная предоплата и доплата:</h4>
           <ol class="space-y-1 text-xs">
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 61 — Кт 51: 20 000 руб.</span> — перечислен аванс поставщику (50% от суммы)</li>
             <li><span class="font-mono text-emerald-600 dark:text-emerald-400">Дт 10 — Кт 60: 40 000 руб.</span> — получены материалы на полную сумму</li>
@@ -238,7 +244,7 @@
 
     <!-- 8. Т-образные формы счетов -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">8. Т-образные формы счетов</h2>
+      <h2>8. Т-образные формы счетов</h2>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Счет 60 -->
@@ -309,20 +315,14 @@
 
     <!-- 9. Журнал-ордер и Ведомость -->
     <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">9. Журнал-ордер и Ведомость по счетам 60 и 62</h2>
+      <h2>9. Журнал-ордер и Ведомость по счетам 60 и 62</h2>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Журнал-ордер № 6 -->
         <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
           <h4 class="font-bold text-center mb-3 text-sm bg-blue-100 dark:bg-blue-900/30 p-2 rounded">ЖУРНАЛ-ОРДЕР № 6<br>за октябрь 2026 г. по кредиту счёта 60</h4>
           <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-            <thead>
-              <tr class="bg-slate-100 dark:bg-slate-700">
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
-              </tr>
-            </thead>
+            <thead><tr class="bg-slate-100 dark:bg-slate-700"><th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th><th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th><th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th></tr></thead>
             <tbody>
               <tr><td class="border border-slate-300 dark:border-slate-600 p-1">03.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">50 000</td></tr>
               <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">07.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">26</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">12 000</td></tr>
@@ -337,13 +337,7 @@
         <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
           <h4 class="font-bold text-center mb-3 text-sm bg-emerald-100 dark:bg-emerald-900/30 p-2 rounded">ВЕДОМОСТЬ № 6<br>за октябрь 2026 г. по дебету счёта 60</h4>
           <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-            <thead>
-              <tr class="bg-slate-100 dark:bg-slate-700">
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
-              </tr>
-            </thead>
+            <thead><tr class="bg-slate-100 dark:bg-slate-700"><th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th><th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th><th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th></tr></thead>
             <tbody>
               <tr><td class="border border-slate-300 dark:border-slate-600 p-1">05.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">50 000</td></tr>
               <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">08.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">12 000</td></tr>
@@ -358,13 +352,7 @@
         <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
           <h4 class="font-bold text-center mb-3 text-sm bg-purple-100 dark:bg-purple-900/30 p-2 rounded">ЖУРНАЛ-ОРДЕР № 4<br>за октябрь 2026 г. по дебету счёта 62</h4>
           <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-            <thead>
-              <tr class="bg-slate-100 dark:bg-slate-700">
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
-              </tr>
-            </thead>
+            <thead><tr class="bg-slate-100 dark:bg-slate-700"><th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th><th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th><th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th></tr></thead>
             <tbody>
               <tr><td class="border border-slate-300 dark:border-slate-600 p-1">04.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">46</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">80 000</td></tr>
               <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">09.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">46</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">45 000</td></tr>
@@ -378,13 +366,7 @@
         <div class="border-2 border-slate-300 dark:border-slate-600 p-4 rounded-lg">
           <h4 class="font-bold text-center mb-3 text-sm bg-amber-100 dark:bg-amber-900/30 p-2 rounded">ВЕДОМОСТЬ № 4<br>за октябрь 2026 г. по кредиту счёта 62</h4>
           <table class="w-full border-collapse border border-slate-300 dark:border-slate-600 text-[10px]">
-            <thead>
-              <tr class="bg-slate-100 dark:bg-slate-700">
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th>
-                <th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th>
-              </tr>
-            </thead>
+            <thead><tr class="bg-slate-100 dark:bg-slate-700"><th class="border border-slate-300 dark:border-slate-600 p-1">Дата</th><th class="border border-slate-300 dark:border-slate-600 p-1">№ кор. счёта</th><th class="border border-slate-300 dark:border-slate-600 p-1">Сумма, руб.</th></tr></thead>
             <tbody>
               <tr><td class="border border-slate-300 dark:border-slate-600 p-1">06.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">80 000</td></tr>
               <tr class="bg-slate-50 dark:bg-slate-900/30"><td class="border border-slate-300 dark:border-slate-600 p-1">11.10</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-center">51</td><td class="border border-slate-300 dark:border-slate-600 p-1 text-right">45 000</td></tr>
@@ -397,142 +379,124 @@
 
     <!-- 10. Проверка знаний -->
     <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
-      <h2 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800 pb-2">10. Проверка знаний</h2>
+      <h2>10. Проверка знаний</h2>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">1. Какой счёт используется для учёта расчётов с поставщиками и подрядчиками?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счёт 62 «Расчёты с покупателями и заказчиками»</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счёт 60 «Расчёты с поставщиками и подрядчиками»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счёт 76 «Расчёты с разными дебиторами и кредиторами»</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счёт 71 «Расчёты с подотчётными лицами»</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">1. Какой счёт используется для учёта расчётов с поставщиками и подрядчиками?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Счёт 62 «Расчёты с покупателями и заказчиками»</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Счёт 60 «Расчёты с поставщиками и подрядчиками»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Счёт 76 «Расчёты с разными дебиторами и кредиторами»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Счёт 71 «Расчёты с подотчётными лицами»</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">2. Какой счёт является активным и используется для учёта авансов, перечисленных поставщикам?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счёт 60</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счёт 61</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счёт 62</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счёт 64</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">2. Какой счёт является активным и используется для учёта авансов, перечисленных поставщикам?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Счёт 60</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Счёт 61</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Счёт 62</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Счёт 64</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">3. Какой счёт является пассивным и используется для учёта авансов, полученных от покупателей?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Счёт 60</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Счёт 61</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Счёт 62</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Счёт 64</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">3. Какой счёт является пассивным и используется для учёта авансов, полученных от покупателей?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Счёт 60</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Счёт 61</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Счёт 62</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Г) Счёт 64</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">4. Какая проводка составляется при перечислении аванса поставщику с расчётного счёта?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 60 — Кт 51</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 61 — Кт 51</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 61</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 60 — Кт 61</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">4. Какая проводка составляется при перечислении аванса поставщику с расчётного счёта?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 60 — Кт 51</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 61 — Кт 51</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 51 — Кт 61</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 60 — Кт 61</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">5. Какая проводка составляется при получении материалов от поставщика?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 60 — Кт 10</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 10 — Кт 60</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 51</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 61 — Кт 10</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">5. Какая проводка составляется при получении материалов от поставщика?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 60 — Кт 10</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 10 — Кт 60</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 10 — Кт 51</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 61 — Кт 10</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">6. Какая проводка составляется при зачёте ранее выданного аванса в счёт поставки?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 61 — Кт 60</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 61</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 61</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 60 — Кт 10</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">6. Какая проводка составляется при зачёте ранее выданного аванса в счёт поставки?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 61 — Кт 60</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 60 — Кт 61</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 10 — Кт 61</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 60 — Кт 10</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">7. Какая проводка составляется при отгрузке продукции покупателю?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 46 — Кт 62</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 62 — Кт 46</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 62 — Кт 51</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 62</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">7. Какая проводка составляется при отгрузке продукции покупателю?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 46 — Кт 62</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 62 — Кт 46</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 62 — Кт 51</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 51 — Кт 62</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">8. Какая проводка составляется при получении аванса от покупателя на расчётный счёт?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 64 — Кт 51</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 51 — Кт 64</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 62 — Кт 46</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 51 — Кт 62</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">8. Какая проводка составляется при получении аванса от покупателя на расчётный счёт?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 64 — Кт 51</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 51 — Кт 64</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 62 — Кт 46</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 51 — Кт 62</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">9. Какая проводка составляется при зачёте ранее полученного аванса в счёт отгрузки?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 62 — Кт 64</button>
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 64 — Кт 62</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 51 — Кт 64</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 62 — Кт 46</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">9. Какая проводка составляется при зачёте ранее полученного аванса в счёт отгрузки?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 62 — Кт 64</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 64 — Кт 62</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 51 — Кт 64</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 62 — Кт 46</button>
+        <div class="quiz-feedback"></div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <p class="font-semibold mb-3">10. Задача. ООО «Smart_buh» перечислило аванс поставщику ООО «Канцтовары» в сумме 30 000 руб. с расчётного счёта. Затем получило канцелярские товары на ту же сумму и зачло аванс. Какие проводки нужно составить?</p>
-        <div class="space-y-2 text-sm">
-          <button onclick="checkTest(this, true)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">А) Дт 61 — Кт 51: 30 000; Дт 10 — Кт 60: 30 000; Дт 60 — Кт 61: 30 000</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Б) Дт 60 — Кт 51: 30 000; Дт 10 — Кт 60: 30 000</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">В) Дт 10 — Кт 51: 30 000</button>
-          <button onclick="checkTest(this, false)" class="w-full text-left p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">Г) Дт 61 — Кт 51: 30 000; Дт 10 — Кт 61: 30 000</button>
-        </div>
-        <p class="feedback hidden mt-2 text-xs font-bold"></p>
+      <div class="quiz-question">
+        <p class="quiz-question-title">10. Задача. ООО «Smart_buh» перечислило аванс поставщику ООО «Канцтовары» в сумме 30 000 руб. с расчётного счёта. Затем получило канцелярские товары на ту же сумму и зачло аванс. Какие проводки нужно составить?</p>
+        <button class="quiz-option" onclick="checkTest(this, true)">А) Дт 61 — Кт 51: 30 000; Дт 10 — Кт 60: 30 000; Дт 60 — Кт 61: 30 000</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Дт 60 — Кт 51: 30 000; Дт 10 — Кт 60: 30 000</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 10 — Кт 51: 30 000</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 61 — Кт 51: 30 000; Дт 10 — Кт 61: 30 000</button>
+        <div class="quiz-feedback"></div>
       </div>
     </section>
 
   </main>
 
+  <div id="smart-footer"></div>
 
   <script>
     function checkTest(btn, isCorrect) {
-      const parent = btn.parentElement.parentElement;
-      const fb = parent.querySelector('.feedback');
-      fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+      const question = btn.closest('.quiz-question');
+      const feedback = question.querySelector('.quiz-feedback');
+      const allOptions = question.querySelectorAll('.quiz-option');
+      
+      allOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+      feedback.classList.remove('correct', 'incorrect', 'show');
+      
       if (isCorrect) {
-        btn.classList.add('bg-emerald-100', 'dark:bg-emerald-900/50', 'border-emerald-500');
-        fb.classList.add('text-emerald-600', 'dark:text-emerald-400');
-        fb.textContent = '✅ Верно!';
+        btn.classList.add('correct');
+        feedback.classList.add('correct', 'show');
+        feedback.textContent = '✅ Верно!';
       } else {
-        btn.classList.add('bg-rose-100', 'dark:bg-rose-900/50', 'border-rose-500');
-        fb.classList.add('text-rose-600', 'dark:text-rose-400');
-        fb.textContent = '❌ Неверно. Попробуйте еще раз.';
+        btn.classList.add('incorrect');
+        feedback.classList.add('incorrect', 'show');
+        feedback.textContent = '❌ Неверно. Попробуйте еще раз.';
       }
     }
-    </script>
+  </script>
 
-  <div id="smart-footer"></div>
-
-  <!-- Подключаем умный скрипт навигации -->
   <script src="navigation.js"></script>
 </body>
 </html>
