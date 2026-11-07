@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 11. Учет расчетов с бюджетом | smart_buh</title>
+  
+  <script>
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
+
+  <div id="smart-header"></div>
+
+  <main class="mx-auto px-4 py-8 space-y-12">
+
+    <!-- Заголовок -->
+    <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <h1>Урок 11. Учет расчетов с бюджетом</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed italic">
+        «В этом мире неизбежны только две вещи: смерть и налоги». Бенджамин Франклин, 1789 г.
+      </p>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p>И если первая неизбежность от нас не зависит, то вторая сопровождает человека фактически на протяжении всей его трудовой деятельности. Согласно Закону РА «Об основах налоговой системы», под налогом понимается обязательный платеж, взимаемый в государственный бюджет или внебюджетный фонд. Совокупность этих платежей образует налоговую систему Республики Абхазия.</p>
+        <p>Для обобщения информации о расчетах с бюджетом предназначен активно-пассивный <b>счет 68 «Расчеты с бюджетом»</b>. По дебету отражается погашение задолженности (оплата, зачет входного НДС), а по кредиту – начисление. Аналитический учет ведется по каждому виду платежей.</p>
+      </div>
+    </div>
+
+    <!-- 1. Классификация налогов -->
+    <section class="space-y-4">
+      <h2>1. Классификация налогов в Республике Абхазия</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+        <div class="info-block blue">
+          <h3 class="!mt-0 text-lg">Республиканские налоги</h3>
+          <ul class="text-sm space-y-1 mt-2 list-disc list-inside">
+            <li>Налог на прибыль организаций</li>
+            <li>Налог на добавленную стоимость (НДС)</li>
+            <li>Акцизы на отдельные группы товаров</li>
+            <li>Налог на операции с ценными бумагами</li>
+            <li>Таможенная пошлина</li>
+            <li>Государственная пошлина</li>
+            <li>Транзитный налог</li>
+            <li>Налог на имущество организаций</li>
+            <li>Платежи за пользование природными ресурсами</li>
+            <li>Налог на реализацию ГСМ</li>
+            <li>Налог с владельцев транспортных средств</li>
+            <li>Лицензионные сборы (республиканские)</li>
+            <li>Страховые взносы во внебюджетные фонды</li>
+          </ul>
+        </div>
+        <div class="info-block gray">
+          <h3 class="!mt-0 text-lg">Местные налоги</h3>
+          <ul class="text-sm space-y-1 mt-2 list-disc list-inside">
+            <li>Доходный налог с физлиц и ИП</li>
+            <li>Земельный налог</li>
+            <li>Налог на имущество физических лиц</li>
+            <li>Сбор за право торговли (разовый талон/патент)</li>
+            <li>Сбор за право торговли вино-водочными изделиями</li>
+            <li>Сбор за выдачу ордера на квартиру</li>
+            <li>Сбор за использование национальной символики</li>
+            <li>Лицензионные сборы (местные)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Налог на прибыль -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2>2. Налог на прибыль организаций</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Объектом обложения является валовая прибыль (доходы от реализации и внереализационные доходы минус расходы). Фактически это распределение чистой прибыли между собственниками и государством.</p>
+        
+        <div class="info-block amber">
+          <p class="font-bold mb-2">Ставки налога на прибыль в РА:</p>
+          <ul class="text-sm space-y-1">
+            <li>• <b>Базовая ставка:</b> 18%</li>
+            <li>• Банковская деятельность: 25%</li>
+            <li>• Страховая деятельность: 20%</li>
+            <li>• Посреднические операции и сделки: 25%</li>
+            <li>• Коммунальное хозяйство: 10%</li>
+            <li>• Магазины свободной торговли: 15%</li>
+          </ul>
+        </div>
+
+        <p>Уплата производится ежеквартально, не позднее 20-го числа месяца, следующего за отчетным кварталом. Сумма налога исчисляется нарастающим итогом с начала года.</p>
+      </div>
+
+      <!-- Интерактивный пример -->
+      <button onclick="toggleExample('ex-profit', this)" id="btn-ex-profit" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4">
+        👁 Показать пример расчета и проводки по налогу на прибыль
+      </button>
+      <div id="ex-profit" class="hidden space-y-4 mt-4">
+        <div class="info-block emerald">
+          <p class="font-bold mb-2">Условие:</p>
+          <p class="text-sm mb-3">По итогам 2026 г. налогооблагаемая прибыль организации составила 100 000 рублей. Базовая ставка — 18%.</p>
+          <p class="font-mono text-sm">Налог = 100 000 × 18% = <b>18 000 руб.</b></p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="data-table text-xs">
+            <thead><tr><th>Дт</th><th>Кт</th><th>Сумма</th><th>Содержание операции</th></tr></thead>
+            <tbody>
+              <tr><td>81</td><td>68</td><td>18 000</td><td>Начислен налог на прибыль</td></tr>
+              <tr><td>68</td><td>51</td><td>18 000</td><td>Перечислен налог на прибыль в бюджет</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. НДС -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2>3. Налог на добавленную стоимость (НДС)</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>НДС — это форма изъятия части добавленной стоимости, созданной на всех стадиях производства и реализации. Организация берет НДС с покупателей, вычитает НДС, уплаченный поставщикам, и разницу отдает государству.</p>
+        <p><b>Базовая ставка:</b> 10%. Ставка 0% применяется при экспорте, транзите, международных перевозках и обслуживании воздушных судов в аэропорту «Сухум» им. В.Г. Ардзинба.</p>
+        <p><b>Налоговый период:</b> Календарный месяц. Уплата — до 15-го числа следующего месяца.</p>
+
+        <div class="info-block blue">
+          <p class="font-bold mb-2">Определение налоговой базы:</p>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li><b>При реализации:</b> Стоимость товаров (работ, услуг) исходя из цен без учета НДС и акцизов.</li>
+            <li><b>При обмене/безвозмездной передаче:</b> Рыночная цена идентичных товаров, но не ниже себестоимости.</li>
+            <li><b>Строительно-монтажные работы для себя:</b> Фактические расходы на выполнение.</li>
+            <li><b>Ввоз товаров:</b> Таможенная стоимость + пошлина + акциз.</li>
+          </ul>
+        </div>
+
+        <div class="info-block gray">
+          <p class="font-bold mb-2">Условия вычета входного НДС:</p>
+          <ul class="text-sm space-y-1 list-disc list-inside">
+            <li>Товары/услуги приобретены для облагаемых операций</li>
+            <li>Товары/услуги приняты к учету</li>
+            <li>Имеются первичные документы с выделенной суммой НДС</li>
+            <li>НДС фактически уплачен поставщику (или при ввозе)</li>
+          </ul>
+          <p class="text-xs mt-2 italic">Если вычеты превышают начисленный налог, разница засчитывается в счет будущих платежей или возмещается из бюджета.</p>
+        </div>
+      </div>
+
+      <!-- Интерактивный пример -->
+      <button onclick="toggleExample('ex-nds', this)" id="btn-ex-nds" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4">
+        👁 Показать пример расчета и проводки по НДС
+      </button>
+      <div id="ex-nds" class="hidden space-y-4 mt-4">
+        <div class="info-block emerald">
+          <p class="font-bold mb-2">Условие:</p>
+          <p class="text-sm mb-3">Торговая организация купила товар за 110 000 руб. (в т.ч. НДС 10 000 руб.) и продала его за 165 000 руб. (в т.ч. НДС 15 000 руб.).</p>
+          <p class="text-sm">К уплате в бюджет: 15 000 (исходящий) − 10 000 (входящий) = <b>5 000 руб.</b></p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="data-table text-xs">
+            <thead><tr><th>Операция</th><th>Дт</th><th>Кт</th><th>Сумма, руб.</th></tr></thead>
+            <tbody>
+              <tr><td>Оприходован товар от поставщика</td><td>41</td><td>60</td><td>100 000</td></tr>
+              <tr><td>Отражен входной НДС</td><td>19</td><td>60</td><td>10 000</td></tr>
+              <tr><td>Продан товар покупателю (с НДС)</td><td>62</td><td>46</td><td>165 000</td></tr>
+              <tr><td>Начислен НДС с реализации</td><td>46</td><td>68</td><td>15 000</td></tr>
+              <tr><td>Входной НДС принят к зачету</td><td>68</td><td>19</td><td>10 000</td></tr>
+              <tr><td>Перечислен НДС в бюджет</td><td>68</td><td>51</td><td>5 000</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Акцизы -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2>4. Акцизы</h2>
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Косвенный налог, включаемый в цену товара. Подакцизные товары: алкоголь, табак, электронные системы доставки никотина, ювелирные изделия из драгметаллов. Налоговый период — месяц, уплата до 15-го числа следующего месяца.</p>
+        
+        <div class="overflow-x-auto my-4">
+          <table class="data-table text-xs">
+            <thead><tr><th>Вид подакцизного товара</th><th>Ставка (реализация в РА)</th><th>Ставка (ввоз в РА)</th></tr></thead>
+            <tbody>
+              <tr><td>Алкоголь >9% спирта (кроме пива, вин)</td><td>20% от стоимости</td><td>30% от таможенной ст-ти</td></tr>
+              <tr><td>Алкоголь ≤9% спирта (кроме пива, вин)</td><td>7% от стоимости</td><td>10% от таможенной ст-ти</td></tr>
+              <tr><td>Вина, фруктовые вина (не игристые)</td><td>6% от стоимости</td><td>9% от таможенной ст-ти</td></tr>
+              <tr><td>Игристые вина (шампанские)</td><td>8% от стоимости</td><td>10% от таможенной ст-ти</td></tr>
+              <tr><td>Пиво до 8,6%</td><td>5% от стоимости</td><td>30% от таможенной ст-ти</td></tr>
+              <tr><td>Сигареты, папиросы</td><td>0,20 руб./шт. + 1,6% (мин. 0,25 руб./шт.)</td><td>0,20 руб./шт. + 1,6% (мин. 0,25 руб./шт.)</td></tr>
+              <tr><td>Ювелирные изделия</td><td>—</td><td>10% от таможенной ст-ти</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-block amber">
+          <p class="text-sm"><b>💡 Важно:</b> При использовании вина наливом (сырья), по которому уже уплачен акциз в РА, сумма акциза по готовому продукту уменьшается на сумму, уплаченную за сырье.</p>
+        </div>
+      </div>
+
+      <!-- Интерактивный пример -->
+      <button onclick="toggleExample('ex-akciz', this)" id="btn-ex-akciz" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4">
+        👁 Показать пример расчета и проводки по акцизам
+      </button>
+      <div id="ex-akciz" class="hidden space-y-4 mt-4">
+        <div class="info-block emerald">
+          <p class="font-bold mb-2">Условие:</p>
+          <p class="text-sm mb-3">Организация реализовала партию вина (неигристого) на сумму 200 000 руб. (без учета акциза и НДС). Ставка для вин — 6%.</p>
+          <p class="font-mono text-sm">Акциз = 200 000 × 6% = <b>12 000 руб.</b></p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="data-table text-xs">
+            <thead><tr><th>Дт</th><th>Кт</th><th>Сумма</th><th>Содержание операции</th></tr></thead>
+            <tbody>
+              <tr><td>46</td><td>68/Акцизы</td><td>12 000</td><td>Начислен акциз при реализации вина</td></tr>
+              <tr><td>68/Акцизы</td><td>51</td><td>12 000</td><td>Перечислен акциз в бюджет</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Корреспонденция счета 68 -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2>5. Основные корреспонденции по счету 68</h2>
+      <div class="overflow-x-auto">
+        <table class="data-table text-xs">
+          <thead><tr><th class="w-1/2">По дебету 68</th><th class="w-1/2">По кредиту 68</th></tr></thead>
+          <tbody>
+            <tr><td>19 «НДС по приобретенным ценностям»</td><td>46 «Реализация продукции»</td></tr>
+            <tr><td>50 «Касса»</td><td>50 «Касса»</td></tr>
+            <tr><td>51 «Расчетный счет»</td><td>51 «Расчетный счет»</td></tr>
+            <tr><td>68 Субсчет (зачет)</td><td>68 Субсчет (зачет)</td></tr>
+            <tr><td>80 «Прибыли и убытки»</td><td>70 «Расчеты с персоналом»</td></tr>
+            <tr><td>99 «Прибыли и убытки» (штрафы)</td><td>80 «Прибыли и убытки»</td></tr>
+            <tr><td></td><td>81 «Использование прибыли»</td></tr>
+            <tr><td></td><td>96 «Целевые финансирования»</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. Тесты -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2>6. Проверка знаний</h2>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">1. Какая базовая ставка налога на прибыль установлена в Республике Абхазия?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 10% — как и для большинства налогов</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) 18% — согласно Закону РА «О налоге на прибыль»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) 20% — как в Российской Федерации</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) 25% — для всех видов деятельности</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">2. На каком счете учитывается входящий НДС по приобретенным ценностям до момента принятия к вычету?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) На счете 68 «Расчеты с бюджетом»</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) На счете 19 «НДС по приобретенным ценностям»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) На счете 41 «Товары»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) На счете 60 «Расчеты с поставщиками»</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">3. В какой срок необходимо уплатить НДС за отчетный налоговый период?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Не позднее 20-го числа следующего месяца</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Не позднее 15-го числа месяца, следующего за отчетным</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Не позднее 25-го числа следующего месяца</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) До конца отчетного месяца</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">4. Какая бухгалтерская проводка отражает начисление налога на прибыль организаций?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 80 — Кт 68</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 81 — Кт 68</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 99 — Кт 68</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 68 — Кт 51</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">5. Что является объектом обложения акцизом согласно законодательству РА?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Вся выручка организации от реализации</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Реализация подакцизных товаров (алкоголь, табак, ювелирные изделия и др.)</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Чистая прибыль от продаж</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Стоимость основных средств организации</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">6. Какова ставка акциза на вина (не игристые) при реализации на территории РА?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 10% от стоимости реализации</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) 20% от стоимости реализации</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) 6% от стоимости реализации</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) 5% от стоимости реализации</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">7. При каком условии возникает обязанность уплаты НДС по методу «по отгрузке»?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) При поступлении денежных средств на расчетный счет</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) При передаче права собственности на товар покупателю</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) В конце налогового периода независимо от отгрузки</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) При подписании договора поставки</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">8. На каком счете отражаются штрафы и пени, начисленные налоговыми органами?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 26 «Общехозяйственные расходы»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Дт 44 «Издержки обращения»</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Дт 99 «Прибыли и убытки»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 81 «Использование прибыли»</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">9. Задача: Налогооблагаемая прибыль организации составила 100 000 руб. Базовая ставка — 18%. Чему равен налог на прибыль?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 10 000 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) 18 000 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) 20 000 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) 15 000 руб.</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">10. Задача: Товар куплен за 110 000 руб. (НДС 10 000), продан за 165 000 руб. (НДС 15 000). Сколько НДС подлежит уплате в бюджет?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 15 000 руб. — вся сумма исходящего НДС</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) 5 000 руб. — разница между исходящим и входящим НДС</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) 10 000 руб. — сумма входного НДС</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) 25 000 руб. — сумма обоих НДС</button>
+        <div class="quiz-feedback"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="smart-footer"></div>
+
+  <script>
+    // Функция переключения примеров (как в Уроках 4 и 7)
+    function toggleExample(id, btn) {
+      const content = document.getElementById(id);
+      
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        btn.innerHTML = '🙈 Скрыть пример';
+        btn.className = 'w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:opacity-90 mt-4';
+      } else {
+        content.classList.add('hidden');
+        btn.innerHTML = '👁 Показать пример расчета и проводки';
+        btn.className = 'w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4';
+      }
+    }
+
+    // Функция проверки тестов
+    function checkTest(btn, isCorrect) {
+      const question = btn.closest('.quiz-question');
+      const feedback = question.querySelector('.quiz-feedback');
+      const allOptions = question.querySelectorAll('.quiz-option');
+      
+      allOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+      feedback.classList.remove('correct', 'incorrect', 'show');
+      
+      if (isCorrect) {
+        btn.classList.add('correct');
+        feedback.classList.add('correct', 'show');
+        feedback.textContent = '✅ Верно!';
+      } else {
+        btn.classList.add('incorrect');
+        feedback.classList.add('incorrect', 'show');
+        feedback.textContent = '❌ Неверно. Попробуйте ещё раз.';
+      }
+    }
+  </script>
+
+  <script src="navigation.js"></script>
+</body>
+</html>
