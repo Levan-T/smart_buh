@@ -25,8 +25,8 @@ const courseStructure = {
         { id: 8, title: "Учет расчетов с подотчетными лицами", file: "lesson8.html", status: "completed" },
         { id: 9, title: "Учет расчетов с поставщиками и покупателями", file: "lesson9.html", status: "completed" },
         { id: 10, title: "Учет расчетов с персоналом по оплате труда", file: "lesson10.html", status: "completed" },
-        { id: 11, title: "Учет расчетов с бюджетом", file: "lesson11.html", status: "current" },
-        { id: 12, title: "Прочие расчеты с дебиторами и кредиторами", file: "lesson12.html", status: "locked" },
+        { id: 11, title: "Учет расчетов с бюджетом", file: "lesson11.html", status: "completed" },
+        { id: 12, title: "Прочие расчеты с дебиторами и кредиторами", file: "lesson12.html", status: "current" },
         { id: 13, title: "Практическое задание по Разделу 2", file: "lesson13.html", status: "locked" }
       ]
     },
