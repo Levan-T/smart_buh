@@ -35,8 +35,8 @@ const courseStructure = {
       title: "Раздел 3. Учет имущества и финансовых вложений",
       icon: "🏢",
       lessons: [
-        { id: 14, title: "Учет материалов", file: "lesson14.html", status: "locked" },
-        { id: 15, title: "Учет основных средств", file: "lesson15.html", status: "locked" }
+        { id: 14, title: "Учет основных средств", file: "lesson14.html", status: "locked" },
+        { id: 15, title: "Учет нематериальных активов", file: "lesson15.html", status: "locked" }
       ]
     }
   ]
