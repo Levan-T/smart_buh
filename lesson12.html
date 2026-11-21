@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 12. Учет расчетов с прочими дебиторами и кредиторами | smart_buh</title>
+  <script>
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    main { max-width: 860px !important; }
+    @media (max-width: 900px) { main { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; } }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
+
+  <div id="smart-header"></div>
+
+  <main class="mx-auto px-4 py-8 space-y-12">
+
+    <!-- Заголовок -->
+    <div class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <h1>УРОК 12. Учет расчетов с прочими дебиторами и кредиторами</h1>
+    </div>
+
+    <!-- Введение -->
+    <section class="space-y-4">
+      <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>Хозяйственная деятельность организации не ограничивается расчетными отношениями с поставщиками и подрядчиками (счет 60), покупателями (счет 62), подотчетными лицами (счет 71) или бюджетом (счет 68). Есть операции, которые нельзя отнести конкретно к вышеперечисленным. Для обобщения информации о таких расчётах предназначен активно-пассивный <b>счет 76 «Расчёты с разными дебиторами и кредиторами»</b>.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+          <div class="info-block emerald !my-0">
+            <h4 class="!mt-0 !mb-2">Дебитор</h4>
+            <p class="text-sm mb-2">Это тот, кто должен нам. Сумма долгов дебиторов называется <b>дебиторской задолженностью</b>.</p>
+            <p class="text-sm">Дебиторская задолженность — это фактический актив организации, означающий будущее поступление денег.</p>
+          </div>
+          <div class="info-block amber !my-0">
+            <h4 class="!mt-0 !mb-2">Кредитор</h4>
+            <p class="text-sm mb-2">Это тот, кому должны мы. Сумма наших долгов — <b>кредиторская задолженность</b>.</p>
+            <p class="text-sm">Кредиторская задолженность — это обязательства компании, которые необходимо будет погасить.</p>
+          </div>
+        </div>
+
+        <p>В бухгалтерском балансе эти суммы отображаются <b>развернуто</b>: дебетовое сальдо в активе, а кредитовое в пассиве. То есть, если один контрагент нам должен 10 000 рублей, то эта сумма рассматривается как потенциально будущее поступление и отображается в активе баланса организации, если же мы потребили электроэнергию, и организация выставила нам счет, то задолженность за потребленную электроэнергию является пассивом, требующей последующей оплаты.</p>
+
+        <p>Принципиальное отличие счёта 76 от счетов 60 и 62 заключается не в механике учёта — она идентична, — а в <b>круге контрагентов и характере операций</b>. Счета 60 и 62, например, обслуживают основной операционный цикл: закупка — производство — реализация. Счёт 76 обслуживает то, что находится вне этого цикла либо носит вспомогательный или транзитный характер.</p>
+
+        <p>Аналитический учёт по счёту 76 ведётся в двух разрезах одновременно: <b>по видам расчётов</b> (через субсчета) и <b>по каждому контрагенту и каждому расчётному документу</b> внутри субсчёта.</p>
+
+        <p>Второй разрез критически важен. Свёрнутое сальдо по субсчёту не даёт информации о том, кто конкретно должен организации и кому должна она. При инвентаризации расчётов и при составлении баланса требуется именно постатейная расшифровка.</p>
+
+        <div class="info-block blue">
+          <p class="font-bold mb-2">📌 Ключевой признак отнесения операции к счёту 76:</p>
+          <p class="text-sm">Она находится вне основного операционного цикла «закупка — производство — реализация», т.е. носит транзитный, вспомогательный характер.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Примеры -->
+    <section class="space-y-4 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2>Типовые примеры операций на счете 76</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400">Рассмотрим несколько типовых примеров, раскрывающих суть операций, которые учитываются на счете 76.</p>
+
+      <!-- Пример 1 -->
+      <button onclick="toggleExample('ex-1', this)" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4">
+        👁 Пример 1. Сдача помещения в аренду
+      </button>
+      <div id="ex-1" class="hidden space-y-4 mt-4">
+        <div class="info-block emerald !my-0">
+          <p class="font-bold mb-2">Условие:</p>
+          <p class="text-sm">ООО «Smart_buh» сдаёт в аренду свободную часть складского помещения площадью 40 м² организации-арендатору. Арендная плата по договору — 22 000 руб. в месяц, включая НДС 10%. Сдача имущества в аренду не относится к обычным видам деятельности организации.</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="data-table text-xs">
+            <thead><tr><th>Дт</th><th>Кт</th><th>Сумма, руб.</th><th>Содержание операции</th></tr></thead>
+            <tbody>
+              <tr><td class="font-mono font-bold">76</td><td class="font-mono font-bold">80</td><td>22 000</td><td>Начислена арендная плата арендатору</td></tr>
+              <tr><td class="font-mono font-bold">80</td><td class="font-mono font-bold">68</td><td>2 000</td><td>Начислен НДС с операции</td></tr>
+              <tr><td class="font-mono font-bold">51</td><td class="font-mono font-bold">76</td><td>22 000</td><td>Перечислена арендная плата</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Пример 2 -->
+      <button onclick="toggleExample('ex-2', this)" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4">
+        👁 Пример 2. Счет за потребленную электроэнергию
+      </button>
+      <div id="ex-2" class="hidden space-y-4 mt-4">
+        <div class="info-block emerald !my-0">
+          <p class="font-bold mb-2">Условие:</p>
+          <p class="text-sm">РУП «Черноморэнерго» выставила счет за потребленную электроэнергию административным офисом за месяц в размере 13 200 рублей, в т.ч. НДС 1 200 руб.</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="data-table text-xs">
+            <thead><tr><th>Дт</th><th>Кт</th><th>Сумма, руб.</th><th>Содержание операции</th></tr></thead>
+            <tbody>
+              <tr><td class="font-mono font-bold">26</td><td class="font-mono font-bold">76</td><td>12 000</td><td>Начислены затраты за электроэнергию</td></tr>
+              <tr><td class="font-mono font-bold">19</td><td class="font-mono font-bold">76</td><td>1 200</td><td>Выделен входящий НДС</td></tr>
+              <tr><td class="font-mono font-bold">76</td><td class="font-mono font-bold">51</td><td>13 200</td><td>Перечислена кредиторская задолженность</td></tr>
+              <tr><td class="font-mono font-bold">68</td><td class="font-mono font-bold">19</td><td>1 200</td><td>Зачтен входящий НДС от полученной услуги</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-block amber !my-0">
+          <p class="text-sm">Обращаем внимание на момент возникновения права на вычет входящего НДС — он принимается к зачёту <b>только после фактической оплаты</b> поставщику и принятия услуги к учёту при наличии первичного документа с выделенной суммой налога отдельно.</p>
+        </div>
+        <div class="info-block gray !my-0">
+          <p class="text-sm">По отражению самой операции внесем небольшое пояснение. Если организация приобретает коммунальные услуги у энергоснабжающей организации по прямому договору, расчёты правомерно вести как на счёте 60, так и на счёте 76 — оба варианта допустимы, выбор закрепляется в учётной политике. Счёт 76 предпочтителен, когда энергоснабжение не связано напрямую с производственным процессом и носит характер эксплуатационного расхода по содержанию офиса, т.е. сопутствующий расход.</p>
+        </div>
+      </div>
+
+      <!-- Пример 3 -->
+      <button onclick="toggleExample('ex-3', this)" class="w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4">
+        👁 Пример 3. Расчеты с наемными лицами по договорам ГПХ
+      </button>
+      <div id="ex-3" class="hidden space-y-4 mt-4">
+        <div class="info-block emerald !my-0">
+          <p class="font-bold mb-2">Условие:</p>
+          <p class="text-sm mb-3">ООО «Smart_buh» наняло 3 людей по договору гражданско-правового характера на текущий ремонт офисного помещения. Суммарный размер вознаграждения составил 120 000 руб., то есть по 40 000 руб. каждому.</p>
+          <p class="font-bold text-sm">Расчет подоходного налога:</p>
+          <p class="text-sm mt-1">Необлагаемый минимум 60 руб. применяется к доходу каждого физического лица за месяц:</p>
+          <p class="font-mono text-sm mt-1">(40 000 − 60) × 10% = 3 994 руб. на человека</p>
+          <p class="font-mono text-sm">3 994 × 3 = <b>11 982 руб.</b></p>
+          <p class="font-mono text-sm mt-2">К выплате: 120 000 − 11 982 = <b>108 018 руб.</b></p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="data-table text-xs">
+            <thead><tr><th>Дт</th><th>Кт</th><th>Сумма, руб.</th><th>Содержание операции</th></tr></thead>
+            <tbody>
+              <tr><td class="font-mono font-bold">26</td><td class="font-mono font-bold">76</td><td>120 000</td><td>Начислено вознаграждение</td></tr>
+              <tr><td class="font-mono font-bold">76</td><td class="font-mono font-bold">68</td><td>11 982</td><td>Удержан подоходный налог</td></tr>
+              <tr><td class="font-mono font-bold">26</td><td class="font-mono font-bold">69</td><td>24 000</td><td>Начислены 20% во внебюджетные фонды</td></tr>
+              <tr><td class="font-mono font-bold">76</td><td class="font-mono font-bold">50</td><td>108 018</td><td>Выплачено вознаграждение</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-block amber !my-0">
+          <p class="text-sm"><b>⚠️ Обратите внимание:</b> страховые взносы 24 000 руб. начисляются <b>сверх</b> суммы вознаграждения и являются затратами организации, а не удержанием из выплаты работникам.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Тесты -->
+    <section class="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800">
+      <h2>Проверка знаний</h2>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">1. Какой счет предназначен для учета расчетов с прочими дебиторами и кредиторами?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Счет 60 «Расчеты с поставщиками и подрядчиками»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Счет 62 «Расчеты с покупателями и заказчиками»</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Счет 76 «Расчеты с разными дебиторами и кредиторами»</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Счет 71 «Расчеты с подотчетными лицами»</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">2. Кто такой дебитор?</p>
+        <button class="quiz-option" onclick="checkTest(this, true)">А) Тот, кто должен нам — его задолженность является активом организации</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) Тот, кому должны мы — его задолженность является пассивом</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Любой контрагент организации независимо от направления долга</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Работник, получивший деньги под отчет</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">3. Как отражается сальдо по счету 76 в бухгалтерском балансе?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Свернуто — отображается только разница между дебиторской и кредиторской задолженностью</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Развернуто — дебетовое сальдо в активе, кредитовое в пассиве</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Только кредитовое сальдо в пассиве</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) По усмотрению бухгалтера</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">4. В чем принципиальное отличие счета 76 от счетов 60 и 62?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) В механике учета — на счете 76 записи делаются иначе</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) В круге контрагентов и характере операций — счет 76 обслуживает операции вне основного цикла</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Счет 76 является только активным, а 60 и 62 — активно-пассивными</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) На счете 76 не ведется аналитический учет</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">5. Какая проводка составляется при начислении арендной платы, если сдача в аренду не является обычным видом деятельности?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Дт 62 — Кт 46</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Дт 76 — Кт 80</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Дт 76 — Кт 46</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Дт 51 — Кт 76</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">6. Когда возникает право на вычет входящего НДС согласно законодательству РА?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) В момент получения счета от поставщика</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Б) В момент оприходования товара, независимо от оплаты</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">В) Только после фактической оплаты поставщику и принятия услуги к учету при наличии первичного документа с выделенным НДС</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) В конце налогового периода автоматически</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">7. На каком счете ведутся расчеты с лицами, привлеченными по договору гражданско-правового характера?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) На счете 70, так как это выплаты физическим лицам</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) На счете 76, так как такие лица не являются работниками организации</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) На счете 71, так как это подотчетные суммы</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) На счете 68, так как удерживается налог</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">8. Начислены ли страховые взносы (20%) удержанием из вознаграждения по договору ГПХ?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) Да, они удерживаются из суммы вознаграждения работника</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) Нет, они начисляются сверх вознаграждения и являются затратами организации</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) Да, но только в части Пенсионного фонда</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) Взносы по договорам ГПХ не начисляются вообще</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">9. Задача: Вознаграждение по договору ГПХ одному лицу — 40 000 руб. Рассчитайте подоходный налог (ставка 10%, необлагаемый минимум 60 руб.).</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 4 000 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) 3 994 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) 3 940 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) 4 060 руб.</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="quiz-question-title">10. Задача: Начислено вознаграждение по ГПХ трем лицам на общую сумму 120 000 руб. (по 40 000 руб. каждому). Какая сумма подлежит выплате после удержания подоходного налога?</p>
+        <button class="quiz-option" onclick="checkTest(this, false)">А) 108 000 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, true)">Б) 108 018 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">В) 109 090 руб.</button>
+        <button class="quiz-option" onclick="checkTest(this, false)">Г) 96 000 руб.</button>
+        <div class="quiz-feedback"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="smart-footer"></div>
+
+  <script>
+    function toggleExample(id, btn) {
+      const content = document.getElementById(id);
+      const titles = {
+        'ex-1': '👁 Пример 1. Сдача помещения в аренду',
+        'ex-2': '👁 Пример 2. Счет за потребленную электроэнергию',
+        'ex-3': '👁 Пример 3. Расчеты с наемными лицами по договорам ГПХ'
+      };
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        btn.innerHTML = '🙈 Скрыть пример';
+        btn.className = 'w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:opacity-90 mt-4';
+      } else {
+        content.classList.add('hidden');
+        btn.innerHTML = titles[id];
+        btn.className = 'w-full px-4 py-3 rounded-xl text-sm font-semibold transition bg-emerald-600 text-white dark:bg-emerald-500 dark:text-slate-950 hover:opacity-90 mt-4';
+      }
+    }
+
+    function checkTest(btn, isCorrect) {
+      const question = btn.closest('.quiz-question');
+      const feedback = question.querySelector('.quiz-feedback');
+      const allOptions = question.querySelectorAll('.quiz-option');
+
+      allOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+      feedback.classList.remove('correct', 'incorrect', 'show');
+
+      if (isCorrect) {
+        btn.classList.add('correct');
+        feedback.classList.add('correct', 'show');
+        feedback.textContent = '✅ Верно!';
+      } else {
+        btn.classList.add('incorrect');
+        feedback.classList.add('incorrect', 'show');
+        feedback.textContent = '❌ Неверно. Попробуйте ещё раз.';
+      }
+    }
+  </script>
+
+  <script src="navigation.js"></script>
+</body>
+</html>
